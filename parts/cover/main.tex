@@ -1,0 +1,44 @@
+% ============================================================
+% 封面 + 版权声明
+% ============================================================
+
+\documentclass[fontset=fandol,ugly,language=chinese]{pkuthss}
+
+\usepackage[backend=biber,style=gb7714-2015ay]{biblatex}
+\usepackage{enumitem,fancyvrb}
+\usepackage{booktabs,multirow,longtable,makecell}
+
+% 加载配置
+\input{configs.tex}
+\input{miscs.tex}
+
+\begin{document}
+
+\frontmatter
+\pagestyle{empty}
+
+% ============================================================
+% 封面
+% ============================================================
+\maketitle
+\cleardoublepage
+
+% ============================================================
+% 版权声明
+% ============================================================
+\chapter*{版权声明}
+\thispagestyle{empty}
+
+任何收存和保管本论文各种版本的单位和个人，
+未经本论文作者同意，不得将本论文转借他人，
+亦不得随意复制、抄录、拍照或以任何方式传播。
+否则一旦引起有碍作者著作权之问题，将可能承担法律责任。
+
+% 插入门户下载的版权声明 PDF
+\begin{textblock}{1}(-0.8,-0.08)
+	\colorbox{white}{%
+		\includegraphics[height=1.2448\textheight]{版权声明.pdf}%
+	}
+\end{textblock}
+
+\end{document}

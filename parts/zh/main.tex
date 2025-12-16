@@ -1,0 +1,65 @@
+% ============================================================
+% 中文版论文 + 致谢 + 原创性声明
+% ============================================================
+
+\documentclass[fontset=fandol,ugly,language=chinese]{pkuthss}
+
+\usepackage[backend=biber,style=gb7714-2015ay]{biblatex}
+\usepackage{enumitem,fancyvrb}
+\usepackage{booktabs,multirow,longtable,makecell}
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame=single,tabsize=4,fontsize=\footnotesize}
+\renewcommand{\v}[1]{\boldsymbol{#1}}
+\newcommand\pkg[1]{\textsf{#1}}
+
+% 参考文献格式
+\setlength{\bibitemsep}{3bp}
+\renewcommand*{\bibfont}{\zihao{5}\linespread{1.27}\selectfont}
+
+% 加载配置
+\input{configs.tex}
+\input{miscs.tex}
+
+% 参考文献
+\addbibresource{ref.bib}
+
+\begin{document}
+
+\frontmatter
+\pagestyle{empty}
+\cleardoublepage
+\pagestyle{plain}
+\setcounter{page}{0}
+\pagenumbering{Roman}
+
+% 中文摘要
+\include{chap/abstract}
+
+% 目录
+\addcontentsline{toc}{chapter}{目录}
+\tableofcontents
+
+% 正文
+\mainmatter
+\include{chap/chap1}
+\include{chap/chap2}
+\include{chap/chap3}
+\include{chap/chap4}
+\include{chap/chap5}
+\include{chap/chap6}
+
+% 参考文献
+\appendix
+\printbibliography[heading=bibintoc]
+
+% 致谢 (仅 final 阶段显示)
+\backmatter
+\ifshowacknowledgement
+	\include{chap/acknowledgement}
+\fi
+
+% 原创性声明 (仅 final 阶段显示)
+\iffinal
+\origin
+\fi
+
+\end{document}
