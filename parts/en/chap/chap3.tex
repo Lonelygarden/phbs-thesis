@@ -1,95 +1,54 @@
-\chapter{Theoretical Model Construction}
+\chapter{The 3/2 Volatility Model Specification}
 \label{chap:model}
 
-This chapter aims to construct a theoretical model to depict the \enquote{shirking} behavior (i.e., choosing the effort level) of employees under asymmetric information and the optimal response strategy of the employer. The model will draw upon the basic frameworks of principal-agent theory and game theory.
-
-\section{Basic Model Setup}
+\section{Evolution and Economic Intuition of the 3/2 Model}
 \label{sec:model_setup}
 
-Consider a single-period employment relationship involving a risk-neutral employer (Principal, P) and a similarly risk-neutral employee (Agent, A). The employee has a reservation utility $\bar{U}$, representing the minimum utility level required to accept the employment relationship. For simplicity, we normalize this to $\bar{U} = 0$.
+As an advanced stochastic volatility framework, the 3/2 model emerged as a sophisticated evolution of the Square-Root Process (popularized by Cox-Ingersoll-Ross and later further developed by Steven Heston).
 
-The sequence of events is as follows:
-\begin{enumerate}
-    \item The employer designs and offers an employment contract to the employee.
-    \item The employee decides whether to accept the contract. If rejected, the employee receives the reservation utility $\bar{U}=0$, and the employer gets zero profit. If accepted, the game proceeds.
-    \item The employee chooses their effort level $e$. Effort level $e \ge 0$. Exerting effort incurs a corresponding cost for the employee.
-    \item Output $q$ is realized, and payments are executed according to the contract.
-\end{enumerate}
+In the current financial industry, the Heston model (a 1/2 model) has long been regarded as the industry standard. However, during periods of extreme market stress, the Heston model often fails to accurately capture the "volatility of volatility" observed in the market and struggles to perfectly fit the steepness of the short-term volatility skew.
 
-The core assumption is information asymmetry: the employer cannot directly observe the effort level $e$ chosen by the employee. However, the employer might indirectly infer or influence the employee's effort choice through monitoring mechanisms or by observing the final output $q$.
+To overcome this limitation, researchers in the late 1990s and early 2000s proposed a novel approach: shifting the exponent of the diffusion term from 1/2 to 3/2. This modification in specification allows the model to generate more explosive volatility dynamics and a non-linear mean-reversion speed. Consequently, the 3/2 model allows for the occurrence of sharp peaks in volatility and presents a steeper skew under market pressure, which is highly consistent with empirical data. However, it is worth noting that under certain normal market conditions, the 3/2 model may lack the stability inherent in the Heston model.
 
-\subsection{Employee Effort and Cost}
+\section{Stochastic Differential Equation (SDE) Specifications}
 
-The employee chooses an effort level $e$. We assume effort is a continuous variable, $e \in [0, \infty)$. Exerting effort generates disutility (cost) for the employee. We represent this with a cost function $c(e)$ and assume it has the following properties:
-\begin{itemize}
-    \item $c(0) = 0$: No effort incurs no cost.
-    \item $c'(e) > 0$ for $e > 0$: The cost of effort increases with the effort level (positive marginal cost).
-    \item $c''(e) > 0$: The marginal cost of effort is increasing (the cost function is strictly convex).
-\end{itemize}
-A commonly used form for the cost function is $c(e) = \frac{k}{2}e^2$, where $k > 0$ is a cost parameter reflecting the difficulty of exerting effort.
+Under the risk-neutral measure, the asset price process and the instantaneous variance/volatility process of the 3/2 model can be characterized by the following system of Stochastic Differential Equations (SDEs):The dynamic evolution of the underlying asset price process $S_t$ satisfies:
 
-The degree of employee \enquote{shirking} can be viewed as the deviation of the chosen effort level $e$ from some benchmark (e.g., the level expected by the employer or the maximum possible level). In this model, we directly analyze the employee's choice of optimal effort $e$.
+$$dS_t = r S_t dt + S_t \sqrt{V_t} (\rho dW_t^1 + \sqrt{1-\rho^2} dW_t^2)$$
 
-\subsection{Output and Payment}
+where $r$ represents the risk-free interest rate, and $\rho$ is the correlation coefficient between the two Brownian motions.
 
-To simplify the model, let's first consider a deterministic output scenario, where output $q$ is entirely determined by the employee's effort level:
-\begin{equation}
-q = e
-\end{equation}
-This implies the employer can perfectly infer effort $e$ by observing output $q$. In this case, no information asymmetry exists, and the employer can achieve the optimum by designing a contract that mandates a specific effort level $e^*$ and pays a corresponding wage. For example, specifying payment $w$ if $q=e^*$ and zero or a penalty otherwise. As long as $w - c(e^*) \ge 0$, the employee will accept and choose $e=e^*$.
+Simultaneously, the dynamic evolution of the variance process $V_t$ satisfies:
 
-However, in reality, output is often affected by random factors. A more realistic setup involves stochastic output, for example:
-\begin{equation}
-q = e + \epsilon
-\end{equation}
-where $\epsilon$ is a random noise term with a mean of zero (e.g., following a Normal distribution $N(0, \sigma^2)$). In this scenario, even after observing output $q$, the employer cannot fully determine the employee's effort $e$, highlighting the problem of information asymmetry.
+$$dV_t = \kappa V_t(\theta - V_t)dt + \epsilon V_t^{3/2}dW_t^1$$
 
-Contracts can be based on observable variables, such as output $q$ or information obtained through monitoring. Common contract forms include:
-\begin{itemize}
-    \item Fixed Wage Contract: Pays a fixed wage $w$ regardless of output.
-    \item Linear Performance Pay Contract: Wage $w = s + bq$, where $s$ is the fixed part, and $b$ is the commission rate (bonus rate) based on output.
-    \item Monitoring-Based Contract: The employer monitors the employee with a certain probability $p$. If monitoring reveals that the employee's behavior does not meet requirements (e.g., effort is below a standard $e^*$), a penalty is imposed.
-\end{itemize}
+In the above equations:
 
-\section{Analysis of Employee Behavior: Fixed Wage and Monitoring}
-\label{sec:agent_behavior_monitor}
+* $\kappa$ controls the speed of mean reversion.
+* $\theta$ represents the long-term average variance level.
+* $\epsilon$ (or denoted as $\nu$) is the volatility of volatility (vov) parameter, controlling the fluctuation degree of the variance process.
+* $dW_t^1$ and $dW_t^2$ are independent standard Brownian motions.
 
-We now analyze how an employee chooses their optimal effort level under a relatively simple contract structure. Consider an employer offering a contract that includes a fixed wage $w$ and a monitoring-penalty mechanism.
+It is worth noting that this variance process can also be equivalently expressed in terms of $dV_t/V_t$, thereby more intuitively reflecting the drift and diffusion characteristics of its relative changes.
 
-Specifically, the employer monitors the employee with probability $p \in [0, 1]$. Monitoring is assumed to be perfect; if implemented, it accurately observes the employee's actual effort level $e$. The contract specifies a minimum effort standard $e_{min} \ge 0$. If the employee is monitored and their effort level $e < e_{min}$, the employee incurs a penalty $F > 0$ (e.g., a fine, wage deduction). If $e \ge e_{min}$, or if the employee is not monitored (with probability $1-p$), no penalty is incurred.
+\section{Integrated Variance and Conditional Distribution}
 
-Assuming the employee is risk-neutral, their objective is to maximize their expected utility. The employee's utility comes from the wage received, minus the cost of effort, minus the potential expected penalty. Given the contract $(w, p, e_{min}, F)$, the employee chooses effort $e$ to maximize:
-\begin{equation}
-E[U(e)] = w - c(e) - p \cdot \mathbb{I}(e < e_{min}) \cdot F
-\end{equation}
-where $\mathbb{I}(\cdot)$ is the indicator function, which equals 1 if the condition is true, and 0 otherwise.
+In the option pricing framework of the 3/2 model, the integrated variance $V_T$ over the time interval $[0, T]$ plays a crucial role. It is defined as follows:
 
-The employee's optimal decision is as follows:
-\begin{enumerate}
-    \item {If choosing $e \ge e_{min}$}: In this case, $\mathbb{I}(e < e_{min}) = 0$, and the employee faces no penalty. Their utility is $U_1(e) = w - c(e)$. To maximize utility, the employee will choose the effort level that satisfies $e \ge e_{min}$ with the minimum cost, which is $e = e_{min}$. The utility in this case is $U_1^* = w - c(e_{min})$.
+$$V_T = \int_0^T \sigma_t^2 dt = \int_0^T V_t dt$$
 
-    \item {If choosing $e < e_{min}$}: In this case, $\mathbb{I}(e < e_{min}) = 1$, and the employee faces the risk of being caught and penalized. Their expected utility is $E[U_2(e)] = w - c(e) - pF$. To maximize this expected utility, the employee will choose the lowest possible effort cost, which is $e=0$ (assuming $e=0$ is the minimum allowable effort). The expected utility in this case is $E[U_2^*] = w - c(0) - pF = w - pF$.
-\end{enumerate}
+Since the randomness of the asset price is partially driven by volatility, when we condition on the integrated variance $V_T$, the terminal price of the underlying asset $S_T$ follows a lognormal distribution. This pivotal property implies that, conditional on $V_T$, we can leverage the pricing framework of the Black-Scholes (BS) model.
 
-The employee will choose the option that yields higher (expected) utility:
-The employee will choose $e = e_{min}$ if and only if
-\begin{equation}
-U_1^* \ge E[U_2^*]
-\end{equation}
-\begin{equation}
-w - c(e_{min}) \ge w - pF
-\end{equation}
-\begin{equation}
-pF \ge c(e_{min})
-\end{equation}
+According to Itô's isometry principle:
 
-{Conclusion}: Under this contract, the employee's optimal effort choice $e^*$ is:
-\begin{equation}
-e^* = \begin{cases} e_{min} & \text{if } pF \ge c(e_{min}) \\ 0 & \text{if } pF < c(e_{min}) \end{cases}
-\end{equation}
+$$\int_0^T \rho^* \sigma_t dX_t \sim \rho^* \sqrt{V_T} X_1 \sim N(0, (\rho^*)^2 V_T)$$
 
-This result intuitively shows that the employee is incentivized to meet the minimum standard $e_{min}$ only when the expected penalty (probability of detection $p$ times the penalty magnitude $F$) is large enough to exceed the cost of meeting that standard, $c(e_{min})$. Otherwise, the employee prefers to exert no effort ($e=0$) and bear the expected penalty cost $pF$, because doing so saves the effort cost $c(e_{min})$.
+Accordingly, the effective volatility $\sigma$ between time $0$ and $T$ can be expressed as:
 
-This simple model reveals the role of monitoring and penalties in curbing \enquote{shirking} behavior but also highlights its limitations: it can only incentivize the employee to meet the minimum standard $e_{min}$, not higher levels of effort. Furthermore, the effort choice exhibits an \enquote{all-or-nothing} characteristic (relative to $e_{min}$).
+$$\sigma = \rho^* \sqrt{V_T / T}$$
 
-% Next section will analyze how the employer designs the optimal contract
+Through further stochastic calculus derivation, the formula for the log return of the terminal price relative to the initial price can be expanded as:
+
+$$\log\left(\frac{S_T}{S_0}\right) = \frac{\rho}{\epsilon}\log\left(\frac{V_T}{V_0}\right) + \left(\kappa + \frac{\epsilon^2}{2}\right)V_T - \kappa\theta T - \frac{1}{2}V_T + \rho^* \sqrt{V_T} X_1$$
+
+This formula serves as the core foundation for subsequent exact simulation and Fourier transform pricing.

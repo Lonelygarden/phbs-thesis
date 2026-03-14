@@ -26,12 +26,9 @@
 \contentsline {subsection}{\numberline {5.2.1}传统离散化与精确模拟方法的局限性}{13}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}频域变换方法的权衡与突破}{13}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}结论}{13}{section.5.3}%
-\contentsline {chapter}{\numberline {第六章\hspace {.3em}}总结与展望}{15}{chapter.6}%
-\contentsline {section}{\numberline {6.1}研究结论总结}{15}{section.6.1}%
-\contentsline {section}{\numberline {6.2}理论意义}{16}{section.6.2}%
-\contentsline {section}{\numberline {6.3}实践启示}{16}{section.6.3}%
-\contentsline {section}{\numberline {6.4}研究局限性}{16}{section.6.4}%
-\contentsline {section}{\numberline {6.5}未来研究方向}{17}{section.6.5}%
-\contentsline {chapter}{致谢}{19}{appendix*.7}%
-\contentsline {chapter}{北京大学学位论文原创性声明和使用授权说明}{21}{appendix*.8}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}创新贡献与结论}{15}{chapter.6}%
+\contentsline {section}{\numberline {6.1}核心创新与贡献}{15}{section.6.1}%
+\contentsline {section}{\numberline {6.2}发现与研究结论}{15}{section.6.2}%
+\contentsline {chapter}{致谢}{17}{appendix*.7}%
+\contentsline {chapter}{北京大学学位论文原创性声明和使用授权说明}{19}{appendix*.8}%
 \contentsfinish 

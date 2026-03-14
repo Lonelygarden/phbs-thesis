@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  12 MAR 2026 20:08
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  14 MAR 2026 23:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2084,7 +2084,7 @@ LaTeX Font Info:    Font shape `TU/texgyreheros(0)/m/n' will be
 (Font)              scaled to size 15.25694pt on input line 1.
 LaTeX Font Info:    Font shape `TU/texgyreheros(0)/b/n' will be
 (Font)              scaled to size 11.4427pt on input line 1.
- [1
+) [1
 
 
 
@@ -2095,56 +2095,62 @@ LaTeX Font Info:    Font shape `TU/texgyreheros(0)/b/n' will be
 
 
 
-]) [2] (./main.toc [3
+] [2
 
 
 
 
-
-
-])
+] (./main.toc)
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
- [4]
+ [3
+
+
+] [4
+
+
+]
 \openout2 = `chap/chap1.aux'.
 
 
 (./chap/chap1.tex
 Chapter 1
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 12.04628pt on input line 5.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 9.03471pt on input line 5.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.22777pt on input line 5.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 12.0437pt on input line 5.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 9.03278pt on input line 5.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 7.22623pt on input line 5.
 [1
 
 
 
+]
+Overfull \hbox (0.68073pt too wide) in paragraph at lines 18--19
+[]\TU/XITS(0)/m/n/12.045 Fast Fourier Transform (FFT): Despite its outstanding 
+performance in calculation speed,
+ []
 
-
-] [2]) [3] [4]
+) [2]
 \openout2 = `chap/chap2.aux'.
 
  (./chap/chap2.tex
 Chapter 2
-[5
+
+Overfull \hbox (0.57114pt too wide) in paragraph at lines 15--16
+\TU/XITS(0)/m/n/12.045 ing while avoiding time discretization errors became ano
+ther major research priority. Academia
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3
 
 
 
 
 
-] [6] [7]) [8] [9]
+]
+[4]) [5]
 \openout2 = `chap/chap3.aux'.
 
- (./chap/chap3.tex [10
+ (./chap/chap3.tex [6
 
 
 
@@ -2152,136 +2158,128 @@ Chapter 2
 
 ]
 Chapter 3
-[11]
-Underfull \vbox (badness 2326) has occurred while \output is active []
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 12.04628pt on input line 15.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 9.03471pt on input line 15.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 7.22777pt on input line 15.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 12.0437pt on input line 15.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 9.03278pt on input line 15.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 7.22623pt on input line 15.
 
- [12]
-Underfull \vbox (badness 3861) has occurred while \output is active []
+Overfull \hbox (22.15034pt too wide) in paragraph at lines 15--16
+[]\TU/XITS(0)/m/n/12.045 Under the risk-neutral measure, the asset price proces
+s and the instantaneous variance/volatility
+ []
 
- [13])
-[14]
+[7]) [8]
 \openout2 = `chap/chap4.aux'.
 
  (./chap/chap4.tex
 Chapter 4
-[15
+[9
 
 
 
 
 
 ]
-Overfull \hbox (3.33545pt too wide) in paragraph at lines 33--34
-[]\TU/XITS(0)/m/n/12.045 The employer needs to choose the contract parameters $
-[][][] [][] [][][] [][]$. However, the penalty
+
+LaTeX Warning: Reference `eq:agent_choice_recap' on page 10 undefined on input 
+line 33.
+
+
+Overfull \hbox (0.48138pt too wide) in paragraph at lines 40--41
+[]\TU/XITS(0)/m/n/12.045 Beyond time-domain Monte Carlo simulations, frequency-
+domain methods (Fourier trans-
  []
 
-[16] [17]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18]
-[19]) [20]
+) [10]
 \openout2 = `chap/chap5.aux'.
 
  (./chap/chap5.tex
 Chapter 5
 
-Overfull \hbox (44.10388pt too wide) in paragraph at lines 20--22
-\TU/XITS(0)/m/n/12.045 the dependent variable, measuring the degree of “shirkin
-g” of employee $[]$ in year $[]$. $[][]$
- []
-
-[21
-
-
-
-
-
-] [22]
-Overfull \hbox (30.59064pt too wide) in paragraph at lines 35--36
-[]\TU/XITS(0)/m/n/12.045 Next are the core explanatory variables. The first is 
-Monitoring Intensity ($[][]$),
+Overfull \hbox (215.31282pt too wide) in paragraph at lines 24--38
+ [][] 
  []
 
 
-Overfull \hbox (8.90437pt too wide) in paragraph at lines 35--36
-\TU/XITS(0)/m/n/12.045 ing greater monitoring intensity. The second is Performa
-nce Pay Share ($[][]$),
- []
+Underfull \vbox (badness 2865) has occurred while \output is active []
+
+ [11
 
 
-Overfull \hbox (3.52751pt too wide) in paragraph at lines 35--36
-\TU/XITS(0)/m/n/12.045 calculated from employee questionnaire responses about t
-heir income composition (fixed salary,
- []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23]
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 10.54048pt on input line 101.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 101.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 101.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 10.53824pt on input line 101.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 101.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 101.
+]
+./chap/chap5.tex:68: Misplaced alignment tab character &.
+<argument> Performance Comparison - Exact Sim &
+                                                Conditional COS
+l.68 ... Comparison - Exact Sim & Conditional COS}
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
+./chap/chap5.tex:68: Misplaced alignment tab character &.
+<argument> Performance Comparison - Exact Sim &
+                                                Conditional COS
+l.68 ... Comparison - Exact Sim & Conditional COS}
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 101.
-
-./chap/chap5.tex:107: ignored error: Infinite glue shrinkage found in box being
- split [24] [25] [26]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27])
-[28]
+) [12]
 \openout2 = `chap/chap6.aux'.
 
  (./chap/chap6.tex
 Chapter 6
-[29
+[13
 
 
 
 
 
-] [30] [31]) [32] [33] [34
+]) [14]
 
+LaTeX Warning: Empty bibliography on input line 50.
 
-
-
-] [35] [36] (./main.aux (./chap/abstract.aux)
-(./chap/chap1.aux) (./chap/chap2.aux) (./chap/chap3.aux) (./chap/chap4.aux)
-(./chap/chap5.aux) (./chap/chap6.aux))
+(./main.aux (./chap/abstract.aux) (./chap/chap1.aux) (./chap/chap2.aux)
+(./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux) (./chap/chap6.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
 
 
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 0.41063pt have occurred.
+LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DEB02B13D2FDF4875EFF970E05686518;8984.
+(rerunfilecheck)             Checksum: FCBFE90D6025402144D95F2543C5405D;7165.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44751 strings out of 468174
- 911366 string characters out of 5436827
- 2021639 words of memory out of 5000000
- 72777 multiletter control sequences out of 15000+600000
- 634415 words of font info for 122 fonts, out of 8000000 for 9000
+ 44192 strings out of 468174
+ 897128 string characters out of 5436827
+ 2011641 words of memory out of 5000000
+ 72233 multiletter control sequences out of 15000+600000
+ 632745 words of font info for 103 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 123i,12n,121p,2078b,6680s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,12n,121p,1201b,2144s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (40 pages).
+Output written on main.pdf (18 pages).
