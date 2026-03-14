@@ -106,3 +106,16 @@ This study implemented general simulation, exact/almost exact simulation, and fr
         \bottomrule
     \end{tabular}
 \end{table}
+
+\subsection{Limitations of Traditional Discretization and Exact Simulation Methods}
+* Euler/Milstein Scheme: As a highly general method, it outputs results across all scenarios, but its computational cost is exceedingly high. In our tests, the computation time for a single pricing typically ranged from approximately 3 seconds to 32 seconds. This speed is evidently insufficient for high-frequency trading or real-time risk management.
+* Exact Simulation: The data indicate that exact simulation completely fails when pricing specific ATM options or options near expiration; across the tests from Case II to Case VII, this method consistently returned invalid values (nan).
+* Almost Exact Simulation: While effective in certain scenarios, under extreme near-expiration conditions, the approximation schemes produced significant option biases, with computation times exceeding 12 seconds.
+
+\subsection{Trade-offs and Breakthroughs in Frequency-Domain Methods}
+Fast Fourier Transform (FFT): The FFT is fast but cannot price options near expiration. It demonstrated remarkable computational speed but completely collapsed near expiration (Case IV and Case V), generating extraordinarily exaggerated numerical biases (e.g., errors reaching the magnitude of 10^58 and 10^59).
+
+Fourier-Cosine Transformation: In contrast, the Fourier-Cosine transformation method stood out in the evaluations. Numerical results showed that this method not only successfully covered various extreme scenarios, but also strictly controlled the option bias. Fourier-Cosine transformation can price precisely at a relatively fast speed.
+
+\section{Summary of Findings}
+Synthesizing the multi-dimensional comparative analysis above, this study reaches a clear conclusion: under the 3/2 volatility model, neither traditional simulation methods nor pure FFT methods can simultaneously accommodate all-scenario adaptability and computational efficiency. The Fourier-Cosine transformation, however, can achieve extremely high precision in option pricing while maintaining relatively fast computational speeds, making it the optimal choice for handling various extreme parameter scenarios.
