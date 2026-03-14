@@ -65,7 +65,7 @@ This study implemented general simulation, exact/almost exact simulation, and fr
 
 \begin{table}[htbp]
     \centering
-    \caption{Performance Comparison - Exact Sim & Conditional COS}
+    \caption{Performance Comparison - Exact Simulation and Conditional COS}
     \label{tab:perf-exact}
     \resizebox{\textwidth}{!}{
     \begin{tabular}{lcccccc}
@@ -113,7 +113,7 @@ This study implemented general simulation, exact/almost exact simulation, and fr
 * Almost Exact Simulation: While effective in certain scenarios, under extreme near-expiration conditions, the approximation schemes produced significant option biases, with computation times exceeding 12 seconds.
 
 \subsection{Trade-offs and Breakthroughs in Frequency-Domain Methods}
-Fast Fourier Transform (FFT): The FFT is fast but cannot price options near expiration. It demonstrated remarkable computational speed but completely collapsed near expiration (Case IV and Case V), generating extraordinarily exaggerated numerical biases (e.g., errors reaching the magnitude of 10^58 and 10^59).
+Fast Fourier Transform (FFT): The FFT is fast but cannot price options near expiration. It demonstrated remarkable computational speed but completely collapsed near expiration (Case IV and Case V), generating extraordinarily exaggerated numerical biases (e.g., errors reaching the magnitude of $10^58$ and $10^59$).
 
 Fourier-Cosine Transformation: In contrast, the Fourier-Cosine transformation method stood out in the evaluations. Numerical results showed that this method not only successfully covered various extreme scenarios, but also strictly controlled the option bias. Fourier-Cosine transformation can price precisely at a relatively fast speed.
 

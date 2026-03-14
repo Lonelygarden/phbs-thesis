@@ -125,6 +125,8 @@ build-all-parts:
 	@cd $(COVER_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex >/dev/null 2>&1
 	@echo "  [3/6] 编译英文版 (第1次 + biber + 第2次)..."
 	@cd $(EN_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex >/dev/null 2>&1
+# 修改为（显示完整错误）
+# 	@cd $(EN_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex
 	@cd $(EN_DIR) && $(BIBER) main >/dev/null 2>&1
 	@cd $(EN_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex >/dev/null 2>&1
 	@cd $(EN_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex >/dev/null 2>&1

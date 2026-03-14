@@ -30,12 +30,6 @@ Regardless of whether the integrated variance is obtained via conditional MC or 
   * Approach 2 (Analytical Formula): Directly substitute the modified parameters into the Bachelier or Black-Scholes-Merton (BSM) option pricing formulas. Specifically, set the modified initial price as $S_0 := E(S_T|v_T)$ and the modified volatility as $\sigma := \rho^*\sqrt{V_T/T}$.
 1. Averaging: Average the resulting option prices across all independent simulation paths to obtain the final expected present value of the option.
 
-The final decision rule is (as shown in Equation \ref{eq:agent_choice_recap}):
-\begin{equation} \label{eq:agent
-  _choice_recap}
-e^* = \begin{cases} e_{min} & \text{if } pF \ge c(e_{min}) \\ 0 & \text{if } pF < c(e_{min}) \end{cases}
-\end{equation}
-
 \section{Fourier Transformation Procedures}
 Beyond time-domain Monte Carlo simulations, frequency-domain methods (Fourier transformations) provide another highly efficient pricing avenue, provided that the characteristic function is known.
 
