@@ -1,7 +1,7 @@
 \chapter{Pricing Methodologies}
 \label{chap:analysis}
 
-Having clarified the stochastic differential equations and integrated variance characteristics of the 3/2 volatility model, this chapter will detail the specific numerical algorithms and derivation steps implemented for option pricing. It primarily covers the Monte Carlo simulation frameworks (including conditional and exact simulation) as well as frequency-domain pricing methods based on Fourier transformations.
+With the fundamental stochastic differential equations and the integrated variance properties of the $3/2$ volatility model now established, the focus of this study shifts to practical numerical implementation. Here, we translate these theoretical constructs into actionable option pricing algorithms. The following sections outline the precise mathematical derivations and computational steps for two distinct valuation paradigms: time-domain Monte Carlo architectures—spanning both conditional and exact simulation schemes—and frequency-domain techniques driven by Fourier transformations.
 
 \section{Monte Carlo Simulation Procedures}
 \label{sec:agent_decision_analysis}
@@ -35,9 +35,9 @@ Regardless of whether the integrated variance is obtained via conditional MC or 
 \end{enumerate}
 
 \section{Fourier Transformation Procedures}
-Beyond time-domain Monte Carlo simulations, frequency-domain methods (Fourier transformations) provide another highly efficient pricing avenue, provided that the characteristic function is known.
+Assuming the characteristic function is accessible, frequency-domain techniques offer a compelling, high-efficiency alternative to traditional time-domain Monte Carlo simulations.
 
 \begin{enumerate}
-    \item Fast Fourier Transform (FFT): By converting the option pricing formula into an integral in the Fourier space, FFT can simultaneously compute option prices across multiple strike prices, significantly enhancing computational speed. However, when dealing with options that are near expiration, the oscillatory nature of the integrand leads to pricing failures or severe degradation in accuracy.
-    \item Fourier-Cosine Transformation (COS Method): To overcome the aforementioned drawbacks, this study specifically introduces and examines the pricing method based on the conditional Fourier-Cosine transform. This method approximates the target probability density function through a cosine series expansion. Both theoretical analysis and subsequent numerical results demonstrate that the Fourier-Cosine transform not only maintains a relatively fast computational speed but also achieves precise option pricing under far more extreme parameter conditions.
+    \item Fast Fourier Transform (FFT): The primary advantage of the FFT lies in its ability to evaluate prices across a spectrum of strikes simultaneously by mapping the valuation problem into Fourier space. Yet, this computational speed comes at a steep cost for short-dated options. As maturity approaches zero, the integrand becomes highly oscillatory, triggering massive numerical instability and effectively breaking the valuation mechanism.
+    \item Fourier-Cosine Transformation (COS Method): Because the standard FFT collapses under short maturities, our research deploys the conditional Fourier-Cosine expansion as a structural remedy. By reconstructing the underlying probability density function via a truncated cosine series, this technique inherently bypasses the instability caused by highly oscillatory integrals. As our subsequent numerical experiments will confirm, the COS method strikes an optimal balance—retaining the rapid execution typical of frequency-domain approaches while delivering robust, high-precision valuations even at the absolute boundaries of the parameter space.
 \end{enumerate}

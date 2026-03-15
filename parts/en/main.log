@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  15 MAR 2026 21:36
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  15 MAR 2026 22:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2116,6 +2116,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (./chap/chap1.tex
 Chapter 1
+
+Overfull \hbox (0.44266pt too wide) in paragraph at lines 7--9
+\TU/XITS(0)/m/n/12.045 volatility frameworks have been introduced. Among these,
+ the 3/2 volatility model has emerged
+ []
+
+
+Overfull \hbox (3.63176pt too wide) in paragraph at lines 16--17
+[]\TU/XITS(0)/m/n/12.045 Exact simulation: Although designed to eliminate time-
+discretization errors, this method
+ []
+
 [1
 
 
@@ -2123,50 +2135,48 @@ Chapter 1
 
 
 ]
-Overfull \hbox (0.68073pt too wide) in paragraph at lines 18--19
-[]\TU/XITS(0)/m/n/12.045 Fast Fourier Transform (FFT): Despite its outstanding 
-performance in calculation speed,
- []
-
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 12.04628pt on input line 24.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 9.03471pt on input line 24.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 7.22777pt on input line 24.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 12.0437pt on input line 24.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 9.03278pt on input line 24.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 7.22623pt on input line 24.
 ) [2]
 \openout2 = `chap/chap2.aux'.
 
  (./chap/chap2.tex
 Chapter 2
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 12.04628pt on input line 9.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 9.03471pt on input line 9.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.22777pt on input line 9.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 12.0437pt on input line 9.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 9.03278pt on input line 9.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 7.22623pt on input line 9.
 
-Overfull \hbox (0.57114pt too wide) in paragraph at lines 17--18
+Overfull \hbox (0.57114pt too wide) in paragraph at lines 15--16
 \TU/XITS(0)/m/n/12.045 ing while avoiding time discretization errors became ano
 ther major research priority. Academia
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3
+[3
 
 
 
 
 
 ]
-Overfull \hbox (4.5245pt too wide) in paragraph at lines 23--24
+Overfull \hbox (4.5245pt too wide) in paragraph at lines 21--22
 []\TU/XITS(0)/m/n/12.045 Extension and Application to the 3/2 Model: Targeting 
 the 3/2 model specifically, [][]Baldeaux[]
  []
 
-[4]) [5]
+[4]
+Overfull \hbox (9.15239pt too wide) in paragraph at lines 36--37
+[]\TU/XITS(0)/m/n/12.045 Conducts a multidimensional empirical benchmark, defin
+itively quantifying the accuracy-
+ []
+
+) [5]
 \openout2 = `chap/chap3.aux'.
 
  (./chap/chap3.tex [6
@@ -2200,35 +2210,39 @@ Overfull \hbox (15.32495pt too wide) in paragraph at lines 32--33
 pricing formulas. Specif-
  []
 
-
-Overfull \hbox (0.48138pt too wide) in paragraph at lines 38--39
-[]\TU/XITS(0)/m/n/12.045 Beyond time-domain Monte Carlo simulations, frequency-
-domain methods (Fourier trans-
- []
-
-) [10]
+[10]) [11]
 \openout2 = `chap/chap5.aux'.
 
- (./chap/chap5.tex
+ (./chap/chap5.tex [12
+
+
+
+
+
+]
 Chapter 5
-[11
+[13] [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-
-
-] [12]) [13] [14]
+ [15])
+[16]
 \openout2 = `chap/chap6.aux'.
 
  (./chap/chap6.tex
 Chapter 6
-[15
+[17
 
 
 
 
 
-]) [16]
+])
+Overfull \hbox (3.97844pt too wide) in paragraph at lines 24--47
+[]\TU/XITS(0)/m/n/12.045 In conclusion, the empirical evidence dictates that ou
+r proposed conditional Fourier-Cosine
+ []
+
+[18]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 10.54048pt on input line 50.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -2258,7 +2272,7 @@ Package fontspec Info:
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
 
-[17
+[19
 
 
 
@@ -2275,7 +2289,7 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A4629F34E209CF50941928DEF130A728;8294.
+(rerunfilecheck)             Checksum: 9927566EAB35DE68CAB0B8ECF0769954;8226.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
@@ -2283,10 +2297,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  44561 strings out of 468174
  906944 string characters out of 5436827
- 2041091 words of memory out of 5000000
+ 2041023 words of memory out of 5000000
  72582 multiletter control sequences out of 15000+600000
  634431 words of font info for 124 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  123i,15n,121p,2717b,5282s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (21 pages).
+Output written on main.pdf (23 pages).
