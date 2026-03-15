@@ -24,11 +24,15 @@ To completely eliminate time discretization errors, the exact simulation method 
 
 \subsection{Common Procedures for Pricing and Aggregation}
 Regardless of whether the integrated variance is obtained via conditional MC or exact MC, the subsequent steps for calculating the option price are universal:
-3. Parameter Transformation: Calculate the expected value of the underlying asset conditional on given $v_T$ and $V_T$, denoted as $E(S_T|v_T, V_T)$, and determine the effective volatility, usually expressed as $\rho^*\sqrt{V_T/T}$.
-1. Option Valuation:
-  * Approach 1 (Price Sampling): Draw samples from the lognormal or normal distribution to calculate the terminal option payoff.
-  * Approach 2 (Analytical Formula): Directly substitute the modified parameters into the Bachelier or Black-Scholes-Merton (BSM) option pricing formulas. Specifically, set the modified initial price as $S_0 := E(S_T|v_T)$ and the modified volatility as $\sigma := \rho^*\sqrt{V_T/T}$.
-1. Averaging: Average the resulting option prices across all independent simulation paths to obtain the final expected present value of the option.
+\begin{enumerate}[start=3]
+  \item Parameter Transformation: Calculate the expected value of the underlying asset conditional on given $v_T$ and $V_T$, denoted as $E(S_T|v_T, V_T)$, and determine the effective volatility, usually expressed as $\rho^*\sqrt{V_T/T}$.
+  \item Option Valuation:
+  \begin{itemize}
+    \item Approach 1 (Price Sampling): Draw samples from the lognormal or normal distribution to calculate the terminal option payoff.
+    \item Approach 2 (Analytical Formula): Directly substitute the modified parameters into the Bachelier or Black-Scholes-Merton (BSM) option pricing formulas. Specifically, set the modified initial price as $S_0 := E(S_T|v_T)$ and the modified volatility as $\sigma := \rho^*\sqrt{V_T/T}$.
+  \end{itemize}
+  \item Averaging: Average the resulting option prices across all independent simulation paths to obtain the final expected present value of the option.
+\end{enumerate}
 
 \section{Fourier Transformation Procedures}
 Beyond time-domain Monte Carlo simulations, frequency-domain methods (Fourier transformations) provide another highly efficient pricing avenue, provided that the characteristic function is known.

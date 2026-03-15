@@ -2,7 +2,7 @@
   title = {A Decomposition of {{Bessel Bridges}}},
   author = {Pitman, Jim and Yor, Marc},
   date = {1982},
-  journaltitle = {Zeitschrift f�r Wahrscheinlichkeitstheorie und Verwandte Gebiete},
+  journaltitle = {Zeitschrift f{\"u}r Wahrscheinlichkeitstheorie und Verwandte Gebiete},
   shortjournal = {Z. Wahrscheinlichkeitstheorie verw Gebiete},
   volume = {59},
   number = {4},
@@ -15,7 +15,7 @@
   file = {C:\Users\27261\Zotero\storage\S83WQ5T3\Pitman和Yor - 1982 - A decomposition of Bessel Bridges.pdf}
 }
 
-@article{medvedevApproximationCalibrationShortTerm2007a,
+@article{medvedevApproximationCalibrationShortTerm2007,
   title = {Approximation and {{Calibration}} of {{Short-Term Implied Volatilities Under Jump-Diffusion Stochastic Volatility}}},
   author = {Medvedev, Alexey and Scaillet, Olivier},
   date = {2007-03},
@@ -32,8 +32,8 @@
   file = {C:\Users\27261\Zotero\storage\K2R5UU9V\Medvedev和Scaillet - 2007 - Approximation and Calibration of Short-Term Implied Volatilities Under Jump-Diffusion Stochastic Vol.pdf}
 }
 
-@article{baldeauxEXACTSIMULATION32012,
-  title = {{{EXACT SIMULATION OF THE}} 3/2 {{MODEL}}},
+@article{baldeauxEXACTSIMULATION322012,
+  title = {{{Exact Simulation}} of the 3/2 {{model}}},
   author = {Baldeaux, Jan},
   date = {2012-08},
   journaltitle = {International Journal of Theoretical and Applied Finance},
@@ -139,4 +139,96 @@
   urldate = {2026-03-12},
   langid = {english},
   file = {C:\Users\27261\Zotero\storage\8P7PN5BQ\Brignone和Junike - 2026 - Exact simulation of stochastic volatility models based on conditional Fourier-cosine method.pdf}
+}
+
+@article{choiSimulationSchemesHeston2024,
+  title = {Simulation Schemes for the {{Heston}} Model with {{Poisson}} Conditioning},
+  author = {Choi, Jaehyuk and Kwok, Yue Kuen},
+  date = {2024-04-01},
+  journaltitle = {European Journal of Operational Research},
+  shortjournal = {European Journal of Operational Research},
+  volume = {314},
+  number = {1},
+  pages = {363--376},
+  issn = {0377-2217},
+  doi = {10.1016/j.ejor.2023.10.048},
+  url = {https://www.sciencedirect.com/science/article/pii/S0377221723008238},
+  urldate = {2026-03-15},
+  abstract = {Exact simulation schemes under the Heston stochastic volatility model (e.g., Broadie–Kaya and Glasserman–Kim) suffer from computationally expensive modified Bessel function evaluations. We propose a new exact simulation scheme without the modified Bessel function, based on the observation that the conditional integrated variance can be simplified when conditioned by the Poisson variate used for simulating the terminal variance. Our approach also enhances the low-bias and time discretization schemes, which are suitable for pricing derivatives with frequent monitoring. Extensive numerical tests reveal the good performance of the new simulation schemes in terms of accuracy, efficiency, and reliability when compared with existing methods.},
+  keywords = {(B) finance,Exact simulation,Gamma expansion,Heston model,Poisson conditioning}
+}
+
+@article{broadieExactSimulationStochastic2006,
+  title = {Exact {{Simulation}} of {{Stochastic Volatility}} and {{Other Affine Jump Diffusion Processes}}},
+  author = {Broadie, Mark and Kaya, Özgür},
+  date = {2006-04},
+  journaltitle = {Operations Research},
+  shortjournal = {Operations Research},
+  volume = {54},
+  number = {2},
+  pages = {217--231},
+  issn = {0030-364X, 1526-5463},
+  doi = {10.1287/opre.1050.0247},
+  url = {https://pubsonline.informs.org/doi/10.1287/opre.1050.0247},
+  urldate = {2026-03-15},
+  abstract = {The stochastic differential equations for affine jump diffusion models do not yield exact solutions that can be directly simulated. Discretization methods can be used for simulating security prices under these models. However, discretization introduces bias into the simulation results, and a large number of time steps may be needed to reduce the discretization bias to an acceptable level. This paper suggests a method for the exact simulation of the stock price and variance under Heston’s stochastic volatility model and other affine jump diffusion processes. The sample stock price and variance from the exact distribution can then be used to generate an unbiased estimator of the price of a derivative security. We compare our method with the more conventional Euler discretization method and demonstrate the faster convergence rate of the error in our method. Specifically, our method achieves an O(s               -1/2               ) convergence rate, where s is the total computational budget. The convergence rate for the Euler discretization method is O(s               -1/3               ) or slower, depending on the model coefficients and option payoff function.},
+  langid = {english},
+  file = {C:\Users\27261\Zotero\storage\6BNSRFED\Broadie和Kaya - 2006 - Exact Simulation of Stochastic Volatility and Other Affine Jump Diffusion Processes.pdf}
+}
+
+@article{glassermanGammaExpansionHeston2011,
+  title = {Gamma Expansion of the {{Heston}} Stochastic Volatility Model},
+  author = {Glasserman, Paul and Kim, Kyoung-Kuk},
+  date = {2011-06-01},
+  journaltitle = {Finance and Stochastics},
+  shortjournal = {Finance Stoch},
+  volume = {15},
+  number = {2},
+  pages = {267--296},
+  issn = {1432-1122},
+  doi = {10.1007/s00780-009-0115-y},
+  url = {https://doi.org/10.1007/s00780-009-0115-y},
+  urldate = {2026-03-15},
+  abstract = {We derive an explicit representation of the transitions of the Heston stochastic volatility model and use it for fast and accurate simulation of the model. Of particular interest is the integral of the variance process over an interval, conditional on the level of the variance at the endpoints. We give an explicit representation of this quantity in terms of infinite sums and mixtures of gamma random variables. The increments of the variance process are themselves mixtures of gamma random variables. The representation of the integrated conditional variance applies the Pitman–Yor decomposition of Bessel bridges. We combine this representation with the Broadie–Kaya exact simulation method and use it to circumvent the most time-consuming step in that method.},
+  langid = {english},
+  keywords = {60H35,65C05,91B70,C63,G12,G13,Monte Carlo methods,Stochastic volatility model},
+  file = {C:\Users\27261\Zotero\storage\RUULVPEZ\Glasserman和Kim - 2011 - Gamma expansion of the Heston stochastic volatility model.pdf}
+}
+
+@article{carrNewApproachOption2007,
+  title = {A New Approach for Option Pricing under Stochastic Volatility},
+  author = {Carr, Peter and Sun, Jian},
+  date = {2007-05-01},
+  journaltitle = {Review of Derivatives Research},
+  shortjournal = {Rev Deriv Res},
+  volume = {10},
+  number = {2},
+  pages = {87--150},
+  issn = {1573-7144},
+  doi = {10.1007/s11147-007-9014-6},
+  url = {https://doi.org/10.1007/s11147-007-9014-6},
+  urldate = {2026-03-08},
+  abstract = {We develop a new approach for pricing European-style contingent claims written on the time T spot price of an underlying asset whose volatility is stochastic. Like most of the stochastic volatility literature, we assume continuous dynamics for the price of the underlying asset. In contrast to most of the stochastic volatility literature, we do not directly model the dynamics of the instantaneous volatility. Instead, taking advantage of the recent rise of the variance swap market, we directly assume continuous dynamics for the time T variance swap rate. The initial value of this variance swap rate can either be directly observed, or inferred from option prices. We make no assumption concerning the real world drift of this process. We assume that the ratio of the volatility of the variance swap rate to the instantaneous volatility of the underlying asset just depends on the variance swap rate and on the variance swap maturity. Since this ratio is assumed to be independent of calendar time, we term this key assumption the stationary volatility ratio hypothesis (SVRH). The instantaneous volatility of the futures follows an unspecified stochastic process, so both the underlying futures price and the variance swap rate have unspecified stochastic volatility. Despite this, we show that the payoff to a path-independent contingent claim can be perfectly replicated by dynamic trading in futures contracts and variance swaps of the same maturity. As a result, the contingent claim is uniquely valued relative to its underlying’s futures price and the assumed observable variance swap rate. In contrast to standard models of stochastic volatility, our approach does not require specifying the market price of volatility risk or observing the initial level of instantaneous volatility. As a consequence of our SVRH, the partial differential equation (PDE) governing the arbitrage-free value of the contingent claim just depends on two state variables rather than the usual three. We then focus on the consistency of our SVRH with the standard assumption that the risk-neutral process for the instantaneous variance is a diffusion whose coefficients are independent of the variance swap maturity. We show that the combination of this maturity independent diffusion hypothesis (MIDH) and our SVRH implies a very special form of the risk-neutral diffusion process for the instantaneous variance. Fortunately, this process is tractable, well-behaved, and enjoys empirical support. Finally, we show that our model can also be used to robustly price and hedge volatility derivatives.},
+  langid = {english},
+  keywords = {Option pricing,Stochastic volatility},
+  file = {C:\Users\27261\Zotero\storage\DDZWE77T\Carr和Sun - 2007 - A new approach for option pricing under stochastic volatility.pdf}
+}
+
+@article{grasselli42Stochastic2017,
+  title = {The 4/2 {{Stochastic Volatility Model}}: {{A Unified Approach}} for the {{Heston}} and the 3/2 {{Model}}},
+  shorttitle = {The 4/2 {{Stochastic Volatility Model}}},
+  author = {Grasselli, Martino},
+  date = {2017},
+  journaltitle = {Mathematical Finance},
+  volume = {27},
+  number = {4},
+  pages = {1013--1034},
+  issn = {1467-9965},
+  doi = {10.1111/mafi.12124},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/mafi.12124},
+  urldate = {2026-03-08},
+  abstract = {We introduce a new stochastic volatility model that includes, as special instances, the Heston (1993) and the 3/2 model of Heston (1997) and Platen (1997). Our model exhibits important features: first, instantaneous volatility can be uniformly bounded away from zero, and second, our model is mathematically and computationally tractable, thereby enabling an efficient pricing procedure. This called for using the Lie symmetries theory for partial differential equations; doing so allowed us to extend known results on Bessel processes. Finally, we provide an exact simulation scheme for the model, which is useful for numerical applications.},
+  langid = {english},
+  keywords = {exact simulation,Laplace transform,Lie's symmetries,stochastic volatility,volatility modeling},
+  file = {C\:\\Users\\27261\\Zotero\\storage\\7XJS8EJB\\Grasselli - 2017 - The 42 Stochastic Volatility Model A Unified Approach for the Heston and the 32 Model.pdf;C\:\\Users\\27261\\Zotero\\storage\\H9G5Q722\\mafi.html}
 }

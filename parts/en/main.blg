@@ -1,9 +1,16 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
 [48] biber-MSWIN64:342> INFO - === 
-[63] Biber.pm:421> INFO - Reading 'main.bcf'
-[171] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
-[208] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[208] bbl.pm:779> INFO - Output to main.bbl
-[209] Biber.pm:132> WARN - The file 'main.bcf' does not contain any citations!
-[209] Biber.pm:134> INFO - WARNINGS: 1
+[65] Biber.pm:421> INFO - Reading 'main.bcf'
+[173] Biber.pm:1002> INFO - Found 11 citekeys in bib section 0
+[209] Biber.pm:4487> INFO - Processing section 0
+[219] Biber.pm:4678> INFO - Looking for bibtex file 'ref.bib' for section 0
+[247] bibtex.pm:1713> INFO - LaTeX decoding ...
+[282] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
+[456] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[457] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'variable = shifted' with 'variable = non-ignorable'
+[457] Biber.pm:4307> INFO - Sorting list 'gb7714-2015/global//global/global/global' of type 'entry' with template 'gb7714-2015' and locale 'zh__pinyin'
+[473] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[483] bbl.pm:779> INFO - Output to main.bbl
+[484] Biber.pm:132> WARN - ISBN '978-3-030-85324-2 978-3-030-85325-9' in entry 'kouarfateExplicitSolutionSimulation2021' is invalid - run biber with '--validate_datamodel' for details.
+[484] Biber.pm:134> INFO - WARNINGS: 1
