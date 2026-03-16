@@ -19,80 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{gb7714-2015/global//global/global/global}
-    \entry{baldeauxEXACTSIMULATION322012}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=cc952180c8aecda9ee1dd9f9a8c5b348}{%
-           family={Baldeaux},
-           familyi={B\bibinitperiod},
-           given={Jan},
-           giveni={J\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=cc952180c8aecda9ee1dd9f9a8c5b348}{%
-           family={Baldeaux},
-           familyi={B\bibinitperiod},
-           given={Jan},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{fullhash}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{fullhashraw}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{bibnamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{authorbibnamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{authornamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{authorfullhash}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{authorfullhashraw}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{nameabibnamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{nameanamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{nameafullhash}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \strng{nameafullhashraw}{cc952180c8aecda9ee1dd9f9a8c5b348}
-      \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{extradate}{1}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This paper discusses the exact simulation of the stock price process underlying the 3/2 model. Using a result derived by Craddock and Lennox using Lie Symmetry Analysis, we adapt the Broadie-Kaya algorithm for the simulation of affine processes to the 3/2 model. We also discuss variance reduction techniques and find that conditional Monte Carlo techniques combined with quasi-Monte Carlo point sets result in significant variance reductions.}
-      \field{issn}{0219-0249, 1793-6322}
-      \field{journaltitle}{International Journal of Theoretical and Applied Finance}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{month}{8}
-      \field{number}{05}
-      \field{shortjournal}{Int. J. Theor. Appl. Finan.}
-      \field{title}{{{Exact Simulation}} of the 3/2 {{model}}}
-      \field{urlday}{12}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{15}
-      \field{year}{2012}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{1250032}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1142/S021902491250032X
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\PIXLSJIX\Baldeaux - 2012 - EXACT SIMULATION OF THE 32 MODEL.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://www.worldscientific.com/doi/abs/10.1142/S021902491250032X
-      \endverb
-      \verb{url}
-      \verb https://www.worldscientific.com/doi/abs/10.1142/S021902491250032X
-      \endverb
-      \keyw{baldeauxEXACTSIMULATION322012}
-    \endentry
     \entry{baldeauxConsistentModelingVIX2012}{online}{}{}
       \name{author}{2}{}{%
         {{hash=cc952180c8aecda9ee1dd9f9a8c5b348}{%
@@ -133,10 +59,8 @@
       \strng{nameanamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
       \strng{nameafullhash}{2313514cf6cde1c43ae94c740dc2e0a9}
       \strng{nameafullhashraw}{2313514cf6cde1c43ae94c740dc2e0a9}
-      \field{extraname}{2}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{extradate}{2}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -257,88 +181,6 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S037722172500712X
       \endverb
       \keyw{brignoneExactSimulationStochastic2026}
-    \endentry
-    \entry{broadieExactSimulationStochastic2006}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=3cfb481751542a67d35c80c9b81f8abb}{%
-           family={Broadie},
-           familyi={B\bibinitperiod},
-           given={Mark},
-           giveni={M\bibinitperiod}}}%
-        {{hash=0ec005fe79025031ee505adea8472ec1}{%
-           family={Kaya},
-           familyi={K\bibinitperiod},
-           given={Özgür},
-           giveni={Ö\bibinitperiod}}}%
-      }
-      \name{namea}{2}{}{%
-        {{hash=3cfb481751542a67d35c80c9b81f8abb}{%
-           family={Broadie},
-           familyi={B\bibinitperiod},
-           given={Mark},
-           giveni={M\bibinitperiod}}}%
-        {{hash=0ec005fe79025031ee505adea8472ec1}{%
-           family={Kaya},
-           familyi={K\bibinitperiod},
-           given={Özgür},
-           giveni={Ö\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \strng{namehash}{3cfb481751542a67d35c80c9b81f8abb}
-      \strng{fullhash}{fde33006bd5df1b09042a0334c784fc1}
-      \strng{fullhashraw}{fde33006bd5df1b09042a0334c784fc1}
-      \strng{bibnamehash}{fde33006bd5df1b09042a0334c784fc1}
-      \strng{authorbibnamehash}{fde33006bd5df1b09042a0334c784fc1}
-      \strng{authornamehash}{3cfb481751542a67d35c80c9b81f8abb}
-      \strng{authorfullhash}{fde33006bd5df1b09042a0334c784fc1}
-      \strng{authorfullhashraw}{fde33006bd5df1b09042a0334c784fc1}
-      \strng{nameabibnamehash}{fde33006bd5df1b09042a0334c784fc1}
-      \strng{nameanamehash}{3cfb481751542a67d35c80c9b81f8abb}
-      \strng{nameafullhash}{fde33006bd5df1b09042a0334c784fc1}
-      \strng{nameafullhashraw}{fde33006bd5df1b09042a0334c784fc1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The stochastic differential equations for affine jump diffusion models do not yield exact solutions that can be directly simulated. Discretization methods can be used for simulating security prices under these models. However, discretization introduces bias into the simulation results, and a large number of time steps may be needed to reduce the discretization bias to an acceptable level. This paper suggests a method for the exact simulation of the stock price and variance under Heston’s stochastic volatility model and other affine jump diffusion processes. The sample stock price and variance from the exact distribution can then be used to generate an unbiased estimator of the price of a derivative security. We compare our method with the more conventional Euler discretization method and demonstrate the faster convergence rate of the error in our method. Specifically, our method achieves an O(s -1/2 ) convergence rate, where s is the total computational budget. The convergence rate for the Euler discretization method is O(s -1/3 ) or slower, depending on the model coefficients and option payoff function.}
-      \field{issn}{0030-364X, 1526-5463}
-      \field{journaltitle}{Operations Research}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{month}{4}
-      \field{number}{2}
-      \field{shortjournal}{Operations Research}
-      \field{title}{Exact {{Simulation}} of {{Stochastic Volatility}} and {{Other Affine Jump Diffusion Processes}}}
-      \field{urlday}{15}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{54}
-      \field{year}{2006}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{217\bibrangedash 231}
-      \range{pages}{15}
-      \verb{doi}
-      \verb 10.1287/opre.1050.0247
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\6BNSRFED\Broadie和Kaya - 2006 - Exact Simulation of Stochastic Volatility and Other Affine Jump Diffusion Processes.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://pubsonline.informs.org/doi/10.1287/opre.1050.0247
-      \endverb
-      \verb{url}
-      \verb https://pubsonline.informs.org/doi/10.1287/opre.1050.0247
-      \endverb
-      \keyw{broadieExactSimulationStochastic2006}
     \endentry
     \entry{carrNewApproachOption2007}{article}{}{}
       \name{author}{2}{}{%
@@ -503,6 +345,86 @@
       \endverb
       \keyw{(B) finance,Exact simulation,Gamma expansion,Heston model,Poisson conditioning}
     \endentry
+    \entry{craddockCalculationExpectationsClasses2009}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=1492476c54cce361c9b328411d818238}{%
+           family={Craddock},
+           familyi={C\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b1e7d2190edc0db35fcd3e4d58e4f932}{%
+           family={Lennox},
+           familyi={L\bibinitperiod},
+           given={Kelly\bibnamedelima A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=1492476c54cce361c9b328411d818238}{%
+           family={Craddock},
+           familyi={C\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b1e7d2190edc0db35fcd3e4d58e4f932}{%
+           family={Lennox},
+           familyi={L\bibinitperiod},
+           given={Kelly\bibnamedelima A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{1492476c54cce361c9b328411d818238}
+      \strng{fullhash}{c6579b14134c613f6d5b4b297dd132d9}
+      \strng{fullhashraw}{c6579b14134c613f6d5b4b297dd132d9}
+      \strng{bibnamehash}{c6579b14134c613f6d5b4b297dd132d9}
+      \strng{authorbibnamehash}{c6579b14134c613f6d5b4b297dd132d9}
+      \strng{authornamehash}{1492476c54cce361c9b328411d818238}
+      \strng{authorfullhash}{c6579b14134c613f6d5b4b297dd132d9}
+      \strng{authorfullhashraw}{c6579b14134c613f6d5b4b297dd132d9}
+      \strng{nameabibnamehash}{c6579b14134c613f6d5b4b297dd132d9}
+      \strng{nameanamehash}{1492476c54cce361c9b328411d818238}
+      \strng{nameafullhash}{c6579b14134c613f6d5b4b297dd132d9}
+      \strng{nameafullhashraw}{c6579b14134c613f6d5b4b297dd132d9}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{issn}{1050-5164}
+      \field{journaltitle}{The Annals of Applied Probability}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{2}
+      \field{number}{1}
+      \field{shortjournal}{Ann. Appl. Probab.}
+      \field{title}{The Calculation of Expectations for Classes of Diffusion Processes by {{Lie}} Symmetry Methods}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{19}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1214/08-AAP534
+      \endverb
+      \verb{file}
+      \verb C:\Users\27261\Zotero\storage\N46292I3\Craddock和Lennox - 2009 - The calculation of expectations for classes of diffusion processes by Lie symmetry methods.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://projecteuclid.org/journals/annals-of-applied-probability/volume-19/issue-1/The-calculation-of-expectations-for-classes-of-diffusion-processes-by/10.1214/08-AAP534.full
+      \endverb
+      \verb{url}
+      \verb https://projecteuclid.org/journals/annals-of-applied-probability/volume-19/issue-1/The-calculation-of-expectations-for-classes-of-diffusion-processes-by/10.1214/08-AAP534.full
+      \endverb
+      \keyw{craddockCalculationExpectationsClasses2009}
+    \endentry
     \entry{glassermanGammaExpansionHeston2011}{article}{}{}
       \name{author}{2}{}{%
         {{hash=ad8512135fae00796ff8f92716d977c9}{%
@@ -656,127 +578,6 @@
       \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/mafi.12124
       \endverb
       \keyw{exact simulation,Laplace transform,Lie's symmetries,stochastic volatility,volatility modeling}
-    \endentry
-    \entry{kouarfateExplicitSolutionSimulation2021}{incollection}{}{}
-      \name{author}{3}{}{%
-        {{hash=411c36915575291a9d6b0baad4156220}{%
-           family={Kouarfate},
-           familyi={K\bibinitperiod},
-           given={Iro\bibnamedelima René},
-           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=1c47bd25cd4714aaba8c2c20c6ec847c}{%
-           family={Kouritzin},
-           familyi={K\bibinitperiod},
-           given={Michael\bibnamedelima A.},
-           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=21886c943921bca60271d8acade2dcde}{%
-           family={MacKay},
-           familyi={M\bibinitperiod},
-           given={Anne},
-           giveni={A\bibinitperiod}}}%
-      }
-      \name{editor}{4}{}{%
-        {{hash=078d9a0b05b9860d7cb2b38adb42a133}{%
-           family={Hernández‐Hernández},
-           familyi={H\bibinithyphendelim H\bibinitperiod},
-           given={Daniel},
-           giveni={D\bibinitperiod}}}%
-        {{hash=eb798bd462bff12344c3d703327f1793}{%
-           family={Leonardi},
-           familyi={L\bibinitperiod},
-           given={Florencia},
-           giveni={F\bibinitperiod}}}%
-        {{hash=8c2488e5e69741bd14dd21aadebc8049}{%
-           family={Mena},
-           familyi={M\bibinitperiod},
-           given={Ramsés\bibnamedelima H.},
-           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=c14226a929551f4d96de98fcc1abe229}{%
-           family={Pardo\bibnamedelima Millán},
-           familyi={P\bibinitperiod\bibinitdelim M\bibinitperiod},
-           given={Juan\bibnamedelima Carlos},
-           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \name{namea}{3}{}{%
-        {{hash=411c36915575291a9d6b0baad4156220}{%
-           family={Kouarfate},
-           familyi={K\bibinitperiod},
-           given={Iro\bibnamedelima René},
-           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=1c47bd25cd4714aaba8c2c20c6ec847c}{%
-           family={Kouritzin},
-           familyi={K\bibinitperiod},
-           given={Michael\bibnamedelima A.},
-           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=21886c943921bca60271d8acade2dcde}{%
-           family={MacKay},
-           familyi={M\bibinitperiod},
-           given={Anne},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{location}{1}{%
-        {Cham}%
-      }
-      \list{publisher}{1}{%
-        {Springer International Publishing}%
-      }
-      \strng{namehash}{411c36915575291a9d6b0baad4156220}
-      \strng{fullhash}{f6f042f3cf337f06babce7431817dc23}
-      \strng{fullhashraw}{f6f042f3cf337f06babce7431817dc23}
-      \strng{bibnamehash}{f6f042f3cf337f06babce7431817dc23}
-      \strng{authorbibnamehash}{f6f042f3cf337f06babce7431817dc23}
-      \strng{authornamehash}{411c36915575291a9d6b0baad4156220}
-      \strng{authorfullhash}{f6f042f3cf337f06babce7431817dc23}
-      \strng{authorfullhashraw}{f6f042f3cf337f06babce7431817dc23}
-      \strng{editorbibnamehash}{a772b9c39f6d36d7ca48db0911c848ae}
-      \strng{editornamehash}{078d9a0b05b9860d7cb2b38adb42a133}
-      \strng{editorfullhash}{960b0c154dca6922a0809017facaca79}
-      \strng{editorfullhashraw}{960b0c154dca6922a0809017facaca79}
-      \strng{nameabibnamehash}{f6f042f3cf337f06babce7431817dc23}
-      \strng{nameanamehash}{411c36915575291a9d6b0baad4156220}
-      \strng{nameafullhash}{f6f042f3cf337f06babce7431817dc23}
-      \strng{nameafullhashraw}{f6f042f3cf337f06babce7431817dc23}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Advances in {{Probability}} and {{Mathematical Statistics}}}
-      \field{isbn}{978-3-030-85324-2 978-3-030-85325-9}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{title}{Explicit {{Solution Simulation Method}} for the 3/2 {{Model}}}
-      \field{urlday}{12}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
-      \field{usera}{G}
-      \field{userc}{english}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{volume}{79}
-      \field{year}{2021}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{123\bibrangedash 145}
-      \range{pages}{23}
-      \verb{doi}
-      \verb 10.1007/978-3-030-85325-9_8
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\VACWKY9G\Kouarfate 等 - 2021 - Explicit Solution Simulation Method for the 32 Model.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://link.springer.com/10.1007/978-3-030-85325-9_8
-      \endverb
-      \verb{url}
-      \verb https://link.springer.com/10.1007/978-3-030-85325-9_8
-      \endverb
-      \keyw{kouarfateExplicitSolutionSimulation2021}
     \endentry
     \entry{medvedevApproximationCalibrationShortTerm2007}{article}{}{}
       \name{author}{2}{}{%

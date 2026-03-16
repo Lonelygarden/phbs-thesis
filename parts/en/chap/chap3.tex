@@ -4,25 +4,21 @@
 \section{Evolution and Economic Intuition of the 3/2 Model}
 \label{sec:model_setup}
 
-As an advanced stochastic volatility framework, the 3/2 model emerged as a sophisticated evolution of the Square-Root Process (popularized by Cox-Ingersoll-Ross and later further developed by Steven Heston).
+The $3/2$ stochastic volatility architecture fundamentally extends the traditional square-root diffusion paradigms pioneered by Cox, Ingersoll, Ross, and later refined by Heston. While the affine $1/2$ specification (the Heston framework) remains a cornerstone in quantitative finance, robust empirical evidence exposes its structural inadequacies during severe market dislocations. Specifically, affine diffusions structurally underestimate the pronounced "volatility of volatility" and systematically fail to replicate the severe gradients characterizing short-maturity implied volatility skews.
 
-In the current financial industry, the Heston model (a 1/2 model) has long been regarded as the industry standard. However, during periods of extreme market stress, the Heston model often fails to accurately capture the "volatility of volatility" observed in the market and struggles to perfectly fit the steepness of the short-term volatility skew.
-
-To overcome this limitation, researchers in the late 1990s and early 2000s proposed a novel approach: shifting the exponent of the diffusion term from 1/2 to 3/2. This modification in specification allows the model to generate more explosive volatility dynamics and a non-linear mean-reversion speed. Consequently, the 3/2 model allows for the occurrence of sharp peaks in volatility and presents a steeper skew under market pressure, which is highly consistent with empirical data. However, it is worth noting that under certain normal market conditions, the 3/2 model may lack the stability inherent in the Heston model.
+By amplifying the exponent of the diffusion term from $1/2$ to $3/2$, the mathematical architecture introduces a profoundly non-linear mean-reversion mechanism alongside highly aggressive volatility trajectories. This specific parametric adjustment empowers the framework to produce instantaneous variance spikes and acute skewness that accurately mirror distressed empirical markets. Nevertheless, this explosive capacity demands a structural trade-off: the $3/2$ specification frequently surrenders the baseline analytical stability native to affine models during tranquil market regimes.
 
 \section{Stochastic Differential Equation (SDE) Specifications}
 
-Under the risk-neutral measure, the asset price process and the instantaneous variance/volatility process of the 3/2 model can be characterized by the following system of Stochastic Differential Equations (SDEs):The dynamic evolution of the underlying asset price process $S_t$ satisfies:
+Formulated within a risk-neutral pricing measure, the continuous-time dynamics of the underlying asset and its driving variance are strictly governed by a coupled system of Stochastic Differential Equations (SDEs). The trajectory of the asset price, denoted as $S_t$, evolves according to the following stochastic process:
 
 $$dS_t = r S_t dt + S_t \sqrt{V_t} (\rho dW_t^1 + \sqrt{1-\rho^2} dW_t^2)$$
 
-where $r$ represents the risk-free interest rate, and $\rho$ is the correlation coefficient between the two Brownian motions.
-
-Simultaneously, the dynamic evolution of the variance process $V_t$ satisfies:
+In this formulation, $r$ defines the constant risk-free rate, while $\rho$ establishes the instantaneous correlation between the two underlying Brownian motions. Concurrently, the non-affine variance process $V_t$ is driven by the subsequent specification:
 
 $$dV_t = \kappa V_t(\theta - V_t)dt + \epsilon V_t^{3/2}dW_t^1$$
 
-In the above equations:
+Within this interdependent system:
 
 \begin{itemize}
     \item $\kappa$ controls the speed of mean reversion.

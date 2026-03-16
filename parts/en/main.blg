@@ -2,15 +2,13 @@
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
 [50] biber-MSWIN64:342> INFO - === 
 [66] Biber.pm:421> INFO - Reading 'main.bcf'
-[176] Biber.pm:1002> INFO - Found 11 citekeys in bib section 0
-[213] Biber.pm:4487> INFO - Processing section 0
-[223] Biber.pm:4678> INFO - Looking for bibtex file 'ref.bib' for section 0
-[245] bibtex.pm:1713> INFO - LaTeX decoding ...
-[292] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
-[463] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'variable = shifted' with 'variable = non-ignorable'
-[463] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[463] Biber.pm:4307> INFO - Sorting list 'gb7714-2015/global//global/global/global' of type 'entry' with template 'gb7714-2015' and locale 'zh__pinyin'
-[480] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[491] bbl.pm:779> INFO - Output to main.bbl
-[491] Biber.pm:132> WARN - ISBN '978-3-030-85324-2 978-3-030-85325-9' in entry 'kouarfateExplicitSolutionSimulation2021' is invalid - run biber with '--validate_datamodel' for details.
-[491] Biber.pm:134> INFO - WARNINGS: 1
+[181] Biber.pm:1002> INFO - Found 9 citekeys in bib section 0
+[223] Biber.pm:4487> INFO - Processing section 0
+[234] Biber.pm:4678> INFO - Looking for bibtex file 'ref.bib' for section 0
+[253] bibtex.pm:1713> INFO - LaTeX decoding ...
+[294] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
+[439] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'variable = shifted' with 'variable = non-ignorable'
+[439] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[440] Biber.pm:4307> INFO - Sorting list 'gb7714-2015/global//global/global/global' of type 'entry' with template 'gb7714-2015' and locale 'zh__pinyin'
+[458] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[466] bbl.pm:779> INFO - Output to main.bbl
