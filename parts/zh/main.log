@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  28 MAR 2026 22:21
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  28 MAR 2026 22:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1685,7 +1685,10 @@ Package fontspec Info:
 
 
 
-] (./main.toc [3
+] (./main.toc
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3
 
 
 ])
@@ -1722,35 +1725,35 @@ Overfull \hbox (17.20256pt too wide) in paragraph at lines 28--29
 
 ]
 第二章
-[5]
-Overfull \hbox (1.48781pt too wide) in paragraph at lines 39--40
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 12.04628pt on input line 9.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 9.03471pt on input line 9.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 7.22777pt on input line 9.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 12.0437pt on input line 9.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 9.03278pt on input line 9.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 7.22623pt on input line 9.
+[5] [6] [7]
+Overfull \hbox (1.48781pt too wide) in paragraph at lines 51--52
 []\TU/FandolSong(0)/m/n/12.045 底 层 数 学 性 质 解 析：|  首 次 系 统 性 地 分 析 了 第 一 类 修 正 贝 塞 尔 函 数 \TU/XITS(0)/m/n/12.045 (Modified Bessel
  []
 
-[6]) [7]
+) [8]
 \openout2 = `chap/chap3.aux'.
 
- (./chap/chap3.tex [8
-
-
-
-
-
-]
+ (./chap/chap3.tex
 第三章
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 12.04628pt on input line 17.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 9.03471pt on input line 17.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.22777pt on input line 17.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 12.0437pt on input line 17.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 9.03278pt on input line 17.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 7.22623pt on input line 17.
-[9]) [10]
+[9
+
+
+
+
+
+]) [10]
 \openout2 = `chap/chap4.aux'.
 
  (./chap/chap4.tex
@@ -1818,18 +1821,18 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 19774AD8B7E5A3CC445ACC6F73B5619C;5237.
+(rerunfilecheck)             Checksum: 41F40B1C86D897943DA90FCC2F5C7BBF;5783.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44373 strings out of 468174
- 907867 string characters out of 5436827
- 2039305 words of memory out of 5000000
- 72402 multiletter control sequences out of 15000+600000
+ 44394 strings out of 468174
+ 909326 string characters out of 5436827
+ 2039884 words of memory out of 5000000
+ 72423 multiletter control sequences out of 15000+600000
  632769 words of font info for 106 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 123i,16n,121p,1245b,2156s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,16n,121p,1245b,2144s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (25 pages, 379560 bytes).
+Output written on main.xdv (25 pages, 411624 bytes).
