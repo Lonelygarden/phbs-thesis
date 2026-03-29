@@ -1,7 +1,7 @@
 \chapter{3/2波动率模型设定}
 \label{chap:model}
 
-\section{3/2模型的演进与经济学直觉}
+\section{3/2模型介绍}
 \label{sec:model_setup}
 
 3/2模型作为一种高级的随机波动率框架，是平方根过程 (Square-Root Process，由Cox-Ingersoll-Ross普及，后被Steven Heston进一步发展) 的复杂演进形式 。
@@ -53,4 +53,36 @@ $$\sigma = \rho^* \sqrt{V_T / T}$$
 
 $$\log\left(\frac{S_T}{S_0}\right) = \frac{\rho}{\epsilon}\log\left(\frac{V_T}{V_0}\right) + \left(\kappa + \frac{\epsilon^2}{2}\right)V_T - \kappa\theta T - \frac{1}{2}V_T + \rho^* \sqrt{V_T} X_1$$
 
-该公式是后续进行精确模拟和傅里叶变换定价的核心基础。
+该公式是后续精确模拟方法进行定价的核心基础。
+
+\section{3/2模型矩母函数}
+
+在风险中性测度 $\mathbb{Q}$ 下，3/2 模型的随机微分方程（SDE）描述如下：
+$$\begin{cases} 
+dS_t = (r - q)S_t dt + \sqrt{V_t} S_t dW_t^S \\
+dV_t = \kappa V_t (\theta - V_t) dt + \epsilon V_t^{3/2} dW_t^V 
+\end{cases}$$
+
+其中，$\langle dW_t^S, dW_t^V \rangle = \rho dt$。为了利用傅里叶变换方法进行期权定价，核心在于求解对数资产价格 $x_T = \ln S_T$ 的矩母函数（MGF）。
+
+根据 Lewis (2000) 与 Carr 和 Sun (2007) 的推导，定义 $\phi(u, \tau) = \mathbb{E}[e^{u x_T} | \mathcal{F}_t]$ 为对数价格的矩母函数。在 3/2 模型框架下，由于其方差过程 $V_t$ 的倒数遵循 CIR 过程（平方根过程），该 MGF 并不具备仿射模型中常见的指数仿射形式，而是表现为包含**库默尔合流超几何函数（Kummer's Confluent Hypergeometric Function, $_1F_1$）**的解析形式。
+
+具体而言，给定初始状态 $V_0 = \sigma^2$，定义辅助变量如下：参数变换项：$$\mu = \frac{1}{2} + \frac{\kappa - u \rho \epsilon}{\epsilon^2}, \quad \tilde{c} = \frac{u(1-u)}{\epsilon^2}$$此处 $\epsilon$ 对应代码中的 vov，$\kappa$ 对应 mr。特征参数：$$\delta = \sqrt{\mu^2 + \tilde{c}}, \quad \alpha = -\mu + \delta, \quad \beta = 1 + 2\delta$$时间相关项：定义 $X = \frac{2\kappa \theta}{\epsilon^2 \sigma^2 (e^{\kappa \theta \tau} - 1)}$。该项刻画了均值回归强度与期限 $\tau$ 对波动率结构的非线性影响。综上，3/2 模型下对数价格的矩母函数可表示为：
+
+$$M(u, \tau) = \frac{\Gamma(\beta - \alpha)}{\Gamma(\beta)} X^\alpha \, _1F_1(\alpha, \beta, -X)$$
+
+在数值计算过程中，$_1F_1(\alpha, \beta, -X)$ 的计算往往涉及复数域的特殊函数处理。代码实现中，为了防止在大参数场景下（如极端波动率或长到期期限）出现数值溢出，采用了对数伽马函数（Log-Gamma）进行重构。对 MGF 前置因子：
+\[
+M(u,\tau)=\frac{\Gamma(\beta-\alpha)}{\Gamma(\beta)}\,X^\alpha\,_1F_1(\alpha,\beta,-X)
+\]
+使用
+\[
+\ln P = \ln \Gamma(\beta-\alpha) - \ln \Gamma(\beta) + \alpha\ln X,
+\qquad
+P = \exp(\ln P),
+\]
+然后
+\[
+M = P \cdot\,_1F_1(\alpha,\beta,-X)
+\]
+来替代直接的乘法/幂运算。这种处理方式既保持了数值稳定性，也为傅里叶逆变换的高精度定价奠定基础。
