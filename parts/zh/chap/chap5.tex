@@ -10,12 +10,15 @@
     \item 高精度模拟数据： 对于其他文献未覆盖的极端场景，本研究采用步长极小的 Euler/Milstein 离散化方案生成了高精度的期权价格作为基准参照 。
 \end{enumerate}
 为了系统性地测试定价算法的鲁棒性，本研究设定了七种不同的参数组合（Case I 至 Case VII），代表了不同的市场情境：
-* Case I: 参照 Baldeaux (2012) 的平值期权 (ATM) 设定 。
-* Case II, Case III: 参照 Kouarfate et al. (2021) 的平值期权设定 。
-* Case IV: 临近到期且为平值期权 (Near expiration and atm) 。
-* Case V: 仅临近到期 (Near expiration only) 。
-* Case VI: 仅为平值期权 (atm only) 。
-* Case VII: 参照 Lewis (2000) 的经典设定 。
+\begin{itemize}
+    \item Case I: 参照 Baldeaux (2012) 的平值期权 (ATM) 设定 。
+    \item Case II, Case III: 参照 Kouarfate et al. (2021) 的平值期权设定 。
+    \item Case IV: 临近到期且为平值期权 (Near expiration and ATM) 。
+    \item Case V: 仅临近到期 (Near expiration only) 。
+    \item Case VI: 仅为平值期权 (ATM only) 。
+    \item Case VII: 参照 Lewis (2000) 的经典设定 。
+\end{itemize}
+
 \begin{table}[htbp]
     \centering
     \caption{Test Cases and Parameter Configurations}
