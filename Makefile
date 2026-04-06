@@ -135,6 +135,10 @@ build-all-parts:
 	@cd $(ZH_DIR) && $(BIBER) main >/dev/null 2>&1
 	@cd $(ZH_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex >/dev/null 2>&1
 	@cd $(ZH_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex >/dev/null 2>&1
+# 	@cd $(ZH_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex
+# 	@cd $(ZH_DIR) && $(BIBER) main
+# 	@cd $(ZH_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex
+# 	@cd $(ZH_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex
 	@echo "  [5/6] 编译封面 (第2次)..."
 	@cd $(COVER_DIR) && $(XELATEX) $(XELATEX_FLAGS) main.tex >/dev/null 2>&1
 

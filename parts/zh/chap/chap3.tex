@@ -12,15 +12,20 @@
 
 \section{随机微分方程 (SDE) 设定}
 
-在风险中性测度下，3/2模型的资产价格过程和瞬时方差/波动率过程可以由以下随机微分方程组来刻画 ：
+在风险中性测度下，3/2 模型的资产价格过程和瞬时方差/波动率过程可以由以下随机微分方程组来刻画 ：
 
 标的资产价格过程 $S_t$ 的动态变化满足：
 
-$$dS_t = r S_t dt + S_t \sqrt{V_t} (\rho dW_t^1 + \sqrt{1-\rho^2} dW_t^2)$$
+\begin{equation}
+    dS_t = r S_t dt + S_t \sqrt{V_t} (\rho dW_t^1 + \sqrt{1-\rho^2} dW_t^2)
+    \label{eq:underlyingProcess}
+\end{equation}
 
 其中，$r$ 代表无风险利率，$\rho$ 是两个布朗运动之间的相关系数 。同时，方差过程 $V_t$ 的动态演进满足：
-
-$$dV_t = \kappa V_t(\theta - V_t)dt + \epsilon V_t^{3/2}dW_t^1$$
+\begin{equation}
+    dV_t = \kappa V_t (\theta - V_t) dt + \epsilon V_t^{3/2} dW_t^1
+    \label{eq:varianceProcess}
+\end{equation}
 
 在上述方程中 ：
 
@@ -35,9 +40,12 @@ $$dV_t = \kappa V_t(\theta - V_t)dt + \epsilon V_t^{3/2}dW_t^1$$
 
 \section{积分方差与条件分布}
 
-在3/2模型的期权定价框架中，时间区间 $[0, T]$ 内的积分方差 (Integrated variance) $V_T$ 扮演着至关重要的角色 。其定义如下：
+在3/2 模型的期权定价框架中，时间区间 $[0, T]$ 内的积分方差 (Integrated variance) $V_T$ 扮演着至关重要的角色 。其定义如下：
 
-$$V_T = \int_0^T \sigma_t^2 dt = \int_0^T V_t dt$$
+\begin{equation}
+    V_T = \int_0^T V_t dt
+    \label{integratedVarianceDefinition}
+\end{equation}
 
 由于资产价格的随机性部分由波动率驱动，当我们以积分方差 $V_T$ 为条件时，标的资产的终端价格 $S_T$ 服从对数正态分布 (lognormal distribution) 。这一重要性质意味着，在给定 $V_T$ 的条件下，我们可以借用 Black-Scholes (BS) 模型的定价框架 。
 
@@ -50,24 +58,28 @@ $$\int_0^T \rho^* \sigma_t dX_t \sim \rho^* \sqrt{V_T} X_1 \sim N(0, (\rho^*)^2 
 $$\sigma = \rho^* \sqrt{V_T / T}$$
 
 经过进一步的随机微积分推导，终端价格与初始价格的对数收益率公式可展开为 ：
-
-$$\log\left(\frac{S_T}{S_0}\right) = \frac{\rho}{\epsilon}\log\left(\frac{V_T}{V_0}\right) + \left(\kappa + \frac{\epsilon^2}{2}\right)V_T - \kappa\theta T - \frac{1}{2}V_T + \rho^* \sqrt{V_T} X_1$$
+\begin{equation}
+    \log\left(\frac{S_T}{S_0}\right) = \frac{\rho}{\epsilon}\log\left(\frac{V_T}{V_0}\right) + \left(\kappa + \frac{\epsilon^2}{2}\right)V_T - \kappa\theta T - \frac{1}{2}V_T + \rho^* \sqrt{V_T} X_1
+    \label{priceFormulaForConditionalMC}
+\end{equation}
 
 该公式是后续精确模拟方法进行定价的核心基础。
 
-\section{3/2模型矩母函数}
+\section{3/2 模型矩母函数}
 
-在风险中性测度 $\mathbb{Q}$ 下，3/2 模型的随机微分方程（SDE）描述如下：
-$$\begin{cases} 
-dS_t = (r - q)S_t dt + \sqrt{V_t} S_t dW_t^S \\
-dV_t = \kappa V_t (\theta - V_t) dt + \epsilon V_t^{3/2} dW_t^V 
-\end{cases}$$
+在风险中性测度 $\mathbb{Q}$ 下，3/2 模型的随机微分方程（SDE）由公式\eqref{eq:underlyingProcess}和公式\eqref{eq:varianceProcess}定义。
 
-其中，$\langle dW_t^S, dW_t^V \rangle = \rho dt$。为了利用傅里叶变换方法进行期权定价，核心在于求解对数资产价格 $x_T = \ln S_T$ 的矩母函数（MGF）。
+为了利用傅里叶变换方法进行期权定价，核心在于求解对数资产价格 $x_T = \ln S_T$ 的矩母函数（MGF）。
 
-根据 Lewis (2000) 与 Carr 和 Sun (2007) 的推导，定义 $\phi(u, \tau) = \mathbb{E}[e^{u x_T} | \mathcal{F}_t]$ 为对数价格的矩母函数。在 3/2 模型框架下，由于其方差过程 $V_t$ 的倒数遵循 CIR 过程（平方根过程），该 MGF 并不具备仿射模型中常见的指数仿射形式，而是表现为包含**库默尔合流超几何函数（Kummer's Confluent Hypergeometric Function, $_1F_1$）**的解析形式。
+根据 Lewis (2000) 与 Carr 和 Sun (2007) 的推导，定义 $\phi(u, \tau) = \mathbb{E}[e^{u x_T} | \mathcal{F}_t]$ 为对数价格的矩母函数。在 3/2 模型框架下，由于其方差过程 $V_t$ 的倒数遵循 CIR 过程（平方根过程），该 MGF 并不具备仿射模型中常见的指数仿射形式，而是表现为包含库默尔合流超几何函数（Kummer's Confluent Hypergeometric Function, $_1F_1$）的解析形式。
 
-具体而言，给定初始状态 $V_0 = \sigma^2$，定义辅助变量如下：参数变换项：$$\mu = \frac{1}{2} + \frac{\kappa - u \rho \epsilon}{\epsilon^2}, \quad \tilde{c} = \frac{u(1-u)}{\epsilon^2}$$此处 $\epsilon$ 对应代码中的 vov，$\kappa$ 对应 mr。特征参数：$$\delta = \sqrt{\mu^2 + \tilde{c}}, \quad \alpha = -\mu + \delta, \quad \beta = 1 + 2\delta$$时间相关项：定义 $X = \frac{2\kappa \theta}{\epsilon^2 \sigma^2 (e^{\kappa \theta \tau} - 1)}$。该项刻画了均值回归强度与期限 $\tau$ 对波动率结构的非线性影响。综上，3/2 模型下对数价格的矩母函数可表示为：
+具体而言，给定初始状态 $V_0 = \sigma_0^2$，定义辅助变量如下：参数变换项：$$\mu = \frac{1}{2} + \frac{\kappa - u \rho \epsilon}{\epsilon^2}, \quad \tilde{c} = \frac{u(1-u)}{\epsilon^2}$$
+
+特征参数：$$\delta = \sqrt{\mu^2 + \tilde{c}}, \quad \alpha = -\mu + \delta, \quad \beta = 1 + 2\delta$$
+
+时间相关项：定义 $$X = \frac{2\kappa \theta}{\epsilon^2 \sigma^2 (e^{\kappa \theta \tau} - 1)}$$
+
+该项刻画了均值回归强度与期限 $\tau$ 对波动率结构的非线性影响。综上，3/2 模型下对数价格的矩母函数可表示为：
 
 $$M(u, \tau) = \frac{\Gamma(\beta - \alpha)}{\Gamma(\beta)} X^\alpha \, _1F_1(\alpha, \beta, -X)$$
 
@@ -85,4 +97,4 @@ P = \exp(\ln P),
 \[
 M = P \cdot\,_1F_1(\alpha,\beta,-X)
 \]
-来替代直接的乘法/幂运算。这种处理方式既保持了数值稳定性，也为傅里叶逆变换的高精度定价奠定基础。
+来替代直接的乘法/幂运算。这种处理方式可以保证运算的数值稳定性。
