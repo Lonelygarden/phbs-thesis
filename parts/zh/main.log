@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  6 APR 2026 17:14
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  6 APR 2026 22:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1764,56 +1764,90 @@ Overfull \hbox (1.48781pt too wide) in paragraph at lines 51--52
 
 ]
 第四章
-[13]) [14]
+[13]
+Missing character: There is no ​ (U+200B) in font [XITS-Regular.otf]/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ​ (U+200B) in font [XITS-Regular.otf]/OT:script=latn;language=dflt;mapping=tex-text;!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Missing character: There is no ​ (U+200B) in font [XITS-Regular.otf]/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ​ (U+200B) in font [XITS-Regular.otf]/OT:script=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ​ (U+200B) in font [XITS-Regular.otf]/OT:script=latn;language=dflt;mapping=tex-text;!
+[15]
+Missing character: There is no ​ (U+200B) in font [XITS-Regular.otf]/OT:script=latn;language=dflt;mapping=tex-text;!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16] [17]
+Missing character: There is no ​ (U+200B) in font [XITS-Regular.otf]/OT:script=latn;language=dflt;mapping=tex-text;!
+) [18] [19]
 \openout2 = `chap/chap5.aux'.
 
- (./chap/chap5.tex
-第五章
-[15
-
-
-
-
-
-] [16] [17]) [18]
-\openout2 = `chap/chap6.aux'.
-
- (./chap/chap6.tex
-第六章
-[19
-
-
-
-
-
-]) [20]
-\openout2 = `chap/chap7.aux'.
-
- (./chap/chap7.tex
-第七章
-) [21
+ (./chap/chap5.tex [20
 
 
 
 
 
 ]
+第五章
+[21] [22] [23]) [24]
+\openout2 = `chap/chap6.aux'.
 
-LaTeX Warning: Empty bibliography on input line 53.
+ (./chap/chap6.tex
+第六章
+[25
 
-[22
 
 
+
+
+]) [26]
+\openout2 = `chap/chap7.aux'.
+
+ (./chap/chap7.tex
+第七章
+) [27
+
+
+
+
+
+] [28
+
+
+
+
+]
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 10.54048pt on input line 53.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 7.00075pt on input line 53.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 53.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 10.53824pt on input line 53.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 53.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 53.
+
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 53.
+
+[29] [30
 
 
 ]
 \openout2 = `chap/acknowledgement.aux'.
 
- (./chap/acknowledgement.tex) [23
+ (./chap/acknowledgement.tex) [31
 
 
 
-] [24
+] [32
 
 
 
@@ -1826,24 +1860,29 @@ Overfull \hbox (583.4233pt too wide) in paragraph at lines 63--63
 [][][][][][][] 
  []
 
-[25] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux) (./chap/chap2.aux) (./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux) (./chap/chap6.aux) (./chap/chap7.aux) (./chap/acknowledgement.aux))
+[33] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux) (./chap/chap2.aux) (./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux) (./chap/chap6.aux) (./chap/chap7.aux) (./chap/acknowledgement.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
  ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.41063pt have occurred.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 54B9F21A5B29524D1DE931498062C79B;7218.
+(rerunfilecheck)             Checksum: E13E35F48A242CC7AA98C033E75A2B46;7265.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44438 strings out of 468174
- 910826 string characters out of 5436827
- 2044338 words of memory out of 5000000
- 72460 multiletter control sequences out of 15000+600000
- 632769 words of font info for 106 fonts, out of 8000000 for 9000
+ 44756 strings out of 468174
+ 918709 string characters out of 5436827
+ 2046054 words of memory out of 5000000
+ 72766 multiletter control sequences out of 15000+600000
+ 634415 words of font info for 122 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 123i,15n,121p,1245b,2144s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,15n,121p,1245b,5277s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (29 pages, 500336 bytes).
+Output written on main.xdv (37 pages, 618392 bytes).

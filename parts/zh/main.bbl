@@ -16,5 +16,466 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{gb7714-2015/global//global/global/global}
+    \entry{andersenEfficientSimulationHeston2007}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=d63e46157e20326be323a1fc548dc259}{%
+           family={Andersen},
+           familyi={A\bibinitperiod},
+           given={Leif\bibnamedelimb B.\bibnamedelimi G.},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=d63e46157e20326be323a1fc548dc259}{%
+           family={Andersen},
+           familyi={A\bibinitperiod},
+           given={Leif\bibnamedelimb B.\bibnamedelimi G.},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {Rochester, NY}%
+      }
+      \strng{namehash}{d63e46157e20326be323a1fc548dc259}
+      \strng{fullhash}{d63e46157e20326be323a1fc548dc259}
+      \strng{fullhashraw}{d63e46157e20326be323a1fc548dc259}
+      \strng{bibnamehash}{d63e46157e20326be323a1fc548dc259}
+      \strng{authorbibnamehash}{d63e46157e20326be323a1fc548dc259}
+      \strng{authornamehash}{d63e46157e20326be323a1fc548dc259}
+      \strng{authorfullhash}{d63e46157e20326be323a1fc548dc259}
+      \strng{authorfullhashraw}{d63e46157e20326be323a1fc548dc259}
+      \strng{nameabibnamehash}{d63e46157e20326be323a1fc548dc259}
+      \strng{nameanamehash}{d63e46157e20326be323a1fc548dc259}
+      \strng{nameafullhash}{d63e46157e20326be323a1fc548dc259}
+      \strng{nameafullhashraw}{d63e46157e20326be323a1fc548dc259}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Stochastic volatility models are increasingly important in practical derivatives pricing applications, yet relatively little work has been undertaken in the development of practical Monte Carlo simulation methods for this class of models. This paper considers several new algorithms for time-discretization and Monte Carlo simulation of Heston-type stochastic volatility models. The algorithms are based on a careful analysis of the properties of affine stochastic volatility diffusions, and are straightforward and quick to implement and execute. Tests on realistic model parameterizations reveal that the computational efficiency and robustness of the simulation schemes proposed in the paper compare very favorably to existing methods.}
+      \field{day}{23}
+      \field{eprinttype}{Social Science Research Network}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{1}
+      \field{number}{946405}
+      \field{pubstate}{prepublished}
+      \field{title}{Efficient {{Simulation}} of the {{Heston Stochastic Volatility Model}}}
+      \field{type}{SSRN Scholarly Paper}
+      \field{urlday}{6}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{usera}{EB}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.2139/ssrn.946405
+      \endverb
+      \verb{eprint}
+      \verb 946405
+      \endverb
+      \verb{file}
+      \verb C:\Users\27261\Zotero\storage\8EMCUNRF\Andersen - 2007 - Efficient Simulation of the Heston Stochastic Volatility Model.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://papers.ssrn.com/abstract=946405
+      \endverb
+      \verb{url}
+      \verb https://papers.ssrn.com/abstract=946405
+      \endverb
+      \keyw{affine square-root models,bias reduction,Heston model,Monte Carlo simulation,SDE discretization}
+    \endentry
+    \entry{baldeauxEXACTSIMULATION322012}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=cc952180c8aecda9ee1dd9f9a8c5b348}{%
+           family={Baldeaux},
+           familyi={B\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=cc952180c8aecda9ee1dd9f9a8c5b348}{%
+           family={Baldeaux},
+           familyi={B\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{fullhash}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{fullhashraw}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{bibnamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{authorbibnamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{authornamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{authorfullhash}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{authorfullhashraw}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{nameabibnamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{nameanamehash}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{nameafullhash}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \strng{nameafullhashraw}{cc952180c8aecda9ee1dd9f9a8c5b348}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper discusses the exact simulation of the stock price process underlying the 3/2 model. Using a result derived by Craddock and Lennox using Lie Symmetry Analysis, we adapt the Broadie-Kaya algorithm for the simulation of affine processes to the 3/2 model. We also discuss variance reduction techniques and find that conditional Monte Carlo techniques combined with quasi-Monte Carlo point sets result in significant variance reductions.}
+      \field{issn}{0219-0249, 1793-6322}
+      \field{journaltitle}{International Journal of Theoretical and Applied Finance}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{8}
+      \field{number}{05}
+      \field{shortjournal}{Int. J. Theor. Appl. Finan.}
+      \field{title}{{{Exact Simulation}} of the 3/2 {{model}}}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{15}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1250032}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1142/S021902491250032X
+      \endverb
+      \verb{file}
+      \verb C:\Users\27261\Zotero\storage\PIXLSJIX\Baldeaux - 2012 - EXACT SIMULATION OF THE 32 MODEL.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.worldscientific.com/doi/abs/10.1142/S021902491250032X
+      \endverb
+      \verb{url}
+      \verb https://www.worldscientific.com/doi/abs/10.1142/S021902491250032X
+      \endverb
+      \keyw{baldeauxEXACTSIMULATION322012}
+    \endentry
+    \entry{brignoneExactSimulationStochastic2026}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=36676ec1e3534731382fdf585a47a121}{%
+           family={Brignone},
+           familyi={B\bibinitperiod},
+           given={Riccardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=20f7762442260849fdf8c35352674097}{%
+           family={Junike},
+           familyi={J\bibinitperiod},
+           given={Gero},
+           giveni={G\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=36676ec1e3534731382fdf585a47a121}{%
+           family={Brignone},
+           familyi={B\bibinitperiod},
+           given={Riccardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=20f7762442260849fdf8c35352674097}{%
+           family={Junike},
+           familyi={J\bibinitperiod},
+           given={Gero},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{36676ec1e3534731382fdf585a47a121}
+      \strng{fullhash}{fb05ef83e97b533e73c050a813eb9035}
+      \strng{fullhashraw}{fb05ef83e97b533e73c050a813eb9035}
+      \strng{bibnamehash}{fb05ef83e97b533e73c050a813eb9035}
+      \strng{authorbibnamehash}{fb05ef83e97b533e73c050a813eb9035}
+      \strng{authornamehash}{36676ec1e3534731382fdf585a47a121}
+      \strng{authorfullhash}{fb05ef83e97b533e73c050a813eb9035}
+      \strng{authorfullhashraw}{fb05ef83e97b533e73c050a813eb9035}
+      \strng{nameabibnamehash}{fb05ef83e97b533e73c050a813eb9035}
+      \strng{nameanamehash}{36676ec1e3534731382fdf585a47a121}
+      \strng{nameafullhash}{fb05ef83e97b533e73c050a813eb9035}
+      \strng{nameafullhashraw}{fb05ef83e97b533e73c050a813eb9035}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{03772217}
+      \field{journaltitle}{European Journal of Operational Research}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{2}
+      \field{number}{3}
+      \field{shortjournal}{European Journal of Operational Research}
+      \field{title}{Exact Simulation of Stochastic Volatility Models Based on Conditional {{Fourier-cosine}} Method}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{328}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1036\bibrangedash 1053}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1016/j.ejor.2025.08.061
+      \endverb
+      \verb{file}
+      \verb C:\Users\27261\Zotero\storage\8P7PN5BQ\Brignone和Junike - 2026 - Exact simulation of stochastic volatility models based on conditional Fourier-cosine method.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S037722172500712X
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S037722172500712X
+      \endverb
+      \keyw{brignoneExactSimulationStochastic2026}
+    \endentry
+    \entry{choiSimulationSchemesHeston2024}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=6f190c452edfed8a9765d06e385d01b0}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={Jaehyuk},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3a666a048a1f88a4aeca69c99c25da97}{%
+           family={Kwok},
+           familyi={K\bibinitperiod},
+           given={Yue\bibnamedelima Kuen},
+           giveni={Y\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=6f190c452edfed8a9765d06e385d01b0}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={Jaehyuk},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3a666a048a1f88a4aeca69c99c25da97}{%
+           family={Kwok},
+           familyi={K\bibinitperiod},
+           given={Yue\bibnamedelima Kuen},
+           giveni={Y\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{6f190c452edfed8a9765d06e385d01b0}
+      \strng{fullhash}{505c4b9f29c75d0a32c7bc9cd078e89b}
+      \strng{fullhashraw}{505c4b9f29c75d0a32c7bc9cd078e89b}
+      \strng{bibnamehash}{505c4b9f29c75d0a32c7bc9cd078e89b}
+      \strng{authorbibnamehash}{505c4b9f29c75d0a32c7bc9cd078e89b}
+      \strng{authornamehash}{6f190c452edfed8a9765d06e385d01b0}
+      \strng{authorfullhash}{505c4b9f29c75d0a32c7bc9cd078e89b}
+      \strng{authorfullhashraw}{505c4b9f29c75d0a32c7bc9cd078e89b}
+      \strng{nameabibnamehash}{505c4b9f29c75d0a32c7bc9cd078e89b}
+      \strng{nameanamehash}{6f190c452edfed8a9765d06e385d01b0}
+      \strng{nameafullhash}{505c4b9f29c75d0a32c7bc9cd078e89b}
+      \strng{nameafullhashraw}{505c4b9f29c75d0a32c7bc9cd078e89b}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Exact simulation schemes under the Heston stochastic volatility model (e.g., Broadie–Kaya and Glasserman–Kim) suffer from computationally expensive modified Bessel function evaluations. We propose a new exact simulation scheme without the modified Bessel function, based on the observation that the conditional integrated variance can be simplified when conditioned by the Poisson variate used for simulating the terminal variance. Our approach also enhances the low-bias and time discretization schemes, which are suitable for pricing derivatives with frequent monitoring. Extensive numerical tests reveal the good performance of the new simulation schemes in terms of accuracy, efficiency, and reliability when compared with existing methods.}
+      \field{day}{1}
+      \field{issn}{0377-2217}
+      \field{journaltitle}{European Journal of Operational Research}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{4}
+      \field{number}{1}
+      \field{shortjournal}{European Journal of Operational Research}
+      \field{title}{Simulation Schemes for the {{Heston}} Model with {{Poisson}} Conditioning}
+      \field{urlday}{15}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{314}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{363\bibrangedash 376}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.ejor.2023.10.048
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0377221723008238
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0377221723008238
+      \endverb
+      \keyw{(B) finance,Exact simulation,Gamma expansion,Heston model,Poisson conditioning}
+    \endentry
+    \entry{fangNovelPricingMethod2009}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=22b72bd5ec673a9539d18f6cc6ef8ff4}{%
+           family={Fang},
+           familyi={F\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=44be9a272e759e67139e94a0c3fa6e7c}{%
+           family={Oosterlee},
+           familyi={O\bibinitperiod},
+           given={C.\bibnamedelimi W.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=22b72bd5ec673a9539d18f6cc6ef8ff4}{%
+           family={Fang},
+           familyi={F\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=44be9a272e759e67139e94a0c3fa6e7c}{%
+           family={Oosterlee},
+           familyi={O\bibinitperiod},
+           given={C.\bibnamedelimi W.},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {Society for Industrial and Applied Mathematics}%
+      }
+      \strng{namehash}{22b72bd5ec673a9539d18f6cc6ef8ff4}
+      \strng{fullhash}{aa63f4f0af46fa47b789b605b8746719}
+      \strng{fullhashraw}{aa63f4f0af46fa47b789b605b8746719}
+      \strng{bibnamehash}{aa63f4f0af46fa47b789b605b8746719}
+      \strng{authorbibnamehash}{aa63f4f0af46fa47b789b605b8746719}
+      \strng{authornamehash}{22b72bd5ec673a9539d18f6cc6ef8ff4}
+      \strng{authorfullhash}{aa63f4f0af46fa47b789b605b8746719}
+      \strng{authorfullhashraw}{aa63f4f0af46fa47b789b605b8746719}
+      \strng{nameabibnamehash}{aa63f4f0af46fa47b789b605b8746719}
+      \strng{nameanamehash}{22b72bd5ec673a9539d18f6cc6ef8ff4}
+      \strng{nameafullhash}{aa63f4f0af46fa47b789b605b8746719}
+      \strng{nameafullhashraw}{aa63f4f0af46fa47b789b605b8746719}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A fast and accurate method for pricing early exercise and certain exotic options in computational finance is presented. The method is based on a quadrature technique and relies heavily on Fourier transformations. The main idea is to reformulate the well-known risk-neutral valuation formula by recognizing that it is a convolution. The resulting convolution is dealt with numerically by using the fast Fourier transform. This novel pricing method, which we dub the convolution method, is applicable to a wide variety of payoffs and requires only the knowledge of the characteristic function of the model. As such, the method is applicable within many regular affine models, among which is the class of exponential Lévy models. For an M-times exercisable Bermudan option, the overall complexity is 𝑂⁡(𝑀⁢𝑁⁢log2⁡(𝑁)), with N grid points used to discretize the price of the underlying asset. American options are priced efficiently by applying Richardson extrapolation to the prices of Bermudan options.}
+      \field{issn}{1064-8275}
+      \field{journaltitle}{SIAM Journal on Scientific Computing}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{1}
+      \field{number}{2}
+      \field{shortjournal}{SIAM J. Sci. Comput.}
+      \field{title}{A {{Novel Pricing Method}} for {{European Options Based}} on {{Fourier-Cosine Series Expansions}}}
+      \field{urlday}{6}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{31}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{826\bibrangedash 848}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1137/080718061
+      \endverb
+      \verb{urlraw}
+      \verb https://epubs.siam.org/doi/abs/10.1137/080718061
+      \endverb
+      \verb{url}
+      \verb https://epubs.siam.org/doi/abs/10.1137/080718061
+      \endverb
+      \keyw{fangNovelPricingMethod2009}
+    \endentry
+    \entry{lewisOptionValuationStochastic2000}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=cc42e280ed5a17704d36d6ea6ecb8fe9}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Alan\bibnamedelima L.},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \name{namea}{1}{}{%
+        {{hash=cc42e280ed5a17704d36d6ea6ecb8fe9}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Alan\bibnamedelima L.},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{publisher}{1}{%
+        {Finance Press}%
+      }
+      \strng{namehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{fullhash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{fullhashraw}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{bibnamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{authorbibnamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{authornamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{authorfullhash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{authorfullhashraw}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{nameabibnamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{nameanamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{nameafullhash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \strng{nameafullhashraw}{cc42e280ed5a17704d36d6ea6ecb8fe9}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This book provides an advanced treatment of option valuation. The general setting is that of 2D continuous-time models with stochastic volatility. Explicit equilibrium risk adjustments and many other new results are provided. Mathematica code for the more important formulas is included. For a summary of results, see the Chapter 1 excerpt.}
+      \field{journaltitle}{Option Valuation under Stochastic Volatility}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{title}{Option {{Valuation}} under {{Stochastic Volatility}}}
+      \field{urlday}{6}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb C:\Users\27261\Zotero\storage\2MTZ9QFR\ovsv.html
+      \endverb
+      \verb{urlraw}
+      \verb https://ideas.repec.org//b/vsv/vbooks/ovsv.html
+      \endverb
+      \verb{url}
+      \verb https://ideas.repec.org//b/vsv/vbooks/ovsv.html
+      \endverb
+      \keyw{eigenvalue,equilibrium,GARCH diffusion,implied volatility,local martingale,Mathematica,option pricing,smile,stochastic volatility,term structure,variational}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
