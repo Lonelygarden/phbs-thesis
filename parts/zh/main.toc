@@ -21,29 +21,72 @@
 \contentsline {section}{\numberline {3.3}积分方差与条件分布}{10}{section.3.3}%
 \contentsline {section}{\numberline {3.4}3/2 模型矩母函数}{10}{section.3.4}%
 \contentsline {chapter}{\numberline {第四章\hspace {.3em}}期权定价方法与算法实现}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}统一定价框架与理论基础}{13}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}时间步进类蒙特卡洛定价方法}{13}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}精确与近似精确模拟定价方法}{15}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}傅里叶频域定价方法}{17}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}本章小结}{18}{subsection.4.1.4}%
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}数据设定与数值结果对比分析}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}数据来源与场景设定}{21}{section.5.1}%
-\contentsline {section}{\numberline {5.2}定价方法性能对比分析}{21}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}传统离散化与精确模拟方法的局限性}{21}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}频域变换方法的权衡与突破}{24}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}结论}{24}{section.5.3}%
-\contentsline {chapter}{\numberline {第六章\hspace {.3em}}实证分析与结果对比}{25}{chapter.6}%
-\contentsline {section}{\numberline {6.1}背景介绍}{25}{section.6.1}%
-\contentsline {section}{\numberline {6.2}数据准备与处理}{25}{section.6.2}%
-\contentsline {section}{\numberline {6.3}校准方法与实现路径}{25}{section.6.3}%
-\contentsline {section}{\numberline {6.4}结果分析与讨论}{26}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}波动率微笑的演变特征}{26}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}3/2 模型与纯扩散模型的对比}{26}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}鲁棒性总结}{26}{subsection.6.4.3}%
-\contentsline {chapter}{\numberline {第七章\hspace {.3em}}创新贡献与结论}{27}{chapter.7}%
-\contentsline {section}{\numberline {7.1}核心创新与贡献}{27}{section.7.1}%
-\contentsline {section}{\numberline {7.2}发现与研究结论}{27}{section.7.2}%
-\contentsline {chapter}{参考文献}{29}{appendix*.7}%
-\contentsline {chapter}{致谢}{31}{appendix*.8}%
-\contentsline {chapter}{北京大学学位论文原创性声明和使用授权说明}{33}{appendix*.9}%
+\contentsline {section}{\numberline {4.1}时间步进类蒙特卡洛定价方法}{13}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Euler 与 Milstein 离散格式}{13}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}方差过程的 Euler 离散格式}{13}{subsubsection.4.1.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.2}方差过程的 Milstein 离散格式}{14}{subsubsection.4.1.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.1.3}误差特性与收敛性分析}{15}{subsubsection.4.1.1.3}%
+\contentsline {subsection}{\numberline {4.1.2}精确步进（Exact Stepping）方法}{15}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}方差过程的倒数变换与精确分布}{15}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}条件蒙特卡洛框架下的实现}{16}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}误差特性与收敛性分析}{16}{subsubsection.4.1.2.3}%
+\contentsline {subsection}{\numberline {4.1.3}Poisson-Gamma 近似精确步进方法}{17}{subsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.1}倒数变换与 CIR 过程的 Poisson-Gamma 混合表示}{17}{subsubsection.4.1.3.1}%
+\contentsline {subsubsection}{\numberline {4.1.3.2}条件蒙特卡洛框架下的实现}{18}{subsubsection.4.1.3.2}%
+\contentsline {subsubsection}{\numberline {4.1.3.3}误差特性与收敛性分析}{18}{subsubsection.4.1.3.3}%
+\contentsline {subsection}{\numberline {4.1.4}Quasi-Exponential (QE) 近似精确步进方法}{19}{subsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.4.1}方差过程的矩匹配与 QE 分布构造}{19}{subsubsection.4.1.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.4.2}条件蒙特卡洛框架下的实现}{19}{subsubsection.4.1.4.2}%
+\contentsline {subsubsection}{\numberline {4.1.4.3}误差特性与收敛性分析}{19}{subsubsection.4.1.4.3}%
+\contentsline {section}{\numberline {4.2}精确与近似精确模拟定价方法}{20}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}精确模拟方法}{20}{subsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}理论推导}{20}{subsubsection.4.2.1.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.2}条件蒙特卡洛框架下的实现}{21}{subsubsection.4.2.1.2}%
+\contentsline {subsubsection}{\numberline {4.2.1.3}误差特性与收敛性分析}{21}{subsubsection.4.2.1.3}%
+\contentsline {subsection}{\numberline {4.2.2}条件傅里叶余弦（Fourier-Cosine）模拟方法}{21}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}理论推导}{21}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}条件蒙特卡洛框架下的实现}{22}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}误差特性与收敛性分析}{22}{subsubsection.4.2.2.3}%
+\contentsline {subsection}{\numberline {4.2.3}条件矩匹配模拟方法}{23}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}理论推导}{23}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}条件蒙特卡洛框架下的实现}{23}{subsubsection.4.2.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}误差特性与收敛性分析}{24}{subsubsection.4.2.3.3}%
+\contentsline {subsection}{\numberline {4.2.4}逆高斯（Inverse Gaussian, IG）近似精确模拟方法}{24}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}理论推导}{24}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}条件蒙特卡洛框架下的实现}{24}{subsubsection.4.2.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}误差特性与收敛性分析}{25}{subsubsection.4.2.4.3}%
+\contentsline {subsection}{\numberline {4.2.5}Gamma 近似精确模拟方法}{25}{subsection.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.5.1}条件蒙特卡洛框架下的实现}{25}{subsubsection.4.2.5.1}%
+\contentsline {subsubsection}{\numberline {4.2.5.2}误差特性与收敛性分析}{25}{subsubsection.4.2.5.2}%
+\contentsline {section}{\numberline {4.3}傅里叶频域定价方法}{25}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}快速傅里叶变换（Fast Fourier Transform, FFT）定价方法}{26}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}理论推导}{26}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}数值实现流程}{26}{subsubsection.4.3.1.2}%
+\contentsline {subsubsection}{\numberline {4.3.1.3}误差特性与收敛性分析}{27}{subsubsection.4.3.1.3}%
+\contentsline {subsection}{\numberline {4.3.2}傅里叶余弦 (Fourier-Cosine, COS) 定价方法}{27}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}理论推导}{27}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}数值实现流程}{28}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}数值实现流程}{28}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}误差特性与收敛性分析}{28}{subsubsection.4.3.2.4}%
+\contentsline {section}{\numberline {4.4}本章小结}{28}{section.4.4}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}数据设定与数值结果对比分析}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}数据来源与场景设定}{31}{section.5.1}%
+\contentsline {section}{\numberline {5.2}定价方法性能对比分析}{31}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}传统离散化与精确模拟方法的局限性}{31}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}频域变换方法的权衡与突破}{34}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}结论}{34}{section.5.3}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}实证分析与结果对比}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}背景介绍}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}数据准备与处理}{35}{section.6.2}%
+\contentsline {section}{\numberline {6.3}校准方法与实现路径}{35}{section.6.3}%
+\contentsline {section}{\numberline {6.4}结果分析与讨论}{36}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}波动率微笑的演变特征}{36}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}3/2 模型与纯扩散模型的对比}{36}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}鲁棒性总结}{36}{subsection.6.4.3}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}创新贡献与结论}{37}{chapter.7}%
+\contentsline {section}{\numberline {7.1}核心创新与贡献}{37}{section.7.1}%
+\contentsline {section}{\numberline {7.2}发现与研究结论}{37}{section.7.2}%
+\contentsline {chapter}{参考文献}{39}{appendix*.7}%
+\contentsline {chapter}{致谢}{41}{appendix*.8}%
+\contentsline {chapter}{北京大学学位论文原创性声明和使用授权说明}{43}{appendix*.9}%
 \contentsfinish 

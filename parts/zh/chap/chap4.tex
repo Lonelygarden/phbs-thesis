@@ -2,8 +2,6 @@
 
 本章在 $3/2$ 随机波动率模型的统一框架下，系统构建欧式期权定价的九类方法体系，所有方法均以无套利风险中性定价原理为理论基准，按照时间离散近似、终端精确 / 近似精确模拟、傅里叶频域积分三大范式展开完整的理论推导、收敛性分析与误差特性刻画，为后续的数值对比与实证检验奠定严格的理论基础。
 
-\section{统一定价框架与理论基础}
-
 在完备市场的风险中性测度$\mathbb{Q}$下，$3/2$ 随机波动率模型的标的资产价格与方差过程满足由式\eqref{eq:underlyingProcess}和\eqref{eq:varianceProcess}给出。
 
 对于到期时间为T、执行价格为K的欧式看涨期权，其无套利价格满足风险中性定价公式：
@@ -12,111 +10,455 @@
 \end {equation}
 其中$S_0$与$v_0$分别为标的资产初始价格与初始瞬时方差。不同于仿射结构的 Heston 模型，$3/2$ 模型属于非仿射随机波动率模型，其欧式期权价格不存在闭形式解析解，因此必须通过数值方法逼近上述条件期望。本章所构建的九类定价方法，覆盖了从时域路径模拟到频域积分变换的完整技术谱系，分别从不同维度实现对期权价格的有效逼近。
 
-\subsection{时间步进类蒙特卡洛定价方法}
-时间步进类方法的核心思想是对连续时间的扩散过程进行离散化处理，通过逐期迭代生成标的资产价格与方差过程的样本路径，再基于大数定律通过路径收益的样本均值估计期权的风险中性价格。本节依次推导 Euler离散格式、Milstein 离散格式、精确步进方法、Poisson-Gamma 近似精确步进方法与 Quasi-Exponential 近似精确步进方法的理论构造，并对每类方法的收敛特性与误差来源进行严格分析。
-
+\section{时间步进类蒙特卡洛定价方法}
+时间步进类方法的核心思想是对连续时间的扩散过程进行离散化处理，通过逐期迭代生成方差过程的样本路径，通过给定方差路径的闭式解析解\eqref{priceFormulaForConditionalMC}生成标的资产的对数价格，从而规避标的价格过程的离散化误差，降低蒙特卡洛模拟的统计方差。本节依次推导 Euler离散格式、Milstein 离散格式、精确步进方法、Poisson-Gamma 近似精确步进方法与 Quasi-Exponential 近似精确步进方法的理论构造，并对每类方法的收敛特性与误差来源进行分析。
+\subsection{Euler 与 Milstein 离散格式}
+\subsubsection{方差过程的 Euler 离散格式}
 Euler 离散格式是随机微分方程数值求解中最基础的离散化方法，其核心是对扩散过程的增量进行一阶泰勒展开近似。对于一般的伊藤扩散过程
 $$dX_t ​= \mu(X_t​)dt+\sigma(X_t​)dW_t​, $$
 Euler 格式的离散形式为
 $$ X_{t+\Delta t}​\approx X_t​+\mu(_t​)\Delta t+\sigma (X_t​)\Delta W_t​, $$
-其中$\Delta t$为离散时间步长，$\Delta W_t​$为服从均值为0、方差为$\Delta t$的正态分布$N(0,\Delta t)$的布朗运动增量。将该格式应用于$3/2$ 模型的方差过程，其漂移项为$\mu(v_t​)=\kappa(\theta−v_t​)v_t​$，扩散项为$\sigma(v_t​)=\epsilon v_t^{3/2}​$，由此可得到方差过程的 Euler 离散迭代式。对于标的资产价格，为避免离散过程中出现负价格，通常对对数价格进行离散化处理，其离散形式为：
-\begin {equation}
-  \ln S_{t+\Delta t} = \ln S_t + \Bigl (r-\frac {1}{2} v_t\Bigr)\Delta t + \sqrt {v_t}\Delta W_t^S,
-\end {equation}
-其中标的资产与方差的布朗运动增量满足相关性约束：
-\begin {equation}
-  \Delta W_t^S = \rho\Delta W_t^1 + \sqrt {1-\rho^2}\Delta W_t^2,
-\end {equation}
-$\Delta W_t^1$​为与$\Delta W_t^2$​相互独立的标准布朗运动增量。在生成足够多的样本路径后，期权价格可通过所有路径到期收益的贴现均值得到：
-\begin {equation}
-  \hat {C} = e^{-rT}\cdot\frac {1}{N}\sum_{n=1}^N \max (S_T^{(n)}-K,0),
-\end {equation}
-其中$N$为模拟路径总数，$S_T^{(n)}$为第$n$条路径的到期标的资产价格。从误差特性来看，Euler 格式的强收敛阶为1/2，弱收敛阶为1，其误差主要来源于两个方面：一是漂移项与扩散项的一阶泰勒截断带来的离散偏差，该偏差随时间步长$\Delta t$的减小以线性速度衰减；二是蒙特卡洛模拟固有的统计误差，该误差随模拟路径数$N$的增加以$O(N^{-1/2})$的速度衰减。
+其中$\Delta t$为离散时间步长，$\Delta W_t​$为服从均值为0、方差为$\Delta t$的正态分布$N(0,\Delta t)$的布朗运动增量。将该格式应用于$3/2$ 模型的方差过程，其漂移项为$\mu(v_t​)=\kappa(\theta−v_t​)v_t​$，扩散项为$\sigma(v_t​)=\epsilon v_t^{3/2}​$，由此可得到方差过程的 Euler 离散迭代式。具体的离散化方案如下：
 
-Milstein 离散格式是对 Euler 格式的二阶修正，其核心是在泰勒展开中引入扩散项的二阶导数项，以消除扩散项状态依赖带来的一阶离散偏差。对于$3/2$模型的方差过程，其扩散项的一阶导数为$\sigma'(v_t)=\frac{3}{2}\epsilon v_t^{1/2}$，代入 Milstein 格式的通用形式后，可得到方差过程的 Milstein 离散迭代式：
+将到期区间$[0,T]$等分为M个时间步，时间步长$\Delta t=T/M$，时间网格为$\{t_0=0,t_1,\ldots,t_M=T\}$。对 $3/2$ 模型的方差过程，在每个时间步上的 Euler 迭代式为：
+\begin {equation}
+  v_{t_{n+1}} = v_{t_n} + \kappa (\theta - v_{t_n}) v_{t_n} \Delta t + \epsilon v_{t_n}^{3/2} \Delta W_n^1,
+  \label {euler_v}
+\end {equation}
+
+其中$\Delta W_n^1\sim N(0,\Delta t)$为第$n$个时间步上的布朗运动增量，各时间步的增量相互独立。
+
+在完成所有时间步的迭代后，通过梯形数值积分方法计算积分方差$V_T$​，以提升积分精度：
+\begin {equation}
+  I_T = \int_0^T v_t dt \approx \sum_{n=0}^{M-1} \frac {v_{t_n} + v_{t_{n+1}}}{2} \cdot \Delta t.
+  \label {trapezoidal_I}
+\end {equation}
+将迭代得到的到期方差$v_T​=v_{t_M}​$​与数值积分得到的$V_T$​代入式 \eqref{priceFormulaForConditionalMC}，即可生成该条路径对应的对数到期价格，进而计算期权到期收益。
+
+\subsubsection{方差过程的 Milstein 离散格式}
+Milstein 离散格式是对 Euler 格式的二阶修正，通过引入扩散项的一阶导数项，消除扩散项状态依赖带来的一阶离散偏差，显著提升方差过程的模拟精度。
+
+对于$3/2$模型的方差过程，其扩散项为$\sigma_v(v_t) = \epsilon v_t^{3/2}$，对$v_t$求一阶导数可得
+\begin {equation}
+  \sigma_v'(v_t) = \frac {\partial \sigma_v (v_t)}{\partial v_t} = \frac {3}{2} \epsilon v_t^{1/2}.
+\end {equation}
+代入 Milstein 格式的通用形式后，可得到方差过程的 Milstein 离散迭代式：
 \begin {equation}
   \begin {aligned}
-    v_{t+\Delta t} &= v_t + \kappa (\theta-v_t) v_t\Delta t + \varepsilon v_t^{3/2}\Delta W_t^1 + \frac {3}{4}\varepsilon^2 v_t^2\bigl ((\Delta W_t^1)^2-\Delta t\bigr).
+    v_{t_{n+1}} &= v_{t_n} + \kappa (\theta - v_{t_n}) v_{t_n} \Delta t + \epsilon v_{t_n}^{3/2} \Delta W_n^v \&\quad + \frac {1}{2} \sigma_v (v_{t_n}) \sigma_v'(v_{t_n}) \left ( (\Delta W_n^v)^2 - \Delta t \right).
   \end {aligned}
 \end {equation}
 
-从误差特性来看，Milstein 格式的强收敛阶提升至1，弱收敛阶仍为1，其离散偏差主要来源于二阶以上的泰勒截断，相较于 Euler 格式，在相同时间步长下具有更小的离散误差，尤其在扩散项非线性程度较高的场景下优势更为明显。
+将扩散项及其导数代入后，最终的 Milstein 迭代式为：
 
-精确步进方法的核心是利用$3/2$ 模型方差过程的特殊结构，通过变量变换实现方差过程的无离散偏差抽样，完全消除时间离散带来的系统误差。对$3/2$模型的方差过程做倒数变换，令$y_t = 1/v_t$，通过伊藤引理可得$y_t$满足一个具有线性漂移和扩散的随机微分方程，该方程的解可以通过已知的分布进行精确抽样。具体而言，$y_t$的动态演进满足：
 \begin {equation}
-  dy_t = \bigl (\kappa - \kappa\theta y_t\bigr) dt - \varepsilon\sqrt {y_t},dW_t^1,
-\end {equation}
-该过程为经典的 CIR 平方根扩散过程，而 CIR 过程的转移分布具有明确的解析形式，服从非中心卡方分布。具体而言，给定初始值$y_t$，在时刻$t+\Delta t$的$y_{t+\Delta t}$满足：
-\begin {equation}
-  y_{t+\Delta t} ,\sim, \frac {1}{c},\chi'^2\bigl (d,\lambda\bigr),
+  v_{t_{n+1}} = v_{t_n} + \kappa (\theta - v_{t_n}) v_{t_n} \Delta t + \epsilon v_{t_n}^{3/2} \Delta W_n^v + \frac {3}{4} \epsilon^2 v_{t_n}^2 \left ( (\Delta W_n^v)^2 - \Delta t \right).
+  \label {milstein_v}
 \end {equation}
 
-其中自由度$d=\frac{4\kappa\theta}{\epsilon^2}$​，尺度参数$c=\frac{\epsilon^2(1-e^{-\kappa\Delta t})}{4\kappa}$​，非中心参数$\lambda=cy_t​e^{−\kappa\Delta t}$。基于该分布可直接精确抽样得到$y_{t+\Delta t}$​，再通过逆变换得到$v_{t+\Delta t}​=1/y_{t+\Delta t}​$，实现方差过程的无偏差步进。从误差特性来看，精确步进方法完全消除了时间离散带来的系统偏差，其误差仅来源于蒙特卡洛模拟的统计误差，收敛速度为$O(N^{-1/2})$，在长期限期权定价中具有显著优势。
+与 Euler 格式一致，完成方差路径迭代后，通过式 \eqref{trapezoidal_I} 计算积分方差$V_t$，再代入式 \eqref{priceFormulaForConditionalMC} 生成对数到期价格。
 
-Poisson-Gamma 近似精确步进方法是对精确步进方法的近似改进，其核心是通过 Poisson 分布与 Gamma 分布的混合分布逼近$3/2$模型方差过程的转移密度，在保证计算效率的同时控制近似误差。$3/2$模型方差过程的转移密度不存在闭形式解析表达，但可通过无穷级数展开表示为 Poisson 加权的 Gamma 分布混合形式：
+\subsubsection{误差特性与收敛性分析}
+本节基于条件蒙特卡洛框架的 Euler/Milstein 格式，误差来源可分解为三个独立部分，各部分的收敛特性如下：
+\begin{enumerate}
+  \item 方差过程的时间离散误差：Euler 格式对扩散过程的强收敛阶为1/2，弱收敛阶为1；Milstein 格式通过二阶修正将强收敛阶提升至1，弱收敛阶仍为1。两类格式的离散偏差均随时间步长$\Delta t$的减小而单调衰减，在相同步长下，Milstein 格式的离散偏差显著低于 Euler 格式。
+  \item 积分方差的数值积分误差：采用梯形法计算积分方差，其收敛阶为2，远高于方差过程的离散收敛阶，因此在实际计算中，积分误差可忽略不计，不会成为整体误差的主导项。
+  \item 蒙特卡洛模拟的统计误差：由于采用了条件蒙特卡洛方法，通过解析映射消除了价格过程的离散噪声，模拟的统计方差显著低于全离散的标准蒙特卡洛方法，统计误差随模拟路径数N的增加以$O(N^{−1/2})$的速度衰减。
+\end{enumerate}
+
+\subsection{精确步进（Exact Stepping）方法}
+精确步进方法是时间步进类条件蒙特卡洛方法中精度最高的方案，其核心是利用 3/2 模型方差过程的特殊数学结构，通过变量变换将其映射为具有已知转移分布的仿射过程，从而实现方差过程的无离散偏差抽样，完全消除时间离散带来的系统误差。
+\subsubsection{方差过程的倒数变换与精确分布}
+对$3/2$模型的方差过程做倒数变换，令$x_t = 1/v_t$，通过伊藤引理可推导$x_t$的动态过程。首先计算$x_t$关于$v_t$的一阶与二阶导数:
 \begin {equation}
-p (v_{t+\Delta t}\mid v_t)= \sum_{n=0}^\infty e^{-\lambda\Delta t}\frac {(\lambda\Delta t)^n}{n!},f_{\mathrm {Gamma}}\bigl (v_{t+\Delta t};\alpha_n,\beta_n\bigr),
+  \frac {\partial x_t}{\partial v_t} = -\frac {1}{v_t^2}, \quad \frac {\partial^2 x_t}{\partial v_t^2} = \frac {2}{v_t^3}.
+\end {equation}
+代入伊藤引理公式$dx_t= \frac{\partial x_t}{\partial v_t} dv_t + \frac{1}{2} \frac{\partial^2 x_t}{\partial v_t^2} (dv_t)^2$，并将$3/2$模型的方差SDE $dv_t = \kappa v_t (\theta - v_t) dt + \epsilon v_t^{3/2} dW_t^1$代入，其中二次变差项$(dv_t)^2 = \epsilon^2 v_t^3 dt$。整理后可得：
+\begin {equation}
+  dx_t = \left ( \kappa - \kappa \theta x_t \right) dt - \epsilon \sqrt {x_t} dW_t^1.
+  \label {x_CIR}
+\end {equation}
+式 \eqref {x_CIR} 表明，变换后的过程$x_t$是一个经典的 CIR（Cox-Ingersoll-Ross）平方根扩散过程，其漂移项为仿射结构，扩散项为平方根结构。CIR 过程的一个核心性质是其转移概率分布具有明确的解析形式，服从非中心卡方分布（Non-central Chi-squared Distribution）。
+具体而言，给定初始时刻$t_n$的$y_{t_n}$，经过时间步长$\Delta t$后，$t_{n+1}$时刻$x_{t_{n+1}}$的条件分布为：
+\begin {equation}
+  x_{t_{n+1}} \mid x_{t_n} \sim \frac {1}{c} \cdot \chi'^2\left ( d, \lambda \right),
+  \label {x_distribution}
+\end {equation}
+其中$\chi'^2 (d,\lambda)$表示自由度为$d$、非中心参数为$\lambda$的非中心卡方分布随机变量，分布参数由 3/2 模型参数与时间步长确定：
+\begin 
+  {equation}d = \frac {4 \kappa \theta}{\epsilon^2}, \quad c = \frac {\epsilon^2 \left ( 1 - e^{-\kappa \Delta t} \right)}{4 \kappa}, \quad \lambda = c \cdot y_{t_n} e^{-\kappa \Delta t}.
+\end {equation}
+通过逆变换$v_{t_{n+1}} = 1/x_{t_{n+1}}$，即可得到$3/2$模型方差过程的精确样本，该抽样过程不引入任何时间离散偏差。
+
+\subsubsection{条件蒙特卡洛框架下的实现}
+在条件蒙特卡洛框架下，精确步进方法的实现流程如下：
+
+将到期区间$[0,T]$等分为M个时间步，时间步长$\Delta t=T/M$，时间网格为$\{t_0=0,t_1,\ldots,t_M=T\}$。在每个时间步上：
+\begin{enumerate}
+  \item 给定当前方差$v_{t_n}$，计算$y_{t_n} = 1/v_{t_n}$；
+  \item 根据式 \eqref{x_distribution} 的分布参数，生成非中心卡方随机变量$\chi'^2 (d,\lambda)$；
+  \item 计算$x_{t_{n+1}} = \chi'^2 (d,\lambda)/c$；
+  \item 通过逆变换得到$v_{t_{n+1}} = 1/x_{t_{n+1}}$。
+\end{enumerate}
+在完成所有时间步的迭代后，通过梯形数值积分方法计算积分方差$V_T$：
+\begin{equation}
+  V_T = \int_0^T v_t dt \approx \sum_{n=0}^{M-1} \frac{v_{t_n} + v_{t_{n+1}}}{2} \cdot \Delta t.
+\end{equation}
+最后，将迭代得到的到期方差$v_T=v_{t_M}$与数值积分得到的$V_T$代入核心闭式映射\eqref{priceFormulaForConditionalMC}
+\subsubsection{误差特性与收敛性分析}
+精确步进方法的误差来源仅包含两个部分，完全消除了方差过程的时间离散误差：
+\begin{enumerate}
+  \item 积分方差的数值积分误差：采用梯形法计算积分方差，其收敛阶为2，在实际应用中，即使使用较少的时间步数，该误差也可忽略不计，不会成为整体误差的主导项。若需进一步消除积分误差，可结合 CIR 过程的积分矩生成函数，通过解析方法计算$V_T$​的条件分布。
+  \item 蒙特卡洛模拟的统计误差：由于采用了条件蒙特卡洛方法，且方差过程为精确抽样，模拟的统计方差处于最低水平，统计误差随模拟路径数N的增加以$O(N^{-1/2})$的速度衰减。
+\end{enumerate}
+在所有时间步进类方法中，精确步进方法具有最小的偏差。
+
+\subsection{Poisson-Gamma 近似精确步进方法}
+Poisson-Gamma 近似精确步进方法的核心，是利用 3/2 模型方差过程倒数变换后的 CIR 过程的经典统计性质 —— 其转移分布可精确表示为 Poisson 分布加权的 Gamma 分布无穷混合级数，通过对该级数进行有限项截断，实现方差过程的高效近似精确抽样，在保持极低偏差的同时，避免了非中心卡方分布抽样的高数值计算成本。该方法完全基于倒数变换后的 CIR 过程展开，是 CIR 转移分布的等价数值实现形式。
+
+\subsubsection{倒数变换与 CIR 过程的 Poisson-Gamma 混合表示}
+与精确步进方法一致，我们首先对 3/2 模型的方差过程做倒数变换，令$x_t = 1/v_t$，进而通过伊藤引理得到式\eqref{x_CIR}。根据非中心卡方分布的经典混合性质，自由度为$d$、非中心参数为$\lambda$的非中心卡方随机变量$\chi'^2 (d,\lambda)$，可精确分解为Poisson 分布与 Gamma 分布的无穷混合形式：
+\begin {equation}\chi'^2 (d, \lambda) \mid N \sim \text {Gamma}\left ( \frac {d}{2} + N, \frac {1}{2} \right), \quad N \sim \text {Poisson}\left ( \frac {\lambda}{2} \right),\label {ncx2_pg_mixture}\end {equation}
+其中$N$为服从 Poisson 分布的潜变量，$Gamma(\alpha,\beta)$为形状参数$\alpha$、率参数$\beta$的 Gamma 分布，其概率密度函数为：
+\begin {equation}
+  f_{\text {Gamma}}(x; \alpha, \beta) = \frac {\beta^\alpha}{\Gamma (\alpha)} x^{\alpha-1} e^{-\beta x}, \quad x > 0.
+\end {equation}
+结合精确步进方法中 CIR 过程的转移分布结论，给定初始值$x_{t_n}$，经过时间步长$\Delta t$后，$x_{t_{n+1}}$的条件分布为：
+\begin {equation}
+  y_{t_{n+1}} \mid y_{t_n} \sim \frac {1}{c} \cdot \chi'^2\left ( d, \lambda \right),
+\end {equation}
+其中分布参数为：
+\begin {equation}
+  d = \frac {4 \kappa \theta}{\epsilon^2}, \quad c = \frac {\epsilon^2 \left ( 1 - e^{-\kappa \Delta t} \right)}{4 \kappa}, \quad \lambda = c \cdot y_{t_n} e^{-\kappa \Delta t}.
+\end {equation}
+将式 \eqref{ncx2_pg_mixture} 代入上式，可直接得到ytn+1​​的 Poisson-Gamma 混合表示：
+\begin {equation}
+  y_{t_{n+1}} \mid N \sim \frac {1}{c} \cdot \text {Gamma}\left ( \frac {d}{2} + N, \frac {1}{2} \right), \quad N \sim \text {Poisson}\left ( \frac {\lambda}{2} \right).
+\label {y_pg_mixture}
+\end {equation}
+式 \eqref{y_pg_mixture} 是该方法的核心：CIR 过程的转移分布本身就是 Poisson 加权的 Gamma 分布无穷混合，不存在任何分布拟合误差，仅需对 Poisson 分布的取值做有限项截断，即可实现近似精确抽样。
+
+\subsubsection{条件蒙特卡洛框架下的实现}
+在条件蒙特卡洛框架下，Poisson-Gamma 近似精确步进方法的实现流程与精确步进方法高度一致，仅将非中心卡方分布抽样替换为更高效的 Poisson-Gamma 混合抽样，具体流程如下：
+
+将到期区间$[0,T]$等分为M个时间步，时间步长$\Delta t=T/M$，时间网格为$\{t_0=0,t_1,\ldots,t_M=T\}$。在每个时间步上：
+\begin{enumerate}
+  \item 给定当前方差$v_{t_n}$，计算$x_{t_n} = 1/v_{t_n}$；
+  \item 预计算 CIR 转移分布的固定参数$d,c$，以及非中心参数$\lambda=c\cdot x_{t_n} e^{-\kappa \Delta t}$；
+  \item 生成 Poisson 潜变量$N\sim \text {Poisson}\left( \frac {\lambda}{2} \right)$，实际计算中对N做上限截断（取$N_{\max}​=⌊λ/2+5λ/2​⌋$，保证截断概率小于$10^{-6}$）；
+  \item 生成 Gamma 随机变量$G\sim \text {Gamma}\left( \frac {d}{2} + N, \frac {1}{2} \right)$；
+  \item 计算$x_{t_{n+1}} = G/c$，再通过逆变换得到下一时间步的方差$v_{t_{n+1}} = 1/x_{t_{n+1}}$。
+\end{enumerate}
+在完成所有时间步的迭代后，通过梯形数值积分方法计算积分方差$V_T$，再将$v_T$与$V_T$代入式 \eqref{priceFormulaForConditionalMC}，即可生成对数到期价格。
+
+\subsubsection{误差特性与收敛性分析}
+Poisson-Gamma 近似精确步进方法的误差来源仅包含三个部分，且偏差水平远低于 Euler/Milstein 离散格式：
+\begin{enumerate}
+  \item Poisson 分布的截断误差：该误差是方法唯一的固有偏差，由于 Poisson 分布的概率质量随N的增大呈指数衰减，截断误差随截断上限$N_{\max}$​的增大呈指数级下降。在常规参数下，取$N_{\max}$​为 Poisson 均值加 5 倍标准差，即可将截断误差控制在$10^{−6}$以下，可忽略不计。
+  \item 积分方差的数值积分误差：采用梯形法计算积分方差，收敛阶为2，在实际应用中该误差远小于截断误差，不会成为整体误差的主导项。
+  \item 蒙特卡洛模拟的统计误差：由于方差过程的抽样偏差极小，且采用了条件蒙特卡洛框架消除了价格过程的离散噪声，统计误差随模拟路径数N的增加以$O(N^{-1/2})$的速度衰减，与精确步进方法处于同一水平。
+\end{enumerate}
+该方法的核心优势在于计算效率与精度的平衡：相较于精确步进方法的非中心卡方分布抽样，Poisson 与 Gamma 分布的随机数生成计算成本极低，速度提升显著；相较于 Euler/Milstein 格式，该方法完全消除了扩散过程的离散偏差，仅存在可忽略的截断误差，精度提升数个数量级。
+
+\subsection{Quasi-Exponential (QE) 近似精确步进方法}
+Quasi-Exponential（QE）近似精确步进方法最初由 \citet{andersenEfficientSimulationHeston2007} 为 Heston 模型设计，现我们将其推广至 3/2 模型，其核心是通过匹配方差过程的条件一阶矩与二阶矩，构造一个指数型的简单近似分布，避免了复杂分布的抽样，在波动率较高、尾部较厚的极端场景下仍能保持良好的数值稳定性。
+\subsubsection{方差过程的矩匹配与 QE 分布构造}
+QE 方法的核心思想是 “矩匹配”，无论真实转移分布多么复杂，仅需匹配其前两阶矩，即可构造一个足够精确的近似分布。对于 3/2 模型的方差过程，给定初始方差$v_t$​，取其倒数过程$x_t = 1/v_t$，经过时间步长$\Delta t$后，其条件一阶矩$\mathbb{E}[x_{t+Δt}∣x_t​]$与条件二阶矩$\mathbb{E}[x_{t+Δt}^2∣x_t​]$可通过求解方差过程的矩微分方程解析得到。
+记$m_1=\mathbb{E}[v_{t+\Delta t}|v_t]$，$m_2=\mathbb{E}[v_{t+\Delta t}^2|v_t]$为条件二阶矩，计算条件方差$\sigma^2=m_2-m_1^2$。
+QE 方法根据方差水平的高低，选择两种不同的近似分布：
+\begin{enumerate}
+  \item 低方差场景：当条件方差相对较小时，采用移位对数正态分布（Shifted Log-Normal Distribution）作为近似；
+  \item 高方差场景：当条件方差较大时，采用指数分布与两点分布的混合（Exponential-Two-Point Mixture）作为近似。
+\end{enumerate}
+通过矩匹配条件$m_1 = \mathbb{E}[X]$与$\sigma^2=Var(X)$，可解析求解出 QE 分布的所有参数，进而实现高效抽样。
+
+\subsubsection{条件蒙特卡洛框架下的实现}
+在条件蒙特卡洛框架下，QE 近似精确步进方法的实现流程如下：
+将到期区间$[0,T]$等分为$M$个时间步，时间步长$\Delta t=T/M$，时间网格为$\{t_0=0,t_1,\ldots,t_M=T\}$。在每个时间步上：
+\begin{enumerate}
+  \item 给定当前方差倒数$x_{t_n}$，通过矩方程解析计算条件均值$m_1$与条件方差$\sigma^2$；
+  \item 根据预设的阈值判断当前场景，选择对应的QE分布形式；
+  \item 根据条件方差的高低，选择对应的近似分布类型，并通过矩匹配求解分布参数；
+  \item 从构造的 QE 分布中抽样，得到$x_{t_{n+1}}$的近似样本，并取倒数得到$v_{t_{n+1}}$。
+\end{enumerate}
+在完成所有时间步的迭代后，通过梯形数值积分方法计算积分方差$V_T$，再将$v_T$与$V_T$代入式 \eqref{priceFormulaForConditionalMC}，即可生成对数到期价格。
+
+\subsubsection{误差特性与收敛性分析}
+QE 近似精确步进方法的误差来源包含三个部分：
+\begin{enumerate}
+  \item 矩匹配的近似偏差：该误差为方法的固有偏差，其弱收敛阶为1，由于仅匹配前两阶矩，忽略了高阶矩的信息，在极端厚尾场景下可能存在微小偏差，但仍显著优于 Euler/Milstein 格式。
+  \item 分布选择的阈值误差：该误差可通过合理设置阈值（通常基于方差系数$\sigma/m_1$）控制在极小水平。
+  \item 积分方差的数值积分误差与蒙特卡洛统计误差：与前述方法一致。
+\end{enumerate}
+QE 方法的最大优势在于其极高的计算效率与极强的数值稳定性，但此处我们对其取倒数的操作，会导致数值稳定性受到一些影响。
+
+\section {精确与近似精确模拟定价方法}
+本节所述的终端模拟类方法，完全规避了时间步进类方法中逐期迭代的离散化过程，直接针对[0,T]
+到期区间内的方差过程终端值$v_T$与积分方差$V_T = \int_0^T v_s ds$
+的联合分布进行抽样，再通过 4.1 节推导的对数价格闭式映射直接生成标的资产到期价格，彻底消除了时间步长带来的离散误差。所有方法仍严格遵循条件蒙特卡洛框架：先抽样方差过程的核心统计量，再通过条件正态分布生成标的价格，最大化降低模拟的统计方差。
+
+\subsection{精确模拟方法}
+
+\citet{baldeauxEXACTSIMULATION322012} 精确模拟方法是$3/2$模型下首个无偏的终端精确模拟方法，其核心是利用$3/2$模型积分方差过程的倒数变换性质，结合修正贝塞尔函数与逆拉普拉斯变换，实现$v_T$与$V_T$的联合精确抽样，完全消除所有系统偏差。
+
+\subsubsection{理论推导}
+与时间步进类方法一致，首先对 3/2 模型的方差过程做倒数变换，令$x_t​=1/v_t$​，得到 CIR 平方根扩散过程\eqref{x_CIR}。该过程的终端值$x_T​=1/v_T$​的条件分布为非中心卡方分布，可实现精确抽样，具体形式与 4.2.2 节一致。
+
+\citet{baldeauxEXACTSIMULATION322012} 的核心贡献在于，推导了给定初始值$y_0$与终端值$y_T$的条件下，积分方差$V_T = \int_0^T v_s ds$的条件拉普拉斯变换的闭式表达：
+\begin {equation}
+  \mathcal {L}(\beta) = \mathbb {E}\left [ e^{-\beta V_T} \mid y_0, y_T \right] = \frac {I_{\nu}\left ( \sqrt {\frac {4\kappa\theta}{\epsilon^2} + \frac {8\beta}{\epsilon^2}} \cdot \frac {2\sqrt {y_0 y_T} e^{-\kappa T/2}}{1-e^{-\kappa T}} \right)}{I_{\nu}\left ( \sqrt {\frac {4\kappa\theta}{\epsilon^2}} \cdot \frac {2\sqrt {y_0 y_T} e^{-\kappa T/2}}{1-e^{-\kappa T}} \right)},
+  \label {laplace_V_T}
+\end {equation}
+其中$\nu = \frac{2\kappa\theta}{\epsilon^2}-1$为修正贝塞尔函数的阶数，$I_\nu(\cdot)$为第一类$\nu$阶修正贝塞尔函数。
+
+基于该闭式拉普拉斯变换，可通过傅里叶逆变换得到$V_T$的条件概率密度函数，再通过逆变换抽样实现$V_T$的精确抽样。最终，通过式 \eqref{priceFormulaForConditionalMC} 生成标的资产到期价格的核心映射中，$V_T$与$v_T$的联合抽样实现了对标的资产价格的无偏模拟。
+
+\subsubsection{条件蒙特卡洛框架下的实现}
+在条件蒙特卡洛框架下，Baldeaux 精确模拟方法的实现流程完全规避时间离散，具体如下：
+\begin{enumerate}
+  \item 终端方差$v_T$的精确抽样：根据CIR过程的非中心卡方转移分布，直接抽样得到到期时刻的$y_T$，再通过求倒数得到$v_T = 1/x_T$，该抽样无任何系统偏差；
+  \item 积分方差$V_T$的精确抽样：给定$y_0 = 1/v_0$和$y_T = 1/v_T$，基于式 \eqref{laplace_V_T} 的拉普拉斯变换，通过数值傅里叶逆变换得到$V_T$的条件累计分布函数，再通过均匀分布逆变换抽样得到$V_T$的精确样本；
+  \item 最后将$v_T=1/x_T$与$V_T$代入式 \eqref{priceFormulaForConditionalMC}，生成标的资产到期价格的样本。
+\end{enumerate}
+
+\subsubsection{误差特性与收敛性分析}
+Baldeaux 精确模拟方法是 3/2 模型下唯一的无偏终端模拟方法，其误差来源仅包含两个部分：
+\begin{enumerate}
+  \item 拉普拉斯逆变换的数值截断误差：该误差随傅里叶余弦级数的截断项数增加呈指数衰减，在常规参数下，取 256 项截断即可将误差控制在$10^{−8}$以下，可忽略不计；
+  \item 蒙特卡洛模拟的统计误差：由于方差过程与积分方差均为精确抽样，且采用条件蒙特卡洛框架消除了价格过程的离散噪声，模拟的统计方差处于理论最低水平，统计误差随模拟路径数$N$的增加以$O(N^{−1/2})$的速度衰减。
+\end{enumerate}
+
+\subsection{条件傅里叶余弦（Fourier-Cosine）模拟方法}
+
+条件傅里叶余弦模拟方法由 \citet{brignoneExactSimulationStochastic2026} 提出，其核心是基于标的资产对数价格的条件特征函数，通过傅里叶余弦级数展开构造积分方差$V_T$的条件累积分布函数，实现高效高精度的抽样，相较于相较于 Baldeaux 精确模拟方法，在保持相近精度的前提下大幅提升了计算效率。
+\subsubsection{理论推导}
+与 Baldeaux 方法一致，首先通过 CIR 过程的非中心卡方分布精确抽样得到终端方差$v_T$，核心问题转化为给定$v_0$与$v_T$的条件下，如何高效抽样积分方差$V_T$。
+
+记 $I_T$ 的条件特征函数为 $\varphi(u) = \mathbb{E}\left[ e^{iuI_T} \mid v_0, v_T \right]$，该特征函数可通过式 \eqref{laplace_V_T} 的拉普拉斯变换解析延拓得到，具有明确的闭式表达。根据傅里叶余弦展开理论，$I_T$ 的条件概率密度函数可在有效支撑区间 $[a,b]$ 上展开为余弦级数：
+
+\begin {equation}
+  f_{I_T \mid v_0, v_T}(x) = \frac {2}{b-a} \sum_{n=0}^\infty \text {Re}\left [ \varphi\left ( \frac {n\pi}{b-a} \right) e^{-i \frac {n\pi a}{b-a}} \right] \cos\left ( \frac {n\pi (x-a)}{b-a} \right),
+\end {equation}
+其中 $[a,b]$ 为 $I_T$ 的有效支撑区间，通常取 $a = 0$，$b = \mathbb{E}[I_T] + 10\sqrt{\mathrm{Var}(I_T)}$ 以覆盖 99.99\% 以上的概率质量。
+
+对密度函数积分，可得到$V_T$的条件累积分布函数的闭式级数展开：
+\begin {equation}
+  F_{V_T \mid v_0, v_T}(x) = \int_a^x f (z) dz = \frac {2}{b-a} \sum_{n=0}^\infty \text {Re}\left [ \varphi\left ( \frac {n\pi}{b-a} \right) e^{-i \frac {n\pi a}{b-a}} \right] \cdot \Psi_n (x),
+\end {equation}
+其中 $\Psi_n(x)$ 为余弦项的积分闭式，可直接解析计算，无需数值积分：
+\begin {equation}
+  \Psi_n (x) =\begin {cases}x - a, & n = 0, \\frac {b-a}{n\pi} \sin\left ( \frac {n\pi (x-a)}{b-a} \right), & n \geq 1.\end {cases}
+\end {equation}
+\subsubsection{条件蒙特卡洛框架下的实现}
+在条件蒙特卡洛框架下，条件傅里叶余弦模拟方法的实现流程如下：
+\begin{enumerate}
+  \item 终端方差$v_T$的精确抽样：与 Baldeaux 方法一致，通过 CIR 过程的非中心卡方分布精确抽样得到$v_T$；
+  \item 积分方差$V_T$的高效抽样：给定$v_0$与$v_T$，计算$V_T$的条件特征函数，通过截断余弦级数构造条件累积分布函数，再通过均匀分布逆变换抽样得到$V_T$的样本；
+  \item 标的资产到期价格的生成：最后将$v_T=1/x_T$与$V_T$代入式 \eqref{priceFormulaForConditionalMC}，生成标的资产到期价格的样本。
+\end{enumerate}
+
+\subsubsection{误差特性与收敛性分析}
+该方法的误差来源主要包含三个部分：
+\begin{enumerate}
+  \item 余弦级数的截断误差：该误差随截断项数的增加呈指数衰减，在常规参数下，仅需128项截断即可达到$10^{-6}$的精度，远快于普通多项式收敛；
+  \item 支撑区间的截断误差：通过合理设置$[a,b]$区间，可将该误差控制在$10^{-8}$以下，可忽略不计；
+  \item 蒙特卡洛模拟的统计误差：由于方差过程的抽样无偏，且采用条件蒙特卡洛框架消除了价格过程的离散噪声，统计误差随模拟路径数$N$的增加以$O(N^{-1/2})$的速度衰减，与 Baldeaux 方法处于同一水平。
+\end{enumerate}
+该方法的核心优势在于计算效率，相较于 Baldeaux 方法的逐路径逆拉普拉斯变换，余弦级数的系数可批量预计算，速度提升一个数量级以上。
+
+\subsection{条件矩匹配模拟方法}
+条件矩匹配模拟方法的核心是通过匹配积分方差$V_T$的前若干阶矩，构造解析近似分布实现抽样，避免了复杂的特征函数计算与级数展开，在保证一定精度的前提下实现了极致的计算效率。
+
+\subsubsection{理论推导}
+3/2 模型的积分方差 $V_T$ 的前四阶矩，可通过 CIR 过程的矩微分方程解析递推得到：
+\begin{enumerate}
+    \item 一阶矩（均值: 
+    $\mathbb{E}[V_T] = \int_0^T \mathbb{E}[v_s] ds$，
+    其中 $\mathbb{E}[v_s]$ 为 3/2 模型方差过程的无条件均值，具有闭式表达；
+
+    \item 二阶矩: 
+    $\mathbb{E}[V_T^2] = 2 \int_0^T \int_0^s \mathbb{E}[v_s v_t] dtds$，
+    协方差 $\mathbb{E}[v_s v_t]$ 可通过 CIR 过程的转移矩解析计算；
+
+    \item 三阶矩、四阶矩: 
+    可通过矩方程的递推关系解析得到，进而计算出 $V_T$ 的偏度与超额峰度。
+\end{enumerate}
+基于前四阶矩，可通过Gram-Charlier A 类展开构造$V_T$的近似概率密度函数：
+\begin {equation}
+  f (x) = \phi_{\mu,\sigma}(x) \left ( 1 + \frac {\kappa_3}{6} H_3\left ( \frac {x-\mu}{\sigma} \right) + \frac {\kappa_4}{24} H_4\left ( \frac {x-\mu}{\sigma} \right) \right),
 \end {equation}
 
-在实际计算中可对该级数进行有限项截断，通过先抽样 Poisson 计数变量、再抽样对应 Gamma 分布的方式，得到方差过程的近似样本。从误差特性来看，该方法的误差主要来源于两个方面：一是 Poisson 级数的截断误差，该误差随截断项数的增加呈指数衰减；二是有限项混合分布对真实转移密度的拟合误差，其弱收敛阶为1，在计算效率与精度之间实现了较好的平衡。
-
-Quasi-Exponential 近似精确步进方法的核心是利用$3/2$模型方差过程的平稳分布与指数矩结构，通过指数型函数逼近方差过程的条件矩，实现对方差过程的高效近似抽样。该方法最初由 \citet{andersenEfficientSimulationHeston2007} 针对 Heston 模型提出，此处我们将其推广至$3/2$模型，其核心是通过匹配方差过程的条件一阶矩与二阶矩，构造指数型近似分布，避免了复杂分布的数值抽样。从误差特性来看，该方法的误差主要来源于指数矩匹配的近似偏差，在常规参数下其弱收敛阶为1，在波动率较高、尾部较厚的极端场景下仍能保持较好的稳定性。
-
-\subsection {精确与近似精确模拟定价方法}
-精确与近似精确模拟方法的核心是规避时间离散过程，直接从标的资产到期价格的条件分布中进行抽样，完全消除时间步长带来的离散误差，仅存在分布近似或统计抽样带来的误差。本节依次推导 Baldeaux（2012）精确模拟方法、条件傅里叶余弦模拟方法、条件矩匹配模拟方法、逆高斯近似精确模拟方法与 Gamma 近似精确模拟方法的理论构造，并对每类方法的误差特性进行严格分析。
-
-\citet{baldeauxEXACTSIMULATION322012} 精确模拟方法是$3/2$模型下首个无偏的终端精确模拟方法，其核心是基于$3/2$模型积分方差的拉普拉斯变换与条件布朗积分的解析结构，实现对积分方差与相关布朗积分的联合精确抽样。标的资产的对数到期价格可表示为：
+其中 $\phi_{\mu,\sigma}(x)$ 为均值 $\mu$、方差 $\sigma^2$ 的正态密度函数，$\kappa_3, \kappa_4$ 为 $V_T$ 的标准化三阶、四阶矩，$H_k(\cdot)$ 为 $k$ 阶埃尔米特多项式，其前四阶形式为：
 \begin {equation}
-  \ln S_T = \ln S_0 + rT - \frac {1}{2}\int_0^T v_s ds + \int_0^T \sqrt {v_s} dW_s^S,
+  H_0 (x) = 1, \quad H_1 (x) = x, \quad H_2 (x) = x^2 - 1, \quad H_3 (x) = x^3 - 3x, \quad H_4 (x) = x^4 - 6x^2 + 3.
 \end {equation}
-其中$\int_0^T v_s ds$为到期前的积分方差，$\int_0^T \sqrt{v_s} dW_s^S$为标的资产的布朗积分。\citet{baldeauxEXACTSIMULATION322012} 证明，在给定初始方差$v_0$的条件下，上述积分可通过修正贝塞尔函数与逆拉普拉斯变换实现精确抽样，无需任何时间离散过程。从误差特性来看，该方法完全消除了时间离散带来的系统偏差，其误差仅来源于两个方面：一是蒙特卡洛模拟的统计误差，收敛速度为$O(N^{-1/2})$；二是修正贝塞尔函数与逆拉普拉斯变换的数值计算误差，该误差可通过高精度数值算法控制在可忽略的水平。
+对该密度函数积分，可得到近似累积分布函数，通过逆变换抽样得到$V_T$的样本。
 
-条件傅里叶余弦模拟方法由 \citet{brignoneExactSimulationStochastic2026} 提出，其核心是基于标的资产对数价格的条件特征函数，通过傅里叶余弦级数展开构造条件累积分布函数，再通过逆函数抽样实现标的资产到期价格的精确模拟。给定到期时刻的方差$v_T$​，标的资产对数价格$X_T​=lnS_T​$的条件特征函数具有明确的解析形式，基于该特征函数可将$X_T​$的条件累积分布函数展开为余弦级数形式：
+\subsubsection{条件蒙特卡洛框架下的实现}
+在条件蒙特卡洛框架下，条件矩匹配模拟方法的实现流程如下：
+\begin{enumerate}
+    \item 终端方差 $v_T$ 的精确抽样: 通过 CIR 过程的非中心卡方分布精确抽样得到 $v_T$；
+
+    \item 积分方差 $V_T$ 的矩匹配抽样: 给定 $v_0$ 与 $v_T$，解析计算 $V_T$ 的前四阶矩，构造 Gram-Charlier 近似分布，通过逆变变换抽样得到 $V_T$ 的样本；
+
+    \item 标的到期价格的生成: 将 $v_T$ 与 $V_T$ 代入核心闭式映射，生成对数到期价格。
+\end{enumerate}
+
+\subsubsection{误差特性与收敛性分析}
+\begin{enumerate}
+    \item 矩匹配的近似误差: 该误差为方法的固有偏差，仅匹配前四阶矩忽略了高阶矩的信息，在常规参数下偏差较小，但在极端厚尾场景下偏差会有所增大，其弱收敛阶为 $O(N^{-2})$；
+
+    \item 蒙特卡洛模拟的统计误差: 收敛速度为 $O(N^{-1/2})$。
+\end{enumerate}
+该方法的核心优势是极致的计算效率，所有矩均可预计算，无需逐路径的复杂数值运算，适合大规模路径模拟与参数校准场景。
+
+\subsection{逆高斯（Inverse Gaussian, IG）近似精确模拟方法}
+逆高斯近似精确模拟方法由 \citet{choiSimulationSchemesHeston2024} 提出，其核心是利用逆高斯分布对正偏、厚尾非负随机变量的优秀拟合能力，通过匹配积分方差$V_T$的前两阶矩构造近似分布，在精度与效率之间实现了极佳的平衡。
+\subsubsection{理论推导}
+逆高斯分布是一类定义在正实数域上的双参数连续分布，其概率密度函数为：
 \begin {equation}
-  \mathbb {P}(X_T\le y\mid v_0,v_T)= \sum_{n=0}^{N-1} C_n \cos\Bigl (\frac {n\pi (y-\mu)}{2L}\Bigr),
+  f_{\text {IG}}(x; \mu, \lambda) = \sqrt {\frac {\lambda}{2\pi x^3}} \exp\left ( -\frac {\lambda (x-\mu)^2}{2\mu^2 x} \right), \quad x > 0,
 \end {equation}
-其中系数$C_n$由条件特征函数在离散频率点的取值确定：
+其中 $\mu > 0$ 为分布的均值，$\lambda > 0$ 为形状参数，其方差满足 $\mathrm{Var}(x) = \mu^3/\lambda$。
+
+3/2 模型的积分方差 $I_T$ 为非负随机变量，具有显著的正偏与厚尾特征，与逆高斯分布的统计特性高度契合。通过矩匹配条件，可解析求解逆高斯分布的参数：
+\begin{enumerate}
+    \item 给定 $v_0$ 与 $v_T$，解析计算 $I_T$ 的条件均值 $\mu = \mathbb{E}[I_T \mid v_0, v_T]$ 与条件方差 $\sigma^2 = \mathrm{Var}(I_T \mid v_0, v_T)$；
+    
+    \item 令逆高斯分布的均值与方差与目标值匹配，解得：
+    \begin{equation}
+        \mu_{\text{IG}} = \mu, \quad \lambda_{\text{IG}} = \frac{\mu^3}{\sigma^2}.
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{条件蒙特卡洛框架下的实现}
+在条件蒙特卡洛框架下，逆高斯近似精确模拟方法的实现流程如下：
+\begin{enumerate}
+    \item 终端方差 $v_T$ 的精确抽样：通过 CIR 过程的非中心卡方分布精确抽样得到 $v_T$；
+    \item 积分方差 $V_T$ 的 IG 分布抽样：给定 $v_0$ 与 $v_T$，解析计算 $V_T$ 的条件均值与方差，校准 IG 分布参数，生成 IG 分布随机数得到 $V_T$ 的样本；
+    \item 标的到期价格的生成：将 $v_T$ 与 $V_T$ 代入核心闭式映射，生成对数到期价格。
+\end{enumerate}
+
+\subsubsection{误差特性与收敛性分析}
+该方法的误差来源主要包含两个部分：
+\begin{enumerate}
+    \item 分布拟合误差：该误差为方法的固有偏差，由于 IG 分布仅匹配前两阶矩，忽略了高阶矩的影响；
+    \item 蒙特卡洛模拟的统计误差：收敛速度为 $O(N^{-1/2})$。
+\end{enumerate}
+
+该方法的核心优势是兼顾精度与效率，IG 分布的随机数生成速度极快，且拟合精度接近精确模拟方法，是实际应用中最常用的 3/2 模型模拟方案。
+
+\subsection{Gamma 近似精确模拟方法}
+Gamma 分布是定义在正实数域上的双参数连续分布，其概率密度函数为：
+\begin{equation}
+  f_{\text{Gamma}}(x; \alpha, \beta) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}, \quad x > 0,
+\end{equation}
+其中 $\alpha > 0$ 为形状参数，$\beta > 0$ 为率参数，其均值与方差满足 $\mathbb{E}[x] = \alpha/\beta$，$\mathrm{Var}(x) = \alpha/\beta^2$。
+
+通过矩匹配条件，可解析求解 Gamma 分布的参数：
+\begin{enumerate}
+    \item 给定 $v_0$ 与 $v_T$，解析计算 $I_T$ 的条件均值 $\mu$ 与条件方差 $\sigma^2$；
+    
+    \item 令 Gamma 分布的均值与方差与目标值匹配，解得：
+    \begin{equation}
+    \alpha = \frac{\mu^2}{\sigma^2}, \quad \beta = \frac{\mu}{\sigma^2}.
+    \end{equation}
+\end{enumerate}
+\subsubsection{条件蒙特卡洛框架下的实现}
+在条件蒙特卡洛框架下，Gamma 近似精确模拟方法的实现流程与 IG 方法完全一致，仅将 IG 分布替换为 Gamma 分布进行抽样，最终将 $v_T$ 与 $I_T$ 代入核心闭式映射生成标的到期价格。
+
+\subsubsection{误差特性与收敛性分析}
+该方法的误差特性与 IG 方法类似，核心差异在于：Gamma 分布对 $I_T$ 的厚尾拟合精度略低于 IG 分布，但其随机数生成的计算效率更高，在超大规模路径模拟场景下具有显著优势。其误差来源同样为分布拟合误差与蒙特卡洛统计误差，收敛速度为 $O(N^{-1/2})$。
+
+\section {傅里叶频域定价方法}
+傅里叶频域定价方法完全规避了蒙特卡洛模拟的路径生成过程，其核心是将期权价格的风险中性期望转化为标的对数价格特征函数的傅里叶积分，通过数值积分方法快速求解，具有计算效率高、无统计误差、适合批量执行价定价的核心优势，是 3/2 模型期权定价与参数校准的主流方法。
+
+\subsection {快速傅里叶变换（Fast Fourier Transform, FFT）定价方法}
+FFT 定价方法由 \citet{carrOptionValuationUsing1999} 提出，其核心是将欧式期权价格表示为特征函数的傅里叶变换形式，通过快速傅里叶变换算法在 $O(N \log N)$ 的时间复杂度内一次性计算出所有等距执行价对应的期权价格。
+
+\subsubsection{理论推导}
+
+对于到期时间为 $T$、执行价为 $K$ 的欧式看涨期权，其风险中性价格可表示为：
+\begin{equation}
+C(K) = e^{-rT} \mathbb{E}^{\mathbb{Q}} \left[ \max(S_T - K, 0) \right] = e^{-rT} \int_{-\infty}^{\infty} \max(S_0 e^x - K, 0) f(x) \, dx,
+\end{equation}
+
+其中 $x = \log(S_T/S_0)$ 为标的对数收益率，$f(x)$ 为 $x$ 的概率密度函数。
+
+令 $k = \log(K/S_0)$ 为对数执行价，将期权价格改写为关于 $k$ 的函数 $C(k)$，通过傅里叶变换的卷积性质，可推导得到 $C(k)$ 的傅里叶变换闭式：
+\begin{equation}
+  \hat{C}(u) = \int_{-\infty}^{\infty} e^{iuk} C(k) \, dk = e^{-rT} \frac{\phi(u - i)}{i u - u^2},
+\end{equation}
+其中 $\phi(u) = \mathbb{E}^{\mathbb{Q}} \left[ e^{iux} \right]$ 为标的对数收益率的特征函数，是频域定价方法的核心。
+
+对于 3/2 模型，对数收益率的特征函数可通过合流超几何函数 $_1F_1$ 得到闭式表达：
+\begin{equation}
+\phi(u) = \exp\left( i u r T \right) \cdot \frac{\Gamma(\beta - \alpha)}{\Gamma(\beta)} \cdot \left( \frac{2 \kappa \theta}{\epsilon^2 v_0} \left( e^{\kappa \theta T} - 1 \right) \right)^{\alpha} \cdot {}_1F_1 \left( \alpha, \beta, -\frac{2 \kappa \theta}{\epsilon^2 v_0} \left( e^{\kappa \theta T} - 1 \right) \right),
+\end{equation}
+
+其中参数 $\alpha, \beta$ 由模型参数与傅里叶变量 $u$ 解析确定：
+\begin{equation}
+\alpha = -\frac{1}{2} + \frac{\kappa - \rho \epsilon u}{\epsilon^2} + \sqrt{\left( \frac{1}{2} - \frac{\kappa - \rho \epsilon u}{\epsilon^2} \right)^2 + \frac{u(iu + 1)}{\epsilon^2}}, \quad \beta = 1 + 2\alpha,
+\end{equation}
+
+通过傅里叶逆变换，可得到期权价格的积分表达式：\begin {equation}C (k) = \frac {e^{-rT}}{\pi} \int_0^\infty \text {Re}\left [ e^{-i u k} \frac {\phi (u - i)}{i u - u^2} \right] du.\end {equation}
+将上述连续积分离散为等距网格的黎曼和，该求和形式恰好符合离散傅里叶变换的结构，因此可通过 FFT 算法实现快速计算。
+\subsubsection{数值实现流程}
+FFT 定价方法的完整实现流程如下：
+\begin{enumerate}
+    \item 参数初始化：设定 3/2 模型参数、期权合约参数、FFT 网格参数 $N$（通常取 $2^{12}$）、频率步长 $\Delta u$；
+    \item 特征函数计算：在离散频率网格上计算 3/2 模型的特征函数值；
+    \item FFT 变换：对加权后的特征函数值执行 FFT 变换，得到离散傅里叶变换结果；
+    \item 价格还原：对 FFT 结果进行尺度变换与逆变换，得到不同对数执行价对应的期权价格；
+    \item 插值处理：通过插值方法得到任意执行价对应的期权价格。
+\end{enumerate}
+\subsubsection {误差特性与收敛性分析}FFT 定价方法的误差来源主要包含两个部分：
+\begin {enumerate}
+  \item 频率域的积分截断误差：该误差随截断频率的增大呈指数衰减，通过合理设置网格参数可将误差控制在$10^{−6}$以下；
+  \item 黎曼和的离散化误差：该误差随频率步长的减小以线性速度衰减，可通过增加网格点数进一步降低。
+\end {enumerate}
+该方法无蒙特卡洛模拟的统计误差，计算效率极高，适合全波动率微笑的批量定价与参数校准场景。
+
+\subsection{傅里叶余弦 (Fourier-Cosine, COS) 定价方法}
+COS 定价方法由 \cite{fangNovelPricingMethod2009} 提出，是对 FFT 方法的重大改进，其核心是通过余弦级数展开标的对数收益率的概率密度函数，实现期权价格的指数级收敛，在非仿射的 3/2 模型中仍能保持极高的计算效率与精度。
+
+\subsubsection{理论推导}
+COS 方法的核心是将标的对数收益率 $x$ 的概率密度函数在有效支撑区间 $[a,b]$ 上展开为余弦级数：
+\begin{equation}
+f(x) = \frac{2}{b-a} \sum_{n=0}^{\infty} \text{Re} \left[ \phi\left( \frac{n\pi}{b-a} \right) e^{-i \frac{n\pi a}{b-a}} \cos\left( \frac{n\pi (x-a)}{b-a} \right) \right],
+\end{equation}
+其中 $\phi(u)$ 为 $x$ 的特征函数，$[a,b]$ 为 $x$ 的有效支撑区间，通常取 $a = \mathbb{E}[x] - 10\sqrt{\mathrm{Var}(x)}$，$b = \mathbb{E}[x] + 10\sqrt{\mathrm{Var}(x)}$。
+
+将该级数展开代入期权价格的积分表达式，可得到期权价格的闭式级数求和形式：
 \begin {equation}
-  C_n = \frac {1}{L}\operatorname {Re}\Bigl (\phi\bigl (\frac {n\pi}{2L}\bigr) e^{-in\pi\mu/(2L)} e^{in\pi/2}\Bigr),
+  C (K) = e^{-rT} \sum_{n=0}^{N-1} \text {Re}\left [ \phi\left ( \frac {n\pi}{b-a} \right) e^{-i \frac {n\pi a}{b-a}} \right] \cdot \frac {2}{b-a} V_n (k),
 \end {equation}
+其中 $k = \log(K/S_0)$，$V_n(k)$ 为欧式看涨期权支付函数的余弦系数，具有完全解析的闭式表达，无需任何数值积分：
+\begin{equation}
+V_n(k) =
+\begin{cases}
+S_0 e^{rT} \left( \frac{b - k}{b - a} \right) - K \left( \frac{b - k}{b - a} \right), & n = 0, \\[10pt]
+\frac{2 S_0 e^{rT}}{b - a} \cdot \frac{\cos\left( \frac{n\pi (b - a)}{b - a} \right) - \cos\left( \frac{n\pi (k - a)}{b - a} \right)}{1 + \left( \frac{n\pi}{b - a} \right)^2} \\
+\quad - \frac{2 K}{b - a} \cdot \frac{\sin\left( \frac{n\pi (b - a)}{b - a} \right) - \sin\left( \frac{n\pi (k - a)}{b - a} \right)}{\frac{n\pi}{b - a}}, & n \geq 1.
+\end{cases}
+\end{equation}
+\subsubsection {数值实现流程}
+\subsubsection{数值实现流程}
+COS 定价方法的完整实现流程如下：
+\begin{enumerate}
+    \item 参数初始化：设定 3/2 模型参数、期权合约参数、COS 级数截断项数 $N$（通常取 128-256）、有效支撑区间 $[a,b]$；
+    
+    \item 特征函数计算：在离散频率点上计算 3/2 模型的特征函数值；
+    
+    \item 支付系数计算：解析计算期权支付的余弦系数 $V_n(k)$；
+    
+    \item 级数求和：通过截断级数求和计算得到期权价格。
+\end{enumerate}
 
-其中$\mu$与$L$分别为分布的中心与截断半宽。在实际计算中，通过截断级数的前$N$项构造近似累积分布函数，再通过均匀分布抽样与逆函数变换得到$X_T​$的样本。从误差特性来看，该方法的误差主要来源于余弦级数的截断误差，该误差随截断项数$N$的增加呈指数衰减，远快于普通多项式收敛的方法，即使在较小的截断项数下也能达到较高的精度。
+\subsubsection{误差特性与收敛性分析}
+COS 定价方法的核心优势是指数级收敛速度，其截断误差随级数项数$N$的增加呈指数衰减，仅需 128 项截断即可达到 FFT 方法 4096 个网格点的精度，计算效率提升一个数量级以上。同时，该方法不存在 FFT 方法的栅栏效应，可灵活计算任意执行价对应的期权价格，在 $3/2$模型 这类非仿射模型中具有极强的适用性。
 
-条件矩匹配模拟方法的核心是通过匹配标的资产对数价格的前若干阶矩，构造近似分布实现抽样，避免复杂的特征函数计算与变换。对于$3/2$模型，标的资产对数价格的前四阶矩可通过方差过程的仿射结构解析递推得到，基于这些矩可构造 Edgeworth 展开或 Gram-Charlier 展开，对标的资产对数价格的真实分布进行近似。Edgeworth 展开以标准正态分布为基准，通过引入高阶矩的修正项调整分布的偏度与峰度，其形式为：
-\begin {equation}
-  f (x) = \phi (x)\Bigl (1+\frac {\kappa_3}{6} H_3 (x)+\frac {\kappa_4}{24} H_4 (x)+\cdots\Bigr),
-\end {equation}
-其中$\phi(x)$为标准正态密度函数，$H_k(x)$为$k$阶埃尔米特多项式，$\kappa_3$与$\kappa_4$分别为分布的标准化三阶矩与四阶矩。从误差特性来看，该方法的误差主要来源于 Edgeworth 展开的截断误差，若仅使用前四阶矩，其收敛阶为$O(N^{-2})$，但该方法在分布尾部的近似效果较差，甚至可能出现展开不收敛的情况，因此更适用于常规参数下的近似模拟。
+\section {本章小结}
 
-逆高斯近似精确模拟方法由 \citet{choiSimulationSchemesHeston2024} 提出，其核心是通过逆高斯分布逼近$3/2$模型积分方差的分布，实现标的资产到期价格的高效近似模拟。$3/2$模型的积分方差$V_T​=\int_{0}^{T} v_s ds$为正的随机变量，具有正偏、厚尾的分布特征，而逆高斯分布恰好适合刻画这类非负右偏的随机变量，其概率密度函数为：
-\begin {equation}
-  f_{\mathrm {IG}}(x;\mu,\lambda)= \sqrt {\frac {\lambda}{2\pi x^3}}\exp\Bigl (-\frac {\lambda (x-\mu)^2}{2\mu^2 x}\Bigr),\quad x>0,
-\end {equation}
-其中$\mu$为分布的均值，$\lambda$为形状参数。通过匹配积分方差的解析一阶矩与二阶矩，可校准逆高斯分布的参数$\mu$与$\lambda$，进而快速抽样得到积分方差的样本，再代入标的资产对数价格的表达式得到$S_T​$的样本。从误差特性来看，该方法的误差主要来源于逆高斯分布对真实积分方差分布的拟合误差，该误差由分布的 Kullback-Leibler 散度刻画，在均值回复较强的常规参数下拟合效果极佳，弱收敛阶为1，在极端参数下拟合误差会有所增大。
-
-Gamma 近似精确模拟方法同样由 \citet{choiSimulationSchemesHeston2024} 提出，其核心是通过 Gamma 分布逼近积分方差的分布，相较于逆高斯分布具有更高的抽样效率。Gamma 分布的概率密度函数为：
-\begin {equation}
-  f_{\mathrm {Gamma}}(x;\alpha,\beta)= \frac {\beta^\alpha}{\Gamma (\alpha)} x^{\alpha-1} e^{-\beta x},
-\end {equation}
-其中$\alpha$为形状参数，$\beta$为率参数，同样通过匹配积分方差的前两阶矩校准参数，满足$E[V_T]=\alpha/\beta$与$\mathrm{Var}[V_T]=\alpha/\beta^2$。从误差特性来看，Gamma 分布对积分方差的拟合精度略低于逆高斯分布，因为逆高斯分布更适合刻画具有厚尾特征的积分方差过程，该方法的误差同样来源于矩匹配带来的分布拟合偏差，仅匹配前两阶矩忽略了高阶矩的影响，但其抽样计算效率更高，适合大规模路径的模拟场景。
-
-\subsection {傅里叶频域定价方法}
-傅里叶频域定价方法的核心是将期权价格的风险中性期望转化为特征函数的傅里叶积分，通过数值积分方法快速求解，无需生成样本路径，尤其适合批量执行价的期权定价场景。本节依次推导快速傅里叶变换方法与傅里叶余弦方法的理论构造，并对每类方法的误差特性进行严格分析。
-
-快速傅里叶变换方法的核心是基于 \citet{lewisOptionValuationStochastic2000} 的期权定价傅里叶表示式，将期权价格转化为特征函数的实部积分，再通过 FFT 算法实现快速数值求解。记$x_T​=lnS_T$​为标的资产的对数到期价格，$k=lnK$为对数执行价格，欧式看涨期权价格可表示为：
-\begin {equation}
-  C (K) = \frac {e^{-rT}}{\pi}\int_0^\infty \operatorname {Re}\Bigl ( \frac {e^{-iuk}\phi (u-i)}{iu} \Bigr) du,
-\end {equation}
-
-其中$\phi(u)=\mathbb{E}^{\mathbb{Q}}[e^{iux_T}]$为标的资产对数价格的特征函数，$3/2$ 模型的特征函数可通过合流超几何函数$_1F_1$得到解析表达。在实际计算中，将上述连续积分离散为等距网格的黎曼和，该求和形式恰好符合离散傅里叶变换的结构，因此可通过 FFT 算法在$O(NlogN)$的时间复杂度内一次性计算出所有执行价对应的期权价格。从误差特性来看，该方法的误差主要来源于两个方面：一是频率域的积分截断误差，该误差随截断频率的增大呈指数衰减；二是黎曼和的离散化误差，该误差随频率步长的减小以线性速度衰减，同时该方法存在固有的栅栏效应，仅能计算等距对数执行价对应的期权价格。
-
-傅里叶余弦方法由 \citet{fangNovelPricingMethod2009} 提出，是对傅里叶积分方法的重大改进，其核心是通过余弦级数展开标的资产对数价格的概率密度函数，实现期权价格的指数收敛速度求解。该方法将期权价格表示为余弦级数的有限项求和形式：
-\begin {equation}
-  C = e^{-rT}\sum_{n=0}^{N-1}\operatorname {Re}\Bigl (\phi\bigl (\frac {n\pi}{b-a}\bigr) e^{-in\pi a/(b-a)}\Bigr)\cdot \frac {2}{b-a},V_n,
-\end {equation}
-
-其中$[a,b]$为对数价格的有效截断区间，$V_n$为欧式看涨期权支付函数的余弦系数，可通过解析方法直接计算得到。从误差特性来看，该方法的误差主要来源于余弦级数的截断误差，该误差随截断项数$N$的增加呈指数衰减，远快于 FFT 方法的多项式收敛速度，同时该方法不存在栅栏效应，可灵活计算任意执行价对应的期权价格，在$3/2$模型这类非仿射模型中仍能保持极高的计算效率与精度。
-
-\subsection {本章小结}
-
-本章在$3/2$ 随机波动率模型的统一框架下，系统构建了欧式期权定价的九类方法体系，涵盖了时间步进类蒙特卡洛方法、精确与近似精确模拟方法、傅里叶频域定价方法三大范式，对每类方法的理论构造、收敛特性与误差来源进行了完整的推导与分析。时间步进类方法实现简单灵活，适合短期限期权与动态对冲场景，但存在固有的时间离散误差，其中精确步进方法可消除离散偏差，仅保留统计误差；精确与近似精确模拟方法完全规避了时间离散过程，其中 Baldeaux 精确模拟方法与条件傅里叶余弦方法具有极高的精度，而逆高斯与 Gamma 近似方法则在效率与精度之间实现了较好的平衡；傅里叶频域方法无需路径模拟，计算效率最高，尤其适合全波动率微笑的批量定价场景，其中 COS 方法具有指数收敛速度，在非仿射模型中优势显著。本章构建的九类方法体系，为后续的数值精度对比、极端场景性能检验与实证定价分析提供了严格的理论基础与统一的方法框架。
+本章在 3/2 随机波动率模型的统一框架下，系统构建了欧式期权定价的九类方法体系，涵盖时间步进类条件蒙特卡洛方法、终端精确与近似精确模拟类方法、傅里叶频域定价方法三大范式，所有方法均严格遵循条件蒙特卡洛框架或频域积分的学术规范，对每类方法的理论构造、实现流程、误差特性进行了完整的推导与分析。
+时间步进类方法实现简单灵活，适合短期限期权与动态对冲场景，其中精确步进方法与 Poisson-Gamma 方法可有效降低离散偏差；终端模拟类方法完全规避了时间离散误差，其中 Baldeaux 精确模拟方法是理论基准，逆高斯与 Gamma 近似方法在精度与效率之间实现了极佳的平衡；傅里叶频域方法无统计误差、计算效率极高，适合全波动率微笑的批量定价与模型参数校准。本章构建的九类方法体系，为后续的数值精度对比、极端场景性能检验与实证定价分析提供了严格的理论基础与统一的方法框架。
