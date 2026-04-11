@@ -490,73 +490,7 @@
       \endverb
       \keyw{fangNovelPricingMethod2009}
     \endentry
-    \entry{lewisOptionValuationStochastic2000}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=cc42e280ed5a17704d36d6ea6ecb8fe9}{%
-           family={Lewis},
-           familyi={L\bibinitperiod},
-           given={Alan\bibnamedelima L.},
-           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-      }
-      \name{namea}{1}{}{%
-        {{hash=cc42e280ed5a17704d36d6ea6ecb8fe9}{%
-           family={Lewis},
-           familyi={L\bibinitperiod},
-           given={Alan\bibnamedelima L.},
-           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{publisher}{1}{%
-        {Finance Press}%
-      }
-      \strng{namehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{fullhash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{fullhashraw}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{bibnamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{authorbibnamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{authornamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{authorfullhash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{authorfullhashraw}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{nameabibnamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{nameanamehash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{nameafullhash}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \strng{nameafullhashraw}{cc42e280ed5a17704d36d6ea6ecb8fe9}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This book provides an advanced treatment of option valuation. The general setting is that of 2D continuous-time models with stochastic volatility. Explicit equilibrium risk adjustments and many other new results are provided. Mathematica code for the more important formulas is included. For a summary of results, see the Chapter 1 excerpt.}
-      \field{journaltitle}{Option Valuation under Stochastic Volatility}
-      \field{langid}{english}
-      \field{languageid}{english}
-      \field{lansortorder}{4}
-      \field{title}{Option {{Valuation}} under {{Stochastic Volatility}}}
-      \field{urlday}{6}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
-      \field{usera}{J}
-      \field{userd}{english}
-      \field{userf}{english}
-      \field{year}{2000}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\2MTZ9QFR\ovsv.html
-      \endverb
-      \verb{urlraw}
-      \verb https://ideas.repec.org//b/vsv/vbooks/ovsv.html
-      \endverb
-      \verb{url}
-      \verb https://ideas.repec.org//b/vsv/vbooks/ovsv.html
-      \endverb
-      \keyw{eigenvalue,equilibrium,GARCH diffusion,implied volatility,local martingale,Mathematica,option pricing,smile,stochastic volatility,term structure,variational}
-    \endentry
   \enddatalist
-  \missing{fang2008}
 \endrefsection
 \endinput
 
