@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  12 APR 2026 20:23
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  12 APR 2026 23:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1955,7 +1955,8 @@ LaTeX Warning: Unused global option(s):
     [UTF8].
 
 (./main.aux (./chap/abstract.aux) (./chap/chap1.aux) (./chap/chap2.aux)
-(./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux) (./chap/chap6.aux))
+(./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux) (./chap/chap6.aux)
+(./chap/chap7.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -2084,7 +2085,7 @@ LaTeX Font Info:    Font shape `TU/texgyreheros(0)/m/n' will be
 (Font)              scaled to size 15.25694pt on input line 1.
 LaTeX Font Info:    Font shape `TU/texgyreheros(0)/b/n' will be
 (Font)              scaled to size 11.4427pt on input line 1.
-) [1
+ [1
 
 
 
@@ -2095,91 +2096,91 @@ LaTeX Font Info:    Font shape `TU/texgyreheros(0)/b/n' will be
 
 
 
-] [2
-
-
-
-
-] (./main.toc
-Underfull \vbox (badness 10000) has occurred while \output is active []
+]) [2] (./main.toc
+Underfull \vbox (badness 3449) has occurred while \output is active []
 
  [3
 
 
-])
+
+
+
+
+]
+Overfull \hbox (5.63539pt too wide) in paragraph at lines 80--80
+ []|[][]\TU/XITS(0)/m/n/12.045 Empirical Calibration and Pricing Evaluation of 
+the 3/2 Stochastic Volatility Model
+ []
+
+[4]
+Overfull \hbox (9.26895pt too wide) in paragraph at lines 92--92
+ []|[][]\TU/XITS(0)/m/n/12.045 Cross-Sectional Calibration Results and Full-Cyc
+le Characteristic Analysis of Time-
+ []
+
+)
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
+ [5] [6
 
-[4]
+
+]
 \openout2 = `chap/chap1.aux'.
 
  (./chap/chap1.tex
 Chapter 1
-
-Overfull \hbox (0.44266pt too wide) in paragraph at lines 7--9
-\TU/XITS(0)/m/n/12.045 volatility frameworks have been introduced. Among these,
- the 3/2 volatility model has emerged
- []
-
-
-Overfull \hbox (3.63176pt too wide) in paragraph at lines 16--17
-[]\TU/XITS(0)/m/n/12.045 Exact simulation: Although designed to eliminate time-
-discretization errors, this method
- []
-
 [1
 
 
 
-
-
 ]
+Underfull \vbox (badness 2261) has occurred while \output is active []
+
+ [2]
+[3]
+Overfull \hbox (0.19775pt too wide) in paragraph at lines 27--28
+\TU/XITS(0)/m/n/12.045 tion of pricing formulas for the 3/2 model. It has neith
+er constructed a comprehensive analytical
+ []
+
+
+Underfull \vbox (badness 7099) has occurred while \output is active []
+
+ [4]
+Overfull \hbox (9.56331pt too wide) in paragraph at lines 37--38
+[]\TU/XITS(0)/m/n/12.045 Second, to execute a systematic performance evaluation
+ of different pricing methods through
+ []
+
+[5]
+Overfull \hbox (4.34784pt too wide) in paragraph at lines 39--40
+[]\TU/XITS(0)/m/n/12.045 Third, to perform empirical calibration of the 3/2 mod
+el and extreme-scenario re-evaluation
+ []
+
+[6]
+Underfull \vbox (badness 7099) has occurred while \output is active []
+
+ [7]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 12.04628pt on input line 24.
+(Font)              scaled to size 12.04628pt on input line 59.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 9.03471pt on input line 24.
+(Font)              scaled to size 9.03471pt on input line 59.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.22777pt on input line 24.
+(Font)              scaled to size 7.22777pt on input line 59.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 12.0437pt on input line 24.
+(Font)              scaled to size 12.0437pt on input line 59.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 9.03278pt on input line 24.
+(Font)              scaled to size 9.03278pt on input line 59.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 7.22623pt on input line 24.
-) [2]
+(Font)              scaled to size 7.22623pt on input line 59.
+)
+[8]
 \openout2 = `chap/chap2.aux'.
 
  (./chap/chap2.tex
 Chapter 2
-[3
-
-
-
-
-
-] [4]
-Overfull \hbox (9.15239pt too wide) in paragraph at lines 28--29
-[]\TU/XITS(0)/m/n/12.045 Conducts a multidimensional empirical benchmark, defin
-itively quantifying the accuracy-
- []
-
-) [5]
-\openout2 = `chap/chap3.aux'.
-
- (./chap/chap3.tex [6
-
-
-
-
-
-]
-Chapter 3
-[7]) [8]
-\openout2 = `chap/chap4.aux'.
-
- (./chap/chap4.tex
-Chapter 4
 [9
 
 
@@ -2187,61 +2188,89 @@ Chapter 4
 
 
 ]
-Overfull \hbox (15.32495pt too wide) in paragraph at lines 32--33
-\TU/XITS(0)/m/n/12.045 into the Bachelier or Black-Scholes-Merton (BSM) option 
-pricing formulas. Specif-
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+Overfull \hbox (0.28345pt too wide) in paragraph at lines 29--30
+\TU/XITS(0)/m/n/12.045 pioneering research, exploring the exact simulation sche
+me for the stock price process under the
  []
 
-[10]) [11]
-\openout2 = `chap/chap5.aux'.
 
- (./chap/chap5.tex [12
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+ [12]
+[13] [14] [15]) [16] [17]
+\openout2 = `chap/chap3.aux'.
+
+ (./chap/chap3.tex [18
 
 
 
 
 
 ]
-Chapter 5
-[13] [14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Chapter 3
 
- [15])
-[16]
-\openout2 = `chap/chap6.aux'.
-
- (./chap/chap6.tex
-Chapter 6
-[17
-
-
-
-
-
-])
-Overfull \hbox (3.97844pt too wide) in paragraph at lines 24--47
-[]\TU/XITS(0)/m/n/12.045 In conclusion, the empirical evidence dictates that ou
-r proposed conditional Fourier-Cosine
+Overfull \hbox (22.15034pt too wide) in paragraph at lines 15--16
+[]\TU/XITS(0)/m/n/12.045 Under the risk-neutral measure, the asset price proces
+s and the instantaneous variance/volatility
  []
 
-[18]
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 10.54048pt on input line 50.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 50.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 50.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 10.53824pt on input line 50.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 50.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 50.
+[19]
+Underfull \vbox (badness 1354) has occurred while \output is active []
+
+ [20]
+Underfull \vbox (badness 4205) has occurred while \output is active []
+
+ [21])
+[22]
+\openout2 = `chap/chap4.aux'.
+
+ (./chap/chap4.tex
+Chapter 4
+
+Overfull \hbox (8.89957pt too wide) in paragraph at lines 3--4
+\TU/XITS(0)/m/n/12.045 tions are developed across three major paradigms: time-d
+iscretization approximation, exact/near-
+ []
+
+[23
 
 
-LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 50.
 
+
+
+] [24] [25] [26] [27] [28]
+Overfull \hbox (12.50232pt too wide) in paragraph at lines 143--144
+[]\TU/XITS(0)/m/n/12.045 Under the conditional Monte Carlo framework, the imple
+mentation procedure of the Poisson-
+ []
+
+[29] [30] [31]
+Underfull \vbox (badness 4353) has occurred while \output is active []
+
+ [32]
+[33]
+Overfull \hbox (5.91145pt too wide) in paragraph at lines 233--234
+[]\TU/XITS(0)/m/n/12.045 The Conditional Fourier-Cosine simulation method was p
+roposed by [][]Brignone et al.[] [][]2026[][]$[]$.
+ []
+
+[34] [35] [36] [37] [38] [39] [40]
+Overfull \hbox (2.76596pt too wide) in paragraph at lines 412--413
+[]\TU/XITS(0)/m/n/12.045 Through the inverse Fourier transform, the integral ex
+pression for the option price emerges: 
+ []
+
+[41] [42]) [43] [44]
+\openout2 = `chap/chap5.aux'.
+
+ (./chap/chap5.tex
+Chapter 5
 
 Package fontspec Info: 
 (fontspec)             Font family 'FandolFang(0)' created for font
@@ -2255,16 +2284,307 @@ Package fontspec Info:
 (fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
 
 
-Package caption Warning: Unused \captionsetup[sub] on input line 19.
-See the caption package documentation for explanation.
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.69254pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.69254pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
 
-[19
+[45
 
 
 
 
-] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux) (./chap/chap2.aux)
-(./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux) (./chap/chap6.aux))
+
+] [46]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.69254pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.69254pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
+
+[47] [48]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.69254pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.69254pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
+
+[49]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+Overfull \hbox (11.56958pt too wide) in paragraph at lines 289--290
+\TU/XITS(0)/m/n/12.045 high vol-of-vol and strong negative correlation cases, s
+hort maturity scenarios, or deep ITM/OTM
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.69254pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.69254pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
+
+[51] [52]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.69254pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.69254pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
+
+[53])
+Underfull \vbox (badness 3635) has occurred while \output is active []
+
+ [54]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.69254pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.69254pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
+
+[55]
+\openout2 = `chap/chap6.aux'.
+
+ (./chap/chap6.tex [56
+
+
+
+
+
+]
+Chapter 6
+
+Underfull \vbox (badness 1314) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[57] [58]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[59] [60]
+Overfull \hbox (3.04034pt too wide) in paragraph at lines 33--34
+\TU/XITS(0)/m/n/12.045 stochastic volatility model discretization estimation me
+thod proposed by Andersen et al. (2002),
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[61] [62]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[63]
+File: img/Deribit_OTM_Option_Trades_Distribution_Pre_Shock.png Graphic file (ty
+pe bmp)
+<img/Deribit_OTM_Option_Trades_Distribution_Pre_Shock.png>
+File: img/Deribit_OTM_Option_Trades_Distribution_Crash.png Graphic file (type b
+mp)
+<img/Deribit_OTM_Option_Trades_Distribution_Crash.png>
+File: img/Deribit_OTM_Option_Trades_Distribution_Recovery.png Graphic file (typ
+e bmp)
+<img/Deribit_OTM_Option_Trades_Distribution_Recovery.png>
+ [64]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[65] [66]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[67]
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 9.0347pt on input line 163.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 6.00064pt on input line 163.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 163.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 9.03276pt on input line 163.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 163.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 163.
+ [68]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[69]
+File: img/Flash_Crash_6D_Evolution_NoJump.png Graphic file (type bmp)
+<img/Flash_Crash_6D_Evolution_NoJump.png>
+File: img/Flash_Crash_20D_Evolution_NoJump.png Graphic file (type bmp)
+<img/Flash_Crash_20D_Evolution_NoJump.png>
+ [70]
+Underfull \vbox (badness 4647) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[71] [72]
+Overfull \hbox (7.51166pt too wide) in paragraph at lines 239--240
+[]\TU/XITS(0)/m/n/12.045 Time-stepping methods include the Euler/Milstein discr
+ete scheme, Exact Stepping method,
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[73]
+
+LaTeX Warning: Float too large for page by 88.7121pt on input line 379.
+
+
+Overfull \hbox (11.11308pt too wide) in paragraph at lines 387--388
+[]\TU/XITS(0)/m/n/12.045 Terminal simulation methods encompass five schemes: Ba
+ldeaux Exact Simulation, Fourier-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [74]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[75] [76]
+Overfull \hbox (0.97122pt too wide) in paragraph at lines 459--460
+[]\TU/XITS(0)/m/n/12.045 Fourier frequency-domain pricing methods comprise two 
+schemes: the Fast Fourier Trans-
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[77] [78]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[79] [80]
+Underfull \vbox (badness 5245) has occurred while \output is active []
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[81]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [82])
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[83]
+\openout2 = `chap/chap7.aux'.
+
+ (./chap/chap7.tex [84
+
+
+
+
+
+]
+Chapter 7
+[85]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [87]
+[88] [89]) [90]
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 10.54048pt on input line 51.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 7.00075pt on input line 51.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 10.53824pt on input line 51.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 51.
+
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 51.
+
+[91
+
+
+
+
+] [92] [93] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux)
+(./chap/chap2.aux) (./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux)
+(./chap/chap6.aux) (./chap/chap7.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2022/08/05>
@@ -2275,18 +2595,18 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 39F6A5EF27E1021666CB0BD7826A1725;8132.
+(rerunfilecheck)             Checksum: C1844742BADBD08CD3FF5AFB637F0F41;35795.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44541 strings out of 468174
- 906232 string characters out of 5436827
- 2040735 words of memory out of 5000000
- 72562 multiletter control sequences out of 15000+600000
- 634431 words of font info for 124 fonts, out of 8000000 for 9000
+ 44855 strings out of 468174
+ 916822 string characters out of 5436827
+ 2167570 words of memory out of 5000000
+ 72850 multiletter control sequences out of 15000+600000
+ 635801 words of font info for 138 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 123i,15n,121p,2717b,5282s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,13n,121p,2767b,6716s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (23 pages).
+Output written on main.pdf (99 pages).

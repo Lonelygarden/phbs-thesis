@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  12 APR 2026 20:23
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  12 APR 2026 23:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2134,35 +2134,30 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 第二章
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 12.04628pt on input line 7.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 9.03471pt on input line 7.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 7.22777pt on input line 7.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 12.0437pt on input line 7.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 9.03278pt on input line 7.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 7.22623pt on input line 7.
 [7]
-Overfull \hbox (18.84265pt too wide) in paragraph at lines 21--22
+Overfull \hbox (18.84245pt too wide) in paragraph at lines 21--22
 []\TU/FandolSong(0)/m/n/12.045 在 模 型 结 构 的 扩 展 与 优 化 方 面，|  为 实 现 股 票 现 货 与 \TU
-/XITS(0)/m/n/12.045 VIX \TU/FandolSong(0)/m/n/12.045 衍 生 品 的 一 致 性 建 模，| \TU/XI
-TS(0)/m/n/12.045 Baldeaux
+/XITS(0)/m/n/12.045 VIX \TU/FandolSong(0)/m/n/12.045 衍 生 品 的 一 致 性 建 模，| [][]\T
+U/XITS(0)/m/n/12.045 Baldeaux
  []
 
 
 Underfull \vbox (badness 1484) has occurred while \output is active []
 
  [8]
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 12.04628pt on input line 37.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 9.03471pt on input line 37.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.22777pt on input line 37.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 12.0437pt on input line 37.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 9.03278pt on input line 37.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 7.22623pt on input line 37.
-
-[9] [10]
-Underfull \vbox (badness 5787) has occurred while \output is active []
-
- [11])
-[12]
+[9] [10] [11]) [12]
 \openout2 = `chap/chap3.aux'.
 
  (./chap/chap3.tex
@@ -2244,7 +2239,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-] [44] [45] [46]
+] [44]
+Overfull \hbox (0.24132pt too wide) in paragraph at lines 27--28
+[]\TU/FandolSong(0)/m/n/12.045 纯 扩 散 框 架 下，| \TU/XITS(0)/m/n/12.045 3/2 \TU/Fan
+dolSong(0)/m/n/12.045 随 机 波 动 率 模 型 的 方 差 过 程 满 足 如 下 动 态 设 定[][]\TU/XITS(0)/m/
+n/12.045 Baldeaux[] [][]2012a[][]$[]$\TU/FandolSong(0)/m/n/12.045 ：| 
+ []
+
+[45] [46]
 File: img/Deribit_OTM_Option_Trades_Distribution_Pre_Shock.png Graphic file (ty
 pe bmp)
 <img/Deribit_OTM_Option_Trades_Distribution_Pre_Shock.png>
@@ -2281,25 +2283,10 @@ Underfull \vbox (badness 2103) has occurred while \output is active []
 
  [53]
 [54]
-Overfull \hbox (283.5374pt too wide) in alignment at lines 239--251
- [] [] [] [] [] [] [] [] [] [] [] 
- []
 
+LaTeX Warning: Float too large for page by 88.7121pt on input line 376.
 
-Overfull \hbox (283.5374pt too wide) in alignment at lines 251--263
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (283.5374pt too wide) in alignment at lines 263--288
- [] [] [] [] [] [] [] [] [] [] [] 
- []
-
-[55] [56]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [57]
-[58] [59] [60]) [61]
+[55] [56] [57] [58] [59] [60]) [61]
 \openout2 = `chap/chap7.aux'.
 
  (./chap/chap7.tex [62
@@ -2328,22 +2315,34 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 (Font)              size <10.95> substituted on input line 53.
 
+
+Package fontspec Info: 
+(fontspec)             Font family 'FandolFang(0)' created for font
+(fontspec)             'FandolFang' with options
+(fontspec)             [Extension={.otf},UprightFont={*-Regular}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
+
 [67
 
 
 
 
-] [68
+] [68] [69] [70
 
 
 ]
 \openout2 = `chap/acknowledgement.aux'.
 
- (./chap/acknowledgement.tex) [69
+ (./chap/acknowledgement.tex) [71
 
 
 
-] [70
+] [72
 
 
 
@@ -2356,7 +2355,7 @@ Overfull \hbox (583.4233pt too wide) in paragraph at lines 63--63
 [][][][][][][] 
  []
 
-[71] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux) (./chap/chap2.aux)
+[73] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux) (./chap/chap2.aux)
 (./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux) (./chap/chap6.aux)
 (./chap/chap7.aux) (./chap/acknowledgement.aux))
  ***********
@@ -2369,18 +2368,18 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6EEBCE39AFE27BD155ABD4A323B60CAE;20239.
+(rerunfilecheck)             Checksum: D95CBF7C03512D36DA67A7ED3935BAB4;20239.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45021 strings out of 468174
- 932033 string characters out of 5436827
- 2179189 words of memory out of 5000000
- 73011 multiletter control sequences out of 15000+600000
- 635801 words of font info for 138 fonts, out of 8000000 for 9000
+ 45175 strings out of 468174
+ 936989 string characters out of 5436827
+ 2180407 words of memory out of 5000000
+ 73158 multiletter control sequences out of 15000+600000
+ 635833 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 123i,13n,121p,1218b,5277s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,13n,121p,2717b,6716s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (77 pages).
+Output written on main.pdf (79 pages).

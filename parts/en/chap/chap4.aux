@@ -1,19 +1,67 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {Chapter 4\hspace  {.3em}}Pricing Methodologies}{9}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {Chapter 4\hspace  {.3em}}Option Pricing Methods and Algorithmic Implementation}{23}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10.0pt}}
 \@writefile{lot}{\addvspace {10.0pt}}
-\newlabel{chap:analysis}{{4}{9}{Pricing Methodologies}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Monte Carlo Simulation Procedures}{9}{section.4.1}\protected@file@percent }
-\newlabel{sec:agent_decision_analysis}{{4.1}{9}{Monte Carlo Simulation Procedures}{section.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Conditional MC}{9}{subsection.4.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Exact MC}{9}{subsection.4.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Common Procedures for Pricing and Aggregation}{10}{subsection.4.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Fourier Transformation Procedures}{10}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Time-Stepping Monte Carlo Pricing Methods}{23}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Euler and Milstein Discretization Schemes}{24}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.1}Euler Discretization Scheme for the Variance Process}{24}{subsubsection.4.1.1.1}\protected@file@percent }
+\newlabel{euler_v}{{4.2}{24}{Euler Discretization Scheme for the Variance Process}{equation.4.2}{}}
+\newlabel{trapezoidal_I}{{4.3}{24}{Euler Discretization Scheme for the Variance Process}{equation.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.2}Milstein Discretization Scheme for the Variance Process}{25}{subsubsection.4.1.1.2}\protected@file@percent }
+\newlabel{milstein_v}{{4.6}{25}{Milstein Discretization Scheme for the Variance Process}{equation.4.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.3}Error Characteristics and Convergence Analysis}{25}{subsubsection.4.1.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Exact Stepping Method}{26}{subsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2.1}Reciprocal Transformation and Exact Distribution of the Variance Process}{26}{subsubsection.4.1.2.1}\protected@file@percent }
+\newlabel{x_CIR}{{4.8}{26}{Reciprocal Transformation and Exact Distribution of the Variance Process}{equation.4.8}{}}
+\newlabel{x_distribution}{{4.9}{27}{Reciprocal Transformation and Exact Distribution of the Variance Process}{equation.4.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2.2}Implementation Under the Conditional Monte Carlo Framework}{27}{subsubsection.4.1.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2.3}Error Characteristics and Convergence Analysis}{27}{subsubsection.4.1.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Poisson-Gamma Near-Exact Stepping Method}{28}{subsection.4.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3.1}Reciprocal Transformation and Poisson-Gamma Mixture Representation of the CIR Process}{28}{subsubsection.4.1.3.1}\protected@file@percent }
+\newlabel{ncx2_pg_mixture}{{4.12}{28}{Reciprocal Transformation and Poisson-Gamma Mixture Representation of the CIR Process}{equation.4.12}{}}
+\newlabel{y_pg_mixture}{{4.16}{29}{Reciprocal Transformation and Poisson-Gamma Mixture Representation of the CIR Process}{equation.4.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3.2}Implementation Under the Conditional Monte Carlo Framework}{29}{subsubsection.4.1.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3.3}Error Characteristics and Convergence Analysis}{30}{subsubsection.4.1.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Quasi-Exponential (QE) Near-Exact Stepping Method}{30}{subsection.4.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4.1}Moment Matching of the Variance Process and QE Distribution Construction}{31}{subsubsection.4.1.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4.2}Implementation Under the Conditional Monte Carlo Framework}{31}{subsubsection.4.1.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4.3}Error Characteristics and Convergence Analysis}{32}{subsubsection.4.1.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Exact and Near-Exact Simulation Pricing Methods}{32}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Exact Simulation Method}{33}{subsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1.1}Theoretical Derivation}{33}{subsubsection.4.2.1.1}\protected@file@percent }
+\newlabel{laplace_V_T}{{4.17}{33}{Theoretical Derivation}{equation.4.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1.2}Implementation Under the Conditional Monte Carlo Framework}{33}{subsubsection.4.2.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1.3}Error Characteristics and Convergence Analysis}{34}{subsubsection.4.2.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Conditional Fourier-Cosine Simulation Method}{34}{subsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2.1}Theoretical Derivation}{34}{subsubsection.4.2.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2.2}Implementation Under the Conditional Monte Carlo Framework}{35}{subsubsection.4.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2.3}Error Characteristics and Convergence Analysis}{35}{subsubsection.4.2.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Conditional Moment Matching Simulation Method}{36}{subsection.4.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.1}Theoretical Derivation}{36}{subsubsection.4.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.2}Implementation Under the Conditional Monte Carlo Framework}{37}{subsubsection.4.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3.3}Error Characteristics and Convergence Analysis}{37}{subsubsection.4.2.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Inverse Gaussian (IG) Near-Exact Simulation Method}{37}{subsection.4.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.1}Theoretical Derivation}{38}{subsubsection.4.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.2}Implementation Under the Conditional Monte Carlo Framework}{38}{subsubsection.4.2.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.3}Error Characteristics and Convergence Analysis}{38}{subsubsection.4.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Gamma Near-Exact Simulation Method}{39}{subsection.4.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5.1}Implementation Under the Conditional Monte Carlo Framework}{39}{subsubsection.4.2.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5.2}Error Characteristics and Convergence Analysis}{39}{subsubsection.4.2.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Fourier Frequency-Domain Pricing Methods}{40}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Fast Fourier Transform (FFT) Pricing Method}{40}{subsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1.1}Theoretical Derivation}{40}{subsubsection.4.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1.2}Numerical Implementation Flow}{41}{subsubsection.4.3.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1.3}Error Characteristics and Convergence Analysis}{41}{subsubsection.4.3.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Fourier-Cosine (COS) Pricing Method}{42}{subsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.1}Theoretical Derivation}{42}{subsubsection.4.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.2}Numerical Implementation Flow}{42}{subsubsection.4.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2.3}Error Characteristics and Convergence Analysis}{43}{subsubsection.4.3.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Chapter Summary}{43}{section.4.4}\protected@file@percent }
 \@setckpt{chap/chap4}{
-\setcounter{page}{12}
-\setcounter{equation}{0}
-\setcounter{enumi}{2}
+\setcounter{page}{45}
+\setcounter{equation}{34}
+\setcounter{enumi}{4}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
@@ -22,7 +70,7 @@
 \setcounter{parentequation}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{4}
-\setcounter{section}{2}
+\setcounter{section}{4}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
@@ -36,10 +84,10 @@
 \setcounter{lofdepth}{1}
 \setcounter{lotdepth}{1}
 \setcounter{section@level}{0}
-\setcounter{Item}{17}
+\setcounter{Item}{65}
 \setcounter{Hfootnote}{0}
 \setcounter{Hy@AnnotLevel}{0}
-\setcounter{bookmark@seq@number}{23}
+\setcounter{bookmark@seq@number}{72}
 \setcounter{tabx@nest}{0}
 \setcounter{listtotal}{0}
 \setcounter{listcount}{0}
@@ -49,7 +97,7 @@
 \setcounter{citetotal}{0}
 \setcounter{multicitecount}{0}
 \setcounter{multicitetotal}{0}
-\setcounter{instcount}{12}
+\setcounter{instcount}{72}
 \setcounter{maxnames}{1}
 \setcounter{minnames}{1}
 \setcounter{maxitems}{1}
@@ -63,8 +111,8 @@
 \setcounter{refsegment}{0}
 \setcounter{maxextratitle}{0}
 \setcounter{maxextratitleyear}{0}
-\setcounter{maxextraname}{0}
-\setcounter{maxextradate}{0}
+\setcounter{maxextraname}{2}
+\setcounter{maxextradate}{2}
 \setcounter{maxextraalpha}{0}
 \setcounter{abbrvpenalty}{50}
 \setcounter{highnamepenalty}{50}

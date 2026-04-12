@@ -14,7 +14,7 @@
 \contentsline {section}{\numberline {2.4}傅里叶变换方法的研究}{9}{section.2.4}%
 \contentsline {section}{\numberline {2.5}加密货币期权市场中随机波动率模型的研究}{10}{section.2.5}%
 \contentsline {section}{\numberline {2.6}国内研究现状}{11}{section.2.6}%
-\contentsline {section}{\numberline {2.7}文献述评与本文研究定位}{12}{section.2.7}%
+\contentsline {section}{\numberline {2.7}文献述评与本文研究定位}{11}{section.2.7}%
 \contentsline {chapter}{\numberline {第三章\hspace {.3em}}3/2波动率模型设定}{13}{chapter.3}%
 \contentsline {section}{\numberline {3.1}3/2模型介绍}{13}{section.3.1}%
 \contentsline {section}{\numberline {3.2}随机微分方程 (SDE) 设定}{13}{section.3.2}%
@@ -94,16 +94,16 @@
 \contentsline {section}{\numberline {6.6}极端市场场景下的定价方法性能再检验与对比分析}{54}{section.6.6}%
 \contentsline {subsection}{\numberline {6.6.1}测试设定与案例构建}{54}{subsection.6.6.1}%
 \contentsline {subsection}{\numberline {6.6.2}时间步进类条件蒙特卡洛方法性能结果与分析}{55}{subsection.6.6.2}%
-\contentsline {subsection}{\numberline {6.6.3}终端模拟类方法性能结果与分析}{56}{subsection.6.6.3}%
+\contentsline {subsection}{\numberline {6.6.3}终端模拟类方法性能结果与分析}{55}{subsection.6.6.3}%
 \contentsline {subsection}{\numberline {6.6.4}傅里叶频域定价方法性能结果与分析}{57}{subsection.6.6.4}%
 \contentsline {subsubsection}{\numberline {6.6.4.1}与学术基准案例结果的对比分析}{59}{subsubsection.6.6.4.1}%
-\contentsline {subsubsection}{\numberline {6.6.4.2}极端市场场景下的方法适用性总结}{59}{subsubsection.6.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.6.4.2}极端市场场景下的方法适用性总结}{60}{subsubsection.6.6.4.2}%
 \contentsline {section}{\numberline {6.7}本章小结}{60}{section.6.7}%
 \contentsline {chapter}{\numberline {第七章\hspace {.3em}}结论与展望}{63}{chapter.7}%
 \contentsline {section}{\numberline {7.1}主要研究结论}{63}{section.7.1}%
 \contentsline {section}{\numberline {7.2}研究局限性}{65}{section.7.2}%
 \contentsline {section}{\numberline {7.3}未来研究展望}{65}{section.7.3}%
-\contentsline {chapter}{参考文献}{67}{appendix*.15}%
-\contentsline {chapter}{致谢}{69}{appendix*.16}%
-\contentsline {chapter}{北京大学学位论文原创性声明和使用授权说明}{71}{appendix*.17}%
+\contentsline {chapter}{参考文献}{67}{appendix*.16}%
+\contentsline {chapter}{致谢}{71}{appendix*.17}%
+\contentsline {chapter}{北京大学学位论文原创性声明和使用授权说明}{73}{appendix*.18}%
 \contentsfinish 

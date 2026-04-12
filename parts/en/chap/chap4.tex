@@ -1,43 +1,478 @@
-\chapter{Pricing Methodologies}
-\label{chap:analysis}
+\chapter{Option Pricing Methods and Algorithmic Implementation}
 
-With the fundamental stochastic differential equations and the integrated variance properties of the $3/2$ volatility model now established, the focus of this study shifts to practical numerical implementation. Here, we translate these theoretical constructs into actionable option pricing algorithms. The following sections outline the precise mathematical derivations and computational steps for two distinct valuation paradigms: time-domain Monte Carlo architectures—spanning both conditional and exact simulation schemes—and frequency-domain techniques driven by Fourier transformations.
+Under the unified framework of the $3/2$ stochastic volatility model, this chapter systematically constructs a methodological system of nine classes for European option pricing. All methods utilize the arbitrage-free risk-neutral pricing principle as their theoretical benchmark. Complete theoretical derivations, convergence analyses, and error characteristic characterizations are developed across three major paradigms: time-discretization approximation, exact/near-exact terminal simulation, and Fourier frequency-domain integration. This establishes a rigorous theoretical foundation for subsequent numerical comparisons and empirical testing.
 
-\section{Monte Carlo Simulation Procedures}
-\label{sec:agent_decision_analysis}
+Under the risk-neutral measure $\mathbb{Q}$ in a complete market, the underlying asset price and variance processes of the $3/2$ stochastic volatility model satisfy the equations given by \eqref{eq:underlyingProcess} and \eqref{eq:varianceProcess}.
 
-Under the 3/2 model, directly discretizing the original SDEs (e.g., using the Euler scheme) often introduces significant truncation errors. Therefore, this study primarily investigates two advanced schemes: conditional Monte Carlo simulation and exact Monte Carlo simulation.
+For a European call option with time to maturity $T$ and strike price $K$, its arbitrage-free price satisfies the risk-neutral pricing formula:
+\begin{equation}
+  C(S_0,v_0;K,T) = e^{-rT}\mathbb{E}^{\mathbb{Q}}\Bigl[\max(S_T-K,0)\Bigm| S_0,v_0\Bigr],
+\end{equation}
+where $S_0$ and $v_0$ are the initial price and initial instantaneous variance of the underlying asset, respectively. Unlike the affine structure of the Heston model, the $3/2$ model belongs to the class of non-affine stochastic volatility models; thus, its European option price lacks a closed-form analytical solution. Consequently, numerical methods must be employed to approximate the aforementioned conditional expectation. The nine classes of pricing methods constructed in this chapter cover the complete technical spectrum from time-domain path simulation to frequency-domain integral transformation, effectively approximating option prices from various dimensions.
 
-\subsection{Conditional MC}
-Conditional Monte Carlo simulation aims to approximate the integrated variance by generating volatility paths. Its primary execution steps are as follows:
+\section{Time-Stepping Monte Carlo Pricing Methods}
+The core idea of time-stepping methods is to discretize the continuous-time diffusion process, generating sample paths of the variance process through step-by-step iteration. The log-price of the underlying asset is then generated using the closed-form analytical solution \eqref{priceFormulaForConditionalMC} given the variance path, thereby circumventing the discretization error of the price process and reducing the statistical variance of the Monte Carlo simulation. This section sequentially derives the theoretical construction of the Euler discretization scheme, the Milstein discretization scheme, the Exact Stepping method, the Poisson-Gamma Near-Exact Stepping method, and the Quasi-Exponential (QE) Near-Exact Stepping method, and analyzes the convergence characteristics and error sources of each method.
+
+\subsection{Euler and Milstein Discretization Schemes}
+\subsubsection{Euler Discretization Scheme for the Variance Process}
+The Euler discretization scheme is the most fundamental discretization method for numerically solving stochastic differential equations. Its core lies in performing a first-order Taylor expansion approximation on the increments of the diffusion process. For a general Itô diffusion process
+$$dX_t = \mu(X_t)dt + \sigma(X_t)dW_t,$$
+the discrete form of the Euler scheme is
+$$X_{t+\Delta t} \approx X_t + \mu(X_t)\Delta t + \sigma(X_t)\Delta W_t,$$
+where $\Delta t$ is the discrete time step, and $\Delta W_t$ is the Brownian motion increment following a normal distribution $N(0,\Delta t)$ with mean $0$ and variance $\Delta t$. Applying this scheme to the variance process of the $3/2$ model, the drift term is $\mu(v_t) = \kappa(\theta-v_t)v_t$, and the diffusion term is $\sigma(v_t) = \epsilon v_t^{3/2}$. From this, the Euler discrete iterative formula for the variance process can be obtained. The specific discretization scheme is as follows:
+
+Divide the maturity interval $[0,T]$ equally into $M$ time steps, with a time step length of $\Delta t = T/M$, and a time grid of $\{t_0=0,t_1,\ldots,t_M=T\}$. For the variance process of the $3/2$ model, the Euler iterative formula at each time step is:
+\begin{equation}
+  v_{t_{n+1}} = v_{t_n} + \kappa(\theta - v_{t_n})v_{t_n}\Delta t + \epsilon v_{t_n}^{3/2}\Delta W_n^1,
+  \label{euler_v}
+\end{equation}
+where $\Delta W_n^1 \sim N(0,\Delta t)$ is the Brownian motion increment at the $n$-th time step, and the increments at each time step are mutually independent.
+
+After completing the iteration for all time steps, the integrated variance $V_T$ is calculated using the trapezoidal numerical integration method to improve integration accuracy:
+\begin{equation}
+  I_T = \int_0^T v_t dt \approx \sum_{n=0}^{M-1} \frac{v_{t_n} + v_{t_{n+1}}}{2} \cdot \Delta t.
+  \label{trapezoidal_I}
+\end{equation}
+By substituting the iterated terminal variance $v_T = v_{t_M}$ and the numerically integrated $V_T$ into Equation \eqref{priceFormulaForConditionalMC}, the logarithmic terminal price corresponding to that path can be generated, subsequently allowing for the calculation of the option's payoff at maturity.
+
+\subsubsection{Milstein Discretization Scheme for the Variance Process}
+The Milstein discretization scheme is a second-order correction to the Euler scheme. By introducing the first-order derivative term of the diffusion term, it eliminates the first-order discrete bias caused by the state dependence of the diffusion term, significantly improving the simulation accuracy of the variance process.
+
+For the variance process of the $3/2$ model, its diffusion term is $\sigma_v(v_t) = \epsilon v_t^{3/2}$. Taking the first derivative with respect to $v_t$ yields:
+\begin{equation}
+  \sigma_v'(v_t) = \frac{\partial \sigma_v(v_t)}{\partial v_t} = \frac{3}{2}\epsilon v_t^{1/2}.
+\end{equation}
+Substituting this into the general form of the Milstein scheme yields the Milstein discrete iterative formula for the variance process:
+\begin{equation}
+  \begin{aligned}
+    v_{t_{n+1}} &= v_{t_n} + \kappa(\theta - v_{t_n})v_{t_n}\Delta t + \epsilon v_{t_n}^{3/2}\Delta W_n^1 + \frac{1}{2}\sigma_v(v_{t_n})\sigma_v'(v_{t_n})\left((\Delta W_n^1)^2 - \Delta t\right).
+  \end{aligned}
+\end{equation}
+
+After substituting the diffusion term and its derivative, the final Milstein iterative formula is:
+\begin{equation}
+  v_{t_{n+1}} = v_{t_n} + \kappa(\theta - v_{t_n})v_{t_n}\Delta t + \epsilon v_{t_n}^{3/2}\Delta W_n^1 + \frac{3}{4}\epsilon^2 v_{t_n}^2\left((\Delta W_n^1)^2 - \Delta t\right).
+  \label{milstein_v}
+\end{equation}
+
+Consistent with the Euler scheme, after completing the iteration of the variance path, the integrated variance $V_t$ is calculated via Equation \eqref{trapezoidal_I}, which is then substituted into Equation \eqref{priceFormulaForConditionalMC} to generate the logarithmic terminal price.
+
+\subsubsection{Error Characteristics and Convergence Analysis}
+Based on the Euler/Milstein schemes under the conditional Monte Carlo framework, the error sources can be decomposed into three independent parts. The convergence characteristics of each part are as follows:
 \begin{enumerate}
-  \item Path Simulation: Simulate the discrete paths of the volatility process $\sigma_t$ over the time grid $0 \le t_1 \le t_2 \le \dots \le T$, and obtain the terminal volatility $\sigma_T$.
-  \item Integral Calculation: Utilize numerical integration rules (such as the Trapezoidal or Simpson’s rule) to perform time integration on the simulated variance paths, thereby obtaining the integrated variance $V_T$ over the entire time period.
+  \item Time discretization error of the variance process: The Euler scheme has a strong order of convergence of 1/2 and a weak order of convergence of 1 for the diffusion process; the Milstein scheme elevates the strong order of convergence to 1 through a second-order correction, while the weak order remains 1. The discrete biases of both schemes monotonically decay as the time step $\Delta t$ decreases. Given the same step size, the discrete bias of the Milstein scheme is significantly lower than that of the Euler scheme.
+  \item Numerical integration error of the integrated variance: Calculating the integrated variance using the trapezoidal method has a convergence order of 2, which is significantly higher than the discrete convergence order of the variance process. Therefore, in practical calculations, the integration error is negligible and will not become the dominant term in the overall error.
+  \item Statistical error of the Monte Carlo simulation: Because the conditional Monte Carlo method is employed, the discrete noise of the price process is eliminated through an analytical mapping. The statistical variance of the simulation is significantly lower than that of fully discretized standard Monte Carlo methods. The statistical error decays at a rate of $O(N^{-1/2})$ as the number of simulated paths $N$ increases.
 \end{enumerate}
 
-\subsection{Exact MC}
-To completely eliminate time discretization errors, the exact simulation method directly samples the terminal states without relying on the step-by-step generation of paths. Its core steps are:
+\subsection{Exact Stepping Method}
+The Exact Stepping method provides the highest precision among time-stepping conditional Monte Carlo methods. Its core relies on utilizing the specific mathematical structure of the variance process in the $3/2$ model. Through a variable transformation, it maps the process to an affine process with a known transition distribution, thereby achieving exact sampling of the variance process without discrete bias and completely eliminating systematic errors caused by time discretization.
+
+\subsubsection{Reciprocal Transformation and Exact Distribution of the Variance Process}
+Applying a reciprocal transformation to the variance process of the $3/2$ model, let $x_t = 1/v_t$. The dynamic process of $x_t$ can be derived via Itô's Lemma. First, compute the first and second derivatives of $x_t$ with respect to $v_t$:
+\begin{equation}
+  \frac{\partial x_t}{\partial v_t} = -\frac{1}{v_t^2}, \quad \frac{\partial^2 x_t}{\partial v_t^2} = \frac{2}{v_t^3}.
+\end{equation}
+Substituting this into the Itô Lemma formula $dx_t = \frac{\partial x_t}{\partial v_t} dv_t + \frac{1}{2}\frac{\partial^2 x_t}{\partial v_t^2}(dv_t)^2$, and inserting the SDE of the $3/2$ model's variance $dv_t = \kappa v_t(\theta - v_t)dt + \epsilon v_t^{3/2}dW_t^1$, where the quadratic variation term is $(dv_t)^2 = \epsilon^2 v_t^3 dt$. Rearranging yields:
+\begin{equation}
+  dx_t = \left(\kappa - \kappa \theta x_t\right)dt - \epsilon \sqrt{x_t} dW_t^1.
+  \label{x_CIR}
+\end{equation}
+Equation \eqref{x_CIR} demonstrates that the transformed process $x_t$ is a classical CIR (Cox-Ingersoll-Ross) square-root diffusion process, characterized by an affine drift structure and a square-root diffusion structure. A core property of the CIR process is that its transition probability distribution has an explicit analytical form, following a non-central chi-squared distribution.
+Specifically, given $y_{t_n}$ at the initial time $t_n$, after a time step $\Delta t$, the conditional distribution of $x_{t_{n+1}}$ at time $t_{n+1}$ is:
+\begin{equation}
+  x_{t_{n+1}} \mid x_{t_n} \sim \frac{1}{c} \cdot \chi'^2\left(d, \lambda\right),
+  \label{x_distribution}
+\end{equation}
+where $\chi'^2(d,\lambda)$ represents a non-central chi-squared random variable with degrees of freedom $d$ and a non-centrality parameter $\lambda$. The distribution parameters are determined by the $3/2$ model parameters and the time step:
+\begin{equation}
+d = \frac{4\kappa\theta}{\epsilon^2}, \quad c = \frac{\epsilon^2\left(1 - e^{-\kappa\Delta t}\right)}{4\kappa}, \quad \lambda = c \cdot y_{t_n} e^{-\kappa\Delta t}.
+\end{equation}
+Through the inverse transformation $v_{t_{n+1}} = 1/x_{t_{n+1}}$, exact samples of the variance process for the $3/2$ model can be obtained. This sampling procedure introduces no time discretization bias.
+
+\subsubsection{Implementation Under the Conditional Monte Carlo Framework}
+Under the conditional Monte Carlo framework, the implementation procedure of the Exact Stepping method is as follows:
+
+Divide the maturity interval $[0,T]$ equally into $M$ time steps, with a time step length of $\Delta t = T/M$, and a time grid of $\{t_0=0,t_1,\ldots,t_M=T\}$. At each time step:
 \begin{enumerate}
-  \item Terminal Variance Simulation: Directly simulate the terminal variance $V_T$ using the known transition density of the variance process under the 3/2 model.
-  \item Conditional Integrated Variance Sampling: Conditional on the known $v_T$ (or equivalently, the terminal volatility $\sigma_T$), sample the integrated variance $V_T$ from the numerical cumulative distribution function (CDF) of $V_T|v_T$. This step typically involves complex inner-layer Inverse Laplace transform operations.
+  \item Given the current variance $v_{t_n}$, calculate $y_{t_n} = 1/v_{t_n}$;
+  \item Generate a non-central chi-squared random variable $\chi'^2(d,\lambda)$ according to the distribution parameters in Equation \eqref{x_distribution};
+  \item Calculate $x_{t_{n+1}} = \chi'^2(d,\lambda)/c$;
+  \item Apply the inverse transformation to obtain $v_{t_{n+1}} = 1/x_{t_{n+1}}$.
 \end{enumerate}
+After completing the iterations for all time steps, calculate the integrated variance $V_T$ using the trapezoidal numerical integration method:
+\begin{equation}
+  V_T = \int_0^T v_t dt \approx \sum_{n=0}^{M-1} \frac{v_{t_n} + v_{t_{n+1}}}{2} \cdot \Delta t.
+\end{equation}
+Finally, substitute the iterated terminal variance $v_T = v_{t_M}$ and the numerically integrated $V_T$ into the core closed-form mapping \eqref{priceFormulaForConditionalMC}.
 
-\subsection{Common Procedures for Pricing and Aggregation}
-Regardless of whether the integrated variance is obtained via conditional MC or exact MC, the subsequent steps for calculating the option price are universal:
-\begin{enumerate}[start=3]
-  \item Parameter Transformation: Calculate the expected value of the underlying asset conditional on given $v_T$ and $V_T$, denoted as $E(S_T|v_T, V_T)$, and determine the effective volatility, usually expressed as $\rho^*\sqrt{V_T/T}$.
-  \item Option Valuation:
-  \begin{itemize}
-    \item Approach 1 (Price Sampling): Draw samples from the lognormal or normal distribution to calculate the terminal option payoff.
-    \item Approach 2 (Analytical Formula): Directly substitute the modified parameters into the Bachelier or Black-Scholes-Merton (BSM) option pricing formulas. Specifically, set the modified initial price as $S_0 := E(S_T|v_T)$ and the modified volatility as $\sigma := \rho^*\sqrt{V_T/T}$.
-  \end{itemize}
-  \item Averaging: Average the resulting option prices across all independent simulation paths to obtain the final expected present value of the option.
-\end{enumerate}
-
-\section{Fourier Transformation Procedures}
-Assuming the characteristic function is accessible, frequency-domain techniques offer a compelling, high-efficiency alternative to traditional time-domain Monte Carlo simulations.
-
+\subsubsection{Error Characteristics and Convergence Analysis}
+The sources of error in the Exact Stepping method consist of only two components, completely eliminating the time discretization error of the variance process:
 \begin{enumerate}
-    \item Fast Fourier Transform (FFT): The primary advantage of the FFT lies in its ability to evaluate prices across a spectrum of strikes simultaneously by mapping the valuation problem into Fourier space. Yet, this computational speed comes at a steep cost for short-dated options. As maturity approaches zero, the integrand becomes highly oscillatory, triggering massive numerical instability and effectively breaking the valuation mechanism.
-    \item Fourier-Cosine Transformation (COS Method): Because the standard FFT collapses under short maturities, our research deploys the conditional Fourier-Cosine expansion as a structural remedy. By reconstructing the underlying probability density function via a truncated cosine series, this technique inherently bypasses the instability caused by highly oscillatory integrals. As our subsequent numerical experiments will confirm, the COS method strikes an optimal balance—retaining the rapid execution typical of frequency-domain approaches while delivering robust, high-precision valuations even at the absolute boundaries of the parameter space.
+  \item Numerical integration error of the integrated variance: Using the trapezoidal rule to calculate the integrated variance results in a convergence order of 2. In practical applications, even with a small number of time steps, this error is negligible and will not dominate the overall error. If further elimination of the integration error is desired, one could combine the integral moment generating function of the CIR process to analytically compute the conditional distribution of $V_T$.
+  \item Statistical error of the Monte Carlo simulation: Due to the use of the conditional Monte Carlo method and exact sampling of the variance process, the statistical variance of the simulation is minimized. The statistical error decays at a rate of $O(N^{-1/2})$ as the number of simulated paths $N$ increases.
 \end{enumerate}
+Among all time-stepping methods, the Exact Stepping method exhibits the smallest bias.
+
+\subsection{Poisson-Gamma Near-Exact Stepping Method}
+The core of the Poisson-Gamma Near-Exact Stepping method lies in leveraging the classical statistical properties of the CIR process derived from the reciprocal transformation of the $3/2$ model's variance process. Its transition distribution can be precisely represented as an infinite mixture series of Gamma distributions weighted by Poisson probabilities. By truncating this series at a finite number of terms, an efficient, near-exact sampling of the variance process is achieved. This maintains extremely low bias while avoiding the high numerical computation costs associated with non-central chi-squared distribution sampling. This method is developed entirely based on the reciprocal-transformed CIR process and is an equivalent numerical implementation of the CIR transition distribution.
+
+\subsubsection{Reciprocal Transformation and Poisson-Gamma Mixture Representation of the CIR Process}
+Consistent with the Exact Stepping method, we first apply a reciprocal transformation to the variance process of the $3/2$ model, let $x_t = 1/v_t$, which via Itô's lemma yields Equation \eqref{x_CIR}. According to the classic mixture property of the non-central chi-squared distribution, a non-central chi-squared random variable $\chi'^2(d,\lambda)$ with $d$ degrees of freedom and non-centrality parameter $\lambda$ can be exactly decomposed into an infinite mixture of Poisson and Gamma distributions:
+\begin{equation}\chi'^2(d, \lambda) \mid N \sim \text{Gamma}\left(\frac{d}{2} + N, \frac{1}{2}\right), \quad N \sim \text{Poisson}\left(\frac{\lambda}{2}\right),\label{ncx2_pg_mixture}\end{equation}
+where $N$ is a latent variable following a Poisson distribution, and $\text{Gamma}(\alpha,\beta)$ is a Gamma distribution with shape parameter $\alpha$ and rate parameter $\beta$, whose probability density function is:
+\begin{equation}
+  f_{\text{Gamma}}(x; \alpha, \beta) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}, \quad x > 0.
+\end{equation}
+Combining this with the conclusion regarding the transition distribution of the CIR process in the Exact Stepping method, given an initial value $x_{t_n}$, the conditional distribution of $x_{t_{n+1}}$ after a time step $\Delta t$ is:
+\begin{equation}
+  y_{t_{n+1}} \mid y_{t_n} \sim \frac{1}{c} \cdot \chi'^2\left(d, \lambda\right),
+\end{equation}
+where the distribution parameters are:
+\begin{equation}
+  d = \frac{4\kappa\theta}{\epsilon^2}, \quad c = \frac{\epsilon^2\left(1 - e^{-\kappa\Delta t}\right)}{4\kappa}, \quad \lambda = c \cdot y_{t_n} e^{-\kappa\Delta t}.
+\end{equation}
+Substituting Equation \eqref{ncx2_pg_mixture} into the above yields the direct Poisson-Gamma mixture representation of $y_{t_{n+1}}$:
+\begin{equation}
+  y_{t_{n+1}} \mid N \sim \frac{1}{c} \cdot \text{Gamma}\left(\frac{d}{2} + N, \frac{1}{2}\right), \quad N \sim \text{Poisson}\left(\frac{\lambda}{2}\right).
+\label{y_pg_mixture}
+\end{equation}
+Equation \eqref{y_pg_mixture} represents the core of this method: the transition distribution of the CIR process is inherently an infinite mixture of Gamma distributions weighted by Poisson probabilities. There is zero distribution fitting error; one only needs to apply a finite truncation to the Poisson distribution values to achieve near-exact sampling.
+
+\subsubsection{Implementation Under the Conditional Monte Carlo Framework}
+Under the conditional Monte Carlo framework, the implementation procedure of the Poisson-Gamma Near-Exact Stepping method aligns closely with the Exact Stepping method. It merely replaces the non-central chi-squared sampling with the more efficient Poisson-Gamma mixture sampling. The specific procedure is as follows:
+
+Divide the maturity interval $[0,T]$ equally into $M$ time steps, with a time step length of $\Delta t = T/M$, and a time grid of $\{t_0=0,t_1,\ldots,t_M=T\}$. At each time step:
+\begin{enumerate}
+  \item Given the current variance $v_{t_n}$, calculate $x_{t_n} = 1/v_{t_n}$;
+  \item Pre-calculate the fixed parameters $d,c$ of the CIR transition distribution, and the non-centrality parameter $\lambda=c\cdot x_{t_n} e^{-\kappa \Delta t}$;
+  \item Generate a Poisson latent variable $N\sim \text{Poisson}\left(\frac{\lambda}{2}\right)$. In practical calculations, an upper bound truncation is applied to $N$ (setting $N_{\max} = \lfloor \lambda/2 + 5\sqrt{\lambda/2} \rfloor$, ensuring the truncation probability is less than $10^{-6}$);
+  \item Generate a Gamma random variable $G\sim \text{Gamma}\left(\frac{d}{2} + N, \frac{1}{2}\right)$;
+  \item Calculate $x_{t_{n+1}} = G/c$, then apply the inverse transformation to obtain the variance at the next time step $v_{t_{n+1}} = 1/x_{t_{n+1}}$.
+\end{enumerate}
+After completing the iterations for all time steps, compute the integrated variance $V_T$ using the trapezoidal numerical integration method. Then, substitute $v_T$ and $V_T$ into Equation \eqref{priceFormulaForConditionalMC} to generate the logarithmic terminal price.
+
+\subsubsection{Error Characteristics and Convergence Analysis}
+The error sources for the Poisson-Gamma Near-Exact Stepping method contain only three parts, and its bias level is substantially lower than that of the Euler/Milstein discrete schemes:
+\begin{enumerate}
+  \item Truncation error of the Poisson distribution: This is the sole inherent bias of the method. Because the probability mass of the Poisson distribution decays exponentially as $N$ increases, the truncation error decreases exponentially with the increase of the truncation upper bound $N_{\max}$. Under normal parameters, setting $N_{\max}$ to the Poisson mean plus five standard deviations can control the truncation error to below $10^{-6}$, making it negligible.
+  \item Numerical integration error of the integrated variance: Using the trapezoidal method yields a convergence order of 2. In practical applications, this error is far smaller than the truncation error and will not dominate the overall error.
+  \item Statistical error of the Monte Carlo simulation: Since the sampling bias of the variance process is minuscule, and the conditional Monte Carlo framework eliminates the discrete noise of the price process, the statistical error decays at a rate of $O(N^{-1/2})$ as the number of paths $N$ increases, placing it on the same level as the Exact Stepping method.
+\end{enumerate}
+The core advantage of this method is the balance between computational efficiency and precision. Compared to generating non-central chi-squared variables in the Exact Stepping method, generating Poisson and Gamma random numbers incurs extremely low computational costs, offering a significant speed boost. Compared to the Euler/Milstein schemes, this method entirely eliminates the discrete bias of the diffusion process, leaving only a negligible truncation error, improving precision by several orders of magnitude.
+
+\subsection{Quasi-Exponential (QE) Near-Exact Stepping Method}
+The Quasi-Exponential (QE) Near-Exact Stepping method was initially designed by \citet{andersenEfficientSimulationHeston2007} for the Heston model. Here, we extend it to the $3/2$ model. Its core logic lies in matching the conditional first and second moments of the variance process to construct a simple exponential-type approximate distribution. This avoids sampling from complex distributions and maintains excellent numerical stability even in extreme scenarios featuring high volatility and thick tails.
+
+\subsubsection{Moment Matching of the Variance Process and QE Distribution Construction}
+The central idea of the QE method is ``moment matching''. No matter how complex the true transition distribution is, one only needs to match its first two moments to construct a sufficiently precise approximate distribution. For the variance process of the $3/2$ model, given the initial variance $v_t$, let its reciprocal process be $x_t = 1/v_t$. After a time step $\Delta t$, its conditional first moment $\mathbb{E}[x_{t+\Delta t} \mid x_t]$ and conditional second moment $\mathbb{E}[x_{t+\Delta t}^2 \mid x_t]$ can be derived analytically by solving the moment differential equations of the variance process.
+Let $m_1 = \mathbb{E}[v_{t+\Delta t} \mid v_t]$ and $m_2 = \mathbb{E}[v_{t+\Delta t}^2 \mid v_t]$ denote the conditional first and second moments, respectively. Compute the conditional variance $\sigma^2 = m_2 - m_1^2$.
+The QE method selects two different approximate distributions based on the magnitude of the variance:
+\begin{enumerate}
+  \item Low variance scenario: When the conditional variance is relatively small, a Shifted Log-Normal Distribution is used as an approximation;
+  \item High variance scenario: When the conditional variance is large, an Exponential-Two-Point Mixture distribution is used as an approximation.
+\end{enumerate}
+By satisfying the moment matching conditions $m_1 = \mathbb{E}[X]$ and $\sigma^2 = \mathrm{Var}(X)$, all parameters of the QE distribution can be solved analytically, enabling efficient sampling.
+
+\subsubsection{Implementation Under the Conditional Monte Carlo Framework}
+Under the conditional Monte Carlo framework, the implementation procedure of the QE Near-Exact Stepping method is as follows:
+Divide the maturity interval $[0,T]$ equally into $M$ time steps, with a time step length of $\Delta t = T/M$, and a time grid of $\{t_0=0,t_1,\ldots,t_M=T\}$. At each time step:
+\begin{enumerate}
+  \item Given the current reciprocal variance $x_{t_n}$, analytically compute the conditional mean $m_1$ and conditional variance $\sigma^2$ via the moment equations;
+  \item Evaluate the current scenario against a predefined threshold to determine the appropriate form of the QE distribution;
+  \item Based on whether the conditional variance is high or low, select the corresponding type of approximate distribution, and calculate the distribution parameters via moment matching;
+  \item Sample from the constructed QE distribution to obtain the approximate sample $x_{t_{n+1}}$, and take its reciprocal to obtain $v_{t_{n+1}}$.
+\end{enumerate}
+After completing the iterations for all time steps, compute the integrated variance $V_T$ using the trapezoidal numerical integration method. Then, substitute $v_T$ and $V_T$ into Equation \eqref{priceFormulaForConditionalMC} to generate the logarithmic terminal price.
+
+\subsubsection{Error Characteristics and Convergence Analysis}
+The sources of error in the QE Near-Exact Stepping method consist of three parts:
+\begin{enumerate}
+  \item Approximation bias of moment matching: This error is the inherent bias of the method, featuring a weak convergence order of 1. Because only the first two moments are matched, omitting information from higher-order moments, slight deviations may occur in extreme heavy-tailed scenarios. Nonetheless, it remains significantly superior to the Euler/Milstein schemes.
+  \item Threshold error in distribution selection: This error can be controlled to a minimal level by setting an appropriate threshold (typically based on the variance coefficient $\sigma/m_1$).
+  \item Numerical integration error of the integrated variance and Monte Carlo statistical error: These are consistent with the previously discussed methods.
+\end{enumerate}
+The greatest advantage of the QE method is its exceptionally high computational efficiency and robust numerical stability, though the reciprocal operation here may mildly impact stability.
+
+\section{Exact and Near-Exact Simulation Pricing Methods}
+The terminal simulation class of methods discussed in this section completely circumvents the step-by-step iterative discretization process seen in time-stepping methods. Instead, it directly samples the joint distribution of the terminal value $v_T$ of the variance process and the integrated variance $V_T = \int_0^T v_s ds$ over the maturity interval $[0,T]$. It then directly generates the terminal price of the underlying asset using the closed-form logarithmic price mapping derived in Section 4.1, thoroughly eradicating the discretization error caused by time steps. All methods strictly follow the conditional Monte Carlo framework: core statistics of the variance process are sampled first, followed by the generation of the underlying price through a conditional normal distribution, maximizing the reduction of statistical variance in the simulation.
+
+\subsection{Exact Simulation Method}
+
+The exact simulation method by \citet{baldeauxEXACTSIMULATION322012} is the first unbiased terminal exact simulation method under the $3/2$ model. Its core exploits the reciprocal transformation property of the $3/2$ model's integrated variance process, combined with modified Bessel functions and inverse Laplace transforms, to achieve the joint exact sampling of $v_T$ and $V_T$, completely eliminating all systematic biases.
+
+\subsubsection{Theoretical Derivation}
+Consistent with time-stepping methods, a reciprocal transformation is first applied to the variance process of the $3/2$ model, let $x_t = 1/v_t$, leading to the CIR square-root diffusion process \eqref{x_CIR}. The conditional distribution of the terminal value $x_T = 1/v_T$ of this process is a non-central chi-squared distribution, which can be exactly sampled, with the specific form aligning with Section 4.2.2.
+
+The core contribution of \citet{baldeauxEXACTSIMULATION322012} lies in deriving the closed-form expression of the conditional Laplace transform of the integrated variance $V_T = \int_0^T v_s ds$, given the initial value $y_0$ and the terminal value $y_T$:
+\begin{equation}
+  \mathcal{L}(\beta) = \mathbb{E}\left[ e^{-\beta V_T} \mid y_0, y_T \right] = \frac{I_{\nu}\left( \sqrt{\frac{4\kappa\theta}{\epsilon^2} + \frac{8\beta}{\epsilon^2}} \cdot \frac{2\sqrt{y_0 y_T} e^{-\kappa T/2}}{1-e^{-\kappa T}} \right)}{I_{\nu}\left( \sqrt{\frac{4\kappa\theta}{\epsilon^2}} \cdot \frac{2\sqrt{y_0 y_T} e^{-\kappa T/2}}{1-e^{-\kappa T}} \right)},
+  \label{laplace_V_T}
+\end{equation}
+where $\nu = \frac{2\kappa\theta}{\epsilon^2}-1$ is the order of the modified Bessel function, and $I_\nu(\cdot)$ is the modified Bessel function of the first kind of order $\nu$.
+
+Based on this closed-form Laplace transform, the conditional probability density function of $V_T$ can be obtained via the inverse Fourier transform, which then allows for the exact sampling of $V_T$ through inverse transform sampling. Ultimately, the unbiased simulation of the underlying asset price is achieved by the joint sampling of $V_T$ and $v_T$ in the core mapping that generates the underlying asset's terminal price, as per Equation \eqref{priceFormulaForConditionalMC}.
+
+\subsubsection{Implementation Under the Conditional Monte Carlo Framework}
+Under the conditional Monte Carlo framework, the implementation flow of Baldeaux's Exact Simulation method completely avoids time discretization, proceeding as follows:
+\begin{enumerate}
+  \item Exact sampling of terminal variance $v_T$: Based on the non-central chi-squared transition distribution of the CIR process, directly sample to obtain $y_T$ at maturity, then take the reciprocal to get $v_T = 1/x_T$. This sampling incurs zero systematic bias.
+  \item Exact sampling of integrated variance $V_T$: Given $y_0 = 1/v_0$ and $y_T = 1/v_T$, and based on the Laplace transform in Equation \eqref{laplace_V_T}, derive the conditional cumulative distribution function of $V_T$ via a numerical inverse Fourier transform, then draw an exact sample of $V_T$ using uniform inverse transform sampling.
+  \item Finally, substitute $v_T=1/x_T$ and $V_T$ into Equation \eqref{priceFormulaForConditionalMC} to generate the underlying asset's terminal price samples.
+\end{enumerate}
+
+\subsubsection{Error Characteristics and Convergence Analysis}
+Baldeaux's Exact Simulation method is the only unbiased terminal simulation method under the $3/2$ model. Its error sources are limited to two parts:
+\begin{enumerate}
+  \item Numerical truncation error of the inverse Laplace transform: This error decays exponentially as the number of truncated terms in the Fourier cosine series increases. Under typical parameters, truncating at 256 terms can restrain the error to below $10^{-8}$, making it negligible.
+  \item Statistical error of the Monte Carlo simulation: Since both the variance process and integrated variance are sampled exactly, and the conditional Monte Carlo framework eliminates discrete noise from the price process, the statistical variance of the simulation is at the theoretical minimum. The statistical error decays at a rate of $O(N^{-1/2})$ as the number of simulated paths $N$ increases.
+\end{enumerate}
+
+\subsection{Conditional Fourier-Cosine Simulation Method}
+
+The Conditional Fourier-Cosine simulation method was proposed by \citet{brignoneExactSimulationStochastic2026}. Its core approach involves constructing the conditional cumulative distribution function of the integrated variance $V_T$ via a Fourier cosine series expansion based on the conditional characteristic function of the underlying logarithmic price. This enables highly efficient and accurate sampling, massively boosting computational efficiency compared to Baldeaux's exact simulation method while maintaining comparable accuracy.
+
+\subsubsection{Theoretical Derivation}
+Consistent with the Baldeaux method, the terminal variance $v_T$ is first exactly sampled via the non-central chi-squared distribution of the CIR process. The core problem then shifts to how to efficiently sample the integrated variance $V_T$ given $v_0$ and $v_T$.
+
+Let the conditional characteristic function of $I_T$ be denoted as $\varphi(u) = \mathbb{E}\left[ e^{iuI_T} \mid v_0, v_T \right]$. This characteristic function can be obtained through the analytical continuation of the Laplace transform in Equation \eqref{laplace_V_T}, possessing a definitive closed-form expression. According to Fourier cosine expansion theory, the conditional probability density function of $I_T$ can be expanded into a cosine series over the effective support interval $[a,b]$:
+
+\begin{equation}
+  f_{I_T \mid v_0, v_T}(x) = \frac{2}{b-a} \sum_{n=0}^\infty \text{Re}\left[ \varphi\left( \frac{n\pi}{b-a} \right) e^{-i \frac{n\pi a}{b-a}} \right] \cos\left( \frac{n\pi (x-a)}{b-a} \right),
+\end{equation}
+where $[a,b]$ is the effective support interval of $I_T$, usually set to $a = 0$ and $b = \mathbb{E}[I_T] + 10\sqrt{\mathrm{Var}(I_T)}$ to cover over 99.99\% of the probability mass.
+
+Integrating the density function yields the closed-form series expansion of the conditional cumulative distribution function of $V_T$:
+\begin{equation}
+  F_{V_T \mid v_0, v_T}(x) = \int_a^x f(z) dz = \frac{2}{b-a} \sum_{n=0}^\infty \text{Re}\left[ \varphi\left( \frac{n\pi}{b-a} \right) e^{-i \frac{n\pi a}{b-a}} \right] \cdot \Psi_n(x),
+\end{equation}
+where $\Psi_n(x)$ is the closed-form integral of the cosine term, which can be computed analytically without numerical integration:
+\begin{equation}
+\Psi_n(x) =
+\begin{cases} 
+x - a, & n = 0, \\
+\dfrac{b-a}{n\pi} \sin\left( \dfrac{n\pi (x-a)}{b-a} \right), & n \geq 1.
+\end{cases}
+\end{equation}
+
+\subsubsection{Implementation Under the Conditional Monte Carlo Framework}
+Under the conditional Monte Carlo framework, the implementation flow of the Conditional Fourier-Cosine simulation method is as follows:
+\begin{enumerate}
+  \item Exact sampling of terminal variance $v_T$: As in the Baldeaux method, $v_T$ is exactly sampled through the non-central chi-squared distribution of the CIR process;
+  \item Efficient sampling of integrated variance $V_T$: Given $v_0$ and $v_T$, calculate the conditional characteristic function of $V_T$, construct the conditional cumulative distribution function using the truncated cosine series, and draw a sample of $V_T$ via uniform inverse transform sampling;
+  \item Generation of underlying asset terminal price: Finally, substitute $v_T=1/x_T$ and $V_T$ into Equation \eqref{priceFormulaForConditionalMC} to generate the underlying asset terminal price samples.
+\end{enumerate}
+
+\subsubsection{Error Characteristics and Convergence Analysis}
+The error sources for this method primarily consist of three components:
+\begin{enumerate}
+  \item Truncation error of the cosine series: This error decays exponentially with an increasing number of truncated terms. Under typical parameters, truncating at merely 128 terms reaches an accuracy of $10^{-6}$, converging much faster than ordinary polynomials;
+  \item Truncation error of the support interval: By appropriately setting the $[a,b]$ interval, this error can be kept below $10^{-8}$, rendering it negligible;
+  \item Statistical error of the Monte Carlo simulation: Because the variance process sampling is unbiased, and the conditional Monte Carlo framework eliminates the discrete noise of the price process, the statistical error decays at a rate of $O(N^{-1/2})$ as the number of simulated paths $N$ increases, performing at the same level as the Baldeaux method.
+\end{enumerate}
+The core advantage of this method lies in its computational efficiency. Compared to the path-by-path inverse Laplace transform of the Baldeaux method, the coefficients of the cosine series can be pre-computed in batches, lifting speed by more than an order of magnitude.
+
+\subsection{Conditional Moment Matching Simulation Method}
+The core of the conditional moment matching simulation method involves matching the first few moments of the integrated variance $V_T$ to construct an analytical approximate distribution for sampling. This avoids complex characteristic function calculations and series expansions, achieving extreme computational efficiency while ensuring a baseline of precision.
+
+\subsubsection{Theoretical Derivation}
+The first four moments of the integrated variance $V_T$ in the $3/2$ model can be analytically derived via the recursive moment differential equations of the CIR process:
+\begin{enumerate}
+    \item First moment (mean): 
+    $\mathbb{E}[V_T] = \int_0^T \mathbb{E}[v_s] ds$,
+    where $\mathbb{E}[v_s]$ is the unconditional mean of the $3/2$ model variance process, which possesses a closed-form expression;
+
+    \item Second moment: 
+    $\mathbb{E}[V_T^2] = 2 \int_0^T \int_0^s \mathbb{E}[v_s v_t] dtds$,
+    where the covariance $\mathbb{E}[v_s v_t]$ can be analytically computed through the transition moments of the CIR process;
+
+    \item Third and fourth moments: 
+    These can be derived analytically through the recursive relations of the moment equations, subsequently enabling the calculation of the skewness and excess kurtosis of $V_T$.
+\end{enumerate}
+Based on these first four moments, an approximate probability density function of $V_T$ can be constructed via the Gram-Charlier Type A expansion:
+\begin{equation}
+  f(x) = \phi_{\mu,\sigma}(x) \left( 1 + \frac{\kappa_3}{6} H_3\left( \frac{x-\mu}{\sigma} \right) + \frac{\kappa_4}{24} H_4\left( \frac{x-\mu}{\sigma} \right) \right),
+\end{equation}
+
+where $\phi_{\mu,\sigma}(x)$ is the normal density function with mean $\mu$ and variance $\sigma^2$; $\kappa_3$ and $\kappa_4$ are the standardized third and fourth moments of $V_T$; and $H_k(\cdot)$ represents the $k$-th order Hermite polynomial, whose first four orders take the forms:
+\begin{equation}
+  H_0(x) = 1, \quad H_1(x) = x, \quad H_2(x) = x^2 - 1, \quad H_3(x) = x^3 - 3x, \quad H_4(x) = x^4 - 6x^2 + 3.
+\end{equation}
+Integrating this density function provides an approximate cumulative distribution function, yielding a sample of $V_T$ through inverse transform sampling.
+
+\subsubsection{Implementation Under the Conditional Monte Carlo Framework}
+Under the conditional Monte Carlo framework, the implementation procedure for the Conditional Moment Matching simulation method is as follows:
+\begin{enumerate}
+    \item Exact sampling of terminal variance $v_T$: Exact sampling of $v_T$ is accomplished through the non-central chi-squared distribution of the CIR process;
+
+    \item Moment-matching sampling of integrated variance $V_T$: Given $v_0$ and $v_T$, analytically calculate the first four moments of $V_T$, construct the Gram-Charlier approximate distribution, and obtain a sample of $V_T$ via inverse transform sampling;
+
+    \item Generation of terminal price: Substitute $v_T$ and $V_T$ into the core closed-form mapping to generate the logarithmic terminal price.
+\end{enumerate}
+
+\subsubsection{Error Characteristics and Convergence Analysis}
+\begin{enumerate}
+    \item Approximation error of moment matching: This is the method's inherent bias. Matching only the first four moments disregards higher-order moment information. The bias is minimal under standard parameters but increases in extreme heavy-tailed scenarios, displaying a weak convergence order of $O(N^{-2})$;
+
+    \item Statistical error of Monte Carlo simulation: The convergence speed is $O(N^{-1/2})$.
+\end{enumerate}
+The central advantage of this method is extreme computational efficiency. All moments can be pre-computed, circumventing path-by-path complex numerical calculations, making it well-suited for massive-scale path simulations and parameter calibration scenarios.
+
+\subsection{Inverse Gaussian (IG) Near-Exact Simulation Method}
+Proposed by \citet{choiSimulationSchemesHeston2024}, the Inverse Gaussian Near-Exact Simulation method capitalizes on the Inverse Gaussian distribution's exceptional ability to fit positively skewed, heavy-tailed non-negative random variables. By matching the first two moments of the integrated variance $V_T$ to construct an approximate distribution, it establishes a prime balance between accuracy and efficiency.
+
+\subsubsection{Theoretical Derivation}
+The Inverse Gaussian distribution is a class of two-parameter continuous distributions defined on the domain of positive real numbers, with a probability density function of:
+\begin{equation}
+  f_{\text{IG}}(x; \mu, \lambda) = \sqrt{\frac{\lambda}{2\pi x^3}} \exp\left( -\frac{\lambda(x-\mu)^2}{2\mu^2 x} \right), \quad x > 0,
+\end{equation}
+where $\mu > 0$ is the mean of the distribution, and $\lambda > 0$ is the shape parameter. Its variance satisfies $\mathrm{Var}(x) = \mu^3/\lambda$.
+
+The integrated variance $I_T$ of the $3/2$ model is a non-negative random variable that exhibits significant positive skewness and thick tails, which is highly consistent with the statistical properties of the Inverse Gaussian distribution. Through moment matching conditions, the parameters of the Inverse Gaussian distribution can be solved analytically:
+\begin{enumerate}
+    \item Given $v_0$ and $v_T$, analytically calculate the conditional mean $\mu = \mathbb{E}[I_T \mid v_0, v_T]$ and conditional variance $\sigma^2 = \mathrm{Var}(I_T \mid v_0, v_T)$ of $I_T$;
+    
+    \item Force the mean and variance of the Inverse Gaussian distribution to match the target values, solving for:
+    \begin{equation}
+        \mu_{\text{IG}} = \mu, \quad \lambda_{\text{IG}} = \frac{\mu^3}{\sigma^2}.
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{Implementation Under the Conditional Monte Carlo Framework}
+Under the conditional Monte Carlo framework, the execution steps for the Inverse Gaussian Near-Exact Simulation method are:
+\begin{enumerate}
+    \item Exact sampling of terminal variance $v_T$: Exact sampling of $v_T$ is accomplished through the non-central chi-squared distribution of the CIR process;
+    \item IG distribution sampling of integrated variance $V_T$: Given $v_0$ and $v_T$, analytically evaluate the conditional mean and variance of $V_T$, calibrate the parameters of the IG distribution, and generate random numbers from the IG distribution to obtain the $V_T$ sample;
+    \item Generation of terminal price: Substitute $v_T$ and $V_T$ into the core closed-form mapping to yield the logarithmic terminal price.
+\end{enumerate}
+
+\subsubsection{Error Characteristics and Convergence Analysis}
+The primary error sources of this approach entail two components:
+\begin{enumerate}
+    \item Distribution fitting error: This represents the method's inherent bias, as the IG distribution fits solely the first two moments, neglecting the influence of higher-order moments;
+    \item Statistical error of Monte Carlo simulation: The convergence speed is $O(N^{-1/2})$.
+\end{enumerate}
+
+The principal asset of this method lies in bridging accuracy with efficiency. The generation of IG distribution random numbers is exceptionally swift, and its fitting accuracy verges on that of exact simulation methods, cementing it as the most widely used simulation scheme for the $3/2$ model in practical applications.
+
+\subsection{Gamma Near-Exact Simulation Method}
+The Gamma distribution is a two-parameter continuous distribution defined on the positive real numbers, whose probability density function is:
+\begin{equation}
+  f_{\text{Gamma}}(x; \alpha, \beta) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x}, \quad x > 0,
+\end{equation}
+where $\alpha > 0$ is the shape parameter, and $\beta > 0$ is the rate parameter. Its mean and variance satisfy $\mathbb{E}[x] = \alpha/\beta$ and $\mathrm{Var}(x) = \alpha/\beta^2$.
+
+Via moment matching conditions, the parameters of the Gamma distribution can be solved analytically:
+\begin{enumerate}
+    \item Given $v_0$ and $v_T$, analytically calculate the conditional mean $\mu$ and conditional variance $\sigma^2$ of $I_T$;
+    
+    \item Force the mean and variance of the Gamma distribution to align with the target values, solving for:
+    \begin{equation}
+    \alpha = \frac{\mu^2}{\sigma^2}, \quad \beta = \frac{\mu}{\sigma^2}.
+    \end{equation}
+\end{enumerate}
+
+\subsubsection{Implementation Under the Conditional Monte Carlo Framework}
+Under the conditional Monte Carlo framework, the implementation of the Gamma Near-Exact Simulation method mimics the IG method exactly, simply substituting the IG distribution with the Gamma distribution for sampling. Ultimately, $v_T$ and $I_T$ are plugged into the core closed-form mapping to generate the terminal underlying price.
+
+\subsubsection{Error Characteristics and Convergence Analysis}
+The error characteristics of this method parallel the IG method. The essential difference is that the Gamma distribution's fit accuracy for the thick tails of $I_T$ is slightly inferior to the IG distribution, but its random number generation exhibits higher computational efficiency, offering a notable advantage in ultra-large-scale path simulation scenarios. Its error sources remain the distribution fitting error and the Monte Carlo statistical error, scaling at a convergence speed of $O(N^{-1/2})$.
+
+\section{Fourier Frequency-Domain Pricing Methods}
+Fourier frequency-domain pricing methods entirely bypass the path generation process characteristic of Monte Carlo simulations. The core technique translates the risk-neutral expectation of the option price into a Fourier integral of the characteristic function of the underlying logarithmic price, securing swift solutions through numerical integration algorithms. This approach commands core advantages—high computational efficiency, zero statistical error, and aptitude for batch pricing across strike prices—establishing it as the dominant method for $3/2$ model option pricing and parameter calibration.
+
+\subsection{Fast Fourier Transform (FFT) Pricing Method}
+Proposed by \citet{carrOptionValuationUsing1999}, the FFT pricing method centers on expressing the European option price as a Fourier transform of the characteristic function. Employing the Fast Fourier Transform algorithm, it simultaneously computes option prices for all equidistant strike prices within a time complexity of $O(N \log N)$.
+
+\subsubsection{Theoretical Derivation}
+
+For a European call option with a time to maturity $T$ and strike price $K$, its risk-neutral price can be represented as:
+\begin{equation}
+C(K) = e^{-rT} \mathbb{E}^{\mathbb{Q}} \left[ \max(S_T - K, 0) \right] = e^{-rT} \int_{-\infty}^{\infty} \max(S_0 e^x - K, 0) f(x) \, dx,
+\end{equation}
+
+where $x = \log(S_T/S_0)$ is the logarithmic return of the underlying asset, and $f(x)$ is the probability density function of $x$.
+
+Let $k = \log(K/S_0)$ denote the logarithmic strike price. Rewriting the option price as a function $C(k)$ of $k$, one can derive the closed form of $C(k)$'s Fourier transform through the convolution property of Fourier transforms:
+\begin{equation}
+  \hat{C}(u) = \int_{-\infty}^{\infty} e^{iuk} C(k) \, dk = e^{-rT} \frac{\phi(u - i)}{iu - u^2},
+\end{equation}
+where $\phi(u) = \mathbb{E}^{\mathbb{Q}} \left[ e^{iux} \right]$ is the characteristic function of the underlying logarithmic return, serving as the nucleus of frequency-domain pricing methods.
+
+For the $3/2$ model, the characteristic function of the logarithmic return can be expressed in closed form via the confluent hypergeometric function $_1F_1$:
+\begin{equation}
+\phi(u) = \exp\left( i u r T \right) \cdot \frac{\Gamma(\beta - \alpha)}{\Gamma(\beta)} \cdot \left( \frac{2 \kappa \theta}{\epsilon^2 v_0} \left( e^{\kappa \theta T} - 1 \right) \right)^{\alpha} \cdot {}_1F_1 \left( \alpha, \beta, -\frac{2 \kappa \theta}{\epsilon^2 v_0} \left( e^{\kappa \theta T} - 1 \right) \right),
+\end{equation}
+
+where parameters $\alpha, \beta$ are analytically determined by the model parameters and the Fourier variable $u$:
+\begin{equation}
+\alpha = -\frac{1}{2} + \frac{\kappa - \rho \epsilon u}{\epsilon^2} + \sqrt{\left( \frac{1}{2} - \frac{\kappa - \rho \epsilon u}{\epsilon^2} \right)^2 + \frac{u(iu + 1)}{\epsilon^2}}, \quad \beta = 1 + 2\alpha.
+\end{equation}
+
+Through the inverse Fourier transform, the integral expression for the option price emerges:
+\begin{equation}
+  C(k) = \frac{e^{-rT}}{\pi} \int_0^\infty \text{Re}\left[ e^{-i u k} \frac{\phi(u - i)}{iu - u^2} \right] du.
+\end{equation}
+Discretizing this continuous integral into a Riemann sum over an equidistant grid yields a summation structure fitting the Discrete Fourier Transform perfectly, enabling rapid calculation via the FFT algorithm.
+
+\subsubsection{Numerical Implementation Flow}
+The complete implementation workflow of the FFT pricing method is as follows:
+\begin{enumerate}
+    \item Parameter initialization: Specify the $3/2$ model parameters, option contract parameters, FFT grid parameter $N$ (typically $2^{12}$), and frequency step size $\Delta u$;
+    \item Characteristic function calculation: Compute the values of the $3/2$ model's characteristic function over the discrete frequency grid;
+    \item FFT execution: Perform the FFT operation on the weighted characteristic function values to secure the discrete Fourier transform results;
+    \item Price recovery: Scale and perform inverse operations on the FFT results to obtain the option prices corresponding to varying logarithmic strike prices;
+    \item Interpolation handling: Acquire the option price for any arbitrary strike price via interpolation methods.
+\end{enumerate}
+
+\subsubsection{Error Characteristics and Convergence Analysis}
+The error footprint of the FFT pricing method primarily contains two parts:
+\begin{enumerate}
+  \item Integral truncation error in the frequency domain: This error exponentially diminishes as the truncation frequency escalates. Judicious calibration of grid parameters curtails this error beneath $10^{-6}$;
+  \item Discretization error of the Riemann sum: This error decays linearly relative to the reduction in the frequency step size, and can be further minimized by compounding grid points.
+\end{enumerate}
+Absent Monte Carlo statistical error, this method flaunts superb computational efficiency, making it highly suited for batch pricing across the full volatility smile and parameter calibration arenas.
+
+\subsection{Fourier-Cosine (COS) Pricing Method}
+Developed by \cite{fangNovelPricingMethod2009}, the COS pricing method marks a substantial upgrade over the FFT method. Its fundamental innovation lies in utilizing a cosine series expansion of the probability density function of the underlying logarithmic return, attaining an exponential convergence rate for option pricing, and retaining commanding computational efficiency and precision even within the non-affine structure of the $3/2$ model.
+
+\subsubsection{Theoretical Derivation}
+The core logic of the COS method entails expanding the probability density function of the underlying logarithmic return $x$ into a cosine series over an effective support interval $[a,b]$:
+\begin{equation}
+f(x) = \frac{2}{b-a} \sum_{n=0}^{\infty} \text{Re} \left[ \phi\left( \frac{n\pi}{b-a} \right) e^{-i \frac{n\pi a}{b-a}} \cos\left( \frac{n\pi (x-a)}{b-a} \right) \right],
+\end{equation}
+where $\phi(u)$ is the characteristic function of $x$, and $[a,b]$ is the effective support interval of $x$, characteristically assigned as $a = \mathbb{E}[x] - 10\sqrt{\mathrm{Var}(x)}$ and $b = \mathbb{E}[x] + 10\sqrt{\mathrm{Var}(x)}$.
+
+Fusing this series expansion into the integral expression of the option price manifests a closed-form series summation representing the option price:
+\begin{equation}
+  C(K) = e^{-rT} \sum_{n=0}^{N-1} \text{Re}\left[ \phi\left( \frac{n\pi}{b-a} \right) e^{-i \frac{n\pi a}{b-a}} \right] \cdot \frac{2}{b-a} V_n(k),
+\end{equation}
+where $k = \log(K/S_0)$, and $V_n(k)$ defines the cosine coefficients of the European call option payoff function. These coefficients hold fully analytical closed-form representations, dodging any numerical integration:
+\begin{equation}
+V_n(k) =
+\begin{cases}
+S_0 e^{rT} \left( \frac{b - k}{b - a} \right) - K \left( \frac{b - k}{b - a} \right), & n = 0, \\[10pt]
+\frac{2 S_0 e^{rT}}{b - a} \cdot \frac{\cos\left( \frac{n\pi (b - a)}{b - a} \right) - \cos\left( \frac{n\pi (k - a)}{b - a} \right)}{1 + \left( \frac{n\pi}{b - a} \right)^2} \\
+\quad - \frac{2 K}{b - a} \cdot \frac{\sin\left( \frac{n\pi (b - a)}{b - a} \right) - \sin\left( \frac{n\pi (k - a)}{b - a} \right)}{\frac{n\pi}{b - a}}, & n \geq 1.
+\end{cases}
+\end{equation}
+
+\subsubsection{Numerical Implementation Flow}
+The complete operational steps of the COS pricing method are configured as follows:
+\begin{enumerate}
+    \item Parameter initialization: Specify the $3/2$ model parameters, option contract parameters, the truncation term limit $N$ for the COS series (typically 128-256), and the effective support interval $[a,b]$;
+    
+    \item Characteristic function calculation: Compute the feature function values of the $3/2$ model across discrete frequency points;
+    
+    \item Payoff coefficient calculation: Analytically compute the cosine coefficients $V_n(k)$ associated with the option payoff;
+    
+    \item Series summation: Compute the resultant option price via the truncated series summation.
+\end{enumerate}
+
+\subsubsection{Error Characteristics and Convergence Analysis}
+The paramount edge of the COS pricing method is its exponential convergence velocity. Its truncation error diminishes exponentially aligned with the incremental number of series terms $N$. Merely 128 truncated terms accomplish the exactness equivalent to an FFT scheme relying on 4096 grid points, heightening computational efficiency by over an order of magnitude. Concurrently, this method bypasses the picket-fence effect intrinsic to the FFT procedure, deftly evaluating option prices tied to any strike price, displaying formidable applicability within non-affine architectures like the $3/2$ model.
+
+\section{Chapter Summary}
+
+Within the integrated framework of the $3/2$ stochastic volatility model, this chapter has systematically constructed a theoretical structure comprising nine classes of methods for European option pricing. This corpus embraces three principal paradigms: time-stepping conditional Monte Carlo methods, exact and near-exact terminal simulation methods, and Fourier frequency-domain pricing methods. All configurations stringently conform to academic conventions bound by the conditional Monte Carlo framework or frequency-domain integration. The theoretical anatomy, execution workflow, and error signatures of each method class were comprehensively deduced and analyzed.
+Time-stepping methods champion ease of implementation and flexibility, adapting well to short-maturity options and dynamic hedging contexts; here, the Exact Stepping method and Poisson-Gamma method capably mitigate discrete bias. Terminal simulation methods utterly avoid time-discretization errors, with Baldeaux's exact simulation acting as the theoretical benchmark, whilst the Inverse Gaussian and Gamma approximation methods unlock an outstanding synergy between accuracy and computational speed. Fourier frequency-domain methods, unshackled from statistical errors and boasting stratospheric efficiency, excel in batch pricing across volatility smiles and executing model parameter calibrations. The comprehensive system of nine distinct methods articulated in this chapter institutes a rigorous theoretical backbone and consolidated procedural framework for subsequent comparative accuracy investigations, extreme-scenario performance stress tests, and empirical pricing evaluations.

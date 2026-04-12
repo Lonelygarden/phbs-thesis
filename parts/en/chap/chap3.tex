@@ -1,30 +1,39 @@
-\chapter{The 3/2 Volatility Model Specification}
+\chapter{Specification of the 3/2 Volatility Model}
 \label{chap:model}
 
-\section{Evolution and Economic Intuition of the 3/2 Model}
+\section{Introduction to the 3/2 Model}
 \label{sec:model_setup}
 
-The $3/2$ stochastic volatility architecture fundamentally extends the traditional square-root diffusion paradigms pioneered by Cox, Ingersoll, Ross, and later refined by Heston. While the affine $1/2$ specification (the Heston framework) remains a cornerstone in quantitative finance, robust empirical evidence exposes its structural inadequacies during severe market dislocations. Specifically, affine diffusions structurally underestimate the pronounced "volatility of volatility" and systematically fail to replicate the severe gradients characterizing short-maturity implied volatility skews.
+As an advanced stochastic volatility framework, the 3/2 model is a complex evolutionary form of the Square-Root Process (popularized by Cox-Ingersoll-Ross and later further developed by Steven Heston).
 
-By amplifying the exponent of the diffusion term from $1/2$ to $3/2$, the mathematical architecture introduces a profoundly non-linear mean-reversion mechanism alongside highly aggressive volatility trajectories. This specific parametric adjustment empowers the framework to produce instantaneous variance spikes and acute skewness that accurately mirror distressed empirical markets. Nevertheless, this explosive capacity demands a structural trade-off: the $3/2$ specification frequently surrenders the baseline analytical stability native to affine models during tranquil market regimes.
+In the current financial industry, the Heston model (i.e., the 1/2 model) has long been regarded as the industry standard. However, when facing extreme market stress, the Heston model often fails to accurately capture the ``volatility of volatilit'' observed in the market and struggles to perfectly fit the steepness of the short-term volatility skew.
 
-\section{Stochastic Differential Equation (SDE) Specifications}
+To overcome this limitation, researchers proposed a completely new approach in the late 1990s and early 2000s: modifying the exponent of the diffusion term from 1/2 to 3/2. This specification change allows the model to generate more explosive volatility dynamics and a nonlinear mean reversion speed. Consequently, the 3/2 model allows volatility to spike and presents a steeper skew under market stress, which highly aligns with actual empirical data. However, it should be noted that under certain normal market conditions, the 3/2 model may lack the stability inherent in the Heston model.
 
-Formulated within a risk-neutral pricing measure, the continuous-time dynamics of the underlying asset and its driving variance are strictly governed by a coupled system of Stochastic Differential Equations (SDEs). The trajectory of the asset price, denoted as $S_t$, evolves according to the following stochastic process:
+\section{Stochastic Differential Equation (SDE) Specification}
 
-$$dS_t = r S_t dt + S_t \sqrt{V_t} (\rho dW_t^1 + \sqrt{1-\rho^2} dW_t^2)$$
+Under the risk-neutral measure, the asset price process and the instantaneous variance/volatility process of the 3/2 model can be characterized by the following system of stochastic differential equations:
 
-In this formulation, $r$ defines the constant risk-free rate, while $\rho$ establishes the instantaneous correlation between the two underlying Brownian motions. Concurrently, the non-affine variance process $V_t$ is driven by the subsequent specification:
+The dynamics of the underlying asset price process $S_t$ satisfy:
 
-$$dV_t = \kappa V_t(\theta - V_t)dt + \epsilon V_t^{3/2}dW_t^1$$
+\begin{equation}
+    dS_t = r S_t dt + S_t \sqrt{V_t} (\rho dW_t^1 + \sqrt{1-\rho^2} dW_t^2)
+    \label{eq:underlyingProcess}
+\end{equation}
 
-Within this interdependent system:
+Where $r$ represents the risk-free interest rate, $W_t^1$ and $W_t^2$ are two independent standard Brownian motions, and $\rho$ is the correlation coefficient between the two Brownian motions. Meanwhile, the dynamic evolution of the variance process $V_t$ satisfies:
+\begin{equation}
+    dV_t = \kappa V_t (\theta - V_t) dt + \epsilon V_t^{3/2} dW_t^1
+    \label{eq:varianceProcess}
+\end{equation}
+
+In the above equations:
 
 \begin{itemize}
     \item $\kappa$ controls the speed of mean reversion.
     \item $\theta$ represents the long-term average variance level.
-    \item $\epsilon$ (or denoted as $\nu$) is the volatility of volatility (vov) parameter, controlling the fluctuation degree of the variance process.
-    \item $dW_t^1$ and $dW_t^2$ are independent standard Brownian motions.
+    \item $\epsilon$ is the volatility of volatility parameter, controlling the degree of fluctuation of the variance process.
+    \item $W_t^1$ and $W_t^2$ are two independent standard Brownian motions driving the randomness in the variance process and the price process, respectively.
 \end{itemize}
 
 It is worth noting that this variance process can also be equivalently expressed in terms of $dV_t/V_t$, thereby more intuitively reflecting the drift and diffusion characteristics of its relative changes.
@@ -33,20 +42,54 @@ It is worth noting that this variance process can also be equivalently expressed
 
 In the option pricing framework of the 3/2 model, the integrated variance $V_T$ over the time interval $[0, T]$ plays a crucial role. It is defined as follows:
 
-$$V_T = \int_0^T \sigma_t^2 dt = \int_0^T V_t dt$$
+\begin{equation}
+    V_T = \int_0^T V_t dt
+    \label{integratedVarianceDefinition}
+\end{equation}
 
-Since the randomness of the asset price is partially driven by volatility, when we condition on the integrated variance $V_T$, the terminal price of the underlying asset $S_T$ follows a lognormal distribution. This pivotal property implies that, conditional on $V_T$, we can leverage the pricing framework of the Black-Scholes (BS) model.
+Since the randomness of the asset price is partially driven by volatility, when we condition on the integrated variance $V_T$, the terminal price of the underlying asset $S_T$ follows a lognormal distribution. This important property means that, given $V_T$, we can borrow the pricing framework of the Black-Scholes (BS) model.
 
 According to Itô's isometry principle:
 
-$$\int_0^T \rho^* \sigma_t dX_t \sim \rho^* \sqrt{V_T} X_1 \sim N(0, (\rho^*)^2 V_T)$$
+$$\int_0^T\rho^*\sigma_tdX_t\sim\rho^*\sqrt{V_T}X_1\sim N(0,(\rho^*)^2V_T)$$
 
 Accordingly, the effective volatility $\sigma$ between time $0$ and $T$ can be expressed as:
 
-$$\sigma = \rho^* \sqrt{V_T / T}$$
+$$\sigma=\rho^*\sqrt{V_T/T}$$
 
-Through further stochastic calculus derivation, the formula for the log return of the terminal price relative to the initial price can be expanded as:
+Through further stochastic calculus derivation, the log-return formula of the terminal price relative to the initial price can be expanded as:
+\begin{equation}
+    \log\left(\frac{S_T}{S_0}\right) = \frac{\rho}{\epsilon}\log\left(\frac{V_T}{V_0}\right) + \left(\kappa + \frac{\epsilon^2}{2}\right)V_T - \kappa\theta T - \frac{1}{2}V_T + \rho^* \sqrt{V_T} X_1
+    \label{priceFormulaForConditionalMC}
+\end{equation}
 
-$$\log\left(\frac{S_T}{S_0}\right) = \frac{\rho}{\epsilon}\log\left(\frac{V_T}{V_0}\right) + \left(\kappa + \frac{\epsilon^2}{2}\right)V_T - \kappa\theta T - \frac{1}{2}V_T + \rho^* \sqrt{V_T} X_1$$
+This formula is the core foundation for pricing via subsequent exact simulation methods.
 
-This formula serves as the core foundation for subsequent exact simulation and Fourier transform pricing.
+\section{Moment Generating Function of the 3/2 Model}
+
+Under the risk-neutral measure $\mathbb{Q}$, the stochastic differential equations (SDEs) of the 3/2 model are defined by Equation \eqref{eq:underlyingProcess} and Equation \eqref{eq:varianceProcess}.
+
+To utilize Fourier transform methods for option pricing, the core lies in solving the moment generating function (MGF) of the log-asset price $x_T=\ln S_T$.
+
+According to the derivations by Lewis (2000) and Carr and Sun (2007), let $\phi(u,\tau)=\mathbb{E}[e^{u x_T}|\mathcal{F}_t]$ be defined as the moment generating function of the log-price. Within the 3/2 model framework, because the reciprocal of its variance process $V_t$ follows a CIR process (square-root process), this MGF does not possess the common exponential-affine form found in affine models. Instead, it manifests as an analytical form involving Kummer's Confluent Hypergeometric Function ($_1F_1$).
+
+Specifically, given the initial state $V_0=\sigma_0^2$, the auxiliary variables are defined as follows: Parameter transformation terms:
+$$\mu=\frac{1}{2}+\frac{\kappa-u\rho\epsilon}{\epsilon^2},\quad\tilde{c}=\frac{u(1-u)}{\epsilon^2}$$
+
+Characteristic parameters:
+$$\delta=\sqrt{\mu^2+\tilde{c}},\quad\alpha=-\mu+\delta,\quad\beta=1+2\delta$$
+
+Time-dependent term: define
+$$X=\frac{2\kappa\theta}{\epsilon^2\sigma^2(e^{\kappa\theta\tau}-1)}$$
+
+This term characterizes the nonlinear impact of the mean reversion strength and the maturity $\tau$ on the volatility structure. In summary, the moment generating function of the log-price under the 3/2 model can be expressed as:
+
+$$M(u,\tau)=\frac{\Gamma(\beta-\alpha)}{\Gamma(\beta)}X^\alpha\,_1F_1(\alpha,\beta,-X)$$
+
+In the process of numerical computation, the calculation of $_1F_1(\alpha,\beta,-X)$ often involves the processing of special functions in the complex domain. In code implementation, to prevent numerical overflow in large-parameter scenarios (such as extreme volatility or long maturities), the log-gamma function (Log-Gamma) is used for reconstruction. For the MGF pre-factor:
+$$M(u,\tau)=\frac{\Gamma(\beta-\alpha)}{\Gamma(\beta)}\,X^\alpha\,_1F_1(\alpha,\beta,-X)$$
+Use
+$$\ln P=\ln\Gamma(\beta-\alpha)-\ln\Gamma(\beta)+\alpha\ln X,\qquad P=\exp(\ln P),$$
+then
+$$M=P\cdot\,_1F_1(\alpha,\beta,-X)$$
+to replace direct multiplication/exponentiation. This approach guarantees the numerical stability of the operations.

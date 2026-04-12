@@ -85,8 +85,8 @@ Milstein 离散格式是对 Euler 格式的二阶修正，通过引入扩散项�
   \label {x_distribution}
 \end {equation}
 其中$\chi'^2 (d,\lambda)$表示自由度为$d$、非中心参数为$\lambda$的非中心卡方分布随机变量，分布参数由 3/2 模型参数与时间步长确定：
-\begin 
-  {equation}d = \frac {4 \kappa \theta}{\epsilon^2}, \quad c = \frac {\epsilon^2 \left ( 1 - e^{-\kappa \Delta t} \right)}{4 \kappa}, \quad \lambda = c \cdot y_{t_n} e^{-\kappa \Delta t}.
+\begin {equation}
+d = \frac {4 \kappa \theta}{\epsilon^2}, \quad c = \frac {\epsilon^2 \left ( 1 - e^{-\kappa \Delta t} \right)}{4 \kappa}, \quad \lambda = c \cdot y_{t_n} e^{-\kappa \Delta t}.
 \end {equation}
 通过逆变换$v_{t_{n+1}} = 1/x_{t_{n+1}}$，即可得到$3/2$模型方差过程的精确样本，该抽样过程不引入任何时间离散偏差。
 
