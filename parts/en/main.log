@@ -1350,11 +1350,11 @@ File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 \tikz@expandcount=\count355
 
-(c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
-brarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)))
-(c:/texlive/2025/texmf-dist/tex/latex/koma-script/scrextend.sty
+c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex:392
+0: Interruption.
+l.3920 
+         \pgfutil@ifnextchar\reset@color% hack for color package
+? :/texlive/2025/texmf-dist/tex/latex/koma-script/scrextend.sty
 Package: scrextend 2026/02/02 v3.49.2 KOMA-Script package (extend other classes
  with features of KOMA-Script classes)
 
