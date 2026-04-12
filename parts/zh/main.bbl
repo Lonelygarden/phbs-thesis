@@ -52,6 +52,7 @@
       \strng{nameanamehash}{d63e46157e20326be323a1fc548dc259}
       \strng{nameafullhash}{d63e46157e20326be323a1fc548dc259}
       \strng{nameafullhashraw}{d63e46157e20326be323a1fc548dc259}
+      \field{extraname}{1}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{extradatescope}{labelyear}
@@ -94,6 +95,107 @@
       \verb https://papers.ssrn.com/abstract=946405
       \endverb
       \keyw{affine square-root models,bias reduction,Heston model,Monte Carlo simulation,SDE discretization}
+    \endentry
+    \entry{andersenModelingForecastingRealized2003}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=09c85c9c10e1f8f0e62363a927495479}{%
+           family={Andersen},
+           familyi={A\bibinitperiod},
+           given={Torben\bibnamedelima G.},
+           giveni={T\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=39f8f5a428abd62057a0152546172106}{%
+           family={Bollerslev},
+           familyi={B\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=15cc2e3b52b5ea2d3045be532376a348}{%
+           family={Diebold},
+           familyi={D\bibinitperiod},
+           given={Francis\bibnamedelima X.},
+           giveni={F\bibinitperiod\bibinitdelim X\bibinitperiod}}}%
+        {{hash=e1a168b034df2b20c2024d8976ae0157}{%
+           family={Labys},
+           familyi={L\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{namea}{4}{}{%
+        {{hash=09c85c9c10e1f8f0e62363a927495479}{%
+           family={Andersen},
+           familyi={A\bibinitperiod},
+           given={Torben\bibnamedelima G.},
+           giveni={T\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=39f8f5a428abd62057a0152546172106}{%
+           family={Bollerslev},
+           familyi={B\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=15cc2e3b52b5ea2d3045be532376a348}{%
+           family={Diebold},
+           familyi={D\bibinitperiod},
+           given={Francis\bibnamedelima X.},
+           giveni={F\bibinitperiod\bibinitdelim X\bibinitperiod}}}%
+        {{hash=e1a168b034df2b20c2024d8976ae0157}{%
+           family={Labys},
+           familyi={L\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{09c85c9c10e1f8f0e62363a927495479}
+      \strng{fullhash}{0b66d427f86ffe531c2d3ee63ee443a0}
+      \strng{fullhashraw}{0b66d427f86ffe531c2d3ee63ee443a0}
+      \strng{bibnamehash}{3cdc87177c9c65d6c82cbb521aedb4ee}
+      \strng{authorbibnamehash}{3cdc87177c9c65d6c82cbb521aedb4ee}
+      \strng{authornamehash}{09c85c9c10e1f8f0e62363a927495479}
+      \strng{authorfullhash}{0b66d427f86ffe531c2d3ee63ee443a0}
+      \strng{authorfullhashraw}{0b66d427f86ffe531c2d3ee63ee443a0}
+      \strng{nameabibnamehash}{3cdc87177c9c65d6c82cbb521aedb4ee}
+      \strng{nameanamehash}{09c85c9c10e1f8f0e62363a927495479}
+      \strng{nameafullhash}{0b66d427f86ffe531c2d3ee63ee443a0}
+      \strng{nameafullhashraw}{0b66d427f86ffe531c2d3ee63ee443a0}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We provide a framework for integration of high–frequency intraday data into the measurement, modeling, and forecasting of daily and lower frequency return volatilities and return distributions. Building on the theory of continuous–time arbitrage–free price processes and the theory of quadratic variation, we develop formal links between realized volatility and the conditional covariance matrix. Next, using continuously recorded observations for the Deutschemark/Dollar and Yen/Dollar spot exchange rates, we find that forecasts from a simple long–memory Gaussian vector autoregression for the logarithmic daily realized volatilities perform admirably. Moreover, the vector autoregressive volatility forecast, coupled with a parametric lognormal–normal mixture distribution produces well–calibrated density forecasts of future returns, and correspondingly accurate quantile predictions. Our results hold promise for practical modeling and forecasting of the large covariance matrices relevant in asset pricing, asset allocation, and financial risk management applications.}
+      \field{issn}{1468-0262}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{number}{2}
+      \field{title}{Modeling and {{Forecasting Realized Volatility}}}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{71}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{579\bibrangedash 625}
+      \range{pages}{47}
+      \verb{doi}
+      \verb 10.1111/1468-0262.00418
+      \endverb
+      \verb{file}
+      \verb C:\Users\27261\Zotero\storage\GJJGW26E\1468-0262.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1468-0262.00418
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1468-0262.00418
+      \endverb
+      \keyw{continuous–time methods,density forecasting,high–frequency data,long memory,quadratic variation,realized volatility,risk management,volatility forecasting}
     \endentry
     \entry{baldeauxEXACTSIMULATION322012}{article}{}{}
       \name{author}{1}{}{%
@@ -489,6 +591,87 @@
       \verb https://epubs.siam.org/doi/abs/10.1137/080718061
       \endverb
       \keyw{fangNovelPricingMethod2009}
+    \endentry
+    \entry{medvedevApproximationCalibrationShortTerm2007}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=7da6126a54752663328b260e72d5f29c}{%
+           family={Medvedev},
+           familyi={M\bibinitperiod},
+           given={Alexey},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e69a37d171e5aad3695f86dd97b2cee9}{%
+           family={Scaillet},
+           familyi={S\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+      }
+      \name{namea}{2}{}{%
+        {{hash=7da6126a54752663328b260e72d5f29c}{%
+           family={Medvedev},
+           familyi={M\bibinitperiod},
+           given={Alexey},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e69a37d171e5aad3695f86dd97b2cee9}{%
+           family={Scaillet},
+           familyi={S\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{7da6126a54752663328b260e72d5f29c}
+      \strng{fullhash}{1987816971ac5dc2b39356ce9703df38}
+      \strng{fullhashraw}{1987816971ac5dc2b39356ce9703df38}
+      \strng{bibnamehash}{1987816971ac5dc2b39356ce9703df38}
+      \strng{authorbibnamehash}{1987816971ac5dc2b39356ce9703df38}
+      \strng{authornamehash}{7da6126a54752663328b260e72d5f29c}
+      \strng{authorfullhash}{1987816971ac5dc2b39356ce9703df38}
+      \strng{authorfullhashraw}{1987816971ac5dc2b39356ce9703df38}
+      \strng{nameabibnamehash}{1987816971ac5dc2b39356ce9703df38}
+      \strng{nameanamehash}{7da6126a54752663328b260e72d5f29c}
+      \strng{nameafullhash}{1987816971ac5dc2b39356ce9703df38}
+      \strng{nameafullhashraw}{1987816971ac5dc2b39356ce9703df38}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0893-9454, 1465-7368}
+      \field{journaltitle}{Review of Financial Studies}
+      \field{langid}{english}
+      \field{languageid}{english}
+      \field{lansortorder}{4}
+      \field{month}{3}
+      \field{number}{2}
+      \field{shortjournal}{Rev. Financ. Stud.}
+      \field{title}{Approximation and {{Calibration}} of {{Short-Term Implied Volatilities Under Jump-Diffusion Stochastic Volatility}}}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{usera}{J}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{volume}{20}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{427\bibrangedash 459}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1093/rfs/hhl013
+      \endverb
+      \verb{file}
+      \verb C:\Users\27261\Zotero\storage\K2R5UU9V\Medvedev和Scaillet - 2007 - Approximation and Calibration of Short-Term Implied Volatilities Under Jump-Diffusion Stochastic Vol.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/rfs/article-lookup/doi/10.1093/rfs/hhl013
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/rfs/article-lookup/doi/10.1093/rfs/hhl013
+      \endverb
+      \keyw{medvedevApproximationCalibrationShortTerm2007}
     \endentry
   \enddatalist
 \endrefsection

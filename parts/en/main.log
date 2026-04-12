@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  11 APR 2026 20:23
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  12 APR 2026 19:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2254,6 +2254,10 @@ Package fontspec Info:
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
 
+
+Package caption Warning: Unused \captionsetup[sub] on input line 19.
+See the caption package documentation for explanation.
+
 [19
 
 
@@ -2277,10 +2281,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44540 strings out of 468174
- 906210 string characters out of 5436827
- 2040725 words of memory out of 5000000
- 72561 multiletter control sequences out of 15000+600000
+ 44541 strings out of 468174
+ 906232 string characters out of 5436827
+ 2040735 words of memory out of 5000000
+ 72562 multiletter control sequences out of 15000+600000
  634431 words of font info for 124 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  123i,15n,121p,2717b,5282s stack positions out of 10000i,1000n,20000p,200000b,200000s

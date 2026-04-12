@@ -78,17 +78,31 @@
 \contentsline {section}{\numberline {5.3}终端精确与近似精确模拟方法结果分析}{33}{section.5.3}%
 \contentsline {section}{\numberline {5.4}傅里叶频域定价方法结果分析}{36}{section.5.4}%
 \contentsline {section}{\numberline {5.5}综合性能对比与研究结论}{37}{section.5.5}%
-\contentsline {chapter}{\numberline {第六章\hspace {.3em}}实证分析与结果对比}{39}{chapter.6}%
-\contentsline {section}{\numberline {6.1}数据准备与处理}{40}{section.6.1}%
-\contentsline {section}{\numberline {6.2}校准方法与实现路径}{40}{section.6.2}%
-\contentsline {section}{\numberline {6.3}结果分析与讨论}{40}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}波动率微笑的演变特征}{40}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}3/2 模型与纯扩散模型的对比}{41}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}鲁棒性总结}{41}{subsection.6.3.3}%
-\contentsline {chapter}{\numberline {第七章\hspace {.3em}}创新贡献与结论}{43}{chapter.7}%
-\contentsline {section}{\numberline {7.1}核心创新与贡献}{43}{section.7.1}%
-\contentsline {section}{\numberline {7.2}发现与研究结论}{43}{section.7.2}%
-\contentsline {chapter}{参考文献}{45}{appendix*.7}%
-\contentsline {chapter}{致谢}{47}{appendix*.8}%
-\contentsline {chapter}{北京大学学位论文原创性声明和使用授权说明}{49}{appendix*.9}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}3/2 随机波动率模型在加密货币极端崩盘事件中的实证校准与定价检验}{39}{chapter.6}%
+\contentsline {section}{\numberline {6.1}章节引言}{39}{section.6.1}%
+\contentsline {section}{\numberline {6.2} 研究事件、时间窗口划分与数据预处理}{40}{section.6.2}%
+\contentsline {section}{\numberline {6.3} 3/2 随机波动率模型的两步校准框架}{41}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1} 长期固定参数的时间序列估计 }{41}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}时变参数的横截面校准}{42}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}崩盘事件全周期期权成交数据的描述性统计与校准样本筛选}{43}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}崩盘事件全周期的 OTM 期权成交分布特征}{43}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}期权成交的流动性统计与期限结构分析}{45}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}参数校准的样本筛选依据}{46}{subsection.6.4.3}%
+\contentsline {section}{\numberline {6.5}参数校准结果与分析}{46}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}长期固定参数的时间序列估计结果}{47}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}时变参数的横截面校准结果与全周期特征分析}{48}{subsection.6.5.2}%
+\contentsline {section}{\numberline {6.6}极端市场场景下的定价方法性能再检验与对比分析}{50}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}测试设定与案例构建}{50}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}时间步进类条件蒙特卡洛方法性能结果与分析}{51}{subsection.6.6.2}%
+\contentsline {subsection}{\numberline {6.6.3}终端模拟类方法性能结果与分析}{52}{subsection.6.6.3}%
+\contentsline {subsection}{\numberline {6.6.4}傅里叶频域定价方法性能结果与分析}{53}{subsection.6.6.4}%
+\contentsline {subsubsection}{\numberline {6.6.4.1}与学术基准案例结果的对比分析}{55}{subsubsection.6.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.6.4.2}极端市场场景下的方法适用性总结}{55}{subsubsection.6.6.4.2}%
+\contentsline {section}{\numberline {6.7}本章小结}{56}{section.6.7}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}创新贡献与结论}{59}{chapter.7}%
+\contentsline {section}{\numberline {7.1}核心创新与贡献}{59}{section.7.1}%
+\contentsline {section}{\numberline {7.2}发现与研究结论}{59}{section.7.2}%
+\contentsline {chapter}{参考文献}{61}{appendix*.15}%
+\contentsline {chapter}{致谢}{63}{appendix*.16}%
+\contentsline {chapter}{北京大学学位论文原创性声明和使用授权说明}{65}{appendix*.17}%
 \contentsfinish 
