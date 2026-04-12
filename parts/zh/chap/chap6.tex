@@ -138,23 +138,23 @@ dv_t = \kappa v_t (\theta - v_t) dt + \epsilon v_t^{3/2} dW_t^v
   \resizebox{0.8\textwidth}{!}{%
   \begin{tabular}{lccccc}
     \toprule
-    解释变量 & 系数估计值 & 标准误 & t 统计量 & p 值 & 95\% 置信区间 \\
+    Variable & Coefficient & Std. Error & $t$-statistic & $p$-value & 95\% Confidence Interval \\
     \midrule
-    X1 ($\kappa$)  & 20.6809   & 7.404   & 2.793  & 0.006 & [6.070, 35.292] \\
-    X2 ($\theta$)  & -126.1498 & 45.477  & -2.774 & 0.006 & [-215.894, -36.406] \\
+    X1 ($\kappa\theta$)  & 20.6809   & 7.404   & 2.793  & 0.006 & [6.070, 35.292] \\
+    X2 ($\kappa$)        & -126.1498 & 45.477  & -2.774 & 0.006 & [-215.894, -36.406] \\
     \midrule
-    \multicolumn{6}{l}{\textit{被解释变量}: $y$ \quad \textit{样本量}: 180} \\
-    \multicolumn{6}{l}{\textit{模型设定}: 无截距项 OLS \quad \textit{$R^2$ (无截距项)}: 0.042} \\
-    \multicolumn{6}{l}{\textit{调整后 $R^2$ (无截距项)}: 0.031 \quad \textit{F 统计量}: 3.923} \\
-    \multicolumn{6}{l}{\textit{AIC}: -179.7 \quad \textit{BIC}: -173.3 \quad \textit{Durbin-Watson 统计量}: 2.170} \\
+    \multicolumn{6}{l}{\textit{Dependent Variable}: $y$ \quad \textit{No. Observations}: 180} \\
+    \multicolumn{6}{l}{\textit{Model}: OLS without intercept \quad \textit{$R^2$ (uncentered)}: 0.042} \\
+    \multicolumn{6}{l}{\textit{Adjusted $R^2$ (uncentered)}: 0.031 \quad \textit{F-statistic}: 3.923} \\
+    \multicolumn{6}{l}{\textit{AIC}: -179.7 \quad \textit{BIC}: -173.3 \quad \textit{Durbin-Watson}: 2.170} \\
     \midrule
-    \multicolumn{6}{l}{\textit{模型诊断统计量}} \\
-    \multicolumn{6}{l}{\textit{Omnibus 统计量}: 14.016 \quad \textit{Prob (Omnibus)}: 0.001} \\
-    \multicolumn{6}{l}{\textit{Jarque-Bera (JB) 统计量}: 21.634 \quad \textit{Prob (JB)}: 2.01e-05} \\
-    \multicolumn{6}{l}{\textit{偏度 (Skew)}: 0.441 \quad \textit{峰度 (Kurtosis)}: 4.451} \\
-    \multicolumn{6}{l}{\textit{条件数 (Cond. No.)}: 29.4 \quad \textit{协方差类型}: 非稳健型} \\
+    \multicolumn{6}{l}{\textit{Diagnostic Statistics}} \\
+    \multicolumn{6}{l}{\textit{Omnibus}: 14.016 \quad \textit{Prob (Omnibus)}: 0.001} \\
+    \multicolumn{6}{l}{\textit{Jarque-Bera (JB)}: 21.634 \quad \textit{Prob (JB)}: 2.01e-05} \\
+    \multicolumn{6}{l}{\textit{Skewness}: 0.441 \quad \textit{Kurtosis}: 4.451} \\
+    \multicolumn{6}{l}{\textit{Cond. No.}: 29.4 \quad \textit{Covariance Type}: nonrobust} \\
     \midrule
-    \multicolumn{6}{l}{\footnotesize\textit{注：} [1] $R^2$ 为无截距项模型计算结果；[2] 标准误假设误差项协方差设定正确。} \\
+    \multicolumn{6}{l}{\footnotesize\textit{Notes:} [1] $R^2$ is computed without centering (uncentered); [2] Standard Errors assume the covariance matrix of errors is correctly specified.} \\
     \bottomrule
   \end{tabular}%
   }

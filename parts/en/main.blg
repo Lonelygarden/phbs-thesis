@@ -1,14 +1,14 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'main.blg'
-[50] biber-MSWIN64:342> INFO - === 
-[66] Biber.pm:421> INFO - Reading 'main.bcf'
-[183] Biber.pm:1002> INFO - Found 9 citekeys in bib section 0
-[222] Biber.pm:4487> INFO - Processing section 0
-[233] Biber.pm:4678> INFO - Looking for bibtex file 'ref.bib' for section 0
-[251] bibtex.pm:1713> INFO - LaTeX decoding ...
-[292] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
-[428] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'variable = shifted' with 'variable = non-ignorable'
-[428] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[428] Biber.pm:4307> INFO - Sorting list 'gb7714-2015/global//global/global/global' of type 'entry' with template 'gb7714-2015' and locale 'zh__pinyin'
-[443] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[451] bbl.pm:779> INFO - Output to main.bbl
+[52] biber-MSWIN64:342> INFO - === 
+[69] Biber.pm:421> INFO - Reading 'main.bcf'
+[178] Biber.pm:1002> INFO - Found 9 citekeys in bib section 0
+[218] Biber.pm:4487> INFO - Processing section 0
+[228] Biber.pm:4678> INFO - Looking for bibtex file 'ref.bib' for section 0
+[247] bibtex.pm:1713> INFO - LaTeX decoding ...
+[284] bibtex.pm:1519> INFO - Found BibTeX data source 'ref.bib'
+[410] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[410] UCollate.pm:68> INFO - Overriding locale 'zh__pinyin' defaults 'variable = shifted' with 'variable = non-ignorable'
+[410] Biber.pm:4307> INFO - Sorting list 'gb7714-2015/global//global/global/global' of type 'entry' with template 'gb7714-2015' and locale 'zh__pinyin'
+[426] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[433] bbl.pm:779> INFO - Output to main.bbl

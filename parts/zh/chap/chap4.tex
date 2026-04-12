@@ -45,14 +45,14 @@ Milstein 离散格式是对 Euler 格式的二阶修正，通过引入扩散项�
 代入 Milstein 格式的通用形式后，可得到方差过程的 Milstein 离散迭代式：
 \begin {equation}
   \begin {aligned}
-    v_{t_{n+1}} &= v_{t_n} + \kappa (\theta - v_{t_n}) v_{t_n} \Delta t + \epsilon v_{t_n}^{3/2} \Delta W_n^v \&\quad + \frac {1}{2} \sigma_v (v_{t_n}) \sigma_v'(v_{t_n}) \left ( (\Delta W_n^v)^2 - \Delta t \right).
+    v_{t_{n+1}} &= v_{t_n} + \kappa (\theta - v_{t_n}) v_{t_n} \Delta t + \epsilon v_{t_n}^{3/2} \Delta W_n^1 + \frac {1}{2} \sigma_v (v_{t_n}) \sigma_v'(v_{t_n}) \left ( (\Delta W_n^1)^2 - \Delta t \right).
   \end {aligned}
 \end {equation}
 
 将扩散项及其导数代入后，最终的 Milstein 迭代式为：
 
 \begin {equation}
-  v_{t_{n+1}} = v_{t_n} + \kappa (\theta - v_{t_n}) v_{t_n} \Delta t + \epsilon v_{t_n}^{3/2} \Delta W_n^v + \frac {3}{4} \epsilon^2 v_{t_n}^2 \left ( (\Delta W_n^v)^2 - \Delta t \right).
+  v_{t_{n+1}} = v_{t_n} + \kappa (\theta - v_{t_n}) v_{t_n} \Delta t + \epsilon v_{t_n}^{3/2} \Delta W_n^1 + \frac {3}{4} \epsilon^2 v_{t_n}^2 \left ( (\Delta W_n^1)^2 - \Delta t \right).
   \label {milstein_v}
 \end {equation}
 
@@ -131,7 +131,7 @@ Poisson-Gamma 近似精确步进方法的核心，是利用 3/2 模型方差过�
 \begin {equation}
   d = \frac {4 \kappa \theta}{\epsilon^2}, \quad c = \frac {\epsilon^2 \left ( 1 - e^{-\kappa \Delta t} \right)}{4 \kappa}, \quad \lambda = c \cdot y_{t_n} e^{-\kappa \Delta t}.
 \end {equation}
-将式 \eqref{ncx2_pg_mixture} 代入上式，可直接得到ytn+1​​的 Poisson-Gamma 混合表示：
+将式 \eqref{ncx2_pg_mixture} 代入上式，可直接得到$y_{t_{n+1}}$​​的 Poisson-Gamma 混合表示：
 \begin {equation}
   y_{t_{n+1}} \mid N \sim \frac {1}{c} \cdot \text {Gamma}\left ( \frac {d}{2} + N, \frac {1}{2} \right), \quad N \sim \text {Poisson}\left ( \frac {\lambda}{2} \right).
 \label {y_pg_mixture}
@@ -246,9 +246,13 @@ Baldeaux 精确模拟方法是 3/2 模型下唯一的无偏终端模拟方法，
   F_{V_T \mid v_0, v_T}(x) = \int_a^x f (z) dz = \frac {2}{b-a} \sum_{n=0}^\infty \text {Re}\left [ \varphi\left ( \frac {n\pi}{b-a} \right) e^{-i \frac {n\pi a}{b-a}} \right] \cdot \Psi_n (x),
 \end {equation}
 其中 $\Psi_n(x)$ 为余弦项的积分闭式，可直接解析计算，无需数值积分：
-\begin {equation}
-  \Psi_n (x) =\begin {cases}x - a, & n = 0, \\frac {b-a}{n\pi} \sin\left ( \frac {n\pi (x-a)}{b-a} \right), & n \geq 1.\end {cases}
-\end {equation}
+\begin{equation}
+\Psi_n(x) =
+\begin{cases} 
+x - a, & n = 0, \\
+\dfrac{b-a}{n\pi} \sin\left( \dfrac{n\pi (x-a)}{b-a} \right), & n \geq 1.
+\end{cases}
+\end{equation}
 \subsubsection{条件蒙特卡洛框架下的实现}
 在条件蒙特卡洛框架下，条件傅里叶余弦模拟方法的实现流程如下：
 \begin{enumerate}
