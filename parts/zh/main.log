@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  17 APR 2026 16:39
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  18 APR 2026 21:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2331,17 +2331,16 @@ Package fontspec Info:
 
 
 
-] [68] [69] [70
-
-
-]
+] [68]
 \openout2 = `chap/acknowledgement.aux'.
 
- (./chap/acknowledgement.tex) [71
+ (./chap/acknowledgement.tex) [69
 
 
 
-] [72
+
+
+] [70
 
 
 
@@ -2354,7 +2353,7 @@ Overfull \hbox (583.4233pt too wide) in paragraph at lines 71--71
 [][][][][][][] 
  []
 
-[73] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux) (./chap/chap2.aux)
+[71] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux) (./chap/chap2.aux)
 (./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux) (./chap/chap6.aux)
 (./chap/chap7.aux) (./chap/acknowledgement.aux))
  ***********
@@ -2373,12 +2372,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45191 strings out of 468174
- 937544 string characters out of 5436827
+ 45149 strings out of 468174
+ 936605 string characters out of 5436827
  2181481 words of memory out of 5000000
- 73174 multiletter control sequences out of 15000+600000
+ 73132 multiletter control sequences out of 15000+600000
  635833 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 123i,13n,121p,2717b,6698s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,13n,121p,1201b,6671s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (79 pages).
+Output written on main.pdf (77 pages).

@@ -19,26 +19,23 @@
 
 \refsection{0}
   \datalist[entry]{gb7714-2015/global//global/global/global}
-    \entry{andersenEfficientSimulationHeston2007}{online}{}{}
+    \entry{andersenEfficientSimulationHeston2007}{article}{}{}
       \name{author}{1}{}{%
         {{hash=d63e46157e20326be323a1fc548dc259}{%
            family={Andersen},
            familyi={A\bibinitperiod},
-           given={Leif\bibnamedelimb B.\bibnamedelimi G.},
-           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+           given={Leif\bibnamedelima BG},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
       }
       \name{namea}{1}{}{%
         {{hash=d63e46157e20326be323a1fc548dc259}{%
            family={Andersen},
            familyi={A\bibinitperiod},
-           given={Leif\bibnamedelimb B.\bibnamedelimi G.},
-           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+           given={Leif\bibnamedelima BG},
+           giveni={L\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {english}%
-      }
-      \list{location}{1}{%
-        {Rochester, NY}%
       }
       \strng{namehash}{d63e46157e20326be323a1fc548dc259}
       \strng{fullhash}{d63e46157e20326be323a1fc548dc259}
@@ -59,42 +56,17 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Stochastic volatility models are increasingly important in practical derivatives pricing applications, yet relatively little work has been undertaken in the development of practical Monte Carlo simulation methods for this class of models. This paper considers several new algorithms for time-discretization and Monte Carlo simulation of Heston-type stochastic volatility models. The algorithms are based on a careful analysis of the properties of affine stochastic volatility diffusions, and are straightforward and quick to implement and execute. Tests on realistic model parameterizations reveal that the computational efficiency and robustness of the simulation schemes proposed in the paper compare very favorably to existing methods.}
-      \field{day}{23}
-      \field{eprinttype}{Social Science Research Network}
+      \field{journaltitle}{Available at SSRN 946405}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{month}{1}
-      \field{number}{946405}
-      \field{pubstate}{prepublished}
-      \field{title}{Efficient {{Simulation}} of the {{Heston Stochastic Volatility Model}}}
-      \field{type}{SSRN Scholarly Paper}
-      \field{urlday}{6}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
-      \field{usera}{EB}
+      \field{title}{Efficient simulation of the Heston stochastic volatility model}
+      \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{year}{2007}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.2139/ssrn.946405
-      \endverb
-      \verb{eprint}
-      \verb 946405
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\8EMCUNRF\Andersen - 2007 - Efficient Simulation of the Heston Stochastic Volatility Model.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://papers.ssrn.com/abstract=946405
-      \endverb
-      \verb{url}
-      \verb https://papers.ssrn.com/abstract=946405
-      \endverb
-      \keyw{affine square-root models,bias reduction,Heston model,Monte Carlo simulation,SDE discretization}
+      \keyw{andersenEfficientSimulationHeston2007}
     \endentry
     \entry{andersenModelingForecastingRealized2003}{article}{}{}
       \name{author}{4}{}{%
@@ -163,39 +135,21 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{We provide a framework for integration of high–frequency intraday data into the measurement, modeling, and forecasting of daily and lower frequency return volatilities and return distributions. Building on the theory of continuous–time arbitrage–free price processes and the theory of quadratic variation, we develop formal links between realized volatility and the conditional covariance matrix. Next, using continuously recorded observations for the Deutschemark/Dollar and Yen/Dollar spot exchange rates, we find that forecasts from a simple long–memory Gaussian vector autoregression for the logarithmic daily realized volatilities perform admirably. Moreover, the vector autoregressive volatility forecast, coupled with a parametric lognormal–normal mixture distribution produces well–calibrated density forecasts of future returns, and correspondingly accurate quantile predictions. Our results hold promise for practical modeling and forecasting of the large covariance matrices relevant in asset pricing, asset allocation, and financial risk management applications.}
-      \field{issn}{1468-0262}
       \field{journaltitle}{Econometrica}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
       \field{number}{2}
       \field{title}{Modeling and {{Forecasting Realized Volatility}}}
-      \field{urlday}{12}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{71}
       \field{year}{2003}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{579\bibrangedash 625}
       \range{pages}{47}
-      \verb{doi}
-      \verb 10.1111/1468-0262.00418
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\GJJGW26E\1468-0262.html
-      \endverb
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1468-0262.00418
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1468-0262.00418
-      \endverb
-      \keyw{continuous–time methods,density forecasting,high–frequency data,long memory,quadratic variation,realized volatility,risk management,volatility forecasting}
+      \keyw{andersenModelingForecastingRealized2003}
     \endentry
     \entry{baldeauxEXACTSIMULATION322012}{article}{}{}
       \name{author}{1}{}{%
@@ -235,8 +189,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{This paper discusses the exact simulation of the stock price process underlying the 3/2 model. Using a result derived by Craddock and Lennox using Lie Symmetry Analysis, we adapt the Broadie-Kaya algorithm for the simulation of affine processes to the 3/2 model. We also discuss variance reduction techniques and find that conditional Monte Carlo techniques combined with quasi-Monte Carlo point sets result in significant variance reductions.}
-      \field{issn}{0219-0249, 1793-6322}
       \field{journaltitle}{International Journal of Theoretical and Applied Finance}
       \field{langid}{english}
       \field{languageid}{english}
@@ -245,30 +197,14 @@
       \field{number}{05}
       \field{shortjournal}{Int. J. Theor. Appl. Finan.}
       \field{title}{{{Exact Simulation}} of the 3/2 {{model}}}
-      \field{urlday}{12}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{15}
       \field{year}{2012}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{1250032}
       \range{pages}{1}
-      \verb{doi}
-      \verb 10.1142/S021902491250032X
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\PIXLSJIX\Baldeaux - 2012 - EXACT SIMULATION OF THE 32 MODEL.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://www.worldscientific.com/doi/abs/10.1142/S021902491250032X
-      \endverb
-      \verb{url}
-      \verb https://www.worldscientific.com/doi/abs/10.1142/S021902491250032X
-      \endverb
       \keyw{baldeauxEXACTSIMULATION322012}
     \endentry
     \entry{baldeauxConsistentModelingVIX2012}{online}{}{}
@@ -319,7 +255,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The paper demonstrates that a pure-diffusion 3/2 model is able to capture the observed upward-sloping implied volatility skew in VIX options. This observation contradicts a common perception in the literature that jumps are required for the consistent modelling of equity and VIX derivatives. The pure-diffusion model, however, struggles to reproduce the smile in the implied volatilities of short-term index options. One remedy to this problem is to augment the model by introducing jumps in the index. The resulting 3/2 plus jumps model turns out to be as tractable as its pure-diffusion counterpart when it comes to pricing equity, realized variance and VIX derivatives, but accurately captures the smile in implied volatilities of short-term index options.}
       \field{day}{6}
       \field{eprintclass}{q-fin}
       \field{eprinttype}{arXiv}
@@ -327,33 +262,16 @@
       \field{languageid}{english}
       \field{lansortorder}{4}
       \field{month}{8}
-      \field{pubstate}{prepublished}
       \field{title}{Consistent {{Modeling}} of {{VIX}} and {{Equity Derivatives Using}} a 3/2 plus {{Jumps Model}}}
-      \field{urlday}{12}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{EB}
       \field{userd}{english}
       \field{userf}{english}
       \field{year}{2012}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.48550/arXiv.1203.5903
-      \endverb
       \verb{eprint}
       \verb 1203.5903
       \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\R8C4ZECW\Baldeaux和Badran - 2012 - Consistent Modeling of VIX and Equity Derivatives Using a 32 plus Jumps Model.pdf
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/1203.5903
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/1203.5903
-      \endverb
-      \keyw{Quantitative Finance - Pricing of Securities}
+      \keyw{baldeauxConsistentModelingVIX2012}
     \endentry
     \entry{blackPricingOptionsCorporate1973}{article}{}{}
       \name{author}{2}{}{%
@@ -404,36 +322,20 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{If options are correctly priced in the market, it should not be possible to make sure profits by creating portfolios of long and short positions in options and their underlying stocks. Using this principle, a theoretical valuation formula for options is derived. Since almost all corporate liabilities can be viewed as combinations of options, the formula and the analysis that led to it are also applicable to corporate liabilities such as common stock, corporate bonds, and warrants. In particular, the formula can be used to derive the discount that should be applied to a corporate bond because of the possibility of default.}
-      \field{issn}{0022-3808}
-      \field{journaltitle}{Journal of Political Economy}
+      \field{journaltitle}{Journal of political economy}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{month}{5}
       \field{number}{3}
-      \field{title}{The {{Pricing}} of {{Options}} and {{Corporate Liabilities}}}
-      \field{urlday}{12}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
+      \field{title}{The pricing of options and corporate liabilities}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{81}
       \field{year}{1973}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{637\bibrangedash 654}
       \range{pages}{18}
-      \verb{doi}
-      \verb 10.1086/260062
-      \endverb
-      \verb{urlraw}
-      \verb https://www.journals.uchicago.edu/doi/abs/10.1086/260062
-      \endverb
-      \verb{url}
-      \verb https://www.journals.uchicago.edu/doi/abs/10.1086/260062
-      \endverb
       \keyw{blackPricingOptionsCorporate1973}
     \endentry
     \entry{brignoneExactSimulationStochastic2026}{article}{}{}
@@ -482,7 +384,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{03772217}
       \field{journaltitle}{European Journal of Operational Research}
       \field{langid}{english}
       \field{languageid}{english}
@@ -491,30 +392,14 @@
       \field{number}{3}
       \field{shortjournal}{European Journal of Operational Research}
       \field{title}{Exact Simulation of Stochastic Volatility Models Based on Conditional {{Fourier-cosine}} Method}
-      \field{urlday}{12}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{328}
       \field{year}{2026}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{1036\bibrangedash 1053}
       \range{pages}{18}
-      \verb{doi}
-      \verb 10.1016/j.ejor.2025.08.061
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\8P7PN5BQ\Brignone和Junike - 2026 - Exact simulation of stochastic volatility models based on conditional Fourier-cosine method.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/S037722172500712X
-      \endverb
-      \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/S037722172500712X
-      \endverb
       \keyw{brignoneExactSimulationStochastic2026}
     \endentry
     \entry{broadieExactSimulationStochastic2006}{article}{}{}
@@ -563,8 +448,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The stochastic differential equations for affine jump diffusion models do not yield exact solutions that can be directly simulated. Discretization methods can be used for simulating security prices under these models. However, discretization introduces bias into the simulation results, and a large number of time steps may be needed to reduce the discretization bias to an acceptable level. This paper suggests a method for the exact simulation of the stock price and variance under Heston’s stochastic volatility model and other affine jump diffusion processes. The sample stock price and variance from the exact distribution can then be used to generate an unbiased estimator of the price of a derivative security. We compare our method with the more conventional Euler discretization method and demonstrate the faster convergence rate of the error in our method. Specifically, our method achieves an O(s -1/2 ) convergence rate, where s is the total computational budget. The convergence rate for the Euler discretization method is O(s -1/3 ) or slower, depending on the model coefficients and option payoff function.}
-      \field{issn}{0030-364X, 1526-5463}
       \field{journaltitle}{Operations Research}
       \field{langid}{english}
       \field{languageid}{english}
@@ -573,30 +456,14 @@
       \field{number}{2}
       \field{shortjournal}{Operations Research}
       \field{title}{Exact {{Simulation}} of {{Stochastic Volatility}} and {{Other Affine Jump Diffusion Processes}}}
-      \field{urlday}{15}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{54}
       \field{year}{2006}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{217\bibrangedash 231}
       \range{pages}{15}
-      \verb{doi}
-      \verb 10.1287/opre.1050.0247
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\6BNSRFED\Broadie和Kaya - 2006 - Exact Simulation of Stochastic Volatility and Other Affine Jump Diffusion Processes.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://pubsonline.informs.org/doi/10.1287/opre.1050.0247
-      \endverb
-      \verb{url}
-      \verb https://pubsonline.informs.org/doi/10.1287/opre.1050.0247
-      \endverb
       \keyw{broadieExactSimulationStochastic2006}
     \endentry
     \entry{carrOptionValuationUsing1999}{article}{}{}
@@ -646,7 +513,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{14601559}
       \field{journaltitle}{The Journal of Computational Finance}
       \field{langid}{english}
       \field{languageid}{english}
@@ -654,30 +520,14 @@
       \field{number}{4}
       \field{shortjournal}{JCF}
       \field{title}{Option Valuation Using the Fast {{Fourier}} Transform}
-      \field{urlday}{7}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{2}
       \field{year}{1999}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{61\bibrangedash 73}
       \range{pages}{13}
-      \verb{doi}
-      \verb 10.21314/JCF.1999.043
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\NEYWTV6P\Carr和Madan - 1999 - Option valuation using the fast Fourier transform.pdf
-      \endverb
-      \verb{urlraw}
-      \verb http://www.risk.net/journal-of-computational-finance/technical-paper/2160495/option-valuation-fast-fourier-transform
-      \endverb
-      \verb{url}
-      \verb http://www.risk.net/journal-of-computational-finance/technical-paper/2160495/option-valuation-fast-fourier-transform
-      \endverb
       \keyw{carrOptionValuationUsing1999}
     \endentry
     \entry{carrNewApproachOption2007}{article}{}{}
@@ -727,9 +577,7 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{We develop a new approach for pricing European-style contingent claims written on the time T spot price of an underlying asset whose volatility is stochastic. Like most of the stochastic volatility literature, we assume continuous dynamics for the price of the underlying asset. In contrast to most of the stochastic volatility literature, we do not directly model the dynamics of the instantaneous volatility. Instead, taking advantage of the recent rise of the variance swap market, we directly assume continuous dynamics for the time T variance swap rate. The initial value of this variance swap rate can either be directly observed, or inferred from option prices. We make no assumption concerning the real world drift of this process. We assume that the ratio of the volatility of the variance swap rate to the instantaneous volatility of the underlying asset just depends on the variance swap rate and on the variance swap maturity. Since this ratio is assumed to be independent of calendar time, we term this key assumption the stationary volatility ratio hypothesis (SVRH). The instantaneous volatility of the futures follows an unspecified stochastic process, so both the underlying futures price and the variance swap rate have unspecified stochastic volatility. Despite this, we show that the payoff to a path-independent contingent claim can be perfectly replicated by dynamic trading in futures contracts and variance swaps of the same maturity. As a result, the contingent claim is uniquely valued relative to its underlying’s futures price and the assumed observable variance swap rate. In contrast to standard models of stochastic volatility, our approach does not require specifying the market price of volatility risk or observing the initial level of instantaneous volatility. As a consequence of our SVRH, the partial differential equation (PDE) governing the arbitrage-free value of the contingent claim just depends on two state variables rather than the usual three. We then focus on the consistency of our SVRH with the standard assumption that the risk-neutral process for the instantaneous variance is a diffusion whose coefficients are independent of the variance swap maturity. We show that the combination of this maturity independent diffusion hypothesis (MIDH) and our SVRH implies a very special form of the risk-neutral diffusion process for the instantaneous variance. Fortunately, this process is tractable, well-behaved, and enjoys empirical support. Finally, we show that our model can also be used to robustly price and hedge volatility derivatives.}
       \field{day}{1}
-      \field{issn}{1573-7144}
       \field{journaltitle}{Review of Derivatives Research}
       \field{langid}{english}
       \field{languageid}{english}
@@ -738,31 +586,15 @@
       \field{number}{2}
       \field{shortjournal}{Rev Deriv Res}
       \field{title}{A New Approach for Option Pricing under Stochastic Volatility}
-      \field{urlday}{8}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{10}
       \field{year}{2007}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{87\bibrangedash 150}
       \range{pages}{64}
-      \verb{doi}
-      \verb 10.1007/s11147-007-9014-6
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\DDZWE77T\Carr和Sun - 2007 - A new approach for option pricing under stochastic volatility.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1007/s11147-007-9014-6
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1007/s11147-007-9014-6
-      \endverb
-      \keyw{Option pricing,Stochastic volatility}
+      \keyw{carrNewApproachOption2007}
     \endentry
     \entry{choiSimulationSchemesHeston2024}{article}{}{}
       \name{author}{2}{}{%
@@ -810,9 +642,7 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Exact simulation schemes under the Heston stochastic volatility model (e.g., Broadie–Kaya and Glasserman–Kim) suffer from computationally expensive modified Bessel function evaluations. We propose a new exact simulation scheme without the modified Bessel function, based on the observation that the conditional integrated variance can be simplified when conditioned by the Poisson variate used for simulating the terminal variance. Our approach also enhances the low-bias and time discretization schemes, which are suitable for pricing derivatives with frequent monitoring. Extensive numerical tests reveal the good performance of the new simulation schemes in terms of accuracy, efficiency, and reliability when compared with existing methods.}
       \field{day}{1}
-      \field{issn}{0377-2217}
       \field{journaltitle}{European Journal of Operational Research}
       \field{langid}{english}
       \field{languageid}{english}
@@ -821,28 +651,15 @@
       \field{number}{1}
       \field{shortjournal}{European Journal of Operational Research}
       \field{title}{Simulation Schemes for the {{Heston}} Model with {{Poisson}} Conditioning}
-      \field{urlday}{15}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{314}
       \field{year}{2024}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{363\bibrangedash 376}
       \range{pages}{14}
-      \verb{doi}
-      \verb 10.1016/j.ejor.2023.10.048
-      \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S0377221723008238
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S0377221723008238
-      \endverb
-      \keyw{(B) finance,Exact simulation,Gamma expansion,Heston model,Poisson conditioning}
+      \keyw{choiSimulationSchemesHeston2024}
     \endentry
     \entry{craddockCalculationExpectationsClasses2009}{article}{}{}
       \name{author}{2}{}{%
@@ -891,7 +708,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{1}
-      \field{issn}{1050-5164}
       \field{journaltitle}{The Annals of Applied Probability}
       \field{langid}{english}
       \field{languageid}{english}
@@ -900,28 +716,12 @@
       \field{number}{1}
       \field{shortjournal}{Ann. Appl. Probab.}
       \field{title}{The Calculation of Expectations for Classes of Diffusion Processes by {{Lie}} Symmetry Methods}
-      \field{urlday}{12}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{19}
       \field{year}{2009}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{doi}
-      \verb 10.1214/08-AAP534
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\N46292I3\Craddock和Lennox - 2009 - The calculation of expectations for classes of diffusion processes by Lie symmetry methods.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://projecteuclid.org/journals/annals-of-applied-probability/volume-19/issue-1/The-calculation-of-expectations-for-classes-of-diffusion-processes-by/10.1214/08-AAP534.full
-      \endverb
-      \verb{url}
-      \verb https://projecteuclid.org/journals/annals-of-applied-probability/volume-19/issue-1/The-calculation-of-expectations-for-classes-of-diffusion-processes-by/10.1214/08-AAP534.full
-      \endverb
       \keyw{craddockCalculationExpectationsClasses2009}
     \endentry
     \entry{dermanRidingSmile1994}{article}{}{}
@@ -984,31 +784,28 @@
       \field{volume}{7}
       \field{year}{1994}
       \field{dateera}{ce}
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\8GWSUF24\Derman和Kani - 1994 - Riding on a Smile.pdf
-      \endverb
       \keyw{dermanRidingSmile1994}
     \endentry
-    \entry{drimusOptionsRealizedVariance2011}{online}{}{}
+    \entry{drimusOptionsRealizedVariance2011}{article}{}{}
       \name{author}{1}{}{%
         {{hash=e2ce9b66c71328e4bfa8558ea1dfd701}{%
            family={Drimus},
            familyi={D\bibinitperiod},
-           given={Gabriel\bibnamedelima G.},
+           given={Gabriel\bibnamedelima G},
            giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
       }
       \name{namea}{1}{}{%
         {{hash=e2ce9b66c71328e4bfa8558ea1dfd701}{%
            family={Drimus},
            familyi={D\bibinitperiod},
-           given={Gabriel\bibnamedelima G.},
+           given={Gabriel\bibnamedelima G},
            giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {english}%
       }
-      \list{location}{1}{%
-        {Rochester, NY}%
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
       }
       \strng{namehash}{e2ce9b66c71328e4bfa8558ea1dfd701}
       \strng{fullhash}{e2ce9b66c71328e4bfa8558ea1dfd701}
@@ -1028,39 +825,21 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{We study the pricing of options on realized variance in a general class of Log-OU stochastic volatility models. The class includes several important models proposed in the literature. Having as common feature the log-normal law of instantaneous variance, the application of standard Fourier-Laplace transform methods is not feasible. We derive extensions of Asian pricing methods, to obtain bounds, in particular, a very tight lower bound for options on realized variance.}
-      \field{day}{1}
-      \field{eprinttype}{Social Science Research Network}
+      \field{journaltitle}{Applied Mathematical Finance}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{month}{10}
-      \field{number}{1570591}
-      \field{pubstate}{prepublished}
-      \field{title}{Options on {{Realized Variance}} in {{Log-OU}} Models}
-      \field{type}{SSRN Scholarly Paper}
-      \field{urlday}{12}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
-      \field{usera}{EB}
+      \field{number}{5}
+      \field{title}{Options on realized variance in Log-OU models}
+      \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
-      \field{year}{2011}
+      \field{volume}{19}
+      \field{year}{2012}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{eprint}
-      \verb 1570591
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\UNDR68X8\Drimus - 2011 - Options on Realized Variance in Log-OU models.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://papers.ssrn.com/abstract=1570591
-      \endverb
-      \verb{url}
-      \verb https://papers.ssrn.com/abstract=1570591
-      \endverb
-      \keyw{Asian options,options on realized variance,stochastic volatility}
+      \field{pages}{477\bibrangedash 494}
+      \range{pages}{18}
+      \keyw{drimusOptionsRealizedVariance2011}
     \endentry
     \entry{dufresne2001integrated}{book}{}{}
       \name{author}{1}{}{%
@@ -1192,9 +971,6 @@
       \list{language}{1}{%
         {english}%
       }
-      \list{publisher}{1}{%
-        {Society for Industrial and Applied Mathematics}%
-      }
       \strng{namehash}{22b72bd5ec673a9539d18f6cc6ef8ff4}
       \strng{fullhash}{aa63f4f0af46fa47b789b605b8746719}
       \strng{fullhashraw}{aa63f4f0af46fa47b789b605b8746719}
@@ -1213,8 +989,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{A fast and accurate method for pricing early exercise and certain exotic options in computational finance is presented. The method is based on a quadrature technique and relies heavily on Fourier transformations. The main idea is to reformulate the well-known risk-neutral valuation formula by recognizing that it is a convolution. The resulting convolution is dealt with numerically by using the fast Fourier transform. This novel pricing method, which we dub the convolution method, is applicable to a wide variety of payoffs and requires only the knowledge of the characteristic function of the model. As such, the method is applicable within many regular affine models, among which is the class of exponential Lévy models. For an M-times exercisable Bermudan option, the overall complexity is 𝑂⁡(𝑀⁢𝑁⁢log2⁡(𝑁)), with N grid points used to discretize the price of the underlying asset. American options are priced efficiently by applying Richardson extrapolation to the prices of Bermudan options.}
-      \field{issn}{1064-8275}
       \field{journaltitle}{SIAM Journal on Scientific Computing}
       \field{langid}{english}
       \field{languageid}{english}
@@ -1223,27 +997,14 @@
       \field{number}{2}
       \field{shortjournal}{SIAM J. Sci. Comput.}
       \field{title}{A {{Novel Pricing Method}} for {{European Options Based}} on {{Fourier-Cosine Series Expansions}}}
-      \field{urlday}{6}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{31}
       \field{year}{2009}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{826\bibrangedash 848}
       \range{pages}{23}
-      \verb{doi}
-      \verb 10.1137/080718061
-      \endverb
-      \verb{urlraw}
-      \verb https://epubs.siam.org/doi/abs/10.1137/080718061
-      \endverb
-      \verb{url}
-      \verb https://epubs.siam.org/doi/abs/10.1137/080718061
-      \endverb
       \keyw{fangNovelPricingMethod2009}
     \endentry
     \entry{glassermanGammaExpansionHeston2011}{article}{}{}
@@ -1292,9 +1053,7 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{We derive an explicit representation of the transitions of the Heston stochastic volatility model and use it for fast and accurate simulation of the model. Of particular interest is the integral of the variance process over an interval, conditional on the level of the variance at the endpoints. We give an explicit representation of this quantity in terms of infinite sums and mixtures of gamma random variables. The increments of the variance process are themselves mixtures of gamma random variables. The representation of the integrated conditional variance applies the Pitman–Yor decomposition of Bessel bridges. We combine this representation with the Broadie–Kaya exact simulation method and use it to circumvent the most time-consuming step in that method.}
       \field{day}{1}
-      \field{issn}{1432-1122}
       \field{journaltitle}{Finance and Stochastics}
       \field{langid}{english}
       \field{languageid}{english}
@@ -1303,31 +1062,15 @@
       \field{number}{2}
       \field{shortjournal}{Finance Stoch}
       \field{title}{Gamma Expansion of the {{Heston}} Stochastic Volatility Model}
-      \field{urlday}{15}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{15}
       \field{year}{2011}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{267\bibrangedash 296}
       \range{pages}{30}
-      \verb{doi}
-      \verb 10.1007/s00780-009-0115-y
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\RUULVPEZ\Glasserman和Kim - 2011 - Gamma expansion of the Heston stochastic volatility model.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1007/s00780-009-0115-y
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1007/s00780-009-0115-y
-      \endverb
-      \keyw{60H35,65C05,91B70,C63,G12,G13,Monte Carlo methods,Stochastic volatility model}
+      \keyw{glassermanGammaExpansionHeston2011}
     \endentry
     \entry{grasselli42Stochastic2017}{article}{}{}
       \name{author}{1}{}{%
@@ -1365,8 +1108,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
-      \field{abstract}{We introduce a new stochastic volatility model that includes, as special instances, the Heston (1993) and the 3/2 model of Heston (1997) and Platen (1997). Our model exhibits important features: first, instantaneous volatility can be uniformly bounded away from zero, and second, our model is mathematically and computationally tractable, thereby enabling an efficient pricing procedure. This called for using the Lie symmetries theory for partial differential equations; doing so allowed us to extend known results on Bessel processes. Finally, we provide an exact simulation scheme for the model, which is useful for numerical applications.}
-      \field{issn}{1467-9965}
       \field{journaltitle}{Mathematical Finance}
       \field{langid}{english}
       \field{languageid}{english}
@@ -1374,31 +1115,15 @@
       \field{number}{4}
       \field{shorttitle}{The 4/2 {{Stochastic Volatility Model}}}
       \field{title}{The 4/2 {{Stochastic Volatility Model}}: {{A Unified Approach}} for the {{Heston}} and the 3/2 {{Model}}}
-      \field{urlday}{8}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{27}
       \field{year}{2017}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{1013\bibrangedash 1034}
       \range{pages}{22}
-      \verb{doi}
-      \verb 10.1111/mafi.12124
-      \endverb
-      \verb{file}
-      \verb C\:\\Users\\27261\\Zotero\\storage\\7XJS8EJB\\Grasselli - 2017 - The 42 Stochastic Volatility Model A Unified Approach for the Heston and the 32 Model.pdf;C\:\\Users\\27261\\Zotero\\storage\\H9G5Q722\\mafi.html
-      \endverb
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/mafi.12124
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/mafi.12124
-      \endverb
-      \keyw{exact simulation,Laplace transform,Lie's symmetries,stochastic volatility,volatility modeling}
+      \keyw{grasselli42Stochastic2017}
     \endentry
     \entry{Hagan2002}{article}{}{}
       \name{author}{4}{}{%
@@ -1482,26 +1207,26 @@
       \range{pages}{25}
       \keyw{Hagan2002}
     \endentry
-    \entry{hestonSimpleNewFormula1997}{online}{}{}
+    \entry{hestonSimpleNewFormula1997}{article}{}{}
       \name{author}{1}{}{%
         {{hash=da886e16f39671df2e1cc9208589b67d}{%
            family={Heston},
            familyi={H\bibinitperiod},
-           given={Steven\bibnamedelima L.},
+           given={Steven\bibnamedelima L},
            giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
       }
       \name{namea}{1}{}{%
         {{hash=da886e16f39671df2e1cc9208589b67d}{%
            family={Heston},
            familyi={H\bibinitperiod},
-           given={Steven\bibnamedelima L.},
+           given={Steven\bibnamedelima L},
            giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {english}%
       }
-      \list{location}{1}{%
-        {Rochester, NY}%
+      \list{publisher}{1}{%
+        {OLIN-97-23}%
       }
       \strng{namehash}{da886e16f39671df2e1cc9208589b67d}
       \strng{fullhash}{da886e16f39671df2e1cc9208589b67d}
@@ -1521,36 +1246,16 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{This paper shows a relationship between bond pricing models and option pricing models with stochastic volatility. It exploits this relationship to find a new stochastic volatility model with a closed-form solution for European option prices. The model allows nonzero correlation between volatility and spot asset returns. When the correlation is unity the model contains the Black-Scholes [1973] model and Cox's [1975] constant elasticity of variance model as special cases. The option formula preserves the Black-Scholes property that changes in volatility are equivalent to changes in option expiration.}
-      \field{day}{19}
-      \field{eprinttype}{Social Science Research Network}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{month}{9}
-      \field{number}{86074}
-      \field{pubstate}{prepublished}
-      \field{title}{A {{Simple New Formula}} for {{Options}} with {{Stochastic Volatility}}}
-      \field{type}{SSRN Scholarly Paper}
-      \field{urlday}{10}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
-      \field{usera}{EB}
+      \field{title}{A simple new formula for options with stochastic volatility}
+      \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{year}{1997}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{eprint}
-      \verb 86074
-      \endverb
-      \verb{urlraw}
-      \verb https://papers.ssrn.com/abstract=86074
-      \endverb
-      \verb{url}
-      \verb https://papers.ssrn.com/abstract=86074
-      \endverb
-      \keyw{A Simple New Formula for Options with Stochastic Volatility,SSRN,Steven L. Heston}
+      \keyw{hestonSimpleNewFormula1997}
     \endentry
     \entry{houPricingCryptocurrencyOptions2020}{article}{}{}
       \name{author}{4}{}{%
@@ -1618,9 +1323,7 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Cryptocurrencies (CCs), especially bitcoin (BTC), which comprises a new digital asset class, have drawn extraordinary worldwide attention. The characteristics of the CC/BTC include a high level of speculation, extreme volatility and price discontinuity. We propose a pricing mechanism based on a stochastic volatility with a correlated jump (SVCJ) model and compare it to a flexible cojump model by Bandi and Renò (2016). The estimation results of both models confirm the impact of jumps and cojumps on options obtained via simulation and an analysis of the implied volatility curve. We show that a sizeable proportion of price jumps is significantly and contemporaneously anticorrelated with jumps in volatility. Our study comprises pioneering research on pricing BTC options. We show how the proposed pricing mechanism underlines the importance of jumps in CC markets.}
       \field{day}{1}
-      \field{issn}{1479-8409}
       \field{journaltitle}{Journal of Financial Econometrics}
       \field{langid}{english}
       \field{languageid}{english}
@@ -1629,30 +1332,14 @@
       \field{number}{2}
       \field{shortjournal}{Journal of Financial Econometrics}
       \field{title}{Pricing {{Cryptocurrency Options}}}
-      \field{urlday}{25}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{18}
       \field{year}{2020}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{250\bibrangedash 279}
       \range{pages}{30}
-      \verb{doi}
-      \verb 10.1093/jjfinec/nbaa006
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\3EVJWVWZ\Hou 等 - 2020 - Pricing Cryptocurrency Options.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1093/jjfinec/nbaa006
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1093/jjfinec/nbaa006
-      \endverb
       \keyw{houPricingCryptocurrencyOptions2020}
     \endentry
     \entry{jonesDynamicsStochasticVolatility2003}{article}{}{}
@@ -1694,7 +1381,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
-      \field{abstract}{No abstract is available for this item.}
       \field{journaltitle}{Journal of Econometrics}
       \field{langid}{english}
       \field{languageid}{english}
@@ -1702,27 +1388,14 @@
       \field{number}{1--2}
       \field{shorttitle}{The Dynamics of Stochastic Volatility}
       \field{title}{The Dynamics of Stochastic Volatility: Evidence from Underlying and Options Markets}
-      \field{urlday}{12}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{116}
       \field{year}{2003}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{181\bibrangedash 224}
       \range{pages}{44}
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\69TLZFET\v116y2003i1-2p181-224.html
-      \endverb
-      \verb{urlraw}
-      \verb https://ideas.repec.org//a/eee/econom/v116y2003i1-2p181-224.html
-      \endverb
-      \verb{url}
-      \verb https://ideas.repec.org//a/eee/econom/v116y2003i1-2p181-224.html
-      \endverb
       \keyw{jonesDynamicsStochasticVolatility2003}
     \endentry
     \entry{kouarfateExplicitSolutionSimulation2021}{incollection}{}{}
@@ -1785,9 +1458,6 @@
       \list{language}{1}{%
         {english}%
       }
-      \list{location}{1}{%
-        {Cham}%
-      }
       \list{publisher}{1}{%
         {Springer International Publishing}%
       }
@@ -1814,14 +1484,10 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advances in {{Probability}} and {{Mathematical Statistics}}}
-      \field{isbn}{978-3-030-85324-2 978-3-030-85325-9}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
       \field{title}{Explicit {{Solution Simulation Method}} for the 3/2 {{Model}}}
-      \field{urlday}{12}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{G}
       \field{userc}{english}
       \field{userd}{english}
@@ -1829,21 +1495,8 @@
       \field{volume}{79}
       \field{year}{2021}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{123\bibrangedash 145}
       \range{pages}{23}
-      \verb{doi}
-      \verb 10.1007/978-3-030-85325-9_8
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\VACWKY9G\Kouarfate 等 - 2021 - Explicit Solution Simulation Method for the 32 Model.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://link.springer.com/10.1007/978-3-030-85325-9_8
-      \endverb
-      \verb{url}
-      \verb https://link.springer.com/10.1007/978-3-030-85325-9_8
-      \endverb
       \keyw{kouarfateExplicitSolutionSimulation2021}
     \endentry
     \entry{lewisOptionValuationStochastic2000}{article}{}{}
@@ -1885,31 +1538,17 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{This book provides an advanced treatment of option valuation. The general setting is that of 2D continuous-time models with stochastic volatility. Explicit equilibrium risk adjustments and many other new results are provided. Mathematica code for the more important formulas is included. For a summary of results, see the Chapter 1 excerpt.}
       \field{journaltitle}{Option Valuation under Stochastic Volatility}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
       \field{title}{Option {{Valuation}} under {{Stochastic Volatility}}}
-      \field{urlday}{6}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{year}{2000}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\2MTZ9QFR\ovsv.html
-      \endverb
-      \verb{urlraw}
-      \verb https://ideas.repec.org//b/vsv/vbooks/ovsv.html
-      \endverb
-      \verb{url}
-      \verb https://ideas.repec.org//b/vsv/vbooks/ovsv.html
-      \endverb
-      \keyw{eigenvalue,equilibrium,GARCH diffusion,implied volatility,local martingale,Mathematica,option pricing,smile,stochastic volatility,term structure,variational}
+      \keyw{lewisOptionValuationStochastic2000}
     \endentry
     \entry{medvedevApproximationCalibrationShortTerm2007}{article}{}{}
       \name{author}{2}{}{%
@@ -1957,7 +1596,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0893-9454, 1465-7368}
       \field{journaltitle}{Review of Financial Studies}
       \field{langid}{english}
       \field{languageid}{english}
@@ -1966,104 +1604,67 @@
       \field{number}{2}
       \field{shortjournal}{Rev. Financ. Stud.}
       \field{title}{Approximation and {{Calibration}} of {{Short-Term Implied Volatilities Under Jump-Diffusion Stochastic Volatility}}}
-      \field{urlday}{12}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{20}
       \field{year}{2007}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{427\bibrangedash 459}
       \range{pages}{33}
-      \verb{doi}
-      \verb 10.1093/rfs/hhl013
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\K2R5UU9V\Medvedev和Scaillet - 2007 - Approximation and Calibration of Short-Term Implied Volatilities Under Jump-Diffusion Stochastic Vol.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://academic.oup.com/rfs/article-lookup/doi/10.1093/rfs/hhl013
-      \endverb
-      \verb{url}
-      \verb https://academic.oup.com/rfs/article-lookup/doi/10.1093/rfs/hhl013
-      \endverb
       \keyw{medvedevApproximationCalibrationShortTerm2007}
     \endentry
     \entry{mertonTheoryRationalOption1973}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
       \name{author}{1}{}{%
         {{hash=b1e2894bce14479f5a711418ce8f8ffa}{%
            family={Merton},
            familyi={M\bibinitperiod},
-           given={Robert\bibnamedelima C.},
+           given={Robert\bibnamedelima C},
            giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
       }
+      \true{morenamea}
       \name{namea}{1}{}{%
         {{hash=b1e2894bce14479f5a711418ce8f8ffa}{%
            family={Merton},
            familyi={M\bibinitperiod},
-           given={Robert\bibnamedelima C.},
+           given={Robert\bibnamedelima C},
            giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
       }
       \list{language}{1}{%
         {english}%
       }
       \list{publisher}{1}{%
-        {[Wiley, RAND Corporation]}%
+        {World Scientific}%
       }
       \strng{namehash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{fullhash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{fullhashraw}{b1e2894bce14479f5a711418ce8f8ffa}
+      \strng{fullhash}{e81cd86f5d714b3b062aba36b33f49b4}
+      \strng{fullhashraw}{e81cd86f5d714b3b062aba36b33f49b4}
       \strng{bibnamehash}{b1e2894bce14479f5a711418ce8f8ffa}
       \strng{authorbibnamehash}{b1e2894bce14479f5a711418ce8f8ffa}
       \strng{authornamehash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{authorfullhash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{authorfullhashraw}{b1e2894bce14479f5a711418ce8f8ffa}
+      \strng{authorfullhash}{e81cd86f5d714b3b062aba36b33f49b4}
+      \strng{authorfullhashraw}{e81cd86f5d714b3b062aba36b33f49b4}
       \strng{nameabibnamehash}{b1e2894bce14479f5a711418ce8f8ffa}
       \strng{nameanamehash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{nameafullhash}{b1e2894bce14479f5a711418ce8f8ffa}
-      \strng{nameafullhashraw}{b1e2894bce14479f5a711418ce8f8ffa}
+      \strng{nameafullhash}{e81cd86f5d714b3b062aba36b33f49b4}
+      \strng{nameafullhashraw}{e81cd86f5d714b3b062aba36b33f49b4}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The long history of the theory of option pricing began in 1900 when the French mathematician Louis Bachelier deduced an option pricing formula based on the assumption that stock prices follow a Brownian motion with zero drift. Since that time, numerous researchers have contributed to the theory. The present paper begins by deducing a set of restrictions on option pricing formulas from the assumption that investors prefer more to less. These restrictions are necessary conditions for a formula to be consistent with a rational pricing theory. Attention is given to the problems created when dividends are paid on the underlying common stock and when the terms of the option contract can be changed explicitly by a change in exercise price or implicitly by a shift in the investment or capital structure policy of the firm. Since the deduced restrictions are not sufficient to uniquely determine an option pricing formula, additional assumptions are introduced to examine and extend the seminal Black-Scholes theory of option pricing. Explicit formulas for pricing both call and put options as well as for warrants and the new "down-and-out" option are derived. The effects of dividends and call provisions on the warrant price are examined. The possibilities for further extension of the theory to the pricing of corporate liabilities are discussed.}
-      \field{eprinttype}{jstor}
-      \field{issn}{0005-8556}
-      \field{journaltitle}{The Bell Journal of Economics and Management Science}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
-      \field{number}{1}
-      \field{title}{Theory of {{Rational Option Pricing}}}
-      \field{urlday}{12}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
+      \field{title}{Theory of rational option pricing}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
-      \field{volume}{4}
-      \field{year}{1973}
+      \field{year}{1971}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{141\bibrangedash 183}
-      \range{pages}{43}
-      \verb{doi}
-      \verb 10.2307/3003143
-      \endverb
-      \verb{eprint}
-      \verb 3003143
-      \endverb
-      \verb{urlraw}
-      \verb https://www.jstor.org/stable/3003143
-      \endverb
-      \verb{url}
-      \verb https://www.jstor.org/stable/3003143
-      \endverb
       \keyw{mertonTheoryRationalOption1973}
     \endentry
     \entry{pitmanDecompositionBesselBridges1982}{article}{}{}
@@ -2112,7 +1713,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0044-3719, 1432-2064}
       \field{journaltitle}{Zeitschrift für Wahrscheinlichkeitstheorie und Verwandte Gebiete}
       \field{langid}{english}
       \field{languageid}{english}
@@ -2120,30 +1720,14 @@
       \field{number}{4}
       \field{shortjournal}{Z. Wahrscheinlichkeitstheorie verw Gebiete}
       \field{title}{A Decomposition of {{Bessel Bridges}}}
-      \field{urlday}{12}
-      \field{urlmonth}{3}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{59}
       \field{year}{1982}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{425\bibrangedash 457}
       \range{pages}{33}
-      \verb{doi}
-      \verb 10.1007/BF00532802
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\S83WQ5T3\Pitman和Yor - 1982 - A decomposition of Bessel Bridges.pdf
-      \endverb
-      \verb{urlraw}
-      \verb http://link.springer.com/10.1007/BF00532802
-      \endverb
-      \verb{url}
-      \verb http://link.springer.com/10.1007/BF00532802
-      \endverb
       \keyw{pitmanDecompositionBesselBridges1982}
     \endentry
     \entry{rubinsteinNonparametricTestsAlternative1985}{article}{}{}
@@ -2182,38 +1766,20 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The tests reported here differ in several ways from those of most other papers testing option pricing models: an extremely large sample of observations of both trades and bid-ask quotes is examined, careful consideration is given to discarding misleading records, nonparametric rather than parametric statistical tests are used, reported results are not sensitive to measurement of stock volatility, special care is taken to incorporate the effects of dividends and early exercise, a simple method is developed to test several option pricing formulas simultaneously, and the statistical significance and consistency across subsamples of the most important reported results are unusually high. The three key results are: (1) short-maturity out-of-the-money calls are priced significantly higher relative to other calls than the Black-Scholes model would predict, (2) striking price biases relative to the Black-Scholes model are also statistically significant but have reversed themselves after long periods of time, and (3) no single option pricing model currently developed seems likely to explain this reversal.}
-      \field{issn}{1540-6261}
       \field{journaltitle}{The Journal of Finance}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
       \field{number}{2}
       \field{title}{Nonparametric {{Tests}} of {{Alternative Option Pricing Models Using All Reported Trades}} and {{Quotes}} on the 30 {{Most Active CBOE Option Classes}} from {{August}} 23, 1976 through {{August}} 31, 1978}
-      \field{urlday}{12}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{40}
       \field{year}{1985}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{455\bibrangedash 480}
       \range{pages}{26}
-      \verb{doi}
-      \verb 10.1111/j.1540-6261.1985.tb04967.x
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\AD4P544A\j.1540-6261.1985.tb04967.html
-      \endverb
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.1985.tb04967.x
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.1985.tb04967.x
-      \endverb
       \keyw{rubinsteinNonparametricTestsAlternative1985}
     \endentry
     \entry{scaillet2020high}{article}{}{}
