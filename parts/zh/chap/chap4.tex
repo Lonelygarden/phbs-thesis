@@ -55,7 +55,6 @@ Milstein 离散格式是对 Euler 格式的二阶修正，通过引入扩散项�
   v_{t_{n+1}} = v_{t_n} + \kappa (\theta - v_{t_n}) v_{t_n} \Delta t + \epsilon v_{t_n}^{3/2} \Delta W_n^1 + \frac {3}{4} \epsilon^2 v_{t_n}^2 \left ( (\Delta W_n^1)^2 - \Delta t \right).
   \label {milstein_v}
 \end {equation}
-
 与 Euler 格式一致，完成方差路径迭代后，通过式 \eqref{trapezoidal_I} 计算积分方差$V_t$，再代入式 \eqref{priceFormulaForConditionalMC} 生成对数到期价格。
 
 \subsubsection{误差特性与收敛性分析}

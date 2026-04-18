@@ -5,11 +5,19 @@
 \documentclass[fontset=fandol,ugly,language=chinese]{pkuthss}
 
 \usepackage[backend=biber,style=gb7714-2015ay]{biblatex}
+\DeclareNameAlias{sortname}{family-given}
+\DeclareNameAlias{default}{family-given}
 \usepackage{enumitem,fancyvrb}
 \usepackage{booktabs,multirow,longtable,makecell}
 \RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame=single,tabsize=4,fontsize=\footnotesize}
 \renewcommand{\v}[1]{\boldsymbol{#1}}
 \newcommand\pkg[1]{\textsf{#1}}
+
+\usepackage{etoolbox}
+% 公式前：单倍行距 + 空 0.6pt
+\BeforeBeginEnvironment{equation}{\begin{singlespace}\vspace{-6pt}}
+% 公式后：空 0.6pt + 关闭单倍行距
+\AfterEndEnvironment{equation}{\vspace{-6pt}\end{singlespace}}
 
 % 参考文献格式
 \setlength{\bibitemsep}{3bp}

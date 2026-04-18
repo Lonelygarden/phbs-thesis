@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  12 APR 2026 23:46
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  17 APR 2026 16:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1350,11 +1350,11 @@ File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )
 \tikz@expandcount=\count355
 
-c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex:392
-0: Interruption.
-l.3920 
-         \pgfutil@ifnextchar\reset@color% hack for color package
-? :/texlive/2025/texmf-dist/tex/latex/koma-script/scrextend.sty
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(c:/texlive/2025/texmf-dist/tex/latex/koma-script/scrextend.sty
 Package: scrextend 2026/02/02 v3.49.2 KOMA-Script package (extend other classes
  with features of KOMA-Script classes)
 
@@ -1959,26 +1959,26 @@ LaTeX Warning: Unused global option(s):
 (./chap/chap7.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -2025,22 +2025,22 @@ Package caption Info: scrextend package is loaded.
 \caption@addmargin@linewidth=\dimen355
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 25.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 36.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 25.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 25.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 25.
-Package hyperref Info: Option `unicode' set `true' on input line 25.
-Package hyperref Info: Option `psdextra' set `true' on input line 25.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 36.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 36.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 36.
+Package hyperref Info: Option `unicode' set `true' on input line 36.
+Package hyperref Info: Option `psdextra' set `true' on input line 36.
 
 (c:/texlive/2025/texmf-dist/tex/latex/hyperref/psdextra.def
 File: psdextra.def 2026-01-29 v7.01p Hyperref: Additions to PDF string support
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 25.
-Package hyperref Info: Option `plainpages' set `false' on input line 25.
-Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 25.
+Package hyperref Info: Option `breaklinks' set `true' on input line 36.
+Package hyperref Info: Option `plainpages' set `false' on input line 36.
+Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 36.
 
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring OFF on input line 36.
  (./main.out)
 (./main.out)
 \@outlinefile=\write6
@@ -2061,8 +2061,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 25.
-Package biblatex Info: Reference segment=0 on input line 25.
+Package biblatex Info: Reference section=0 on input line 36.
+Package biblatex Info: Reference segment=0 on input line 36.
 \openout2 = `chap/abstract.aux'.
 
  (./chap/abstract.tex
@@ -2096,10 +2096,7 @@ LaTeX Font Info:    Font shape `TU/texgyreheros(0)/b/n' will be
 
 
 
-]) [2] (./main.toc
-Underfull \vbox (badness 3449) has occurred while \output is active []
-
- [3
+]) [2] (./main.toc [3
 
 
 
@@ -2134,20 +2131,13 @@ Chapter 1
 
 
 
-]
-Underfull \vbox (badness 2261) has occurred while \output is active []
-
- [2]
-[3]
+] [2] [3]
 Overfull \hbox (0.19775pt too wide) in paragraph at lines 27--28
 \TU/XITS(0)/m/n/12.045 tion of pricing formulas for the 3/2 model. It has neith
 er constructed a comprehensive analytical
  []
 
-
-Underfull \vbox (badness 7099) has occurred while \output is active []
-
- [4]
+[4]
 Overfull \hbox (9.56331pt too wide) in paragraph at lines 37--38
 []\TU/XITS(0)/m/n/12.045 Second, to execute a systematic performance evaluation
  of different pricing methods through
@@ -2159,10 +2149,7 @@ Overfull \hbox (4.34784pt too wide) in paragraph at lines 39--40
 el and extreme-scenario re-evaluation
  []
 
-[6]
-Underfull \vbox (badness 7099) has occurred while \output is active []
-
- [7]
+[6] [7]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 12.04628pt on input line 59.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -2175,8 +2162,7 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 9.03278pt on input line 59.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 7.22623pt on input line 59.
-)
-[8]
+) [8]
 \openout2 = `chap/chap2.aux'.
 
  (./chap/chap2.tex
@@ -2187,23 +2173,13 @@ Chapter 2
 
 
 
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]
+] [10] [11]
 Overfull \hbox (0.28345pt too wide) in paragraph at lines 29--30
 \TU/XITS(0)/m/n/12.045 pioneering research, exploring the exact simulation sche
 me for the stock price process under the
  []
 
-
-Underfull \vbox (badness 1168) has occurred while \output is active []
-
- [12]
-[13] [14] [15]) [16] [17]
+[12] [13] [14] [15]) [16] [17]
 \openout2 = `chap/chap3.aux'.
 
  (./chap/chap3.tex [18
@@ -2220,14 +2196,7 @@ Overfull \hbox (22.15034pt too wide) in paragraph at lines 15--16
 s and the instantaneous variance/volatility
  []
 
-[19]
-Underfull \vbox (badness 1354) has occurred while \output is active []
-
- [20]
-Underfull \vbox (badness 4205) has occurred while \output is active []
-
- [21])
-[22]
+[19] [20] [21]) [22]
 \openout2 = `chap/chap4.aux'.
 
  (./chap/chap4.tex
@@ -2250,11 +2219,7 @@ Overfull \hbox (12.50232pt too wide) in paragraph at lines 143--144
 mentation procedure of the Poisson-
  []
 
-[29] [30] [31]
-Underfull \vbox (badness 4353) has occurred while \output is active []
-
- [32]
-[33]
+[29] [30] [31] [32] [33]
 Overfull \hbox (5.91145pt too wide) in paragraph at lines 233--234
 []\TU/XITS(0)/m/n/12.045 The Conditional Fourier-Cosine simulation method was p
 roposed by [][]Brignone et al.[] [][]2026[][]$[]$.
@@ -2312,10 +2277,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
 
-[49]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50]
+[49] [50]
 Overfull \hbox (11.56958pt too wide) in paragraph at lines 289--290
 \TU/XITS(0)/m/n/12.045 high vol-of-vol and strong negative correlation cases, s
 hort maturity scenarios, or deep ITM/OTM
@@ -2336,10 +2298,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
 
-[53])
-Underfull \vbox (badness 3635) has occurred while \output is active []
-
- [54]
+[53]) [54]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.69254pt, for example:
@@ -2359,10 +2318,6 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 ]
 Chapter 6
 
-Underfull \vbox (badness 1314) has occurred while \output is active []
-
-
-
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
 (fancyhdr)                \setlength{\headheight}{23.65038pt}.
@@ -2370,9 +2325,6 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
 [57] [58]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2454,9 +2406,6 @@ File: img/Flash_Crash_6D_Evolution_NoJump.png Graphic file (type bmp)
 File: img/Flash_Crash_20D_Evolution_NoJump.png Graphic file (type bmp)
 <img/Flash_Crash_20D_Evolution_NoJump.png>
  [70]
-Underfull \vbox (badness 4647) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2469,10 +2418,6 @@ Overfull \hbox (7.51166pt too wide) in paragraph at lines 239--240
 []\TU/XITS(0)/m/n/12.045 Time-stepping methods include the Euler/Milstein discr
 ete scheme, Exact Stepping method,
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
@@ -2491,10 +2436,7 @@ Overfull \hbox (11.11308pt too wide) in paragraph at lines 387--388
 ldeaux Exact Simulation, Fourier-
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [74]
+[74]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2524,9 +2466,6 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
 [79] [80]
-Underfull \vbox (badness 5245) has occurred while \output is active []
-
-
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2534,10 +2473,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[81]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [82])
+[81] [82])
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2556,26 +2492,19 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 ]
 Chapter 7
-[85]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [86]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [87]
-[88] [89]) [90]
+[85] [86] [87] [88] [89]) [90]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 10.54048pt on input line 51.
+(Font)              scaled to size 10.54048pt on input line 62.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 51.
+(Font)              scaled to size 7.00075pt on input line 62.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 10.53824pt on input line 51.
+(Font)              scaled to size 10.53824pt on input line 62.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 51.
+(Font)              scaled to size 6.99925pt on input line 62.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 51.
+(Font)              size <10.95> substituted on input line 62.
 
 [91
 
@@ -2601,12 +2530,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44855 strings out of 468174
- 916822 string characters out of 5436827
- 2167570 words of memory out of 5000000
- 72850 multiletter control sequences out of 15000+600000
+ 44871 strings out of 468174
+ 917377 string characters out of 5436827
+ 2168656 words of memory out of 5000000
+ 72866 multiletter control sequences out of 15000+600000
  635801 words of font info for 138 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 123i,13n,121p,2767b,6716s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,13n,121p,2767b,6698s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (99 pages).

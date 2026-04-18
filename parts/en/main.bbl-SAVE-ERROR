@@ -163,39 +163,21 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{We provide a framework for integration of high–frequency intraday data into the measurement, modeling, and forecasting of daily and lower frequency return volatilities and return distributions. Building on the theory of continuous–time arbitrage–free price processes and the theory of quadratic variation, we develop formal links between realized volatility and the conditional covariance matrix. Next, using continuously recorded observations for the Deutschemark/Dollar and Yen/Dollar spot exchange rates, we find that forecasts from a simple long–memory Gaussian vector autoregression for the logarithmic daily realized volatilities perform admirably. Moreover, the vector autoregressive volatility forecast, coupled with a parametric lognormal–normal mixture distribution produces well–calibrated density forecasts of future returns, and correspondingly accurate quantile predictions. Our results hold promise for practical modeling and forecasting of the large covariance matrices relevant in asset pricing, asset allocation, and financial risk management applications.}
-      \field{issn}{1468-0262}
       \field{journaltitle}{Econometrica}
       \field{langid}{english}
       \field{languageid}{english}
       \field{lansortorder}{4}
       \field{number}{2}
       \field{title}{Modeling and {{Forecasting Realized Volatility}}}
-      \field{urlday}{12}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{71}
       \field{year}{2003}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{579\bibrangedash 625}
       \range{pages}{47}
-      \verb{doi}
-      \verb 10.1111/1468-0262.00418
-      \endverb
-      \verb{file}
-      \verb C:\Users\27261\Zotero\storage\GJJGW26E\1468-0262.html
-      \endverb
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1468-0262.00418
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1468-0262.00418
-      \endverb
-      \keyw{continuous–time methods,density forecasting,high–frequency data,long memory,quadratic variation,realized volatility,risk management,volatility forecasting}
+      \keyw{andersenModelingForecastingRealized2003}
     \endentry
     \entry{baldeauxEXACTSIMULATION322012}{article}{}{}
       \name{author}{1}{}{%
@@ -383,9 +365,6 @@
       \list{language}{1}{%
         {english}%
       }
-      \list{publisher}{1}{%
-        {The University of Chicago Press}%
-      }
       \strng{namehash}{93277dfc1ebe8d44428e74799781e4d7}
       \strng{fullhash}{0bcdbf94b820ddcda24f3e8d73d9a4ec}
       \strng{fullhashraw}{0bcdbf94b820ddcda24f3e8d73d9a4ec}
@@ -404,8 +383,6 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{If options are correctly priced in the market, it should not be possible to make sure profits by creating portfolios of long and short positions in options and their underlying stocks. Using this principle, a theoretical valuation formula for options is derived. Since almost all corporate liabilities can be viewed as combinations of options, the formula and the analysis that led to it are also applicable to corporate liabilities such as common stock, corporate bonds, and warrants. In particular, the formula can be used to derive the discount that should be applied to a corporate bond because of the possibility of default.}
-      \field{issn}{0022-3808}
       \field{journaltitle}{Journal of Political Economy}
       \field{langid}{english}
       \field{languageid}{english}
@@ -413,27 +390,14 @@
       \field{month}{5}
       \field{number}{3}
       \field{title}{The {{Pricing}} of {{Options}} and {{Corporate Liabilities}}}
-      \field{urlday}{12}
-      \field{urlmonth}{4}
-      \field{urlyear}{2026}
       \field{usera}{J}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{81}
       \field{year}{1973}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{637\bibrangedash 654}
       \range{pages}{18}
-      \verb{doi}
-      \verb 10.1086/260062
-      \endverb
-      \verb{urlraw}
-      \verb https://www.journals.uchicago.edu/doi/abs/10.1086/260062
-      \endverb
-      \verb{url}
-      \verb https://www.journals.uchicago.edu/doi/abs/10.1086/260062
-      \endverb
       \keyw{blackPricingOptionsCorporate1973}
     \endentry
     \entry{brignoneExactSimulationStochastic2026}{article}{}{}

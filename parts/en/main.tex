@@ -10,10 +10,21 @@
 \RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame=single,tabsize=4,fontsize=\footnotesize}
 \renewcommand{\v}[1]{\boldsymbol{#1}}
 \newcommand\pkg[1]{\textsf{#1}}
+\usepackage{etoolbox}
+% 公式前：单倍行距 + 空 0.9pt
+\BeforeBeginEnvironment{equation}{\begin{singlespace}\vspace{-9pt}}
+% 公式后：空 0.9pt + 关闭单倍行距
+\AfterEndEnvironment{equation}{\vspace{-9pt}\end{singlespace}}
+\usepackage{amsmath} % 加载数学公式包
+% 全局设置数学字体大小
+\DeclareMathSizes{12}{8}{5}{3} % 文本12pt时的数学字体大小
+\raggedbottom
 
 % 参考文献格式
 \setlength{\bibitemsep}{3bp}
 \renewcommand*{\bibfont}{\zihao{5}\linespread{1.27}\selectfont}
+\DeclareNameAlias{sortname}{family-given}
+\DeclareNameAlias{default}{family-given}
 
 % 加载配置
 \input{configs.tex}
