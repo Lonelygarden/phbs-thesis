@@ -8,7 +8,7 @@
 本次数值实验的运行硬件为消费级笔记本联想电脑ThinkBook14，具体配置如下：处理器为 AMD Ryzen 7 6800H with Radeon Graphics，基础主频 3.20GHz，8 核 16 线程，标准 TDP 45W；内存为 16.0GB DDR5 双通道内存，实验运行时可用内存 13.7GB，可支撑大规模蒙特卡洛路径模拟与频域网格计算；操作系统为 Windows 11 企业版（版本号 26200.7840），64 位架构；开发与计算环境基于 Python 3.9 实现，核心数值计算依赖向量化运算库 numpy、特殊函数与概率分布库 scipy，所有方法均采用向量化实现以最大化利用硬件算力，未使用 GPU 加速，结果反映方法在通用 CPU 环境下的实际性能。
 
 \subsection{测试案例设计}
-本次实验共设计 7 组测试案例，覆盖了金融衍生品定价中最常见的常规场景与极端场景，包括平值（ATM）、实值（ITM）、虚值（OTM）期权，短期到期、高杠杆效应（强价格 - 波动率负相关）、高波动率的波动率（vol-of-vol）等典型场景，所有案例的基准价格均来自对应文献的精确解析结果或高精度数值解，作为精度评价的基准。7 组案例的具体参数与设计逻辑如下表所示：
+本次实验共设计 7 组测试案例，覆盖了金融衍生品定价中最常见的常规场景与极端场景，包括平值（ATM）、实值（ITM）、虚值（OTM）期权，短期到期、高杠杆效应（强价格 - 波动率负相关）、高波动率的波动率（vol-of-vol）等典型场景，所有案例的基准价格均来自对应文献的精确解析结果或高精度数值解，作为精度评价的基准。7 组案例的具体参数与设计逻辑如表\ref{tab:cases}所示。
 
 \begin{table}[htbp ]
     \centering
@@ -57,11 +57,11 @@ Case I 为\citet{baldeauxEXACTSIMULATION322012} 中的经典基准算例，用�
 
 \section{时间步进类条件蒙特卡洛方法结果分析}
 
-时间步进类方法共包含 4 种方案：Euler/Milstein 离散格式、精确步进（Exact Stepping）、Poisson-Gamma 近似精确步进、QE 近似精确步进，实验设置了 3 组时间步长 dt=1/50、1/500、1/5000，对应从粗到细的时间离散精度，验证步长对方法性能的影响，完整结果如下表所示：
+时间步进类方法共包含 4 种方案：Euler/Milstein 离散格式、精确步进（Exact Stepping）、Poisson-Gamma 近似精确步进、QE 近似精确步进，实验设置了 3 组时间步长 dt=1/50、1/500、1/5000，对应从粗到细的时间离散精度，验证步长对方法性能的影响，完整结果如表\ref{tab:timestepping_part1}和表\ref{tab:timestepping_part2}所示。
 
 \begin{table}[htbp]
   \centering
-  \caption{时间步进蒙特卡洛结果}
+  \caption{时间步进蒙特卡洛结果（CaseI-IV）}
   \label{tab:timestepping_part1}
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{lclclclc}
@@ -121,6 +121,22 @@ Case I 为\citet{baldeauxEXACTSIMULATION322012} 中的经典基准算例，用�
     &                         & 50 &                          & $0.0002269$ ($0.00\%$)   &                          & $-0.003774$ ($-0.07\%$)   \\
     &                         & 51 &                          & $-0.0002143$ ($-0.00\%$) &                          & $-0.00356$ ($-0.07\%$)    \\
     &                         & 47 &                          & $-0.001015$ ($-0.01\%$)  &                          & $-0.01999$ ($-0.30\%$)    \\
+    \bottomrule
+  \end{tabular}%
+  }
+\end{table}
+\begin{table}[htbp]
+  \centering
+  \caption{时间步进蒙特卡洛结果（CaseV-VII）}
+  \label{tab:timestepping_part2}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lclclclc}
+    \toprule
+    \multirow{2}{*}{Case} & \multirow{2}{*}{$dt$} & \multirow{2}{*}{Strike} 
+    & \multicolumn{2}{c}{Euler/Milstein scheme} 
+    & \multicolumn{2}{c}{Exact Stepping} \\
+    \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+    & & & Time (s) & Option Bias & Time (s) & Option Bias \\
     \midrule
     \multirow{9}{*}{Case V}
     & \multirow{3}{*}{1/50}  & 20 & \multirow{3}{*}{0.0873017} & $-0.00994$ ($-0.03\%$)   & \multirow{3}{*}{0.0845473} & $-0.01497$ ($-0.07\%$)    \\
@@ -174,54 +190,98 @@ Case I 为\citet{baldeauxEXACTSIMULATION322012} 中的经典基准算例，用�
 与 Euler/Milstein 格式不同的是，精确步进、Poisson-Gamma 近似精确步进、QE 近似精确步进三类方法，在全部 7 组测试案例、所有执行价与所有时间步长下，均未出现数值失效，始终可输出有效定价结果，是本次实验中唯一具备全场景稳定性的蒙特卡洛类方法。即使在 1/50 粗步长下，精确步进方法在 Case II 平值期权场景中的相对偏差仅为 - 0.03\%，Poisson-Gamma 与 QE 方法的偏差也控制在 0.2\% 以内，精度显著优于 Euler 格式 1/5000 细步长下的结果，而计算时间仅为 0.2 秒左右，不足 Euler 细步长计算时间的 1\%。在 Case VI 高 vol-of-vol 极端场景中，1/500 步长下精确步进方法的相对偏差仅为 - 0.46\%，Poisson-Gamma 方法仅为 0.12\%，而同步长下 Euler 格式完全数值失效。三类方法的性能差异同样可通过实验结果量化验证，精确步进方法的定价精度最高，所有场景下的相对偏差均控制在 0.5\% 以内，无时间离散偏差，为时间步进类方法的精度基准；Poisson-Gamma 与 QE 方法的精度略低于精确步进方法，但计算时间与 Euler 格式处于同一量级，在极端场景下仍保持数值稳定性，实现了定价精度与计算效率的最优平衡。
 
 \section{终端精确与近似精确模拟方法结果分析}
-终端模拟类方法完全规避了时间离散过程，直接针对到期方差与积分方差的联合分布抽样，共包含 5 种方案：Baldeaux精确模拟、基于 Fourier-Cosine 的精确模拟、基于矩匹配的精确模拟、逆高斯（IG）近似精确模拟、Gamma 近似精确模拟，完整结果如下表所示：
+终端模拟类方法完全规避了时间离散过程，直接针对到期方差与积分方差的联合分布抽样，共包含 5 种方案：Baldeaux精确模拟、基于 Fourier-Cosine 的精确模拟、基于矩匹配的精确模拟、逆高斯（IG）近似精确模拟、Gamma 近似精确模拟，完整结果如表\ref{tab:terminal_part1}和表\ref{tab:terminal_part2}所示。
 
 \begin{table}[htbp]
   \centering
-  \caption{终端精确与近似精确模拟结果}
-  \label{tab:terminal}
+  \caption{终端精确与近似精确模拟结果（CaseI-IV）}
+  \label{tab:terminal_part1}
   \resizebox{\textwidth}{!}{%
-  \begin{tabular}{lclcccccccccc}
+  \begin{tabular}{lclcccccc}
     \toprule
-    \multirow{2}{*}{Case} & \multirow{2}{*}{Strike} & \multicolumn{2}{c}{Exact Simulation} & \multicolumn{2}{c}{Exact Simulation (Use Fourier-Cosine)} & \multicolumn{2}{c}{Exact Simulation (Use Moment Matching)} & \multicolumn{2}{c}{Almost Exact Simulation (Inverse Gaussian)} & \multicolumn{2}{c}{Almost Exact Simulation (Gamma)} \\
-    \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10} \cmidrule(lr){11-12}
-    & & Time(s) & Option Bias & Time(s) & Option Bias & Time(s) & Option Bias & Time(s) & Option Bias & Time(s) & Option Bias \\
+    \multirow{2}{*}{Case} & \multirow{2}{*}{Strike} & \multicolumn{2}{c}{Exact Simulation} & \multicolumn{2}{c}{Exact Simulation (Use Fourier-Cosine)} & \multicolumn{2}{c}{Exact Simulation (Use Moment Matching)} \\
+    \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+    & & Time(s) & Option Bias & Time(s) & Option Bias & Time(s) & Option Bias \\
     \midrule
-    Case I & 1 & 59.5239847 & $-1.571\times10^{-5}\ (-0.00\%)$ & 25.4983391 & $-0.04977\ (-11.23\%)$ & 0.025079 & $-0.05216\ (-11.77\%)$ & 2.6390925 & $0.001326\ (0.30\%)$ & 2.164342 & $0.0008747\ (0.20\%)$ \\
-    Case I & 95 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-8.215\ (-79.26\%)$ & & $-7.956\ (-76.77\%)$ \\
+    Case I & 1 & 59.5239847 & $-1.571\times10^{-5}\ (-0.00\%)$ & 25.4983391 & $-0.04977\ (-11.23\%)$ & 0.025079 & $-0.05216\ (-11.77\%)$ \\
+    Case I & 95 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
     \midrule
-    \multirow{3}{*}{Case II} & 100 & \multirow{3}{*}{69.0326374} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{8.3304516} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.034264} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.2152987} & $-6.213\ (-84.12\%)$ & \multirow{3}{*}{0.204456} & $-5.994\ (-81.16\%)$ \\
-    & 105 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-4.361\ (-88.31\%)$ & & $-4.195\ (-84.95\%)$ \\
-    & 95 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-11.64\ (-89.30\%)$ & & $-11.97\ (-99.56\%)$ \\
+    \multirow{3}{*}{Case II} & 100 & \multirow{3}{*}{69.0326374} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{8.3304516} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.034264} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 105 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 95 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
     \midrule
-    \multirow{3}{*}{Case III} & 100 & \multirow{3}{*}{73.7386331} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{6.6512523} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.032648} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.256394} & $-8.96\ (-99.57\%)$ & \multirow{3}{*}{0.241701} & $-8.975\ (-99.73\%)$ \\
-    & 105 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-6.693\ (-99.74\%)$ & & $-6.699\ (-99.84\%)$ \\
-    & 95 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-11.64\ (-99.30\%)$ & & $-11.975\ (-99.56\%)$ \\
+    \multirow{3}{*}{Case III} & 100 & \multirow{3}{*}{73.7386331} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{6.6512523} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.032648} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 105 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 95 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
     \midrule
-    \multirow{5}{*}{Case IV} & 47 & \multirow{5}{*}{79.0467981} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{5}{*}{6.5286679} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{5}{*}{0.026266} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{5}{*}{20.5061735} & $-5.559\ (-78.96\%)$ & \multirow{5}{*}{13.86428} & $38.31\ (544.13\%)$ \\
-    & 48 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-5.287\ (-81.34\%)$ & & $37.91\ (583.29\%)$ \\
-    & 49 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-5.135\ (-83.88\%)$ & & $37.37\ (610.49\%)$ \\
-    & 50 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-4.903\ (-86.01\%)$ & & $36.87\ (646.82\%)$ \\
-    & 51 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-4.664\ (-87.91\%)$ & & $36.36\ (685.41\%)$ \\
+    \multirow{5}{*}{Case IV} & 47 & \multirow{5}{*}{79.0467981} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{5}{*}{6.5286679} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{5}{*}{0.026266} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 48 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 49 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 50 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 51 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
     \midrule
-    \multirow{3}{*}{Case V} & 10 & \multirow{3}{*}{75.2066147} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{6.0646468} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.025757} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{22.739208} & $-5.255\ (-13.14\%)$ & \multirow{3}{*}{13.84294} & $43.83\ (109.58\%)$ \\
-    & 20 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-5.259\ (-17.53\%)$ & & $43.83\ (146.08\%)$ \\
-    & 40 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-6.356\ (-53.29\%)$ & & $41.99\ (352.08\%)$ \\
+    \multirow{3}{*}{Case V} & 10 & \multirow{3}{*}{75.2066147} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{6.0646468} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.025757} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 20 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 40 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
     \midrule
-    \multirow{5}{*}{Case VI} & 47 & \multirow{5}{*}{69.5002801} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{5}{*}{21.3088199} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{5}{*}{0.033759} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{5}{*}{0.1932632} & $-0.06061\ (-0.48\%)$ & \multirow{5}{*}{0.186914} & $-0.1563\ (-1.23\%)$ \\
-    & 48 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-0.05685\ (-0.46\%)$ & & $-0.1489\ (-1.20\%)$ \\
-    & 49 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-0.05316\ (-0.44\%)$ & & $-0.1419\ (-1.18\%)$ \\
-    & 50 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-0.04984\ (-0.42\%)$ & & $-0.1354\ (-1.15\%)$ \\
-    & 51 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-0.04649\ (-0.41\%)$ & & $-0.1291\ (-1.13\%)$ \\
+    \multirow{5}{*}{Case VI} & 47 & \multirow{5}{*}{69.5002801} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{5}{*}{21.3088199} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{5}{*}{0.033759} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 48 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 49 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 50 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 51 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
     \midrule
-    \multirow{3}{*}{Case VII} & 95 & \multirow{3}{*}{70.4046528} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{6.2345658} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.032753} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.2169977} & $-11.64\ (-99.30\%)$ & \multirow{3}{*}{0.235242} & $-11.67\ (-99.56\%)$ \\
-    & 100 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-8.959\ (-99.57\%)$ & & $-8.974\ (-99.73\%)$ \\
-    & 105 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $-6.692\ (-99.74\%)$ & & $-6.698\ (-99.84\%)$ \\
+    \multirow{3}{*}{Case VII} & 95 & \multirow{3}{*}{70.4046528} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{6.2345658} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & \multirow{3}{*}{0.032753} & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 100 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
+    & 105 & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ & & $\mathrm{NaN}\ (\mathrm{NaN}\%)$ \\
     \bottomrule
   \end{tabular}%
   }
 \end{table}
-
+\begin{table}[htbp]
+  \centering
+  \caption{终端精确与近似精确模拟结果（CaseV-VII）}
+  \label{tab:terminal_part2}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lclcccc}
+    \toprule
+    \multirow{2}{*}{Case} & \multirow{2}{*}{Strike} & \multicolumn{2}{c}{Almost Exact Simulation (Inverse Gaussian)} & \multicolumn{2}{c}{Almost Exact Simulation (Gamma)} \\
+    \cmidrule(lr){3-4} \cmidrule(lr){5-6}
+    & & Time(s) & Option Bias & Time(s) & Option Bias \\
+    \midrule
+    Case I & 1 & 2.6390925 & $0.001326\ (0.30\%)$ & 2.164342 & $0.0008747\ (0.20\%)$ \\
+    Case I & 95 &  & $-8.215\ (-79.26\%)$ &  & $-7.956\ (-76.77\%)$ \\
+    \midrule
+    \multirow{3}{*}{Case II} & 100 & 0.2152987 & $-6.213\ (-84.12\%)$ & 0.204456 & $-5.994\ (-81.16\%)$ \\
+    & 105 &  & $-4.361\ (-88.31\%)$ &  & $-4.195\ (-84.95\%)$ \\
+    & 95 &  & $-11.64\ (-89.30\%)$ &  & $-11.97\ (-99.56\%)$ \\
+    \midrule
+    \multirow{3}{*}{Case III} & 100 & 0.256394 & $-8.96\ (-99.57\%)$ & 0.241701 & $-8.975\ (-99.73\%)$ \\
+    & 105 &  & $-6.693\ (-99.74\%)$ &  & $-6.699\ (-99.84\%)$ \\
+    & 95 &  & $-11.64\ (-99.30\%)$ &  & $-11.975\ (-99.56\%)$ \\
+    \midrule
+    \multirow{5}{*}{Case IV} & 47 & 20.5061735 & $-5.559\ (-78.96\%)$ & 13.86428 & $38.31\ (544.13\%)$ \\
+    & 48 &  & $-5.287\ (-81.34\%)$ &  & $37.91\ (583.29\%)$ \\
+    & 49 &  & $-5.135\ (-83.88\%)$ &  & $37.37\ (610.49\%)$ \\
+    & 50 &  & $-4.903\ (-86.01\%)$ &  & $36.87\ (646.82\%)$ \\
+    & 51 &  & $-4.664\ (-87.91\%)$ &  & $36.36\ (685.41\%)$ \\
+    \midrule
+    \multirow{3}{*}{Case V} & 10 & 22.739208 & $-5.255\ (-13.14\%)$ & 13.84294 & $43.83\ (109.58\%)$ \\
+    & 20 &  & $-5.259\ (-17.53\%)$ &  & $43.83\ (146.08\%)$ \\
+    & 40 &  & $-6.356\ (-53.29\%)$ &  & $41.99\ (352.08\%)$ \\
+    \midrule
+    \multirow{5}{*}{Case VI} & 47 & 0.1932632 & $-0.06061\ (-0.48\%)$ & 0.186914 & $-0.1563\ (-1.23\%)$ \\
+    & 48 &  & $-0.05685\ (-0.46\%)$ &  & $-0.1489\ (-1.20\%)$ \\
+    & 49 &  & $-0.05316\ (-0.44\%)$ &  & $-0.1419\ (-1.18\%)$ \\
+    & 50 &  & $-0.04984\ (-0.42\%)$ &  & $-0.1354\ (-1.15\%)$ \\
+    & 51 &  & $-0.04649\ (-0.41\%)$ &  & $-0.1291\ (-1.13\%)$ \\
+    \midrule
+    \multirow{3}{*}{Case VII} & 95 & 0.2169977 & $-11.64\ (-99.30\%)$ & 0.235242 & $-11.67\ (-99.56\%)$ \\
+    & 100 &  & $-8.959\ (-99.57\%)$ &  & $-8.974\ (-99.73\%)$ \\
+    & 105 &  & $-6.692\ (-99.74\%)$ &  & $-6.698\ (-99.84\%)$ \\
+    \bottomrule
+  \end{tabular}%
+  }
+\end{table}
 从表中结果可以看到，精确模拟” 的三类终端方法，仅能在 Case I 基准算例的单一执行价场景下输出有效结果，在其余测试场景中均完全数值失效，不具备全场景工程实用性。
 
 具体而言，Baldeaux (2012) 精确模拟方法仅在 Case I 的单一执行价场景下输出有效定价结果，相对偏差趋近于 0，具备理论层面的无偏性；但在 Case II 至 Case VII 的全部 6 组测试案例、22 个执行价场景中，均出现数值溢出与计算失效，输出结果为非数值型。该现象的核心成因在于，该方法需要逐路径计算高维修正贝塞尔函数与逆拉普拉斯变换，在非基准参数下，极易出现贝塞尔函数数值溢出、积分收敛失败的问题，仅能在文献给定的基准参数下完成计算，无法适配实际市场中的非基准参数环境。基于 Fourier-Cosine 的终端精确模拟方法与基于矩匹配的终端精确模拟方法，表现与 Baldeaux 方法高度一致，仅在 Case I 单一执行价场景下输出有效结果，且相对偏差分别达 $-11.23\%$ 与 $-11.77\%$，定价精度极差，其余所有场景均完全数值失效。两类方法失效的核心成因分别为：Fourier-Cosine 方法对积分方差分布的余弦级数截断，在非基准参数下，分布尾部的截断误差被无限放大，导致特征函数计算失效；矩匹配方法仅匹配分布前四阶矩的 Gram-Charlier 展开，无法适配 3/2 模型方差分布的非正态厚尾特征，易出现负密度的非物理结果，最终导致累积分布函数逆变换抽样失败。
@@ -230,7 +290,7 @@ Case I 为\citet{baldeauxEXACTSIMULATION322012} 中的经典基准算例，用�
 
 \section{傅里叶频域定价方法结果分析}
 
-频域定价方法完全规避了蒙特卡洛模拟的路径生成过程，通过特征函数的傅里叶积分直接求解期权价格，包含快速傅里叶变换（FFT）与傅里叶余弦（COS）两种方法，完整结果如下表所示：
+频域定价方法完全规避了蒙特卡洛模拟的路径生成过程，通过特征函数的傅里叶积分直接求解期权价格，包含快速傅里叶变换（FFT）与傅里叶余弦（COS）两种方法，完整结果如表\ref{tab:frequency}所示。
 
 \begin{table}[htbp]
   \centering
