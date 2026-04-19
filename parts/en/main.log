@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  19 APR 2026 21:14
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  19 APR 2026 21:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2131,42 +2131,23 @@ Chapter 1
 
 
 
-] [2] [3]
-Overfull \hbox (0.19775pt too wide) in paragraph at lines 27--28
-\TU/XITS(0)/m/n/12.045 tion of pricing formulas for the 3/2 model. It has neith
-er constructed a comprehensive analytical
- []
-
-[4]
-Overfull \hbox (9.56331pt too wide) in paragraph at lines 37--38
-[]\TU/XITS(0)/m/n/12.045 Second, to execute a systematic performance evaluation
- of different pricing methods through
- []
-
-[5]
-Overfull \hbox (4.34784pt too wide) in paragraph at lines 39--40
-[]\TU/XITS(0)/m/n/12.045 Third, to perform empirical calibration of the 3/2 mod
-el and extreme-scenario re-evaluation
- []
-
-[6] [7]
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 12.04628pt on input line 59.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 9.03471pt on input line 59.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
-(Font)              scaled to size 7.22777pt on input line 59.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 12.0437pt on input line 59.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 9.03278pt on input line 59.
-LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
-(Font)              scaled to size 7.22623pt on input line 59.
-) [8]
+] [2] [3] [4] [5] [6] [7]) [8]
 \openout2 = `chap/chap2.aux'.
 
  (./chap/chap2.tex
 Chapter 2
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 12.04628pt on input line 7.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 9.03471pt on input line 7.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
+(Font)              scaled to size 7.22777pt on input line 7.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 12.0437pt on input line 7.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 9.03278pt on input line 7.
+LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
+(Font)              scaled to size 7.22623pt on input line 7.
 [9
 
 
@@ -2524,7 +2505,7 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C1844742BADBD08CD3FF5AFB637F0F41;35795.
+(rerunfilecheck)             Checksum: CA5FCE90838F86011BD6FB8961B98B46;35739.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
@@ -2532,7 +2513,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  44829 strings out of 468174
  916438 string characters out of 5436827
- 2167656 words of memory out of 5000000
+ 2167606 words of memory out of 5000000
  72824 multiletter control sequences out of 15000+600000
  635801 words of font info for 138 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

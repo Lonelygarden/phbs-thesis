@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  19 APR 2026 21:15
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  19 APR 2026 21:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2123,16 +2123,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-] [2] [3] [4]) [5]
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+[3] [4]) [5] [6]
 \openout2 = `chap/chap2.aux'.
 
- (./chap/chap2.tex [6
-
-
-
-
-
-]
+ (./chap/chap2.tex
 第二章
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 12.04628pt on input line 7.
@@ -2146,7 +2144,13 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 9.03278pt on input line 7.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 7.22623pt on input line 7.
-[7]
+[7
+
+
+
+
+
+]
 Overfull \hbox (18.84245pt too wide) in paragraph at lines 21--22
 []\TU/FandolSong(0)/m/n/12.045 在 模 型 结 构 的 扩 展 与 优 化 方 面，|  为 实 现 股 票 现 货 与 \TU
 /XITS(0)/m/n/12.045 VIX \TU/FandolSong(0)/m/n/12.045 衍 生 品 的 一 致 性 建 模，| [][]\T
@@ -2366,7 +2370,7 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D95CBF7C03512D36DA67A7ED3935BAB4;20239.
+(rerunfilecheck)             Checksum: A2CFF3CEA038A1CE67C8F061A6E20F10;20188.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
@@ -2374,7 +2378,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  45137 strings out of 468174
  935781 string characters out of 5436827
- 2181481 words of memory out of 5000000
+ 2180436 words of memory out of 5000000
  73120 multiletter control sequences out of 15000+600000
  635833 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
