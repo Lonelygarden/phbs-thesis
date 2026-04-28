@@ -194,7 +194,7 @@ Case I 为\citet{baldeauxEXACTSIMULATION322012} 中的经典基准算例，用�
 
 \begin{table}[htbp]
   \centering
-  \caption{终端精确与近似精确模拟结果（CaseI-IV）}
+  \caption{精确模拟方法结果}
   \label{tab:terminal_part1}
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{lclcccccc}
@@ -239,7 +239,7 @@ Case I 为\citet{baldeauxEXACTSIMULATION322012} 中的经典基准算例，用�
 \end{table}
 \begin{table}[htbp]
   \centering
-  \caption{终端精确与近似精确模拟结果（CaseV-VII）}
+  \caption{终端近似精确方法模拟结果}
   \label{tab:terminal_part2}
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{lclcccc}
@@ -282,7 +282,7 @@ Case I 为\citet{baldeauxEXACTSIMULATION322012} 中的经典基准算例，用�
   \end{tabular}%
   }
 \end{table}
-从表中结果可以看到，精确模拟” 的三类终端方法，仅能在 Case I 基准算例的单一执行价场景下输出有效结果，在其余测试场景中均完全数值失效，不具备全场景工程实用性。
+从表中结果可以看到，精确模拟的三类终端方法，仅能在 Case I 基准算例的单一执行价场景下输出有效结果，在其余测试场景中均完全数值失效，不具备全场景工程实用性。
 
 具体而言，Baldeaux (2012) 精确模拟方法仅在 Case I 的单一执行价场景下输出有效定价结果，相对偏差趋近于 0，具备理论层面的无偏性；但在 Case II 至 Case VII 的全部 6 组测试案例、22 个执行价场景中，均出现数值溢出与计算失效，输出结果为非数值型。该现象的核心成因在于，该方法需要逐路径计算高维修正贝塞尔函数与逆拉普拉斯变换，在非基准参数下，极易出现贝塞尔函数数值溢出、积分收敛失败的问题，仅能在文献给定的基准参数下完成计算，无法适配实际市场中的非基准参数环境。基于 Fourier-Cosine 的终端精确模拟方法与基于矩匹配的终端精确模拟方法，表现与 Baldeaux 方法高度一致，仅在 Case I 单一执行价场景下输出有效结果，且相对偏差分别达 $-11.23\%$ 与 $-11.77\%$，定价精度极差，其余所有场景均完全数值失效。两类方法失效的核心成因分别为：Fourier-Cosine 方法对积分方差分布的余弦级数截断，在非基准参数下，分布尾部的截断误差被无限放大，导致特征函数计算失效；矩匹配方法仅匹配分布前四阶矩的 Gram-Charlier 展开，无法适配 3/2 模型方差分布的非正态厚尾特征，易出现负密度的非物理结果，最终导致累积分布函数逆变换抽样失败。
 

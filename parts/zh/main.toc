@@ -94,16 +94,14 @@
 \contentsline {section}{\numberline {6.6}极端市场场景下的定价方法性能再检验与对比分析}{56}{section.6.6}%
 \contentsline {subsection}{\numberline {6.6.1}测试设定与案例构建}{56}{subsection.6.6.1}%
 \contentsline {subsection}{\numberline {6.6.2}时间步进类条件蒙特卡洛方法性能结果与分析}{57}{subsection.6.6.2}%
-\contentsline {subsection}{\numberline {6.6.3}终端模拟类方法性能结果与分析}{57}{subsection.6.6.3}%
-\contentsline {subsection}{\numberline {6.6.4}傅里叶频域定价方法性能结果与分析}{59}{subsection.6.6.4}%
-\contentsline {subsubsection}{\numberline {6.6.4.1}与学术基准案例结果的对比分析}{61}{subsubsection.6.6.4.1}%
-\contentsline {subsubsection}{\numberline {6.6.4.2}极端市场场景下的方法适用性总结}{62}{subsubsection.6.6.4.2}%
-\contentsline {section}{\numberline {6.7}本章小结}{62}{section.6.7}%
-\contentsline {chapter}{\numberline {第七章\hspace {.3em}}结论与展望}{65}{chapter.7}%
-\contentsline {section}{\numberline {7.1}主要研究结论}{65}{section.7.1}%
-\contentsline {section}{\numberline {7.2}研究局限性}{67}{section.7.2}%
-\contentsline {section}{\numberline {7.3}未来研究展望}{67}{section.7.3}%
-\contentsline {chapter}{参考文献}{69}{appendix*.18}%
-\contentsline {chapter}{致谢}{71}{appendix*.19}%
-\contentsline {chapter}{北京大学学位论文原创性声明和使用授权说明}{73}{appendix*.20}%
+\contentsline {subsection}{\numberline {6.6.3}终端模拟类方法性能结果与分析}{59}{subsection.6.6.3}%
+\contentsline {subsection}{\numberline {6.6.4}傅里叶频域定价方法性能结果与分析}{62}{subsection.6.6.4}%
+\contentsline {subsubsection}{\numberline {6.6.4.1}与学术基准案例结果的对比分析}{63}{subsubsection.6.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.6.4.2}极端市场场景下的方法适用性总结}{64}{subsubsection.6.6.4.2}%
+\contentsline {section}{\numberline {6.7}本章小结}{64}{section.6.7}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}结论与展望}{67}{chapter.7}%
+\contentsline {section}{\numberline {7.1}主要研究结论}{67}{section.7.1}%
+\contentsline {section}{\numberline {7.2}研究局限性}{69}{section.7.2}%
+\contentsline {section}{\numberline {7.3}未来研究展望}{69}{section.7.3}%
+\contentsline {chapter}{参考文献}{71}{appendix*.20}%
 \contentsfinish 

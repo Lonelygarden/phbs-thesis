@@ -94,13 +94,13 @@
 \contentsline {subsection}{\numberline {6.5.1}Test Setup and Case Construction}{75}{subsection.6.5.1}%
 \contentsline {subsection}{\numberline {6.5.2}Performance Results and Analysis of Time-Stepping Conditional Monte Carlo Methods}{76}{subsection.6.5.2}%
 \contentsline {subsection}{\numberline {6.5.3}Performance Results and Analysis of Terminal Simulation Methods}{78}{subsection.6.5.3}%
-\contentsline {subsection}{\numberline {6.5.4}Performance Results and Analysis of Fourier Frequency-Domain Pricing Methods}{79}{subsection.6.5.4}%
-\contentsline {subsubsection}{\numberline {6.5.4.1}Comparative Analysis with Academic Benchmark Case Results}{81}{subsubsection.6.5.4.1}%
-\contentsline {subsubsection}{\numberline {6.5.4.2}Summary of Method Applicability in Extreme Market Scenarios}{82}{subsubsection.6.5.4.2}%
-\contentsline {section}{\numberline {6.6}Chapter Summary}{83}{section.6.6}%
-\contentsline {chapter}{\numberline {Chapter 7\hspace {.3em}}Conclusions and Outlook}{87}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Main Research Conclusions}{87}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Research Limitations}{90}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Future Research Outlook}{91}{section.7.3}%
-\contentsline {chapter}{References}{93}{chapter*.18}%
+\contentsline {subsection}{\numberline {6.5.4}Performance Results and Analysis of Fourier Frequency-Domain Pricing Methods}{81}{subsection.6.5.4}%
+\contentsline {subsubsection}{\numberline {6.5.4.1}Comparative Analysis with Academic Benchmark Case Results}{83}{subsubsection.6.5.4.1}%
+\contentsline {subsubsection}{\numberline {6.5.4.2}Summary of Method Applicability in Extreme Market Scenarios}{84}{subsubsection.6.5.4.2}%
+\contentsline {section}{\numberline {6.6}Chapter Summary}{85}{section.6.6}%
+\contentsline {chapter}{\numberline {Chapter 7\hspace {.3em}}Conclusions and Outlook}{89}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Main Research Conclusions}{89}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Research Limitations}{92}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Future Research Outlook}{93}{section.7.3}%
+\contentsline {chapter}{References}{95}{chapter*.20}%
 \contentsfinish 

@@ -236,11 +236,11 @@ The evaluation metric system for this test is identical to Chapter 5 to guarante
 
 \subsection{Performance Results and Analysis of Time-Stepping Conditional Monte Carlo Methods}
 
-Time-stepping methods include the Euler/Milstein discrete scheme, Exact Stepping method, Poisson-Gamma Near-Exact Stepping method, and QE Near-Exact Stepping method. Tests were configured with 3 time steps: 1/50, 1/500, and 1/5000. Complete results are shown in Table \ref{tab:timestepping_full}.
-
+Time-stepping methods include the Euler/Milstein discrete scheme, Exact Stepping method, Poisson-Gamma Near-Exact Stepping method, and QE Near-Exact Stepping method. Tests were configured with 3 time steps: 1/50, 1/500, and 1/5000. Complete results are shown in Table \ref{tab:timestepping_6D} and Table \ref{tab:timestepping_20D}.
 \begin{table}[htbp]
   \centering
-  \caption{Time-Stepping Monte Carlo Option Pricing Results}\label{tab:timestepping_full}
+  \caption{Time-Stepping Monte Carlo Option Pricing Results (6D)}
+  \label{tab:timestepping_6D}
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{llccccccccc}
     \toprule
@@ -249,92 +249,8 @@ Time-stepping methods include the Euler/Milstein discrete scheme, Exact Stepping
     & & & Time (s) & Option Bias & Time (s) & Option Bias & Time (s) & Option Bias & Time (s) & Option Bias \\
     \midrule
 
-% 20D during crash
-\multirow{15}{*}{20D during crash}
-& \multirow{5}{*}{1/50} & 85 & \multirow{5}{*}{0.097975} & 52.78 (343.90\%) & \multirow{5}{*}{0.073905} & -0.3025 (-1.97\%) & \multirow{5}{*}{0.08308} & -0.303 (-1.97\%) & \multirow{5}{*}{0.090593} & -0.4921 (-3.21\%) \\
-& & 98 & & 50.99 (1008.18\%) & & -0.06433 (-1.27\%) & & -0.0648 (-1.28\%) & & -0.116 (-2.29\%) \\
-& & 100 & & 50.25 (1264.36\%) & & -0.02048 (-0.52\%) & & -0.02098 (-0.53\%) & & -0.05895 (-1.48\%) \\
-& & 102 & & 49.36 (1614.22\%) & & 0.01505 (0.49\%) & & 0.01452 (0.47\%) & & -0.01246 (-0.41\%) \\
-& & 115 & & 40.6 (11478.07\%) & & 0.03456 (9.77\%) & & 0.03419 (9.67\%) & & 0.03758 (10.63\%) \\
-\cmidrule(lr){2-11}
-& \multirow{5}{*}{1/500} & 85 & \multirow{5}{*}{0.260825} & 8.006 (52.17\%) & \multirow{5}{*}{0.376691} & -0.007846 (-0.05\%) & \multirow{5}{*}{0.541429} & -0.008731 (-0.06\%) & \multirow{5}{*}{0.500772} & -0.03622 (-0.24\%) \\
-& & 98 & & 7.206 (142.48\%) & & -0.004967 (-0.10\%) & & -0.005825 (-0.12\%) & & -0.01238 (-0.24\%) \\
-& & 100 & & 7.024 (176.73\%) & & -0.004271 (-0.11\%) & & -0.004983 (-0.13\%) & & -0.009548 (-0.24\%) \\
-& & 102 & & 6.834 (223.50\%) & & -0.003733 (-0.12\%) & & -0.0043 (-0.14\%) & & -0.007244 (-0.24\%) \\
-& & 115 & & 5.497 (1554.06\%) & & -0.002588 (-0.73\%) & & -0.002764 (-0.78\%) & & -0.00155 (-0.44\%) \\
-\cmidrule(lr){2-11}
-& \multirow{5}{*}{1/5000} & 85 & \multirow{5}{*}{2.147697} & 0.1869 (1.22\%) & \multirow{5}{*}{4.123019} & -0.004063 (-0.03\%) & \multirow{5}{*}{3.745557} & -0.01244 (-0.08\%) & \multirow{5}{*}{4.445529} & -0.006032 (-0.04\%) \\
-& & 98 & & 0.1493 (2.95\%) & & -0.002526 (-0.05\%) & & -0.004968 (-0.10\%) & & -0.003897 (-0.08\%) \\
-& & 100 & & 0.1432 (3.60\%) & & -0.002434 (-0.06\%) & & -0.004031 (-0.10\%) & & -0.00364 (-0.09\%) \\
-& & 102 & & 0.1373 (4.49\%) & & -0.002466 (-0.08\%) & & -0.003371 (-0.11\%) & & -0.003511 (-0.11\%) \\
-& & 115 & & 0.1051 (29.71\%) & & -0.002438 (-0.69\%) & & -0.002065 (-0.58\%) & & -0.002741 (-0.77\%) \\
-\midrule
-
-% 20D pre-shock
-\multirow{15}{*}{20D pre-shock}
-& \multirow{5}{*}{1/50} & 85 & \multirow{5}{*}{0.10964} & 70.57 (458.80\%) & \multirow{5}{*}{0.072515} & -0.1383 (-0.90\%) & \multirow{5}{*}{0.087479} & -0.1359 (-0.88\%) & \multirow{5}{*}{0.087417} & -0.2368 (-1.54\%) \\
-& & 98 & & 68.33 (1302.82\%) & & -0.03066 (-0.58\%) & & -0.03023 (-0.58\%) & & -0.05632 (-1.07\%) \\
-& & 100 & & 67.57 (1618.57\%) & & -0.01057 (-0.25\%) & & -0.01042 (-0.25\%) & & -0.02948 (-0.71\%) \\
-& & 102 & & 66.67 (2044.48\%) & & 0.006084 (0.19\%) & & 0.005995 (0.18\%) & & -0.007262 (-0.22\%) \\
-& & 115 & & 58.32 (13521.37\%) & & 0.01885 (4.37\%) & & 0.01855 (4.30\%) & & 0.02139 (4.96\%) \\
-\cmidrule(lr){2-11}
-& \multirow{5}{*}{1/500} & 85 & \multirow{5}{*}{0.280515} & 2.87 (18.66\%) & \multirow{5}{*}{0.36221} & -0.006586 (-0.04\%) & \multirow{5}{*}{0.539243} & -0.008506 (-0.06\%) & \multirow{5}{*}{0.574392} & -0.007351 (-0.05\%) \\
-& & 98 & & 2.522 (48.08\%) & & -0.002124 (-0.04\%) & & -0.003617 (-0.07\%) & & -0.002112 (-0.04\%) \\
-& & 100 & & 2.457 (58.86\%) & & -0.001463 (-0.04\%) & & -0.002796 (-0.07\%) & & -0.001406 (-0.03\%) \\
-& & 102 & & 2.394 (73.40\%) & & -0.0008839 (-0.03\%) & & -0.002039 (-0.06\%) & & -0.0007904 (-0.02\%) \\
-& & 115 & & 2.019 (468.13\%) & & 0.0003308 (0.08\%) & & 0.000147 (0.03\%) & & 0.0005106 (0.12\%) \\
-\cmidrule(lr){2-11}
-& \multirow{5}{*}{1/5000} & 85 & \multirow{5}{*}{1.995124} & 0.03389 (0.22\%) & \multirow{5}{*}{4.798202} & -0.001573 (-0.01\%) & \multirow{5}{*}{3.812062} & -0.005295 (-0.03\%) & \multirow{5}{*}{4.348587} & -0.0009402 (-0.01\%) \\
-& & 98 & & 0.01982 (0.38\%) & & 0.0004488 (0.01\%) & & -0.001427 (-0.03\%) & & 4.042e-05 (0.00\%) \\
-& & 100 & & 0.01777 (0.43\%) & & 0.0004454 (0.01\%) & & -0.0009235 (-0.02\%) & & 7.606e-05 (0.00\%) \\
-& & 102 & & 0.01599 (0.49\%) & & 0.0003961 (0.01\%) & & -0.0004937 (-0.02\%) & & 9.859e-05 (0.00\%) \\
-& & 115 & & 0.01084 (2.51\%) & & 0.000117 (0.03\%) & & 0.0003757 (0.09\%) & & 0.0001203 (0.03\%) \\
-\midrule
-
-% 20D recovery
-\multirow{15}{*}{20D recovery}
-& \multirow{5}{*}{1/50} & 85 & \multirow{5}{*}{0.098142} & 59.05 (383.33\%) & \multirow{5}{*}{0.088713} & -0.1175 (-0.76\%) & \multirow{5}{*}{0.079911} & -0.1147 (-0.74\%) & \multirow{5}{*}{0.095661} & -0.1813 (-1.18\%) \\
-& & 98 & & 56.68 (1054.03\%) & & -0.009567 (-0.18\%) & & -0.009586 (-0.18\%) & & -0.02326 (-0.43\%) \\
-& & 100 & & 55.91 (1294.30\%) & & 0.007429 (0.17\%) & & 0.007149 (0.17\%) & & -0.001574 (-0.04\%) \\
-& & 102 & & 55.02 (1611.90\%) & & 0.02082 (0.61\%) & & 0.02034 (0.60\%) & & 0.01568 (0.46\%) \\
-& & 115 & & 46.85 (9134.21\%) & & 0.02293 (4.47\%) & & 0.02233 (4.35\%) & & 0.02815 (5.49\%) \\
-\cmidrule(lr){2-11}
-& \multirow{5}{*}{1/500} & 85 & \multirow{5}{*}{0.269408} & 1.687 (10.96\%) & \multirow{5}{*}{0.370337} & -0.005204 (-0.03\%) & \multirow{5}{*}{0.554489} & -0.00616 (-0.04\%) & \multirow{5}{*}{0.474414} & -0.004593 (-0.03\%) \\
-& & 98 & & 1.419 (26.38\%) & & -0.001239 (-0.02\%) & & -0.002311 (-0.04\%) & & -0.0008583 (-0.02\%) \\
-& & 100 & & 1.372 (31.75\%) & & -0.0007568 (-0.02\%) & & -0.001756 (-0.04\%) & & -0.0004048 (-0.01\%) \\
-& & 102 & & 1.327 (38.87\%) & & -0.0003489 (-0.01\%) & & -0.001255 (-0.04\%) & & -1.756e-05 (-0.00\%) \\
-& & 115 & & 1.081 (210.68\%) & & 0.000451 (0.09\%) & & 0.0001603 (0.03\%) & & 0.0006369 (0.12\%) \\
-\cmidrule(lr){2-11}
-& \multirow{5}{*}{1/5000} & 85 & \multirow{5}{*}{2.857551} & 0.01856 (0.12\%) & \multirow{5}{*}{2.678423} & -0.001722 (-0.01\%) & \multirow{5}{*}{3.641867} & -0.002718 (-0.02\%) & \multirow{5}{*}{4.265534} & -0.0009435 (-0.01\%) \\
-& & 98 & & 0.006872 (0.13\%) & & -0.0001248 (-0.00\%) & & -6.51e-05 (-0.00\%) & & 0.0001071 (0.00\%) \\
-& & 100 & & 0.005187 (0.12\%) & & 2.452e-05 (0.00\%) & & 0.0001319 (0.00\%) & & 0.0001094 (0.00\%) \\
-& & 102 & & 0.003788 (0.11\%) & & 0.000152 (0.00\%) & & 0.0002834 (0.01\%) & & 0.0001107 (0.00\%) \\
-& & 115 & & 0.001108 (0.22\%) & & 0.000323 (0.06\%) & & 0.0004545 (0.09\%) & & 0.00019 (0.04\%) \\
-\midrule
-
-% 6D during crash
-\multirow{15}{*}{6D during crash}
-& \multirow{5}{*}{1/50} & 85 & \multirow{5}{*}{0.089805} & 13.3 (88.27\%) & \multirow{5}{*}{0.063753} & -0.1617 (-1.07\%) & \multirow{5}{*}{0.088638} & -0.1608 (-1.07\%) & \multirow{5}{*}{0.068912} & -0.2239 (-1.49\%) \\
-& & 98 & & 13.12 (336.33\%) & & 0.1601 (4.10\%) & & 0.1599 (4.10\%) & & 0.1684 (4.32\%) \\
-& & 100 & & 12.64 (452.63\%) & & 0.2069 (7.41\%) & & 0.2067 (7.40\%) & & 0.2211 (7.92\%) \\
-& & 102 & & 11.96 (622.57\%) & & 0.2226 (11.59\%) & & 0.2223 (11.58\%) & & 0.2407 (12.53\%) \\
-& & 115 & & 5.002 (5437.06\%) & & 0.01928 (20.95\%) & & 0.01918 (20.85\%) & & 0.03486 (37.89\%) \\
-\cmidrule(lr){2-11}
-& \multirow{5}{*}{1/500} & 85 & \multirow{5}{*}{0.115985} & 3.487 (23.13\%) & \multirow{5}{*}{0.188744} & -0.004953 (-0.03\%) & \multirow{5}{*}{0.213808} & -0.003007 (-0.02\%) & \multirow{5}{*}{0.241169} & -0.02175 (-0.14\%) \\
-& & 98 & & 2.883 (73.87\%) & & -0.0007794 (-0.02\%) & & -0.0008907 (-0.02\%) & & 0.006112 (0.16\%) \\
-& & 100 & & 2.699 (96.68\%) & & 0.0002888 (0.01\%) & & -0.0001072 (-0.00\%) & & 0.008969 (0.32\%) \\
-& & 102 & & 2.506 (130.52\%) & & 0.0007156 (0.04\%) & & 0.0001468 (0.01\%) & & 0.01058 (0.55\%) \\
-& & 115 & & 1.133 (1231.99\%) & & -0.0006745 (-0.73\%) & & -0.0007963 (-0.87\%) & & 0.006959 (7.56\%) \\
-\cmidrule(lr){2-11}
-& \multirow{5}{*}{1/5000} & 85 & \multirow{5}{*}{0.584799} & 0.1193 (0.79\%) & \multirow{5}{*}{1.375289} & -0.004369 (-0.03\%) & \multirow{5}{*}{1.153838} & -0.005645 (-0.04\%) & \multirow{5}{*}{1.281406} & -0.004032 (-0.03\%) \\
-& & 98 & & 0.08104 (2.08\%) & & 0.0004828 (0.01\%) & & -0.0009292 (-0.02\%) & & -0.001528 (-0.04\%) \\
-& & 100 & & 0.07398 (2.65\%) & & 0.0008826 (0.03\%) & & -0.0002692 (-0.01\%) & & -0.001203 (-0.04\%) \\
-& & 102 & & 0.0673 (3.50\%) & & 0.001027 (0.05\%) & & 9.225e-05 (0.00\%) & & -0.001018 (-0.05\%) \\
-& & 115 & & 0.03297 (35.84\%) & & 0.0001429 (0.16\%) & & -0.0002349 (-0.26\%) & & -0.0004011 (-0.44\%) \\
-\midrule
-
-% 6D pre-shock
-\multirow{15}{*}{6D pre-shock}
+% 6D Pre-shock
+\multirow{15}{*}{6D Pre-shock}
 & \multirow{5}{*}{1/50} & 85 & \multirow{5}{*}{0.096497} & 31.94 (211.97\%) & \multirow{5}{*}{0.070505} & -0.1701 (-1.13\%) & \multirow{5}{*}{0.089836} & -0.1694 (-1.12\%) & \multirow{5}{*}{0.073266} & -0.2781 (-1.85\%) \\
 & & 98 & & 32.14 (858.70\%) & & 0.00318 (0.08\%) & & 0.003333 (0.09\%) & & -0.01203 (-0.32\%) \\
 & & 100 & & 31.76 (1220.41\%) & & 0.05443 (2.09\%) & & 0.05451 (2.09\%) & & 0.0469 (1.80\%) \\
@@ -354,8 +270,29 @@ Time-stepping methods include the Euler/Milstein discrete scheme, Exact Stepping
 & & 115 & & 0.08972 (189.29\%) & & -0.002234 (-4.71\%) & & -0.002566 (-5.41\%) & & -0.002595 (-5.48\%) \\
 \midrule
 
-% 6D recovery
-\multirow{15}{*}{6D recovery}
+% 6D Crash
+\multirow{15}{*}{6D Crash}
+& \multirow{5}{*}{1/50} & 85 & \multirow{5}{*}{0.089805} & 13.3 (88.27\%) & \multirow{5}{*}{0.063753} & -0.1617 (-1.07\%) & \multirow{5}{*}{0.088638} & -0.1608 (-1.07\%) & \multirow{5}{*}{0.068912} & -0.2239 (-1.49\%) \\
+& & 98 & & 13.12 (336.33\%) & & 0.1601 (4.10\%) & & 0.1599 (4.10\%) & & 0.1684 (4.32\%) \\
+& & 100 & & 12.64 (452.63\%) & & 0.2069 (7.41\%) & & 0.2067 (7.40\%) & & 0.2211 (7.92\%) \\
+& & 102 & & 11.96 (622.57\%) & & 0.2226 (11.59\%) & & 0.2223 (11.58\%) & & 0.2407 (12.53\%) \\
+& & 115 & & 5.002 (5437.06\%) & & 0.01928 (20.95\%) & & 0.01918 (20.85\%) & & 0.03486 (37.89\%) \\
+\cmidrule(lr){2-11}
+& \multirow{5}{*}{1/500} & 85 & \multirow{5}{*}{0.115985} & 3.487 (23.13\%) & \multirow{5}{*}{0.188744} & -0.004953 (-0.03\%) & \multirow{5}{*}{0.213808} & -0.003007 (-0.02\%) & \multirow{5}{*}{0.241169} & -0.02175 (-0.14\%) \\
+& & 98 & & 2.883 (73.87\%) & & -0.0007794 (-0.02\%) & & -0.0008907 (-0.02\%) & & 0.006112 (0.16\%) \\
+& & 100 & & 2.699 (96.68\%) & & 0.0002888 (0.01\%) & & -0.0001072 (-0.00\%) & & 0.008969 (0.32\%) \\
+& & 102 & & 2.506 (130.52\%) & & 0.0007156 (0.04\%) & & 0.0001468 (0.01\%) & & 0.01058 (0.55\%) \\
+& & 115 & & 1.133 (1231.99\%) & & -0.0006745 (-0.73\%) & & -0.0007963 (-0.87\%) & & 0.006959 (7.56\%) \\
+\cmidrule(lr){2-11}
+& \multirow{5}{*}{1/5000} & 85 & \multirow{5}{*}{0.584799} & 0.1193 (0.79\%) & \multirow{5}{*}{1.375289} & -0.004369 (-0.03\%) & \multirow{5}{*}{1.153838} & -0.005645 (-0.04\%) & \multirow{5}{*}{1.281406} & -0.004032 (-0.03\%) \\
+& & 98 & & 0.08104 (2.08\%) & & 0.0004828 (0.01\%) & & -0.0009292 (-0.02\%) & & -0.001528 (-0.04\%) \\
+& & 100 & & 0.07398 (2.65\%) & & 0.0008826 (0.03\%) & & -0.0002692 (-0.01\%) & & -0.001203 (-0.04\%) \\
+& & 102 & & 0.0673 (3.50\%) & & 0.001027 (0.05\%) & & 9.225e-05 (0.00\%) & & -0.001018 (-0.05\%) \\
+& & 115 & & 0.03297 (35.84\%) & & 0.0001429 (0.16\%) & & -0.0002349 (-0.26\%) & & -0.0004011 (-0.44\%) \\
+\midrule
+
+% 6D Recovery
+\multirow{15}{*}{6D Recovery}
 & \multirow{5}{*}{1/50} & 85 & \multirow{5}{*}{0.101825} & 34.92 (231.58\%) & \multirow{5}{*}{0.065492} & -0.1713 (-1.14\%) & \multirow{5}{*}{0.0785} & -0.1696 (-1.12\%) & \multirow{5}{*}{0.068987} & -0.2575 (-1.71\%) \\
 & & 98 & & 34.87 (893.86\%) & & 0.0171 (0.44\%) & & 0.01731 (0.44\%) & & 0.005745 (0.15\%) \\
 & & 100 & & 34.46 (1241.16\%) & & 0.06363 (2.29\%) & & 0.06369 (2.29\%) & & 0.05845 (2.11\%) \\
@@ -378,77 +315,211 @@ Time-stepping methods include the Euler/Milstein discrete scheme, Exact Stepping
   }
 \end{table}
 
-From the results in Table \ref{tab:timestepping_full}, we can see that the performance of the four time-stepping methods in real extreme market scenarios is highly consistent with the conclusions from the academic benchmark cases in Chapter 5. However, extreme market conditions impose higher requirements on the accuracy and stability of the methods. The Euler/Milstein discrete scheme remains highly sensitive to time step size. Under a coarse step size of $dt=1/50$, this method exhibited massive pricing deviations across all 6 test cases. The relative bias for ATM options during the 6D crash reached $1612.23\%$, and for deep OTM options before the 20D crash, it even reached $762.56\%$, completely losing its pricing capability. Even when the step size was reduced to $dt=1/500$, the relative bias in most scenarios still exceeded $50\%$. Only when the step size was further reduced to $dt=1/5000$ did the bias fall below $1\%$, but the corresponding computation time increased by an order of magnitude compared to the coarse step size, rendering its efficiency extremely low.
+\begin{table}[htbp]
+  \centering
+  \caption{Time-Stepping Monte Carlo Option Pricing Results (20D)}
+  \label{tab:timestepping_20D}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llccccccccc}
+    \toprule
+    \multirow{2}{*}{Situation} & \multirow{2}{*}{$dt$} & \multirow{2}{*}{Strike} & \multicolumn{2}{c}{Euler/Milstein scheme} & \multicolumn{2}{c}{Exact Stepping} & \multicolumn{2}{c}{Poisson-Gamma Almost Exact Stepping} & \multicolumn{2}{c}{QE Almost Exact Stepping} \\
+    \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11}
+    & & & Time (s) & Option Bias & Time (s) & Option Bias & Time (s) & Option Bias & Time (s) & Option Bias \\
+    \midrule
+
+% 20D Pre-shock
+\multirow{15}{*}{20D Pre-shock}
+& \multirow{5}{*}{1/50} & 85 & \multirow{5}{*}{0.10964} & 70.57 (458.80\%) & \multirow{5}{*}{0.072515} & -0.1383 (-0.90\%) & \multirow{5}{*}{0.087479} & -0.1359 (-0.88\%) & \multirow{5}{*}{0.087417} & -0.2368 (-1.54\%) \\
+& & 98 & & 68.33 (1302.82\%) & & -0.03066 (-0.58\%) & & -0.03023 (-0.58\%) & & -0.05632 (-1.07\%) \\
+& & 100 & & 67.57 (1618.57\%) & & -0.01057 (-0.25\%) & & -0.01042 (-0.25\%) & & -0.02948 (-0.71\%) \\
+& & 102 & & 66.67 (2044.48\%) & & 0.006084 (0.19\%) & & 0.005995 (0.18\%) & & -0.007262 (-0.22\%) \\
+& & 115 & & 58.32 (13521.37\%) & & 0.01885 (4.37\%) & & 0.01855 (4.30\%) & & 0.02139 (4.96\%) \\
+\cmidrule(lr){2-11}
+& \multirow{5}{*}{1/500} & 85 & \multirow{5}{*}{0.280515} & 2.87 (18.66\%) & \multirow{5}{*}{0.36221} & -0.006586 (-0.04\%) & \multirow{5}{*}{0.539243} & -0.008506 (-0.06\%) & \multirow{5}{*}{0.574392} & -0.007351 (-0.05\%) \\
+& & 98 & & 2.522 (48.08\%) & & -0.002124 (-0.04\%) & & -0.003617 (-0.07\%) & & -0.002112 (-0.04\%) \\
+& & 100 & & 2.457 (58.86\%) & & -0.001463 (-0.04\%) & & -0.002796 (-0.07\%) & & -0.001406 (-0.03\%) \\
+& & 102 & & 2.394 (73.40\%) & & -0.0008839 (-0.03\%) & & -0.002039 (-0.06\%) & & -0.0007904 (-0.02\%) \\
+& & 115 & & 2.019 (468.13\%) & & 0.0003308 (0.08\%) & & 0.000147 (0.03\%) & & 0.0005106 (0.12\%) \\
+\cmidrule(lr){2-11}
+& \multirow{5}{*}{1/5000} & 85 & \multirow{5}{*}{1.995124} & 0.03389 (0.22\%) & \multirow{5}{*}{4.798202} & -0.001573 (-0.01\%) & \multirow{5}{*}{3.812062} & -0.005295 (-0.03\%) & \multirow{5}{*}{4.348587} & -0.0009402 (-0.01\%) \\
+& & 98 & & 0.01982 (0.38\%) & & 0.0004488 (0.01\%) & & -0.001427 (-0.03\%) & & 4.042e-05 (0.00\%) \\
+& & 100 & & 0.01777 (0.43\%) & & 0.0004454 (0.01\%) & & -0.0009235 (-0.02\%) & & 7.606e-05 (0.00\%) \\
+& & 102 & & 0.01599 (0.49\%) & & 0.0003961 (0.01\%) & & -0.0004937 (-0.02\%) & & 9.859e-05 (0.00\%) \\
+& & 115 & & 0.01084 (2.51\%) & & 0.000117 (0.03\%) & & 0.0003757 (0.09\%) & & 0.0001203 (0.03\%) \\
+\midrule
+
+% 20D Crash
+\multirow{15}{*}{20D Crash}
+& \multirow{5}{*}{1/50} & 85 & \multirow{5}{*}{0.097975} & 52.78 (343.90\%) & \multirow{5}{*}{0.073905} & -0.3025 (-1.97\%) & \multirow{5}{*}{0.08308} & -0.303 (-1.97\%) & \multirow{5}{*}{0.090593} & -0.4921 (-3.21\%) \\
+& & 98 & & 50.99 (1008.18\%) & & -0.06433 (-1.27\%) & & -0.0648 (-1.28\%) & & -0.116 (-2.29\%) \\
+& & 100 & & 50.25 (1264.36\%) & & -0.02048 (-0.52\%) & & -0.02098 (-0.53\%) & & -0.05895 (-1.48\%) \\
+& & 102 & & 49.36 (1614.22\%) & & 0.01505 (0.49\%) & & 0.01452 (0.47\%) & & -0.01246 (-0.41\%) \\
+& & 115 & & 40.6 (11478.07\%) & & 0.03456 (9.77\%) & & 0.03419 (9.67\%) & & 0.03758 (10.63\%) \\
+\cmidrule(lr){2-11}
+& \multirow{5}{*}{1/500} & 85 & \multirow{5}{*}{0.260825} & 8.006 (52.17\%) & \multirow{5}{*}{0.376691} & -0.007846 (-0.05\%) & \multirow{5}{*}{0.541429} & -0.008731 (-0.06\%) & \multirow{5}{*}{0.500772} & -0.03622 (-0.24\%) \\
+& & 98 & & 7.206 (142.48\%) & & -0.004967 (-0.10\%) & & -0.005825 (-0.12\%) & & -0.01238 (-0.24\%) \\
+& & 100 & & 7.024 (176.73\%) & & -0.004271 (-0.11\%) & & -0.004983 (-0.13\%) & & -0.009548 (-0.24\%) \\
+& & 102 & & 6.834 (223.50\%) & & -0.003733 (-0.12\%) & & -0.0043 (-0.14\%) & & -0.007244 (-0.24\%) \\
+& & 115 & & 5.497 (1554.06\%) & & -0.002588 (-0.73\%) & & -0.002764 (-0.78\%) & & -0.00155 (-0.44\%) \\
+\cmidrule(lr){2-11}
+& \multirow{5}{*}{1/5000} & 85 & \multirow{5}{*}{2.147697} & 0.1869 (1.22\%) & \multirow{5}{*}{4.123019} & -0.004063 (-0.03\%) & \multirow{5}{*}{3.745557} & -0.01244 (-0.08\%) & \multirow{5}{*}{4.445529} & -0.006032 (-0.04\%) \\
+& & 98 & & 0.1493 (2.95\%) & & -0.002526 (-0.05\%) & & -0.004968 (-0.10\%) & & -0.003897 (-0.08\%) \\
+& & 100 & & 0.1432 (3.60\%) & & -0.002434 (-0.06\%) & & -0.004031 (-0.10\%) & & -0.00364 (-0.09\%) \\
+& & 102 & & 0.1373 (4.49\%) & & -0.002466 (-0.08\%) & & -0.003371 (-0.11\%) & & -0.003511 (-0.11\%) \\
+& & 115 & & 0.1051 (29.71\%) & & -0.002438 (-0.69\%) & & -0.002065 (-0.58\%) & & -0.002741 (-0.77\%) \\
+\midrule
+
+% 20D Recovery
+\multirow{15}{*}{20D Recovery}
+& \multirow{5}{*}{1/50} & 85 & \multirow{5}{*}{0.098142} & 59.05 (383.33\%) & \multirow{5}{*}{0.088713} & -0.1175 (-0.76\%) & \multirow{5}{*}{0.079911} & -0.1147 (-0.74\%) & \multirow{5}{*}{0.095661} & -0.1813 (-1.18\%) \\
+& & 98 & & 56.68 (1054.03\%) & & -0.009567 (-0.18\%) & & -0.009586 (-0.18\%) & & -0.02326 (-0.43\%) \\
+& & 100 & & 55.91 (1294.30\%) & & 0.007429 (0.17\%) & & 0.007149 (0.17\%) & & -0.001574 (-0.04\%) \\
+& & 102 & & 55.02 (1611.90\%) & & 0.02082 (0.61\%) & & 0.02034 (0.60\%) & & 0.01568 (0.46\%) \\
+& & 115 & & 46.85 (9134.21\%) & & 0.02293 (4.47\%) & & 0.02233 (4.35\%) & & 0.02815 (5.49\%) \\
+\cmidrule(lr){2-11}
+& \multirow{5}{*}{1/500} & 85 & \multirow{5}{*}{0.269408} & 1.687 (10.96\%) & \multirow{5}{*}{0.370337} & -0.005204 (-0.03\%) & \multirow{5}{*}{0.554489} & -0.00616 (-0.04\%) & \multirow{5}{*}{0.474414} & -0.004593 (-0.03\%) \\
+& & 98 & & 1.419 (26.38\%) & & -0.001239 (-0.02\%) & & -0.002311 (-0.04\%) & & -0.0008583 (-0.02\%) \\
+& & 100 & & 1.372 (31.75\%) & & -0.0007568 (-0.02\%) & & -0.001756 (-0.04\%) & & -0.0004048 (-0.01\%) \\
+& & 102 & & 1.327 (38.87\%) & & -0.0003489 (-0.01\%) & & -0.001255 (-0.04\%) & & -1.756e-05 (-0.00\%) \\
+& & 115 & & 1.081 (210.68\%) & & 0.000451 (0.09\%) & & 0.0001603 (0.03\%) & & 0.0006369 (0.12\%) \\
+\cmidrule(lr){2-11}
+& \multirow{5}{*}{1/5000} & 85 & \multirow{5}{*}{2.857551} & 0.01856 (0.12\%) & \multirow{5}{*}{2.678423} & -0.001722 (-0.01\%) & \multirow{5}{*}{3.641867} & -0.002718 (-0.02\%) & \multirow{5}{*}{4.265534} & -0.0009435 (-0.01\%) \\
+& & 98 & & 0.006872 (0.13\%) & & -0.0001248 (-0.00\%) & & -6.51e-05 (-0.00\%) & & 0.0001071 (0.00\%) \\
+& & 100 & & 0.005187 (0.12\%) & & 2.452e-05 (0.00\%) & & 0.0001319 (0.00\%) & & 0.0001094 (0.00\%) \\
+& & 102 & & 0.003788 (0.11\%) & & 0.000152 (0.00\%) & & 0.0002834 (0.01\%) & & 0.0001107 (0.00\%) \\
+& & 115 & & 0.001108 (0.22\%) & & 0.000323 (0.06\%) & & 0.0004545 (0.09\%) & & 0.00019 (0.04\%) \\
+\bottomrule
+  \end{tabular}%
+  }
+\end{table}
+From the results in Table \ref{tab:timestepping_6D} and Table \ref{tab:timestepping_20D}, we can see that the performance of the four time-stepping methods in real extreme market scenarios is highly consistent with the conclusions from the academic benchmark cases in Chapter 5. However, extreme market conditions impose higher requirements on the accuracy and stability of the methods. The Euler/Milstein discrete scheme remains highly sensitive to time step size. Under a coarse step size of $dt=1/50$, this method exhibited massive pricing deviations across all 6 test cases. The relative bias for ATM options during the 6D crash reached $1612.23\%$, and for deep OTM options before the 20D crash, it even reached $762.56\%$, completely losing its pricing capability. Even when the step size was reduced to $dt=1/500$, the relative bias in most scenarios still exceeded $50\%$. Only when the step size was further reduced to $dt=1/5000$ did the bias fall below $1\%$, but the corresponding computation time increased by an order of magnitude compared to the coarse step size, rendering its efficiency extremely low.
 
 In stark contrast, the Exact Stepping, Poisson-Gamma Near-Exact Stepping, and QE Near-Exact Stepping methods did not suffer any numerical failures across all 6 test cases and all time step sizes, consistently maintaining exceptionally high pricing stability. Even under the coarse step size of $dt=1/50$, the relative bias of these three methods was generally kept within $2\%$, demonstrating accuracy far superior to the Euler/Milstein scheme under the fine step size of $dt=1/5000$, while computation times remained on the same order of magnitude as the Euler/Milstein scheme at the same step size. Among them, the Exact Stepping method achieved the highest accuracy, with relative biases controlled within $1\%$ across all scenarios, serving as the accuracy benchmark for time-stepping methods. The accuracy of the Poisson-Gamma and QE methods was slightly lower than that of the Exact Stepping method, but they offered better computational efficiency, maintaining stable pricing performance even in extreme scenarios like the crash period, thereby achieving an optimal balance between accuracy and efficiency.
 
 \subsection{Performance Results and Analysis of Terminal Simulation Methods}
 
-Terminal simulation methods encompass five schemes: Baldeaux Exact Simulation, Fourier-Cosine Exact Terminal Simulation, Moment Matching Exact Terminal Simulation, Inverse Gaussian (IG) Near-Exact Simulation, and Gamma Near-Exact Simulation. The complete test results are shown in Table \ref{tab:terminal_real}.
+Terminal simulation methods encompass five schemes: Baldeaux Exact Simulation, Fourier-Cosine Exact Terminal Simulation, Moment Matching Exact Terminal Simulation, Inverse Gaussian (IG) Near-Exact Simulation, and Gamma Near-Exact Simulation. The complete test results are shown in Table \ref{tab:terminal_real_part1} and Table \ref{tab:terminal_real_part2}.
 
 \begin{table}[htbp]
   \centering
-  \caption{Pricing Performance Results of Terminal Simulation Methods in Extreme Market Scenarios}
-  \label{tab:terminal_real}
+  \caption{Exact Simulation Methods in Extreme Market Scenarios}
+  \label{tab:terminal_real_part1}
   \resizebox{\textwidth}{!}{%
-  \begin{tabular}{lclcccccccccc}
+  \begin{tabular}{lclcccccc}
     \toprule
     \multirow{2}{*}{Scenario} & \multirow{2}{*}{Strike}
     & \multicolumn{2}{c}{Exact Simulation}
     & \multicolumn{2}{c}{Exact Simulation (Fourier-Cosine)}
-    & \multicolumn{2}{c}{Exact Simulation (Moment Matching)}
-    & \multicolumn{2}{c}{Almost Exact Simulation (IG)}
-    & \multicolumn{2}{c}{Almost Exact Simulation (Gamma)} \\
-    \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10} \cmidrule(lr){11-12}
-    & & Time (s) & Option Bias & Time (s) & Option Bias & Time (s) & Option Bias & Time (s) & Option Bias & Time (s) & Option Bias \\
+    & \multicolumn{2}{c}{Exact Simulation (Moment Matching)} \\
+    \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+    & & Time (s) & Option Bias & Time (s) & Option Bias & Time (s) & Option Bias \\
     \midrule
     \multirow{5}{*}{6D Pre-Shock}
-    & 85 & \multirow{5}{*}{55.2718} & 1.534 (10.18\%) & \multirow{5}{*}{21.9335} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0377} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.3837} & 1.665 (11.05\%) & \multirow{5}{*}{2.965} & 2.965 (19.68\%) \\
-    & 98 & & -0.03761 (-1.00\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & 0.00733 (0.02\%) & & 1.292 (34.53\%) \\
-    & 100 & & -0.6423 (-24.68\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.7651 (-29.40\%) & & 0.447 (17.18\%) \\
-    & 102 & & -1.031 (-60.04\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -1.275 (-74.28\%) & & -0.5019 (-29.23\%) \\
-    & 115 & & -0.0474 (-99.99\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.0474 (-100.00\%) & & -0.0474 (-100.00\%) \\
+    & 85 & \multirow{5}{*}{55.2718} & 1.534 (10.18\%) & \multirow{5}{*}{21.9335} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0377} & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 98 & & -0.03761 (-1.00\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 100 & & -0.6423 (-24.68\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 102 & & -1.031 (-60.04\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 115 & & -0.0474 (-99.99\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
     \midrule
     \multirow{5}{*}{6D Crash}
-    & 85 & \multirow{5}{*}{63.5117} & 0.7671 (5.09\%) & \multirow{5}{*}{19.1247} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0360} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.3375} & 0.8457 (5.61\%) & \multirow{5}{*}{0.3797} & 1.455 (9.66\%) \\
-    & 98 & & -0.8963 (-22.97\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.9757 (-25.00\%) & & -0.3736 (-9.57\%) \\
-    & 100 & & -1.384 (-49.57\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -1.71 (-61.26\%) & & -1.221 (-43.74\%) \\
-    & 102 & & -1.471 (-76.62\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -1.805 (-93.99\%) & & -1.72 (-89.59\%) \\
-    & 115 & & -0.09199 (-99.99\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.092 (-100.00\%) & & -0.092 (-100.00\%) \\
+    & 85 & \multirow{5}{*}{63.5117} & 0.7671 (5.09\%) & \multirow{5}{*}{19.1247} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0360} & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 98 & & -0.8963 (-22.97\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 100 & & -1.384 (-49.57\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 102 & & -1.471 (-76.62\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 115 & & -0.09199 (-99.99\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
     \midrule
     \multirow{5}{*}{6D Recovery}
-    & 85 & \multirow{5}{*}{46.3179} & 1.567 (10.39\%) & \multirow{5}{*}{19.1559} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0358} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.2984} & 1.686 (11.18\%) & \multirow{5}{*}{0.3350} & 3.032 (20.11\%) \\
-    & 98 & & -0.1522 (-3.90\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.126 (-3.23\%) & & 1.211 (31.05\%) \\
-    & 100 & & -0.7739 (-27.88\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.9046 (-32.59\%) & & 0.3499 (12.61\%) \\
-    & 102 & & -1.17 (-61.93\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -1.419 (-75.13\%) & & -0.6054 (-32.05\%) \\
-    & 115 & & -0.0671 (-99.99\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.0671 (-100.00\%) & & -0.0671 (-100.00\%) \\
+    & 85 & \multirow{5}{*}{46.3179} & 1.567 (10.39\%) & \multirow{5}{*}{19.1559} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0358} & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 98 & & -0.1522 (-3.90\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 100 & & -0.7739 (-27.88\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 102 & & -1.17 (-61.93\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 115 & & -0.0671 (-99.99\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
     \midrule
     \multirow{5}{*}{20D Pre-Shock}
-    & 85 & \multirow{5}{*}{57.0627} & 2.732 (17.76\%) & \multirow{5}{*}{10.6008} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0356} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.3099} & 0.1622 (3.88\%) & \multirow{5}{*}{0.2807} & 0.6949 (16.64\%) \\
-    & 98 & & 0.6052 (11.54\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & 0.9414 (17.95\%) & & 1.522 (29.01\%) \\
-    & 100 & & 0.1364 (3.27\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & 0.1267 (3.04\%) & & 0.6949 (16.64\%) \\
-    & 102 & & -0.2787 (-8.55\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.5563 (-17.06\%) & & -0.1177 (-3.61\%) \\
-    & 115 & & -0.3418 (-79.25\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.4291 (-99.49\%) & & -0.4287 (-99.40\%) \\
+    & 85 & \multirow{5}{*}{57.0627} & 2.732 (17.76\%) & \multirow{5}{*}{10.6008} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0356} & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 98 & & 0.6052 (11.54\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 100 & & 0.1364 (3.27\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 102 & & -0.2787 (-8.55\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 115 & & -0.3418 (-79.25\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
     \midrule
     \multirow{5}{*}{20D Crash}
-    & 85 & \multirow{5}{*}{57.4672} & 2.087 (13.60\%) & \multirow{5}{*}{17.3398} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0434} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.3143} & 3.585 (23.36\%) & \multirow{5}{*}{0.2824} & 1.43 (28.29\%) \\
-    & 98 & & 0.4211 (8.33\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & 0.9223 (18.24\%) & & 1.43 (28.29\%) \\
-    & 100 & & 0.0838 (2.11\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & 0.1267 (3.19\%) & & 0.5963 (15.00\%) \\
-    & 102 & & -0.2042 (-6.68\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.6188 (-20.24\%) & & -0.2366 (-7.74\%) \\
-    & 115 & & -0.237 (-67.01\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.353 (-99.79\%) & & -0.3529 (-99.78\%) \\
+    & 85 & \multirow{5}{*}{57.4672} & 2.087 (13.60\%) & \multirow{5}{*}{17.3398} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0434} & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 98 & & 0.4211 (8.33\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 100 & & 0.0838 (2.11\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 102 & & -0.2042 (-6.68\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 115 & & -0.237 (-67.01\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
     \midrule
     \multirow{5}{*}{20D Recovery}
-    & 85 & \multirow{5}{*}{59.4667} & 2.468 (16.02\%) & \multirow{5}{*}{7.6416} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0387} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.3289} & 3.14 (20.39\%) & \multirow{5}{*}{0.2639} & 3.662 (23.77\%) \\
-    & 98 & & 0.1784 (3.32\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & 0.2658 (4.94\%) & & 0.7524 (13.99\%) \\
-    & 100 & & -0.308 (-7.13\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.4767 (-11.03\%) & & -0.04502 (-1.04\%) \\
-    & 102 & & -0.7179 (-21.03\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -1.106 (-32.44\%) & & -0.7729 (-22.64\%) \\
-    & 115 & & -0.4415 (-86.08\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & -0.5112 (-99.66\%) & & -0.5111 (-99.64\%) \\
+    & 85 & \multirow{5}{*}{59.4667} & 2.468 (16.02\%) & \multirow{5}{*}{7.6416} & $\mathrm{nan}$ ($\mathrm{nan}\%$) & \multirow{5}{*}{0.0387} & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 98 & & 0.1784 (3.32\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 100 & & -0.308 (-7.13\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 102 & & -0.7179 (-21.03\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
+    & 115 & & -0.4415 (-86.08\%) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) & & $\mathrm{nan}$ ($\mathrm{nan}\%$) \\
     \bottomrule
   \end{tabular}%
   }
 \end{table}
 
-The results in Table \ref{tab:terminal_real} clearly show that terminal simulation methods suffer from severe numerical failure and pricing bias issues in real extreme market scenarios. Compared to the results from the academic benchmark cases in Chapter 5, the stability and accuracy of the methods have deteriorated significantly. The Fourier-Cosine Exact Terminal Simulation method and the Moment Matching Exact Terminal Simulation method completely failed across all 6 test cases, outputting $\mathrm{nan}$ results and losing their pricing capability entirely; they failed to perform valid calculations even in the stable pre-shock market scenarios. The core reason is that the high volatility of volatility parameter calibrated from the real market caused severe numerical errors in truncating the cosine series and executing the moment-matching expansion for the distribution, eventually leading to computational failure.
+\begin{table}[htbp]
+  \centering
+  \caption{Almost Exact Simulation Methods in Extreme Market Scenarios}
+  \label{tab:terminal_real_part2}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lclcccc}
+    \toprule
+    \multirow{2}{*}{Scenario} & \multirow{2}{*}{Strike}
+    & \multicolumn{2}{c}{Almost Exact Simulation (IG)}
+    & \multicolumn{2}{c}{Almost Exact Simulation (Gamma)} \\
+    \cmidrule(lr){3-4} \cmidrule(lr){5-6}
+    & & Time (s) & Option Bias & Time (s) & Option Bias \\
+    \midrule
+    \multirow{5}{*}{6D Pre-Shock}
+    & 85 & \multirow{5}{*}{0.3837} & 1.665 (11.05\%) & \multirow{5}{*}{2.965} & 2.965 (19.68\%) \\
+    & 98 & & 0.00733 (0.02\%) & & 1.292 (34.53\%) \\
+    & 100 & & -0.7651 (-29.40\%) & & 0.447 (17.18\%) \\
+    & 102 & & -1.275 (-74.28\%) & & -0.5019 (-29.23\%) \\
+    & 115 & & -0.0474 (-100.00\%) & & -0.0474 (-100.00\%) \\
+    \midrule
+    \multirow{5}{*}{6D Crash}
+    & 85 & \multirow{5}{*}{0.3375} & 0.8457 (5.61\%) & \multirow{5}{*}{0.3797} & 1.455 (9.66\%) \\
+    & 98 & & -0.9757 (-25.00\%) & & -0.3736 (-9.57\%) \\
+    & 100 & & -1.71 (-61.26\%) & & -1.221 (-43.74\%) \\
+    & 102 & & -1.805 (-93.99\%) & & -1.72 (-89.59\%) \\
+    & 115 & & -0.092 (-100.00\%) & & -0.092 (-100.00\%) \\
+    \midrule
+    \multirow{5}{*}{6D Recovery}
+    & 85 & \multirow{5}{*}{0.2984} & 1.686 (11.18\%) & \multirow{5}{*}{0.3350} & 3.032 (20.11\%) \\
+    & 98 & & -0.126 (-3.23\%) & & 1.211 (31.05\%) \\
+    & 100 & & -0.9046 (-32.59\%) & & 0.3499 (12.61\%) \\
+    & 102 & & -1.419 (-75.13\%) & & -0.6054 (-32.05\%) \\
+    & 115 & & -0.0671 (-100.00\%) & & -0.0671 (-100.00\%) \\
+    \midrule
+    \multirow{5}{*}{20D Pre-Shock}
+    & 85 & \multirow{5}{*}{0.3099} & 0.1622 (3.88\%) & \multirow{5}{*}{0.2807} & 0.6949 (16.64\%) \\
+    & 98 & & 0.9414 (17.95\%) & & 1.522 (29.01\%) \\
+    & 100 & & 0.1267 (3.04\%) & & 0.6949 (16.64\%) \\
+    & 102 & & -0.5563 (-17.06\%) & & -0.1177 (-3.61\%) \\
+    & 115 & & -0.4291 (-99.49\%) & & -0.4287 (-99.40\%) \\
+    \midrule
+    \multirow{5}{*}{20D Crash}
+    & 85 & \multirow{5}{*}{0.3143} & 3.585 (23.36\%) & \multirow{5}{*}{0.2824} & 1.43 (28.29\%) \\
+    & 98 & & 0.9223 (18.24\%) & & 1.43 (28.29\%) \\
+    & 100 & & 0.1267 (3.19\%) & & 0.5963 (15.00\%) \\
+    & 102 & & -0.6188 (-20.24\%) & & -0.2366 (-7.74\%) \\
+    & 115 & & -0.353 (-99.79\%) & & -0.3529 (-99.78\%) \\
+    \midrule
+    \multirow{5}{*}{20D Recovery}
+    & 85 & \multirow{5}{*}{0.3289} & 3.14 (20.39\%) & \multirow{5}{*}{0.2639} & 3.662 (23.77\%) \\
+    & 98 & & 0.2658 (4.94\%) & & 0.7524 (13.99\%) \\
+    & 100 & & -0.4767 (-11.03\%) & & -0.04502 (-1.04\%) \\
+    & 102 & & -1.106 (-32.44\%) & & -0.7729 (-22.64\%) \\
+    & 115 & & -0.5112 (-99.66\%) & & -0.5111 (-99.64\%) \\
+    \bottomrule
+  \end{tabular}%
+  }
+\end{table}
+
+The results in Table \ref{tab:terminal_real_part1} and Table \ref{tab:terminal_real_part2} clearly show that terminal simulation methods suffer from severe numerical failure and pricing bias issues in real extreme market scenarios. Compared to the results from the academic benchmark cases in Chapter 5, the stability and accuracy of the methods have deteriorated significantly. The Fourier-Cosine Exact Terminal Simulation method and the Moment Matching Exact Terminal Simulation method completely failed across all 6 test cases, outputting $\mathrm{nan}$ results and losing their pricing capability entirely; they failed to perform valid calculations even in the stable pre-shock market scenarios. The core reason is that the high volatility of volatility parameter calibrated from the real market caused severe numerical errors in truncating the cosine series and executing the moment-matching expansion for the distribution, eventually leading to computational failure.
 
 Although the Baldeaux Exact Simulation method did not experience complete numerical failure, its pricing bias was massive. The relative bias for ATM options during the 6D crash reached $-49.57\%$, and for deep OTM options before the 20D crash, it plunged to $-79.25\%$, completely failing to meet pricing accuracy requirements. Furthermore, the computational efficiency of this method was extremely low, with a single case runtime exceeding 45 seconds—a further increase compared to the runtime in the academic benchmark cases. The core reason is that under extreme market parameters, the computational complexity of the high-order modified Bessel function and the inverse Laplace transform increased drastically, while the risk of numerical overflow also rose significantly, ultimately leading to degraded accuracy and worsened computational efficiency.
 
