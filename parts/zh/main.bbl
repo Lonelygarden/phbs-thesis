@@ -1416,28 +1416,6 @@
            given={Anne},
            giveni={A\bibinitperiod}}}%
       }
-      \name{editor}{4}{}{%
-        {{hash=078d9a0b05b9860d7cb2b38adb42a133}{%
-           family={Hernández‐Hernández},
-           familyi={H\bibinithyphendelim H\bibinitperiod},
-           given={Daniel},
-           giveni={D\bibinitperiod}}}%
-        {{hash=eb798bd462bff12344c3d703327f1793}{%
-           family={Leonardi},
-           familyi={L\bibinitperiod},
-           given={Florencia},
-           giveni={F\bibinitperiod}}}%
-        {{hash=8c2488e5e69741bd14dd21aadebc8049}{%
-           family={Mena},
-           familyi={M\bibinitperiod},
-           given={Ramsés\bibnamedelima H.},
-           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=c14226a929551f4d96de98fcc1abe229}{%
-           family={Pardo\bibnamedelima Millán},
-           familyi={P\bibinitperiod\bibinitdelim M\bibinitperiod},
-           given={Juan\bibnamedelima Carlos},
-           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
       \name{namea}{3}{}{%
         {{hash=411c36915575291a9d6b0baad4156220}{%
            family={Kouarfate},
@@ -1469,10 +1447,6 @@
       \strng{authornamehash}{411c36915575291a9d6b0baad4156220}
       \strng{authorfullhash}{f6f042f3cf337f06babce7431817dc23}
       \strng{authorfullhashraw}{f6f042f3cf337f06babce7431817dc23}
-      \strng{editorbibnamehash}{a772b9c39f6d36d7ca48db0911c848ae}
-      \strng{editornamehash}{078d9a0b05b9860d7cb2b38adb42a133}
-      \strng{editorfullhash}{960b0c154dca6922a0809017facaca79}
-      \strng{editorfullhashraw}{960b0c154dca6922a0809017facaca79}
       \strng{nameabibnamehash}{f6f042f3cf337f06babce7431817dc23}
       \strng{nameanamehash}{411c36915575291a9d6b0baad4156220}
       \strng{nameafullhash}{f6f042f3cf337f06babce7431817dc23}
@@ -1489,7 +1463,6 @@
       \field{lansortorder}{4}
       \field{title}{Explicit {{Solution Simulation Method}} for the 3/2 {{Model}}}
       \field{usera}{G}
-      \field{userc}{english}
       \field{userd}{english}
       \field{userf}{english}
       \field{volume}{79}
