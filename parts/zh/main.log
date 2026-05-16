@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  10 MAY 2026 17:12
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  16 MAY 2026 20:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2227,25 +2227,25 @@ Overfull \hbox (1.01312pt too wide) in paragraph at lines 433--434
 
 ]
 第五章
-[35] [36] [37] [38] [39] [40] [41] [42] [43]) [44]
+[35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45]) [46]
 \openout2 = `chap/chap6.aux'.
 
  (./chap/chap6.tex
 第六章
-[45
+[47
 
 
 
 
 
-] [46]
+] [48]
 Overfull \hbox (0.24132pt too wide) in paragraph at lines 27--28
 []\TU/FandolSong(0)/m/n/12.045 纯 扩 散 框 架 下，| \TU/XITS(0)/m/n/12.045 3/2 \TU/Fan
 dolSong(0)/m/n/12.045 随 机 波 动 率 模 型 的 方 差 过 程 满 足 如 下 动 态 设 定[][]\TU/XITS(0)/m/
 n/12.045 Baldeaux[] [][]2012a[][]$[]$\TU/FandolSong(0)/m/n/12.045 ：| 
  []
 
-[47] [48]
+[49] [50]
 File: img/Deribit_OTM_Option_Trades_Distribution_Pre_Shock.png Graphic file (ty
 pe bmp)
 <img/Deribit_OTM_Option_Trades_Distribution_Pre_Shock.png>
@@ -2255,7 +2255,7 @@ mp)
 File: img/Deribit_OTM_Option_Trades_Distribution_Recovery.png Graphic file (typ
 e bmp)
 <img/Deribit_OTM_Option_Trades_Distribution_Recovery.png>
- [49] [50] [51] [52]
+ [51] [52] [53] [54]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 9.0347pt on input line 160.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -2271,24 +2271,24 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 
 Underfull \vbox (badness 2653) has occurred while \output is active []
 
- [53]
+ [55]
 File: img/Flash_Crash_6D_Evolution_NoJump.png Graphic file (type bmp)
 <img/Flash_Crash_6D_Evolution_NoJump.png>
 File: img/Flash_Crash_20D_Evolution_NoJump.png Graphic file (type bmp)
 <img/Flash_Crash_20D_Evolution_NoJump.png>
 
-[54]
+[56]
 Underfull \vbox (badness 2103) has occurred while \output is active []
 
- [55]
-[56] [57] [58] [59] [60] [61] [62]
+ [57]
+[58] [59] [60] [61] [62] [63] [64]
 Underfull \vbox (badness 4096) has occurred while \output is active []
 
- [63]
-[64]) [65]
+ [65]
+[66]) [67]
 \openout2 = `chap/chap7.aux'.
 
- (./chap/chap7.tex [66
+ (./chap/chap7.tex [68
 
 
 
@@ -2296,11 +2296,11 @@ Underfull \vbox (badness 4096) has occurred while \output is active []
 
 ]
 第七章
-[67]
+[69]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [68]
-[69]) [70]
+ [70]
+[71]) [72]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 10.54048pt on input line 61.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -2326,12 +2326,12 @@ Package fontspec Info:
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->"[FandolFang-Regular.otf]/OT:language=dflt;"
 
-[71
+[73
 
 
 
 
-] [72] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux)
+] [74] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux)
 (./chap/chap2.aux) (./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux)
 (./chap/chap6.aux) (./chap/chap7.aux))
  ***********
@@ -2344,18 +2344,18 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9789A1688F20A2EC62AAB54C763F6988;19918.
+(rerunfilecheck)             Checksum: 2C77E666B9143284BA7E8629BFBE7686;19918.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45100 strings out of 468174
- 934697 string characters out of 5436827
- 2117427 words of memory out of 5000000
- 73091 multiletter control sequences out of 15000+600000
+ 45102 strings out of 468174
+ 934759 string characters out of 5436827
+ 2160538 words of memory out of 5000000
+ 73093 multiletter control sequences out of 15000+600000
  635833 words of font info for 142 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  123i,13n,121p,1201b,6671s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (78 pages).
+Output written on main.pdf (80 pages).

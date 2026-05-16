@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  10 MAY 2026 17:11
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.22)  16 MAY 2026 20:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2267,7 +2267,15 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
 
 [51] [52]
-Overfull \hbox (11.56958pt too wide) in paragraph at lines 353--354
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.69254pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.69254pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
+
+[53] [54]
+Overfull \hbox (11.56958pt too wide) in paragraph at lines 480--481
 \TU/XITS(0)/m/n/12.045 high vol-of-vol and strong negative correlation cases, s
 hort maturity scenarios, or deep ITM/OTM
  []
@@ -2279,7 +2287,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
 
-[53] [54]
+[55] [56]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.69254pt, for example:
@@ -2287,7 +2295,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
 
-[55] [56])
+[57] [58])
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.69254pt, for example:
@@ -2295,10 +2303,10 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.46617pt}.
 
-[57]
+[59]
 \openout2 = `chap/chap6.aux'.
 
- (./chap/chap6.tex [58
+ (./chap/chap6.tex [60
 
 
 
@@ -2313,7 +2321,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[59] [60]
+[61] [62]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2321,7 +2329,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[61] [62]
+[63] [64]
 Overfull \hbox (3.04034pt too wide) in paragraph at lines 33--34
 \TU/XITS(0)/m/n/12.045 stochastic volatility model discretization estimation me
 thod proposed by Andersen et al. (2002),
@@ -2334,7 +2342,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[63] [64]
+[65] [66]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2342,7 +2350,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[65]
+[67]
 File: img/Deribit_OTM_Option_Trades_Distribution_Pre_Shock.png Graphic file (ty
 pe bmp)
 <img/Deribit_OTM_Option_Trades_Distribution_Pre_Shock.png>
@@ -2352,7 +2360,7 @@ mp)
 File: img/Deribit_OTM_Option_Trades_Distribution_Recovery.png Graphic file (typ
 e bmp)
 <img/Deribit_OTM_Option_Trades_Distribution_Recovery.png>
- [66]
+ [68]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2360,7 +2368,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[67] [68]
+[69] [70]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2368,7 +2376,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[69]
+[71]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 9.0347pt on input line 163.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -2381,19 +2389,6 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 5.99936pt on input line 163.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 163.
- [70]
-
-Package fancyhdr Warning: \headheight is too small (14.22636pt): 
-(fancyhdr)                Make it at least 23.65038pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.65038pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
-
-[71]
-File: img/Flash_Crash_6D_Evolution_NoJump.png Graphic file (type bmp)
-<img/Flash_Crash_6D_Evolution_NoJump.png>
-File: img/Flash_Crash_20D_Evolution_NoJump.png Graphic file (type bmp)
-<img/Flash_Crash_20D_Evolution_NoJump.png>
  [72]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
@@ -2402,7 +2397,20 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[73] [74]
+[73]
+File: img/Flash_Crash_6D_Evolution_NoJump.png Graphic file (type bmp)
+<img/Flash_Crash_6D_Evolution_NoJump.png>
+File: img/Flash_Crash_20D_Evolution_NoJump.png Graphic file (type bmp)
+<img/Flash_Crash_20D_Evolution_NoJump.png>
+ [74]
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[75] [76]
 Overfull \hbox (7.51166pt too wide) in paragraph at lines 239--317
 []\TU/XITS(0)/m/n/12.045 Time-stepping methods include the Euler/Milstein discr
 ete scheme, Exact Stepping method,
@@ -2415,7 +2423,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[75] [76]
+[77] [78]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2423,26 +2431,13 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[77]
+[79]
 Overfull \hbox (11.11308pt too wide) in paragraph at lines 401--402
 []\TU/XITS(0)/m/n/12.045 Terminal simulation methods encompass five schemes: Ba
 ldeaux Exact Simulation, Fourier-
  []
 
-[78]
-
-Package fancyhdr Warning: \headheight is too small (14.22636pt): 
-(fancyhdr)                Make it at least 23.65038pt, for example:
-(fancyhdr)                \setlength{\headheight}{23.65038pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
-
-[79] [80]
-Overfull \hbox (0.97122pt too wide) in paragraph at lines 530--531
-[]\TU/XITS(0)/m/n/12.045 Fourier frequency-domain pricing methods comprise two 
-schemes: the Fast Fourier Trans-
- []
-
+[80]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2451,6 +2446,11 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
 [81] [82]
+Overfull \hbox (0.97122pt too wide) in paragraph at lines 530--531
+[]\TU/XITS(0)/m/n/12.045 Fourier frequency-domain pricing methods comprise two 
+schemes: the Fast Fourier Trans-
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2466,7 +2466,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[85] [86])
+[85] [86]
 
 Package fancyhdr Warning: \headheight is too small (14.22636pt): 
 (fancyhdr)                Make it at least 23.65038pt, for example:
@@ -2474,10 +2474,18 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
 
-[87]
+[87] [88])
+
+Package fancyhdr Warning: \headheight is too small (14.22636pt): 
+(fancyhdr)                Make it at least 23.65038pt, for example:
+(fancyhdr)                \setlength{\headheight}{23.65038pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-9.42401pt}.
+
+[89]
 \openout2 = `chap/chap7.aux'.
 
- (./chap/chap7.tex [88
+ (./chap/chap7.tex [90
 
 
 
@@ -2485,7 +2493,7 @@ Package fancyhdr Warning: \headheight is too small (14.22636pt):
 
 ]
 Chapter 7
-[89] [90] [91] [92] [93]) [94]
+[91] [92] [93] [94] [95]) [96]
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
 (Font)              scaled to size 10.54048pt on input line 62.
 LaTeX Font Info:    Font shape `TU/XITSMath-Regular(2)/m/n' will be
@@ -2499,12 +2507,12 @@ LaTeX Font Info:    Font shape `TU/XITSMath-Regular(3)/m/n' will be
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <10.53937> not available
 (Font)              size <10.95> substituted on input line 62.
 
-[95
+[97
 
 
 
 
-] [96] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux)
+] [98] (./main.aux (./chap/abstract.aux) (./chap/chap1.aux)
 (./chap/chap2.aux) (./chap/chap3.aux) (./chap/chap4.aux) (./chap/chap5.aux)
 (./chap/chap6.aux) (./chap/chap7.aux))
  ***********
@@ -2517,18 +2525,18 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D2C14669A2E5D02B0B3EDDAA7C3ECDB0;35739.
+(rerunfilecheck)             Checksum: 6545183E7D7F6073FEE2B318436E6159;35739.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44828 strings out of 468174
- 916428 string characters out of 5436827
- 2123896 words of memory out of 5000000
- 72823 multiletter control sequences out of 15000+600000
+ 44830 strings out of 468174
+ 916490 string characters out of 5436827
+ 2137049 words of memory out of 5000000
+ 72825 multiletter control sequences out of 15000+600000
  635801 words of font info for 138 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  123i,13n,121p,2767b,6671s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (102 pages).
+Output written on main.pdf (104 pages).
