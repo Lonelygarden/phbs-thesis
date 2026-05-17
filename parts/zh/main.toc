@@ -65,8 +65,7 @@
 \contentsline {subsection}{\numberline {4.3.2}傅里叶余弦 (Fourier-Cosine, COS) 定价方法}{31}{subsection.4.3.2}%
 \contentsline {subsubsection}{\numberline {4.3.2.1}理论推导}{32}{subsubsection.4.3.2.1}%
 \contentsline {subsubsection}{\numberline {4.3.2.2}数值实现流程}{32}{subsubsection.4.3.2.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.3}数值实现流程}{32}{subsubsection.4.3.2.3}%
-\contentsline {subsubsection}{\numberline {4.3.2.4}误差特性与收敛性分析}{32}{subsubsection.4.3.2.4}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}误差特性与收敛性分析}{32}{subsubsection.4.3.2.3}%
 \contentsline {section}{\numberline {4.4}本章小结}{33}{section.4.4}%
 \contentsline {chapter}{\numberline {第五章\hspace {.3em}}数值实验设定与结果对比分析}{35}{chapter.5}%
 \contentsline {section}{\numberline {5.1}数值实验环境与设定}{35}{section.5.1}%
