@@ -102,4 +102,6 @@
 \contentsline {section}{\numberline {7.2}研究局限性}{71}{section.7.2}%
 \contentsline {section}{\numberline {7.3}未来研究展望}{71}{section.7.3}%
 \contentsline {chapter}{参考文献}{73}{appendix*.22}%
+\contentsline {chapter}{致谢}{75}{appendix*.23}%
+\contentsline {chapter}{北京大学学位论文原创性声明和使用授权说明}{77}{appendix*.24}%
 \contentsfinish 

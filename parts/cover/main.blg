@@ -1,4 +1,4 @@
-[0] Config.pm:307> INFO - This is Biber 2.19
-[0] Config.pm:310> INFO - Logfile is 'main.blg'
-[29] biber-darwin:340> INFO - === Wed Dec 17, 2025, 03:43:49
-[37] Biber.pm:419> INFO - Reading 'main.bcf'
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'main.blg'
+[52] biber-MSWIN64:342> INFO - === 
+[70] Biber.pm:421> INFO - Reading 'main.bcf'
