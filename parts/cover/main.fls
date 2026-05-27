@@ -382,21 +382,12 @@ INPUT c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/ti
 INPUT ./miscs.tex
 INPUT ./miscs.tex
 INPUT miscs.tex
-INPUT ./main.aux
-INPUT ./main.aux
-INPUT main.aux
 OUTPUT main.aux
 INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/caption/ltcaption.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/hyperref/psdextra.def
 INPUT c:/texlive/2025/texmf-dist/tex/latex/hyperref/psdextra.def
 INPUT c:/texlive/2025/texmf-dist/tex/latex/hyperref/psdextra.def
-INPUT ./main.out
-INPUT ./main.out
-INPUT main.out
-INPUT main.out
-INPUT ./main.out
-INPUT ./main.out
 OUTPUT main.out
 INPUT c:/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 OUTPUT main.bcf
@@ -422,5 +413,4 @@ INPUT ./版权声明.pdf
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
-INPUT main.run.xml
 OUTPUT main.run.xml
